@@ -67,7 +67,7 @@ namespace LevelManagement
             LevelLoader.LoadMainMenuLevel();
 
             _splashText.text = "";
-            _splashImage.active = false;
+            _splashImage.SetActive(false);
 
             yield return new WaitForSeconds(_screenFader.FadeOffDuration);
 
