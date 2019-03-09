@@ -50,20 +50,19 @@ namespace LevelManagement
         {
             if (transitionPrefab != null)
             {
-                transitionPrefab.GetComponentInChildren<Text>().text = "LEVEL " + nextLevelNumber;
+                //transitionPrefab.GetComponentInChildren<Text>().text = "LEVEL " + nextLevelNumber;
 
                 TransitionFader instance = Instantiate(transitionPrefab, Vector3.zero, Quaternion.identity);
                 instance.Play();
             }
         }
 
-        // TODO: [REMOVE] - verify that is unused
         // instantiate a transition prefab and fade on/off, alter the text and fade on/off 
-        public static void PlayTransition(TransitionFader transitionPrefab, string nextLevelName)
+        public static void PlayTransition(TransitionFader transitionPrefab, string nextZoneName)
         {
             if (transitionPrefab != null)
             {
-                transitionPrefab.GetComponentInChildren<Text>().text = nextLevelName;
+                transitionPrefab.GetComponentInChildren<Text>().text = nextZoneName;
 
                 TransitionFader instance = Instantiate(transitionPrefab, Vector3.zero, Quaternion.identity);
                 instance.Play();

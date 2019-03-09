@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 4686994119298673107}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,9 +96,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.43335742}
+  m_Offset: {x: 0, y: -0.6797294}
   serializedVersion: 2
-  m_Radius: 0.39999992
+  m_Radius: 0.44325548
 --- !u!50 &4686994119298673118
 Rigidbody2D:
   serializedVersion: 4
@@ -133,7 +133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 4686994119298673118}
-  _speed: 15
+  _speed: 10
   _animator: {fileID: 4686994119298673107}
 --- !u!95 &4686994119298673107
 Animator:

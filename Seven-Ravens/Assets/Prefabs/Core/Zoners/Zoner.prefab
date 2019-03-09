@@ -70,3 +70,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9ea582080b96d54c94998a9efaa0010, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playDelay: 0.5
+  _transitionPrefab: {fileID: 114970023746679392, guid: 613757411f6b548a5b3aff05cbf09ad8,
+    type: 3}
+  _zoneName: 
+  _zoneSceneName: 
