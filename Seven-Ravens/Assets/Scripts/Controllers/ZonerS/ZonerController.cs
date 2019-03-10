@@ -15,9 +15,11 @@ namespace Rokemon
         [SerializeField]
         private TransitionFader _transitionPrefab;
 
+        // refernece to zone transporting to name
         [SerializeField]
         private string _zoneName;
 
+        // reference to zone transporting to scene name
         [SerializeField]
         private string _zoneSceneName;
 
@@ -28,17 +30,17 @@ namespace Rokemon
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.tag == _playerTag)
-            {
                 StartCoroutine(OnZonerTriggered());
-            }
         }
-
 
         private IEnumerator OnZonerTriggered()
         {
+            PlayerController.Instance.FreezePlayer();
             TransitionFader.PlayTransition(_transitionPrefab, _zoneName);
             yield return new WaitForSeconds(_playDelay);
+            PlayerInformationController.Instance.UpdateZones(_zoneName);
             LevelLoader.LoadLevel(_zoneSceneName);
+            PlayerController.Instance.UnfreezePlayer();
         }
     }
 }

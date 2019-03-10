@@ -9,6 +9,7 @@ namespace Rokemon
         // reference to player controller rigidbody
         [SerializeField]
         private Rigidbody2D _rigidbody;
+        public Rigidbody2D Rigidbody { get { return _rigidbody ; } }
 
         // reference to player controller speed
         [SerializeField]
@@ -24,6 +25,7 @@ namespace Rokemon
 
         // reference to movement capability status 
         private bool _canMove = true;
+        public bool CanMove { get { return _canMove ; } set { _canMove = value ; } } 
 
         // reference to left bound limits
         private Vector3 _leftBoundary;
@@ -74,6 +76,18 @@ namespace Rokemon
         {
             _leftBoundary = botLeft + new Vector3(.5f, 1f, 0f);
             _rightBoundary = topRight + new Vector3(-.5f, -1f, 0f);
+        }
+
+        public void FreezePlayer()
+        {
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
+            _canMove = false; 
+        }
+
+        public void UnfreezePlayer()
+        {
+            _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
+            _canMove = true;
         }
     }
 }
