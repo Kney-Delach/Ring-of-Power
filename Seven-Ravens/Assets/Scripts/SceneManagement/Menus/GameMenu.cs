@@ -16,7 +16,7 @@ namespace LevelManagement
         }
 
         // pauses the game and opens the pause menu
-        public void OnPausePressed()
+        private void OnPausePressed()
         {
             Time.timeScale = 0;
             AudioManager audioManager = Object.FindObjectOfType<AudioManager>();

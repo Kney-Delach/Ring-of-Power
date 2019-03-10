@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using LevelManagement.Data;
+using Rokemon; 
 
 namespace LevelManagement
 {
@@ -44,7 +45,7 @@ namespace LevelManagement
 
         }
 
-        // launch the first game level
+        // launch the game
         public void OnPlayPressed()
         {
             StartCoroutine(OnPlayPressedRoutine());
@@ -53,8 +54,12 @@ namespace LevelManagement
         // start the transition and play the first level
         private IEnumerator OnPlayPressedRoutine()
         {
-            TransitionFader.PlayTransition(startTransitionPrefab, LevelLoader.CurrentSceneIndex);
+            TransitionFader.PlayTransition(startTransitionPrefab, "Zone-1");
             yield return new WaitForSeconds(_playDelay);
+            if (PlayerController.Instance != null)
+            {
+                PlayerController.Instance.UnfreezePlayer();
+            }
             LevelLoader.LoadNextLevel();
             GameMenu.Open();
             _active = false;

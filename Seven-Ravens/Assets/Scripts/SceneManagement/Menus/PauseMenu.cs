@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Rokemon;
+
 namespace LevelManagement
 {
     // controls the pause menu screen
@@ -20,6 +22,7 @@ namespace LevelManagement
         [SerializeField]
         private Button _selectedComponent;
 
+        
         // reference to active status of menu
         private bool _active = false;
 
@@ -30,6 +33,8 @@ namespace LevelManagement
                 _active = true;
                 _selectedComponent.Select();
                 _selectedComponent.OnSelect(null);
+                if(PlayerController.Instance != null)
+                    PlayerController.Instance.FreezePlayer();
             }
             if (Input.GetKeyDown(KeyCode.Escape))
             {
@@ -39,21 +44,24 @@ namespace LevelManagement
         // resumes the game and closes the pause menu
         public void OnResumePressed()
         {
+            //_canvasGroup.interactable = false;
             Time.timeScale = 1;
             AudioManager audioManager = Object.FindObjectOfType<AudioManager>();
             audioManager.UnPauseSfx();
             base.OnBackPressed();
             _active = false;
+            if (PlayerController.Instance != null)
+                PlayerController.Instance.UnfreezePlayer();
         }
 
-        // unpauses and restarts the current level
-        public void OnRestartPressed()
-        {
-            Time.timeScale = 1;
-            LevelLoader.ReloadLevel();
-            base.OnBackPressed();
-            _active = false;
-        }
+        //// unpauses and restarts the current level
+        //public void OnRestartPressed()
+        //{
+        //    Time.timeScale = 1;
+        //    LevelLoader.ReloadLevel();
+        //    base.OnBackPressed();
+        //    _active = false;
+        //}
 
         // opens the settings menu
         public void OnSettingsPressed()
@@ -69,6 +77,7 @@ namespace LevelManagement
             LevelLoader.LoadMainMenuLevel();
             MainMenu.Open();
             _active = false;
+            PlayerInformationController.Instance.UpdateZones("MainMenu");
         }
 
         // quits the application (does not work in Editor, build only)

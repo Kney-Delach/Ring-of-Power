@@ -41,15 +41,11 @@ namespace Rokemon
             }
         }
 
+        // function to update the zone string references of the character
         public void UpdateZones(string newZone)
         {
             _previousZoneName = string.Copy(_currentZoneName);
             _currentZoneName = string.Copy(newZone);
-        }
-
-        public string Text()
-        {
-            return _previousZoneName;
         }
     }
 }

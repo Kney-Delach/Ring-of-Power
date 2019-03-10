@@ -15,6 +15,10 @@ namespace Rokemon
         [SerializeField]
         private Text _dialogueText;
 
+        // reference to dialogue name text UI rect transform
+        [SerializeField]
+        private RectTransform _nameTransform; 
+
         // reference to dialogue typing animator 
         [SerializeField]
         private CanvasGroup _dialogueGroup;
@@ -54,7 +58,10 @@ namespace Rokemon
             _dialogueGroup.alpha = 1;
             _dialogueGroup.interactable = true;
 
-            _nameText.text = dialogue.speakerName;
+            if (dialogue.speakerName == "Sign")
+                _nameTransform.gameObject.SetActive(false);
+            else
+                _nameText.text = dialogue.speakerName;
 
             _sentences.Clear();
 

@@ -10,6 +10,7 @@ namespace Rokemon
         // reference to player tag 
         private static string _playerTag = "Player";
 
+        // reference to npc controller
         [SerializeField]
         private NpcController _triggerNpc; 
 
