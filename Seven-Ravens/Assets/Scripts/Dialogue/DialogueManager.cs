@@ -54,7 +54,7 @@ namespace Rokemon
             _dialogueGroup.alpha = 1;
             _dialogueGroup.interactable = true;
 
-            _nameText.text = dialogue.dialogueName;
+            _nameText.text = dialogue.speakerName;
 
             _sentences.Clear();
 

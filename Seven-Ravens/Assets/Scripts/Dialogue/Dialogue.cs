@@ -7,7 +7,7 @@ namespace Rokemon
     [System.Serializable]
     public class Dialogue
     {
-        public string dialogueName;
+        public string speakerName;
 
         [TextArea(3, 10)]
         public string[] sentences;

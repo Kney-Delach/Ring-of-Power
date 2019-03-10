@@ -100,9 +100,6 @@ namespace Rokemon
                     directionOfTravel.z * _speed * Time.deltaTime,
                     Space.World
                 );
-
-                Debug.Log(directionOfTravel.y);
-
             }
             else
             {

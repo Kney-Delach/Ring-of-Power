@@ -16690,6 +16690,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1735581434221072148}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &702244723 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+    type: 3}
+  m_PrefabInstance: {fileID: 1735581434221072148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566278a354fa4dc4a8bc04bcb0437919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &885206808
 GameObject:
   m_ObjectHideFlags: 0
@@ -21632,7 +21644,7 @@ PrefabInstance:
     - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: _speed
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
@@ -21644,6 +21656,11 @@ PrefabInstance:
       propertyPath: m_BodyType
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4766083495613476354, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_SleepingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4887795131157426018, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -21654,6 +21671,36 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -10
       objectReference: {fileID: 0}
+    - target: {fileID: 9022891930851389541, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Mom
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Good morning sunshine!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[1]
+      value: Don't forget to pick up some apples from the market when you're out today!
+      objectReference: {fileID: 0}
+    - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _triggerNpc
+      value: 
+      objectReference: {fileID: 702244723}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
 --- !u!4 &2745122285491479382 stripped
