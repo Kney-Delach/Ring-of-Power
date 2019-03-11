@@ -17,6 +17,8 @@ namespace Rokemon
         [SerializeField]
         private bool _isItem = false;
 
+        private bool _isActive = false; 
+
         // reference to dialogue
         [SerializeField]
         private Dialogue _dialogue;
@@ -27,7 +29,7 @@ namespace Rokemon
 
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) && _isActive)
             {
                 _nextPressed = true;
                 if(_isItem)
@@ -35,6 +37,7 @@ namespace Rokemon
                     ExitDialogue();
                     _nextPressed = false;
                     gameObject.SetActive(false);
+                    _isActive = false;
                 }
             }
         }
@@ -43,6 +46,7 @@ namespace Rokemon
         {
             if (collision.tag == _playerTag)
             {
+                _isActive = true;
                 TriggerDialogue();
                 if(_triggerNpc != null)
                     _triggerNpc.CanMove = false;
@@ -65,6 +69,7 @@ namespace Rokemon
         {
             if (collision.tag == _playerTag && _triggerNpc != null)
             {
+                _isActive = false;
                 ExitDialogue();                
                 _triggerNpc.CanMove = true;
             }
@@ -86,6 +91,7 @@ namespace Rokemon
         private void ExitDialogue()
         {
             DialogueManager.Instance.EndDialogue();
+            _isActive = false;
         }
 
     }
