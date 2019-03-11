@@ -13,11 +13,12 @@ namespace Rokemon{
         // reference to current list of items in item inventory
 	    private List<Item> _items = new List<Item>();
         public List<Item> Items {get { return _items ; } }
+        
         #region Singleton
 
         // reference to instance
         private static ItemInventory _instance = null;
-        public static ItemInventory Instance { get { return _instance; } }
+        public static ItemInventory Instance { get { return _instance ; } }
 
         private void Awake()
         {
