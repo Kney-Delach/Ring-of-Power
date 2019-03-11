@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 namespace Rokemon
 {
-    public class InventoryController : MonoBehaviour
+    public class InventoryUIController : MonoBehaviour
     {
         // reference to inventory UI canvas group
         [SerializeField]
@@ -23,6 +23,12 @@ namespace Rokemon
         [SerializeField]
         private CanvasGroup _questCanvasGroup; 
 
+        // inventory activated delegate 
+        public delegate void OnInventoryActive();
+
+	    // instantiate inventory active observer set
+        public OnInventoryActive onInventoryActiveCallback;
+
         // reference to visibility status of inventory UI 
         private bool _active  = false;
 
@@ -30,9 +36,11 @@ namespace Rokemon
         private bool _rokemonActive = false;
         private bool _questsActive = false; 
 
+        #region Singleton 
+
         // reference to instance
-        private static InventoryController _instance = null;
-        public static InventoryController Instance { get { return _instance; } }
+        private static InventoryUIController _instance = null;
+        public static InventoryUIController Instance { get { return _instance; } }
 
         private void Awake()
         {
@@ -44,12 +52,6 @@ namespace Rokemon
             }
         }
 
-        private void Start()
-        {
-            _inventoryGroup.alpha = 0;
-            _inventoryGroup.interactable = false;
-        }
-        
         // remove instance if destroyed
         private void OnDestroy()
         {
@@ -58,6 +60,16 @@ namespace Rokemon
                 _instance = null;
             }
         }
+        
+        #endregion
+
+        private void Start()
+        {
+            _inventoryGroup.alpha = 0;
+            _inventoryGroup.interactable = false;
+        }
+        
+
 
         private void Update()
         {
@@ -70,10 +82,13 @@ namespace Rokemon
         private void DisplayInventory()
         {
             DeactivateActive();
+            if(onInventoryActiveCallback != null)
+                onInventoryActiveCallback.Invoke();
             ActivateItems();
             _active = true;
             _inventoryGroup.alpha = 1;
             _inventoryGroup.interactable = true;
+            _inventoryGroup.blocksRaycasts = true;
         }
 
         private void HideInventory()
@@ -82,20 +97,25 @@ namespace Rokemon
             _active = false;
             _inventoryGroup.alpha = 0;
             _inventoryGroup.interactable = false;
+            _inventoryGroup.blocksRaycasts = false;
         }
 
         public void ActivateItems()
         {
             DeactivateActive();
+            if(onInventoryActiveCallback != null)
+                onInventoryActiveCallback.Invoke();
             _itemsActive = true;
             _itemCanvasGroup.alpha = 1;
             _itemCanvasGroup.interactable = true;
+            _itemCanvasGroup.blocksRaycasts = true;
         }
 
         public void DeactivateItems()
         {
             _itemCanvasGroup.alpha = 0;
             _itemCanvasGroup.interactable = false;
+            _itemCanvasGroup.blocksRaycasts = false;
             _itemsActive = false;
         }
 
@@ -105,12 +125,14 @@ namespace Rokemon
             _rokemonActive = true; 
             _rokemonCanvasGroup.alpha = 1; 
             _rokemonCanvasGroup.interactable = true;
+            _rokemonCanvasGroup.blocksRaycasts = true;
         }
 
         public void DeactivateRokemon()
         {
             _rokemonCanvasGroup.alpha = 0; 
             _rokemonCanvasGroup.interactable = false;
+            _rokemonCanvasGroup.blocksRaycasts = false;
             _rokemonActive = false; 
         }
 
@@ -118,7 +140,8 @@ namespace Rokemon
         {
             DeactivateActive();
             _questsActive = true; 
-            _questCanvasGroup.interactable = true; 
+            _questCanvasGroup.interactable = true;
+            _questCanvasGroup.blocksRaycasts = true; 
             _questCanvasGroup.alpha = 1;
         }
 
@@ -126,6 +149,7 @@ namespace Rokemon
         {
             _questCanvasGroup.interactable = false; 
             _questCanvasGroup.alpha = 0;
+            _questCanvasGroup.blocksRaycasts = false;
             _questsActive = false; 
         }
 
