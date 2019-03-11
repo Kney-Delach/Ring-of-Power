@@ -34,7 +34,9 @@ namespace Rokemon{
             {
                 // if bool is true, then item has been collected already
                 if(_itemIdDatabase[_itemId])
-                    Destroy(gameObject);
+                {
+                    Destroy(transform.parent.gameObject);
+                }
             }
             else 
             {

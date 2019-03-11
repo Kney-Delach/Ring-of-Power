@@ -6,7 +6,7 @@ namespace Rokemon
 {
     [RequireComponent(typeof(Collider2D))]
     public class DialogueTrigger : MonoBehaviour
-    {
+    {        
         // reference to player tag 
         private static string _playerTag = "Player";
 
