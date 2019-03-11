@@ -46,7 +46,8 @@ namespace Rokemon {
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            _colliding = true;
+            if(collision.tag == PLAYER_TAG)
+                _colliding = true;
         }
 
         private void OnTriggerStay2D(Collider2D collision)
@@ -60,9 +61,13 @@ namespace Rokemon {
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            _colliding = false;
-            _qPressed = false;
-            OnDeactivated();
+            if(collision.tag == PLAYER_TAG)
+            {
+                _colliding = false;
+                _qPressed = false;
+                OnDeactivated();
+            }
+
         }
 
     }

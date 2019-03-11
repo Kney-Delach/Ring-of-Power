@@ -106,7 +106,6 @@ namespace Rokemon
 
         public void HideInventory()
         {
-
             _active = false;
             _inventoryGroup.alpha = 0;
             _inventoryGroup.interactable = false;

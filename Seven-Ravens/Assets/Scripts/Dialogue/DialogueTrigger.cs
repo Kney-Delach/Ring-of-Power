@@ -52,10 +52,11 @@ namespace Rokemon
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            _isColliding = true;
+            if(collision.tag == _playerTag)
+                _isColliding = true;
 
             // if item, set active
-            if(_triggerNpc == null)
+            if(_triggerNpc == null && collision.tag == _playerTag)
             {
                 _isActive = true;
                 TriggerDialogue(); 
@@ -106,7 +107,10 @@ namespace Rokemon
         {
             DialogueManager.Instance.DisplayNextSentence();
             if(DialogueManager.Instance.DialogueExited)
+            {
+                ExitDialogue();
                 InventoryUIController.Instance.HideInventory();
+            }
         }
 
         // function triggering exit dialogue
