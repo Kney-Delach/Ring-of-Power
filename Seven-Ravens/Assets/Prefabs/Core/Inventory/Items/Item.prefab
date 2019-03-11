@@ -70,7 +70,7 @@ SpriteRenderer:
   m_SortingLayerID: -1389149173
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300378, guid: 25810b4aec7e60742b178d4aa6f42e24, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -78,7 +78,7 @@ SpriteRenderer:
   m_Size: {x: 0.875, y: 0.8125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &2677686587355281883
@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemId: 0
-  _item: {fileID: 11400000, guid: 5f53574845349ed4693faf1af2dd04cd, type: 2}
+  _item: {fileID: 0}
 --- !u!1 &9119784046091612118
 GameObject:
   m_ObjectHideFlags: 0
@@ -193,7 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerNpc: {fileID: 0}
-  _isItem: 0
+  _isItem: 1
   _dialogue:
     speakerName: Item
     sentences:

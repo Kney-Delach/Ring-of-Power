@@ -41,7 +41,10 @@ namespace Rokemon{
             else 
             {
                 _itemIdDatabase.Add(_itemId, false);
+                gameObject.GetComponent<SpriteRenderer>().sprite = _item.icon;
             }
+
+
         }
 
          private void OnTriggerEnter2D(Collider2D collision)
