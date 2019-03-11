@@ -14,6 +14,9 @@ namespace Rokemon
         [SerializeField]
         private NpcController _triggerNpc; 
 
+        [SerializeField]
+        private bool _isItem = false;
+
         // reference to dialogue
         [SerializeField]
         private Dialogue _dialogue;
@@ -27,6 +30,12 @@ namespace Rokemon
             if (Input.GetKeyDown(KeyCode.Space))
             {
                 _nextPressed = true;
+                if(_isItem)
+                {
+                    ExitDialogue();
+                    _nextPressed = false;
+                    gameObject.SetActive(false);
+                }
             }
         }
 
@@ -35,13 +44,14 @@ namespace Rokemon
             if (collision.tag == _playerTag)
             {
                 TriggerDialogue();
-                _triggerNpc.CanMove = false;
+                if(_triggerNpc != null)
+                    _triggerNpc.CanMove = false;
             }
         }
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if(collision.tag == _playerTag)
+            if(collision.tag == _playerTag && _triggerNpc != null)
                 _triggerNpc.CanMove = false;
 
             if (_nextPressed && collision.tag == _playerTag)
@@ -53,9 +63,9 @@ namespace Rokemon
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.tag == _playerTag)
+            if (collision.tag == _playerTag && _triggerNpc != null)
             {
-                ExitDialogue();
+                ExitDialogue();                
                 _triggerNpc.CanMove = true;
             }
         }
