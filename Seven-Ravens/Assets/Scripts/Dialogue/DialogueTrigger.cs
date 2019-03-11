@@ -36,8 +36,8 @@ namespace Rokemon
                 {
                     ExitDialogue();
                     _nextPressed = false;
-                    gameObject.SetActive(false);
                     _isActive = false;
+                    gameObject.SetActive(false);
                 }
             }
         }
