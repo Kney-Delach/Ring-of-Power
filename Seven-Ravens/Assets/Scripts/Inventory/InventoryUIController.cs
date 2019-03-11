@@ -7,6 +7,17 @@ namespace Rokemon
 {
     public class InventoryUIController : MonoBehaviour
     {
+        [Header("Controlling Buttons")]
+        [SerializeField]
+        private ButtonHighlighter _itemsButton;
+
+        [SerializeField]
+        private ButtonHighlighter _rokemonButton;
+
+        [SerializeField]
+        private ButtonHighlighter _questButton;
+
+        [Header("Context Panel Canvas Groups")]
         // reference to inventory UI canvas group
         [SerializeField]
         private CanvasGroup _inventoryGroup; 
@@ -73,13 +84,15 @@ namespace Rokemon
 
         private void Update()
         {
+            // TODO: Add option to switch between items, rokemon and quests with I,R,Q
+
             if(Input.GetKeyDown(KeyCode.I) && !_active)
                 DisplayInventory();
             else if(Input.GetKeyDown(KeyCode.I) && _active)
                 HideInventory();
         }
 
-        private void DisplayInventory()
+        public void DisplayInventory()
         {
             DeactivateActive();
             if(onInventoryActiveCallback != null)
@@ -106,6 +119,7 @@ namespace Rokemon
             if(onInventoryActiveCallback != null)
                 onInventoryActiveCallback.Invoke();
             _itemsActive = true;
+            _itemsButton.HighlightButton();
             _itemCanvasGroup.alpha = 1;
             _itemCanvasGroup.interactable = true;
             _itemCanvasGroup.blocksRaycasts = true;
@@ -113,6 +127,7 @@ namespace Rokemon
 
         public void DeactivateItems()
         {
+            _itemsButton.UnHighlightButton();
             _itemCanvasGroup.alpha = 0;
             _itemCanvasGroup.interactable = false;
             _itemCanvasGroup.blocksRaycasts = false;
@@ -122,6 +137,7 @@ namespace Rokemon
         public void ActivateRokemon()
         {
             DeactivateActive();
+            _rokemonButton.HighlightButton();
             _rokemonActive = true; 
             _rokemonCanvasGroup.alpha = 1; 
             _rokemonCanvasGroup.interactable = true;
@@ -130,6 +146,7 @@ namespace Rokemon
 
         public void DeactivateRokemon()
         {
+            _rokemonButton.UnHighlightButton();
             _rokemonCanvasGroup.alpha = 0; 
             _rokemonCanvasGroup.interactable = false;
             _rokemonCanvasGroup.blocksRaycasts = false;
@@ -139,6 +156,7 @@ namespace Rokemon
         public void ActivateQuests()
         {
             DeactivateActive();
+            _questButton.HighlightButton();
             _questsActive = true; 
             _questCanvasGroup.interactable = true;
             _questCanvasGroup.blocksRaycasts = true; 
@@ -147,6 +165,7 @@ namespace Rokemon
 
         public void DeactivateQuests()
         {
+            _questButton.UnHighlightButton();
             _questCanvasGroup.interactable = false; 
             _questCanvasGroup.alpha = 0;
             _questCanvasGroup.blocksRaycasts = false;

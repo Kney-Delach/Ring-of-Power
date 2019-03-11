@@ -494,6 +494,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fbef180216e43a89dd5caf235f6574, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _itemsButton: {fileID: 3945609599386253036}
+  _rokemonButton: {fileID: 1105808517378232220}
+  _questButton: {fileID: 2767285385217023269}
   _inventoryGroup: {fileID: 7117137897837886326}
   _itemCanvasGroup: {fileID: 6429556929829583763}
   _rokemonCanvasGroup: {fileID: 865425543318544690}
@@ -709,6 +712,7 @@ GameObject:
   - component: {fileID: 3458091939195129422}
   - component: {fileID: 3131077102261257204}
   - component: {fileID: 5726504841927256591}
+  - component: {fileID: 3945609599386253036}
   m_Layer: 0
   m_Name: ItemsButton
   m_TagString: Untagged
@@ -786,7 +790,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -794,8 +798,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.83170736, g: 0.8773585, b: 0.29383236, a: 1}
+    m_PressedColor: {r: 0.1792453, g: 0.16148986, b: 0.16148986, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -826,6 +830,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &3945609599386253036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3720183945656471522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfa0261f0fc898479a8ed3f2530c1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisButton: {fileID: 5726504841927256591}
+  _otherButtonOne: {fileID: 1105808517378232220}
+  _otherButtonTwo: {fileID: 2767285385217023269}
 --- !u!1 &3955461910020836691
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,6 +1015,7 @@ GameObject:
   - component: {fileID: 7599161569233040731}
   - component: {fileID: 7046490683608390315}
   - component: {fileID: 1840653843072924460}
+  - component: {fileID: 1105808517378232220}
   m_Layer: 0
   m_Name: RokemonButton
   m_TagString: Untagged
@@ -1073,7 +1093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1081,8 +1101,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.83137256, g: 0.8784314, b: 0.29411766, a: 1}
+    m_PressedColor: {r: 0.18039216, g: 0.16078432, b: 0.16078432, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1113,6 +1133,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &1105808517378232220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5040744157036141184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfa0261f0fc898479a8ed3f2530c1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisButton: {fileID: 1840653843072924460}
+  _otherButtonOne: {fileID: 3945609599386253036}
+  _otherButtonTwo: {fileID: 2767285385217023269}
 --- !u!1 &5195181575445850423
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1414,7 @@ GameObject:
   - component: {fileID: 5408272716521813422}
   - component: {fileID: 810182285873536034}
   - component: {fileID: 2567062066645982662}
+  - component: {fileID: 2767285385217023269}
   m_Layer: 0
   m_Name: QuestButton
   m_TagString: Untagged
@@ -1456,7 +1492,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
@@ -1464,8 +1500,8 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_HighlightedColor: {r: 0.83137256, g: 0.8784314, b: 0.29411766, a: 1}
+    m_PressedColor: {r: 0.18039216, g: 0.16078432, b: 0.16078432, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1496,6 +1532,21 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &2767285385217023269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6063113894395604672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfa0261f0fc898479a8ed3f2530c1ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _thisButton: {fileID: 2567062066645982662}
+  _otherButtonOne: {fileID: 1105808517378232220}
+  _otherButtonTwo: {fileID: 3945609599386253036}
 --- !u!1 &6714081610408804895
 GameObject:
   m_ObjectHideFlags: 0
