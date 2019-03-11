@@ -14,6 +14,8 @@ namespace Rokemon{
     // reference to item icon 
 	public Sprite icon = null;
 
+    public string description = "";
+
     // reference to item inventory display status
 	public bool showInInventory = true;
 

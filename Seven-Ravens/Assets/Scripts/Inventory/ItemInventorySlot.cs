@@ -17,9 +17,30 @@ namespace Rokemon{
         [SerializeField]
         private CanvasGroup _removeItemButtonCanvasGroup; 
 
+        private GameObject _descriptionObject; 
+
+        private CanvasGroup _descriptionCanvasGroup; 
+
+        private Text _descriptionCanvasText; 
+
+        private Image _descriptionImage; 
+
+
         // reference to current item in inventory slot
         private Item _item;
 
+        private void Start()
+        {
+            _descriptionObject = GameObject.FindGameObjectWithTag("DescriptionPanel");
+            _descriptionCanvasGroup = _descriptionObject.GetComponent<CanvasGroup>(); 
+            _descriptionCanvasText = _descriptionObject.GetComponentInChildren<Text>(); 
+            GameObject _tempImageObject = GameObject.FindGameObjectWithTag("DescriptionImage");
+            _descriptionImage = _tempImageObject.GetComponent<Image>();
+
+            _descriptionCanvasGroup.interactable = false; 
+            _descriptionCanvasGroup.blocksRaycasts = false; 
+            _descriptionCanvasGroup.alpha = 0;
+        }
         // Add item to the slot
         public void AddItem (Item newItem)
         {
@@ -57,6 +78,19 @@ namespace Rokemon{
             {
                 _item.Use();
             }
+        }
+
+        public void DisplayItemDescription()
+        {
+            _descriptionCanvasText.text = _item.description;
+            _descriptionImage.sprite = _item.icon;         
+            _descriptionCanvasGroup.alpha = 1;   
+        }
+
+        public void StopDisplayItemDescription()
+        {
+            _descriptionCanvasGroup.alpha = 0;   
+
         }
     }
 }
