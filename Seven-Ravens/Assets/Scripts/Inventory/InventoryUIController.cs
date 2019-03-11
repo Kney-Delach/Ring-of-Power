@@ -104,7 +104,7 @@ namespace Rokemon
             _inventoryGroup.blocksRaycasts = true;
         }
 
-        private void HideInventory()
+        public void HideInventory()
         {
 
             _active = false;

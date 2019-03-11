@@ -26,6 +26,9 @@ namespace Rokemon
         // reference to queue of sentences for current dialogue 
         private Queue<string> _sentences;
 
+        // reference to status of dialouge 
+        private bool _dialogueExited = false; 
+        public bool DialogueExited {get { return _dialogueExited ; } }
         // reference to object instance
         private static DialogueManager _instance;
         public static DialogueManager Instance {  get { return _instance ; } }
@@ -55,6 +58,7 @@ namespace Rokemon
         // starts a new dialogue 
         public void StartDialogue(Dialogue dialogue)
         {
+            _dialogueExited = false;
             _dialogueGroup.alpha = 1;
             _dialogueGroup.interactable = true;
 
@@ -102,6 +106,7 @@ namespace Rokemon
             _dialogueGroup.alpha = 0;
             _dialogueGroup.interactable = false;
             _sentences.Clear();
+            _dialogueExited = true;
         }
 
     }

@@ -39,6 +39,11 @@ namespace Rokemon {
             
         } 
 
+        private void OnDeactivated()
+        {
+            InventoryUIController.Instance.HideInventory();
+        }
+
         private void OnTriggerEnter2D(Collider2D collision)
         {
             _colliding = true;
@@ -57,6 +62,7 @@ namespace Rokemon {
         {
             _colliding = false;
             _qPressed = false;
+            OnDeactivated();
         }
 
     }
