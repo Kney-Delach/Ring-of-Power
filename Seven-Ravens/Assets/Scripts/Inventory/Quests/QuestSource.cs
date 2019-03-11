@@ -34,7 +34,9 @@ namespace Rokemon {
                 _currentQuest = _quests[_currentQuestIndex];
 
             InventoryUIController.Instance.DisplayInventory();
-            InventoryUIController.Instance.ActivateQuests();
+            bool val = true; 
+            InventoryUIController.Instance.ActivateQuests(val);
+            
             Debug.Log(_currentQuest.questTitle + "Requested");
             
         } 

@@ -447,7 +447,7 @@ GameObject:
   - component: {fileID: 8190377653179256818}
   m_Layer: 0
   m_Name: QuestRequestPanelGroup
-  m_TagString: Untagged
+  m_TagString: QuestsRequestPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -518,8 +518,8 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1936435124464981246}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
+  m_Alpha: 0
+  m_Interactable: 0
   m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
 --- !u!1 &2033903463503807207
@@ -745,6 +745,8 @@ MonoBehaviour:
   _itemCanvasGroup: {fileID: 6429556929829583763}
   _rokemonCanvasGroup: {fileID: 865425543318544690}
   _questCanvasGroup: {fileID: 792655344871191341}
+  _questAllCanvasGroup: {fileID: 3495626583174365200}
+  _questRequestCanvasGroup: {fileID: 8190377653179256818}
 --- !u!114 &4215795925682759032
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2374,7 +2376,7 @@ GameObject:
   - component: {fileID: 3495626583174365200}
   m_Layer: 0
   m_Name: AllQuestsPanelGroup
-  m_TagString: Untagged
+  m_TagString: QuestsAllPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2413,13 +2415,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5798332685484754159}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0.9150943, g: 0.15970986, b: 0.15970986, a: 0.392}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2566,7 +2568,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 5878270603574427733}
         m_MethodName: ActivateQuests
-        m_Mode: 1
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

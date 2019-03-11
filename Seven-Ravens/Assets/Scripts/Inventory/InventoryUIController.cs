@@ -34,6 +34,12 @@ namespace Rokemon
         [SerializeField]
         private CanvasGroup _questCanvasGroup; 
 
+        [SerializeField]
+        private CanvasGroup _questAllCanvasGroup; 
+
+        [SerializeField]
+        private CanvasGroup _questRequestCanvasGroup; 
+
         // inventory activated delegate 
         public delegate void OnInventoryActive();
 
@@ -152,14 +158,28 @@ namespace Rokemon
             _rokemonActive = false; 
         }
 
-        public void ActivateQuests()
+        public void ActivateQuests(bool isRequest)
         {
             DeactivateActive();
             _questButton.HighlightButton();
+            
             _questsActive = true; 
             _questCanvasGroup.interactable = true;
-            _questCanvasGroup.blocksRaycasts = true; 
+            _questCanvasGroup.blocksRaycasts = false; 
             _questCanvasGroup.alpha = 1;
+
+            if(isRequest)
+            {
+                _questRequestCanvasGroup.alpha = 1; 
+                _questRequestCanvasGroup.interactable = true; 
+                _questRequestCanvasGroup.blocksRaycasts = true;
+                
+            }else {
+                _questAllCanvasGroup.interactable = true; 
+                _questAllCanvasGroup.alpha = 1; 
+                _questAllCanvasGroup.blocksRaycasts = true;
+            }
+
         }
 
         public void DeactivateQuests()
@@ -169,6 +189,14 @@ namespace Rokemon
             _questCanvasGroup.alpha = 0;
             _questCanvasGroup.blocksRaycasts = false;
             _questsActive = false; 
+            
+            _questAllCanvasGroup.interactable = false; 
+            _questAllCanvasGroup.alpha = 0; 
+            _questAllCanvasGroup.blocksRaycasts = false;
+
+            _questRequestCanvasGroup.alpha = 0; 
+            _questRequestCanvasGroup.interactable = false; 
+            _questRequestCanvasGroup.blocksRaycasts = false;
         }
 
         private void DeactivateActive()
