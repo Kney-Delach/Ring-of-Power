@@ -165,7 +165,7 @@ namespace Rokemon
             
             _questsActive = true; 
             _questCanvasGroup.interactable = true;
-            _questCanvasGroup.blocksRaycasts = false; 
+            _questCanvasGroup.blocksRaycasts = true; 
             _questCanvasGroup.alpha = 1;
 
             if(isRequest)

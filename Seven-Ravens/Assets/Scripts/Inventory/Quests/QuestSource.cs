@@ -38,6 +38,7 @@ namespace Rokemon {
             InventoryUIController.Instance.ActivateQuests(val);
             
             Debug.Log(_currentQuest.questTitle + "Requested");
+            // TODO: quest reference to quest inventory
             
         } 
 
