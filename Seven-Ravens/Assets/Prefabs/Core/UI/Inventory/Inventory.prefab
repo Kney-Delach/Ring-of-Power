@@ -704,6 +704,7 @@ GameObject:
   - component: {fileID: 5041225694488212395}
   - component: {fileID: 1618236167655381800}
   - component: {fileID: 2498427198509604665}
+  - component: {fileID: 5853692253883430336}
   m_Layer: 0
   m_Name: Inventory
   m_TagString: Untagged
@@ -797,6 +798,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _questSlots: 1
+--- !u!114 &5853692253883430336
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2287767982822531564}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e53fc6993fe3f744a0488d5ace8fece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2326348452357624463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,7 +2039,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6212884486738874222}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5853692253883430336}
+        m_MethodName: QuestAcceptance
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &5195181575445850423
@@ -3118,7 +3142,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2009761302935175692}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5853692253883430336}
+        m_MethodName: QuestAcceptance
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!1 &8342393630163923847

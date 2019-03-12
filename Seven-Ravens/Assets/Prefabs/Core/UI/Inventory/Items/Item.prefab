@@ -131,7 +131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9119784046091612119}
   - component: {fileID: 9119784046091612113}
-  - component: {fileID: 6308032468277434743}
+  - component: {fileID: 8945386666349239803}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
@@ -180,7 +180,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &6308032468277434743
+--- !u!114 &8945386666349239803
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,12 +189,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 9119784046091612118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2463a82e5493d4e894fd699f3fc9ee, type: 3}
+  m_Script: {fileID: 11500000, guid: 5db31bc85cfafd74285e6b2278a26f43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerNpc: {fileID: 0}
   _isItem: 1
   _dialogue:
     speakerName: Item
-    sentences:
-    - 'Picked up item - WORLD MAP ..... item added to inventory. Press I to open inventory. '
+    sentences: []
