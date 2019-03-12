@@ -22,19 +22,12 @@ namespace Rokemon {
         private bool _colliding = false; 
 
         [SerializeField]
-        private QuestDialogueTrigger _dialogueTrigger; 
+        private QuestDialogueTrigger _questDialogueTrigger; 
 
 
         private void Awake()
         {
             QuestRequestUIController.Instance.onRequestChoiceMadeCallback += QuestAcceptanceStatus;
-        }
-        private void Update()
-        {
-            // if(Input.GetKeyDown(KeyCode.Q) && _colliding)
-            // {
-            //     _qPressed = true;
-            // }            
         }
 
         public bool OnActivated(int questIndex)
@@ -56,6 +49,9 @@ namespace Rokemon {
                 bool val = true; 
                 InventoryUIController.Instance.ActivateQuests(val);
                 
+                // assigns quest ui current quest 
+                QuestRequestUIController.Instance.AssignQuestUIValues(_currentQuest);
+
                 Debug.Log(_currentQuest.questTitle + "Requested");
 
                 return true;
@@ -78,36 +74,28 @@ namespace Rokemon {
 
         private void QuestAcceptanceStatus(bool accepted)
         {
-            OnDeactivated();
-            //Debug.Log("_currentQuestIndex:" + _currentQuestIndex);
-            _dialogueTrigger.QuestAcceptanceStatus(accepted);
+            if(accepted)
+            {
+                RegisterAcceptedQuest();
+                SwitchQuestPanel();
+            }
+            else {
+                OnDeactivated();
+            }
+
+            _questDialogueTrigger.QuestAcceptanceStatusResult(accepted);
         }
 
-        // private void OnTriggerEnter2D(Collider2D collision)
-        // {
-        //     if(collision.tag == PLAYER_TAG)
-        //         _colliding = true;
-        // }
+        private void SwitchQuestPanel()
+        {
+            bool val = false;
+            InventoryUIController.Instance.ActivateQuests(val);
+        }
 
-        // private void OnTriggerStay2D(Collider2D collision)
-        // {
-        //     if(collision.tag == PLAYER_TAG && _qPressed)
-        //     {
-        //         OnActivated();
-        //         _qPressed = false;
-        //     }
-        // }
-
-        // private void OnTriggerExit2D(Collider2D collision)
-        // {
-        //     if(collision.tag == PLAYER_TAG)
-        //     {
-        //         _colliding = false;
-        //         _qPressed = false;
-        //         OnDeactivated();
-        //     }
-
-        // }
-
+        // register accepted quest
+        private void RegisterAcceptedQuest()
+        {
+            QuestManager.Instance.AssignQuest(_currentQuest);
+        }
     }
 }

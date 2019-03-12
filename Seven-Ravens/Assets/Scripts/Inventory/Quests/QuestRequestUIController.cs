@@ -40,5 +40,10 @@ namespace Rokemon {
             _acceptedStatus = accepted; 
             onRequestChoiceMadeCallback(_acceptedStatus);
         }
+
+        public void AssignQuestUIValues(Quest quest)
+        {
+            
+        }
     }
 }

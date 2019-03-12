@@ -78,7 +78,7 @@ namespace Rokemon
             }
         }
 
-        public void QuestAcceptanceStatus(bool accepted)
+        public void QuestAcceptanceStatusResult(bool accepted)
         {
             if(accepted)
             {
@@ -196,6 +196,7 @@ namespace Rokemon
             
             if(_choiceReached)
                 ChoiceUIController.Instance.DisableCanavs();
+            _questSource.OnDeactivated();
 
             _isActive = false;
             _currentIndex = 0; 
