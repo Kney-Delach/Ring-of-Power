@@ -201,9 +201,10 @@ GameObject:
   - component: {fileID: 9022891930851389541}
   - component: {fileID: 2778928083967667256}
   - component: {fileID: 8726404859877337287}
+  - component: {fileID: 1805957030037437636}
   m_Layer: 0
   m_Name: NpcTriggers
-  m_TagString: Untagged
+  m_TagString: Quest-1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -289,10 +290,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e77b4ce61d2ddc8498a7d70e888608f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _questSourceID: 0
   _quests:
   - isActive: 0
     questTitle: Mom Quest 1 Title
     questDescription: The description of moms first quest
     questRewards:
     - {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417, type: 2}
-  _dialogueTrigger: {fileID: 2778928083967667256}
+  _questDialogueTrigger: {fileID: 0}
+--- !u!114 &1805957030037437636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2729055160443311671}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5db31bc85cfafd74285e6b2278a26f43, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggerNpc: {fileID: 7326345086891979187}
+  _isItem: 0
+  _dialogue:
+    speakerName: Mom
+    sentences:
+    - I'm looking forward to eating those apples!

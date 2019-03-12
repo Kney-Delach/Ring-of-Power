@@ -147,7 +147,18 @@ namespace Rokemon
             if (_nextPressed && collision.tag == _playerTag && _isActive)
             {
                 if(_choiceComplete)
+                {
                     ExitDialogue();
+                    _isActive = false; 
+                    _triggerNpc.CanMove = true;
+                    _isColliding = false;
+                    transform.gameObject.GetComponent<QuestSource>().enabled = false; 
+                    transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
+                    transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
+                    //transform.gameObject.SetActive(false);
+                    // TODO: Add dictionary code to not re-accept this quest
+                }
+
                 else
                 {
                     NextSentence();
@@ -172,6 +183,7 @@ namespace Rokemon
         // function riggering dialogue
         private void TriggerDialogue()
         {
+            _questSource.OnDeactivated();
             QuestDialogueManager.Instance.StartDialogue(_dialogue);
             if(_triggerNpc != null)
                 _triggerNpc.CanMove = false;

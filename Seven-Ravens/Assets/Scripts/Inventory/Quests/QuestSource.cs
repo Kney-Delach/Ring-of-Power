@@ -7,6 +7,19 @@ namespace Rokemon {
     [RequireComponent(typeof(QuestDialogueTrigger))]
     public class QuestSource : MonoBehaviour
     {
+        #region ID REGISTRATION
+        // reference to quest source ID counter 
+        private static int _itemIdCounter = 0;
+
+        // reference to this quest source's ID
+        [SerializeField]
+        private int _questSourceID; 
+        public int QuestSourceID {get { return _questSourceID ; } set { _questSourceID = value ; } }
+
+        private static Dictionary<int, bool> _questSourceIdDatabase;
+        #endregion
+        
+
         private static string PLAYER_TAG = "Player";
         [SerializeField]
         private Quest[] _quests;
@@ -27,7 +40,30 @@ namespace Rokemon {
 
         private void Awake()
         {
+            if(_questSourceIdDatabase == null)
+                _questSourceIdDatabase = new Dictionary<int, bool>();
+
             QuestRequestUIController.Instance.onRequestChoiceMadeCallback += QuestAcceptanceStatus;
+        }
+
+        private void Start()
+        {
+            // if true, reloading scene
+            if(_questSourceIdDatabase.ContainsKey(_questSourceID))
+            {
+                // if bool is true, then quest has been collected already
+                if(_questSourceIdDatabase[_questSourceID])
+                {
+                    transform.gameObject.GetComponent<QuestSource>().enabled = false; 
+                    transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
+                    transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
+                }
+            }
+            else 
+            {
+                _questSourceIdDatabase.Add(_questSourceID, false);
+                transform.gameObject.GetComponent<DialogueTrigger>().enabled = false;
+            }
         }
 
         public bool OnActivated(int questIndex)
@@ -78,6 +114,7 @@ namespace Rokemon {
             {
                 RegisterAcceptedQuest();
                 SwitchQuestPanel();
+                _questSourceIdDatabase[_questSourceID] = true;
             }
             else {
                 OnDeactivated();

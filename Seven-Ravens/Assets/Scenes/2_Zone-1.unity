@@ -17027,6 +17027,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1293007541}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1333602071 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+    type: 3}
+  m_PrefabInstance: {fileID: 1735581434221072148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf2463a82e5493d4e894fd699f3fc9ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1378865647
 GameObject:
   m_ObjectHideFlags: 0
@@ -21928,7 +21940,7 @@ PrefabInstance:
     - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: _quests.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
@@ -21951,6 +21963,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417,
         type: 2}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _questDialogueTrigger
+      value: 
+      objectReference: {fileID: 1333602071}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
 --- !u!4 &2745122285491479382 stripped

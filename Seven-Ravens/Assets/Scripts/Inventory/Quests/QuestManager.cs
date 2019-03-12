@@ -5,6 +5,7 @@ using UnityEngine;
 namespace Rokemon {
     public class QuestManager : MonoBehaviour
     {
+        [SerializeField]
         private Quest _activeQuest;
 
         private bool _activeQuestCompleted = false;
