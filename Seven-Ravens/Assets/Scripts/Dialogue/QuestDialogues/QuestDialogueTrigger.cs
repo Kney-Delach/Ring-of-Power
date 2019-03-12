@@ -62,13 +62,15 @@ namespace Rokemon
             if(_isActive)
             {
                 _choiceMadeIndex = choiceMadeIndex-1;
-                bool questExists = _questSource.OnActivated(choiceMadeIndex-1);
+                Debug.Log("Choice made A: " + _choiceMadeIndex);
+                bool questExists = _questSource.OnActivated(_choiceMadeIndex);
                 if(!questExists)
                 {   
                     // no quest for selected choice
-                    QuestDialogueManager.Instance.SkipNextSentence(choiceMadeIndex-1);
+                    QuestDialogueManager.Instance.SkipNextSentence(_choiceMadeIndex);
                     _choiceReached = false;
                     NextSentence();
+                    Debug.Log("No Quest for selected choice, exiting");
                 }
 
                 // buttons indexed 1,2,3 - so -1 necessary
@@ -80,26 +82,32 @@ namespace Rokemon
 
         public void QuestAcceptanceStatusResult(bool accepted)
         {
-            if(accepted)
+            if(_isActive)
             {
-                QuestDialogueManager.Instance.SkipNextSentence(_choiceMadeIndex);
-                _choiceReached = false;
-                NextSentence();
-                _choiceComplete = true;
+                if(accepted)
+                {
+                    Debug.Log("Choice made: " + _choiceMadeIndex);
+                    QuestDialogueManager.Instance.SkipNextSentence(_choiceMadeIndex);
+                    _choiceReached = false;
+                    NextSentence();
+                    _choiceComplete = true;
+                }
+                else 
+                {
+                    Debug.Log("Quest Rejected, Exiting dialogue");
+                    ExitDialogue();
+                }
             }
-            else 
-            {
-                Debug.Log("Quest Rejected, Exiting dialogue");
-                ExitDialogue();
-            }
+
         }
         private void Update()
         {
 
-            if(_choiceIndex != null && _choiceIndex == _currentIndex && _isActive && !_nextPressed && !_choiceReached)
+            if(_choiceIndex != -1 && _choiceIndex == _currentIndex && _isActive && !_nextPressed && !_choiceReached)
             {
                 ChoiceUIController.Instance.DispalyChoices(_choices);
                 _choiceReached = true;
+                _nextPressed = false;
             }
                 // TRIGGER CHOICES DISPALY AND WAIT FOR RESPONSE
             if(Input.GetKeyDown(KeyCode.Q) && _isColliding && !_choiceReached)
@@ -210,8 +218,10 @@ namespace Rokemon
                 ChoiceUIController.Instance.DisableCanavs();
             _questSource.OnDeactivated();
 
+            _choiceMadeIndex = 0;
             _isActive = false;
             _currentIndex = 0; 
+            _choiceMadeIndex = 0;
             _choiceReached = false; 
             _nextPressed = false;
             _choiceComplete = false;

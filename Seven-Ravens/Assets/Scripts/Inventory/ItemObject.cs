@@ -36,7 +36,10 @@ namespace Rokemon{
                 if(_itemIdDatabase[_itemId])
                 {
                     Destroy(transform.parent.gameObject);
-                }
+                } 
+                else{
+                    gameObject.GetComponent<SpriteRenderer>().sprite = _item.icon;
+                }                
             }
             else 
             {

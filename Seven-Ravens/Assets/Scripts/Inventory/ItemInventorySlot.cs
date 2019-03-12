@@ -48,8 +48,13 @@ namespace Rokemon{
 
             _itemIcon.sprite = _item.icon;
             _itemIcon.enabled = true;
-            _removeItemButtonCanvasGroup.alpha = 1;
-            _removeItemButtonCanvasGroup.interactable = true;
+           
+            if(_removeItemButtonCanvasGroup != null)
+            {
+                _removeItemButtonCanvasGroup.alpha = 1;
+                _removeItemButtonCanvasGroup.interactable = true;
+            }
+
         }
 
         // removes item from inventory slot
@@ -59,8 +64,13 @@ namespace Rokemon{
 
             _itemIcon.sprite = null;
             _itemIcon.enabled = false;
-            _removeItemButtonCanvasGroup.interactable = false;
-            _removeItemButtonCanvasGroup.alpha = 0;
+           
+            if(_removeItemButtonCanvasGroup != null)
+            {
+                _removeItemButtonCanvasGroup.interactable = false;
+                _removeItemButtonCanvasGroup.alpha = 0;
+            }
+
         }
 
         // called if remove button pressed

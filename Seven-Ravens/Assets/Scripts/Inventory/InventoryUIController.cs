@@ -17,6 +17,9 @@ namespace Rokemon
         [SerializeField]
         private ButtonHighlighter _questButton;
 
+        [SerializeField]
+        private CanvasGroup _buttonGroup;
+
         [Header("Context Panel Canvas Groups")]
         // reference to inventory UI canvas group
         [SerializeField]
@@ -52,6 +55,9 @@ namespace Rokemon
         private bool _itemsActive = false; 
         private bool _rokemonActive = false;
         private bool _questsActive = false; 
+
+        private bool _questRequestActive = false;
+        public bool QuestRequestActive {get { return _questRequestActive ; } set { _questRequestActive = value; } }
 
         #region Singleton 
 
@@ -92,9 +98,9 @@ namespace Rokemon
         {
             // TODO: Add option to switch between items, rokemon and quests with I,R,Q
 
-            if(Input.GetKeyDown(KeyCode.I) && !_active)
+            if(Input.GetKeyDown(KeyCode.I) && !_active && !_questRequestActive)
                 DisplayInventory();
-            else if(Input.GetKeyDown(KeyCode.I) && _active)
+            else if(Input.GetKeyDown(KeyCode.I) && _active && !_questRequestActive)
                 HideInventory();
         }
 
@@ -210,6 +216,16 @@ namespace Rokemon
             {
                 DeactivateQuests();
             }
+        }
+
+        public void DisableButtons()
+        {
+            _buttonGroup.interactable = false; 
+        }
+
+        public void EnableButtons()
+        {
+            _buttonGroup.interactable = true;
         }
 
     }

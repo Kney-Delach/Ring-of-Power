@@ -24,6 +24,7 @@ namespace Rokemon {
         [SerializeField]
         private Quest[] _quests;
 
+        [SerializeField]
         private Quest _currentQuest; 
 
         // Todo: Utilise this to continue the world? 
@@ -57,6 +58,10 @@ namespace Rokemon {
                     transform.gameObject.GetComponent<QuestSource>().enabled = false; 
                     transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
                     transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
+                }
+                else
+                {
+                    transform.gameObject.GetComponent<DialogueTrigger>().enabled = false;
                 }
             }
             else 
@@ -110,17 +115,21 @@ namespace Rokemon {
 
         private void QuestAcceptanceStatus(bool accepted)
         {
-            if(accepted)
+            if(_active)
             {
-                RegisterAcceptedQuest();
-                SwitchQuestPanel();
-                _questSourceIdDatabase[_questSourceID] = true;
-            }
-            else {
-                OnDeactivated();
+                if(accepted)
+                {
+                    RegisterAcceptedQuest();
+                    SwitchQuestPanel();
+                    _questSourceIdDatabase[_questSourceID] = true;
+                }
+                else {
+                    OnDeactivated();
+                }
+
+                _questDialogueTrigger.QuestAcceptanceStatusResult(accepted);
             }
 
-            _questDialogueTrigger.QuestAcceptanceStatusResult(accepted);
         }
 
         private void SwitchQuestPanel()
@@ -132,6 +141,7 @@ namespace Rokemon {
         // register accepted quest
         private void RegisterAcceptedQuest()
         {
+            Debug.Log(_currentQuest);
             QuestManager.Instance.AssignQuest(_currentQuest);
         }
     }
