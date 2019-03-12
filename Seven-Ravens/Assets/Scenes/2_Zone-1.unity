@@ -21918,6 +21918,32 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 417161893}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.data[1].questRewards.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.data[1].questTitle
+      value: Mom Quest 2 Title
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.data[1].questDescription
+      value: The description of moms second quest
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.data[1].questRewards.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
 --- !u!4 &2745122285491479382 stripped

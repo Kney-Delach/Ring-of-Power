@@ -27,7 +27,7 @@ namespace Rokemon
         private Queue<string> _sentences;
 
         // reference to status of dialouge 
-        private bool _dialogueExited = false; 
+        private bool _dialogueExited = true; 
         public bool DialogueExited {get { return _dialogueExited ; } }
         // reference to object instance
         private static QuestDialogueManager _instance;
@@ -58,6 +58,9 @@ namespace Rokemon
         // starts a new dialogue 
         public void StartDialogue(Dialogue dialogue)
         {
+            if(!DialogueManager.Instance.DialogueExited)
+                DialogueManager.Instance.EndDialogue();
+
             _dialogueExited = false;
             _dialogueGroup.alpha = 1;
             _dialogueGroup.interactable = true;
