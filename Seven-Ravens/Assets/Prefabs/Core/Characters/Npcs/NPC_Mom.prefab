@@ -15,10 +15,7 @@ GameObject:
   - component: {fileID: 7099301386393049588}
   - component: {fileID: 4766083495613476354}
   - component: {fileID: 6515825264948430698}
-  - component: {fileID: 1735581434221072153}
   - component: {fileID: 1735581434221072151}
-  - component: {fileID: 1735581434221072152}
-  - component: {fileID: 1735581434221072159}
   m_Layer: 0
   m_Name: NPC_Mom
   m_TagString: Untagged
@@ -96,7 +93,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735581433798977659}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -174,7 +171,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735581433798977659}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -193,7 +190,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0625, y: 0.8629849}
   m_EdgeRadius: 0
---- !u!61 &1735581434221072153
+--- !u!61 &1735581434221072151
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -203,7 +200,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -217,87 +214,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.5}
+  m_Size: {x: 1.0625, y: 1.8125}
   m_EdgeRadius: 0
---- !u!114 &1735581434221072151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735581433798977659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77b4ce61d2ddc8498a7d70e888608f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questSourceID: 0
-  _quests:
-  - isActive: 0
-    questTitle: Mom Quest 1 Title
-    questDescription: The description of moms first quest
-    questRewards:
-    - {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417, type: 2}
-    questGoal:
-      collectionGoalComplete: 0
-      collectionGoal: 0
-      collectionItem: 
-      collectionAmount: 0
-      collectedAmount: 0
-      findNpcGoalComplete: 0
-      findNpcGoal: 1
-      npcTag: Juniper
-      battleGoalComplete: 0
-      battleGoal: 0
-      battleTag: 
-  _questDialogueTrigger: {fileID: 1735581434221072152}
---- !u!114 &1735581434221072152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735581433798977659}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2463a82e5493d4e894fd699f3fc9ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerNpc: {fileID: 7326345086891979187}
-  _isItem: 0
-  _choices:
-    _choicesText:
-    - Sure mom, I was going down there anyway, see you later!
-    - I hate going to that market, it's such a loud place, can't you just do it?
-  _choiceIndex: 1
-  _questSource: {fileID: 1735581434221072151}
-  _dialogue:
-    speakerName: Mom
-    sentences:
-    - Good morning sunshine!
-    - 'Can you go and bring me the apples I ordered from the market today? '
-    - Great! Mrs Juniper has them stored in her blue booth over in west-quay, i'll
-      be awaiting your return!
-    - Fine, i'll get them myself! You need to start pulling your weight around here
-      sometime! Maybe your dad has something for you to do that might be to your liking....
---- !u!114 &1735581434221072159
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735581433798977659}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db31bc85cfafd74285e6b2278a26f43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerNpc: {fileID: 7326345086891979187}
-  _isItem: 0
-  _dialogue:
-    speakerName: Mom
-    sentences:
-    - I'm looking forward to eating those apples!
 --- !u!1 &2729055160443311671
 GameObject:
   m_ObjectHideFlags: 0
@@ -317,7 +235,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4933729577268948031
 Transform:
   m_ObjectHideFlags: 0

@@ -24420,74 +24420,45 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 417161893}
-    - target: {fileID: 2729055160443311671, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
-      propertyPath: m_IsActive
+      propertyPath: _quests.Array.data[0].questGoal.collectionGoal
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5737592585732240734, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4766083495613476354, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: m_UseFullKinematicContacts
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4766083495613476354, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: m_CollisionDetection
+      propertyPath: _quests.Array.data[0].questGoal.battleGoalComplete
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 6515825264948430698, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9022891930851389541, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: m_Enabled
+      propertyPath: _quests.Array.data[0].questGoal.battleGoal
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.data[0].questGoal.battleTag
+      value: John
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.data[0].questGoal.collectionAmount
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.data[0].questGoal.collectionItem
+      value: Apples
+      objectReference: {fileID: 0}
+    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _quests.Array.data[0].questGoal.collectedAmount
+      value: 42
       objectReference: {fileID: 0}
     m_RemovedComponents:
-    - {fileID: 1735581434221072151, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
-    - {fileID: 1735581434221072152, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
-    - {fileID: 1735581434221072159, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
-    - {fileID: 1735581434221072153, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+    - {fileID: 5737592585732240734, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+    - {fileID: 6515825264948430698, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
---- !u!1 &1735581434221072150 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1735581433798977659, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-    type: 3}
-  m_PrefabInstance: {fileID: 1735581434221072148}
-  m_PrefabAsset: {fileID: 0}
---- !u!61 &1735581434221072151
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735581434221072150}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.0625, y: 1.8125}
-    newSize: {x: 0.17, y: 0.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.0625, y: 1.8125}
-  m_EdgeRadius: 0
 --- !u!4 &2745122285491479382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2745122285491479382, guid: 6aeda09536d99c24286959a6d08bc211,
