@@ -50,6 +50,7 @@ namespace Rokemon {
                     Debug.Log("Reached B");
                 _activeQuest.isActive = true;
                 _activeQuestCompleted = false;
+                QuestInventory.Instance.Add(_activeQuest);
             }
             else 
             {

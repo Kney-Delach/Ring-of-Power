@@ -21,7 +21,21 @@ namespace Rokemon {
 
         public void UpdateUI()
         {
-            // TODO: Implement quest inventory slots 
+            QuestInventorySlot[] slots = GetComponentsInChildren<QuestInventorySlot>();
+
+            for (int i = 0; i < slots.Length; i++)
+            {
+                if (i < _questInventory.Quests.Count)
+                {
+                    slots[i].AddItem(_questInventory.Quests[i]);
+                } else
+                {
+                    slots[i].ClearSlot();
+                }
+            }
+
+            Debug.Log("UpdatedUI");
+            
         }
     }
 }

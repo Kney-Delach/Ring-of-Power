@@ -120,8 +120,8 @@ namespace Rokemon {
                 if(accepted)
                 {
                     RegisterAcceptedQuest();
+                    _questSourceIdDatabase[_questSourceID] = true;  // TODO: Implement attatching to quest chain
                     SwitchQuestPanel();
-                    _questSourceIdDatabase[_questSourceID] = true;
                 }
                 else {
                     OnDeactivated();

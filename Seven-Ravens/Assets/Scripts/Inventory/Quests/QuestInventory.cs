@@ -47,7 +47,7 @@ namespace Rokemon{
 
         public void Add(Quest quest)
         {
-            if(_quests.Count >= _questSlots)
+            if(_quests.Count > _questSlots)
             {
                 Debug.Log("QuestInventory Add: Not enough room in quest inventory!");
                 return;
