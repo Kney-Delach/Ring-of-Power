@@ -106,11 +106,15 @@ namespace Rokemon {
             {
                 UpdateQuestDescriptionText(slots[0].Quest);
                 UpdateQuestProgressText(slots[0].Quest);
+                UpdateQuestTitleText(slots[0].Quest);
+                UpdateQuestRewards(slots[0].Quest);
             }
             else
             {
                 UpdateQuestDescriptionText(null);
                 UpdateQuestProgressText(null);
+                UpdateQuestTitleText(null);
+                UpdateQuestRewards(null);
             }
 
 
@@ -138,6 +142,14 @@ namespace Rokemon {
         private void UpdateActiveQuestsDisplay()
         {
             _activeQuestText.text = "<Color=Green>QUESTS:</Color> " + QuestInventory.Instance.Quests.Count + "/" + QuestInventory.Instance.QuestSlots;
+        }
+
+        public void UpdateQuestTitleText(Quest quest)
+        {   
+            if(quest == null)
+                _questContextTitleText.text = "NO ACTIVE QUESTS";
+            else 
+                _questContextTitleText.text = quest.questTitle;
         }
 
         public void UpdateQuestDescriptionText(Quest quest)
@@ -198,6 +210,30 @@ namespace Rokemon {
                 }      
             }
             
+        }
+
+        public void UpdateQuestRewards(Quest quest)
+        {
+            if(quest == null)
+            {
+                for(int i = 0; i < 3; i++)
+                    _questContextRewardSlots[i].gameObject.SetActive(false);
+            }
+            else
+            {   
+                int count = 0;
+                for(int i=0; i < quest.questRewards.Length; i++)
+                {   
+                    count++;
+                    _questContextRewardSlots[i].gameObject.SetActive(true);
+                    _questContextRewardSlots[i].ClearSlot();
+                    _questContextRewardSlots[i].AddItem(quest.questRewards[i]);
+                }
+                for(int n = count; n < 3; n++)
+                {
+                    _questContextRewardSlots[n].gameObject.SetActive(false);
+                }
+            }
         }        
     }
 }

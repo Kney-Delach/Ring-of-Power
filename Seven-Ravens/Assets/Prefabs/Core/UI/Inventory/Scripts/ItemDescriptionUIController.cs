@@ -69,7 +69,7 @@ namespace Rokemon {
         public void EnableCanvas(Item item, bool isLog, bool isQSource)
         {   
             if(isLog)
-                _childTransform.anchoredPosition = new Vector2(975, -360); //localPosition = new Vector3(975, -360, transform.position.z);
+                _childTransform.anchoredPosition = new Vector2(850, -360); //localPosition = new Vector3(975, -360, transform.position.z);
             else if(isQSource)
                 _childTransform.anchoredPosition = new Vector2(850, -275); 
             else 
