@@ -15,7 +15,7 @@ namespace Rokemon{
 
         public Item[] questRewards;
 
-        public List<QuestGoal> questGoals;
+        public QuestGoal questGoal;
 
     }
 }

@@ -7,8 +7,10 @@ namespace Rokemon{
     {
         [SerializeField]
         private int _questSlots = 1;
+        public int QuestSlots {get { return _questSlots ; } }
+        
         public int QuestItemSlots {get { return _questSlots ; } }
-
+        
         // reference to current list of quests in quest inventory
 	    private List<Quest> _quests = new List<Quest>();
         public List<Quest> Quests {get { return _quests ; } }
@@ -44,6 +46,7 @@ namespace Rokemon{
         }
 
         #endregion
+
 
         public void Add(Quest quest)
         {

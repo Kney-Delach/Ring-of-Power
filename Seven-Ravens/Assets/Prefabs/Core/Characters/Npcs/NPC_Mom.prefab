@@ -266,7 +266,7 @@ MonoBehaviour:
   _choices:
     _choicesText:
     - Sure mom, I was going down there anyway, see you later!
-    - I hate going to that market, its such a loud place, can't you just do it?
+    - I hate going to that market, it's such a loud place, can't you just do it?
   _choiceIndex: 1
   _questSource: {fileID: 8726404859877337287}
   _dialogue:
@@ -297,6 +297,18 @@ MonoBehaviour:
     questDescription: The description of moms first quest
     questRewards:
     - {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417, type: 2}
+    questGoal:
+      collectionGoalComplete: 0
+      collectionGoal: 0
+      collectionItem: 
+      collectionAmount: 0
+      collectedAmount: 0
+      findNpcGoalComplete: 0
+      findNpcGoal: 1
+      npcTag: Juniper
+      battleGoalComplete: 0
+      battleGoal: 0
+      battleTag: 
   _questDialogueTrigger: {fileID: 0}
 --- !u!114 &1805957030037437636
 MonoBehaviour:

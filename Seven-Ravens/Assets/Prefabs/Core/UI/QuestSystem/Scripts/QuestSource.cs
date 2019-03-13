@@ -22,7 +22,7 @@ namespace Rokemon {
         [SerializeField]
         private Quest[] _quests;
 
-        [SerializeField]
+//        [SerializeField]
         private Quest _currentQuest; 
 
         // Todo: Utilise this to continue the world? 
@@ -38,11 +38,12 @@ namespace Rokemon {
             if(_questSourceIdDatabase == null)
                 _questSourceIdDatabase = new Dictionary<int, bool>();
 
-            QuestRequestUIController.Instance.onRequestChoiceMadeCallback += QuestAcceptanceStatus;
         }
 
         private void Start()
         {
+            QuestRequestUIController.Instance.onRequestChoiceMadeCallback += QuestAcceptanceStatus;
+
             // if true, reloading scene
             if(_questSourceIdDatabase.ContainsKey(_questSourceID))
             {
