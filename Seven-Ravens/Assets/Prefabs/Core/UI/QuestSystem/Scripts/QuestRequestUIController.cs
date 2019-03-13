@@ -15,6 +15,9 @@ namespace Rokemon {
         private Text _questBodyText; 
 
         [SerializeField]
+        private CanvasGroup _questSourceCanvas; 
+
+        [SerializeField]
         private ItemInventorySlot[] _questRewardItems; 
 
         #endregion
@@ -50,17 +53,18 @@ namespace Rokemon {
         #endregion
 
         public void QuestAcceptance(bool accepted)
-        {
+        {   
+            HideRequestCanvas();
             _acceptedStatus = accepted; 
             onRequestChoiceMadeCallback(_acceptedStatus);
-            InventoryUIController.Instance.QuestRequestActive = false; 
-            InventoryUIController.Instance.EnableButtons();
+
+            // TODO notify other UI they can be activated again
+
         }
 
         public void AssignQuestUIValues(Quest quest)
         {
-            InventoryUIController.Instance.QuestRequestActive = true; 
-            InventoryUIController.Instance.DisableButtons(); 
+            // TODO notify other UI they cannot be activated as quest UI active
 
             _questTitleText.text = quest.questTitle;
             _questBodyText.text = quest.questDescription;
@@ -80,6 +84,23 @@ namespace Rokemon {
                 _questRewardItems[1].gameObject.SetActive(false);
                 _questRewardItems[0].AddItem(quest.questRewards[0]);
             }
+
+            DisplayRequestCanvas();
+
         }
+
+        public void HideRequestCanvas()
+        {
+            _questSourceCanvas.interactable = false;
+            _questSourceCanvas.blocksRaycasts = false; 
+            _questSourceCanvas.alpha = 0;
+        }
+        private void DisplayRequestCanvas()
+        {
+            _questSourceCanvas.interactable = true;
+            _questSourceCanvas.blocksRaycasts = true; 
+            _questSourceCanvas.alpha = 1;
+        }
+
     }
 }

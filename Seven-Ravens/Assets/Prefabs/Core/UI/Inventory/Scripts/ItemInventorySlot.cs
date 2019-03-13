@@ -17,29 +17,21 @@ namespace Rokemon{
         [SerializeField]
         private CanvasGroup _removeItemButtonCanvasGroup; 
 
-        private GameObject _descriptionObject; 
+        [SerializeField]
+        private bool _isQuest = false;
 
-        private CanvasGroup _descriptionCanvasGroup; 
+        [SerializeField]
+        private bool _isQSource = false;
 
-        private Text _descriptionCanvasText; 
-
-        private Image _descriptionImage; 
-
-
+        // reference to description controller instance
+        private ItemDescriptionUIController _descriptionController; 
         // reference to current item in inventory slot
         private Item _item;
 
+
         private void Start()
         {
-            _descriptionObject = GameObject.FindGameObjectWithTag("DescriptionPanel");
-            _descriptionCanvasGroup = _descriptionObject.GetComponent<CanvasGroup>(); 
-            _descriptionCanvasText = _descriptionObject.GetComponentInChildren<Text>(); 
-            GameObject _tempImageObject = GameObject.FindGameObjectWithTag("DescriptionImage");
-            _descriptionImage = _tempImageObject.GetComponent<Image>();
-
-            _descriptionCanvasGroup.interactable = false; 
-            _descriptionCanvasGroup.blocksRaycasts = false; 
-            _descriptionCanvasGroup.alpha = 0;
+            _descriptionController = ItemDescriptionUIController.Instance;
         }
         // Add item to the slot
         public void AddItem (Item newItem)
@@ -51,10 +43,10 @@ namespace Rokemon{
            
             if(_removeItemButtonCanvasGroup != null)
             {
+                _removeItemButtonCanvasGroup.blocksRaycasts = true;
                 _removeItemButtonCanvasGroup.alpha = 1;
                 _removeItemButtonCanvasGroup.interactable = true;
             }
-
         }
 
         // removes item from inventory slot
@@ -69,8 +61,8 @@ namespace Rokemon{
             {
                 _removeItemButtonCanvasGroup.interactable = false;
                 _removeItemButtonCanvasGroup.alpha = 0;
+                _removeItemButtonCanvasGroup.blocksRaycasts = false;
             }
-
         }
 
         // called if remove button pressed
@@ -91,16 +83,14 @@ namespace Rokemon{
         }
 
         public void DisplayItemDescription()
-        {
-            _descriptionCanvasText.text = _item.description;
-            _descriptionImage.sprite = _item.icon;         
-            _descriptionCanvasGroup.alpha = 1;   
+        {   
+            Debug.Log(_isQuest);
+            _descriptionController.EnableCanvas(_item, _isQuest, _isQSource); 
         }
 
         public void StopDisplayItemDescription()
         {
-            _descriptionCanvasGroup.alpha = 0;   
-
+            _descriptionController.DisableCanvas(); 
         }
     }
 }

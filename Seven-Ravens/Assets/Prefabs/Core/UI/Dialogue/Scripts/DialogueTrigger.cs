@@ -19,7 +19,9 @@ namespace Rokemon
 
         private bool _isActive = false; 
 
-        private bool _qPressed = false;
+        private bool _itemProcessed = false;
+
+        private bool _cPressed = false;
 
         private bool _isColliding = false;
 
@@ -33,9 +35,9 @@ namespace Rokemon
 
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Q) && _isColliding)
+            if(Input.GetKeyDown(KeyCode.C) && _isColliding)
             {
-                _qPressed = true;
+                _cPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.Space) && _isActive)
             {
@@ -56,23 +58,29 @@ namespace Rokemon
                 _isColliding = true;
 
             // if item, set active
-            if(_triggerNpc == null && collision.tag == _playerTag)
+            if(_isItem && collision.tag == _playerTag && !_itemProcessed)
             {
+                // hide inventory
+                InventoryUIController.Instance.HideInventory();
                 _isActive = true;
                 TriggerDialogue(); 
+                _itemProcessed = true;
             }
         }
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if(collision.tag == _playerTag && _triggerNpc != null)
-                _triggerNpc.CanMove = false;
-
-            if(collision.tag == _playerTag && _qPressed && _triggerNpc != null)
+            if(!_isItem)
             {
-                _isActive = true;
-                TriggerDialogue();
-                _qPressed = false;
+                if(collision.tag == _playerTag && _triggerNpc != null)
+                    _triggerNpc.CanMove = false;
+                if(collision.tag == _playerTag && _cPressed && _triggerNpc != null)
+                {   
+                    InventoryUIController.Instance.HideInventory();
+                    _isActive = true;
+                    TriggerDialogue();
+                    _cPressed = false;
+                }
             }
 
             if (_nextPressed && collision.tag == _playerTag && _isActive)
@@ -118,6 +126,10 @@ namespace Rokemon
         {
             DialogueManager.Instance.EndDialogue();
             _isActive = false;
+            if(_isItem)
+            {
+                gameObject.SetActive(false);
+            }
         }
 
     }

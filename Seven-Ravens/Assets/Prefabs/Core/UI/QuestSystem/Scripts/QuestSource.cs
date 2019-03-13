@@ -19,8 +19,6 @@ namespace Rokemon {
         private static Dictionary<int, bool> _questSourceIdDatabase;
         #endregion
         
-
-        private static string PLAYER_TAG = "Player";
         [SerializeField]
         private Quest[] _quests;
 
@@ -32,12 +30,8 @@ namespace Rokemon {
 
         private bool _active = false;
 
-        private bool _qPressed = false;
-        private bool _colliding = false; 
-
         [SerializeField]
         private QuestDialogueTrigger _questDialogueTrigger; 
-
 
         private void Awake()
         {
@@ -85,12 +79,9 @@ namespace Rokemon {
                 _active = true;
                 _currentQuest = _quests[questIndex];
                 _currentQuestIndex = questIndex;
-
-                InventoryUIController.Instance.DisplayInventory();
-                bool val = true; 
-                InventoryUIController.Instance.ActivateQuests(val);
                 
-                // assigns quest ui current quest 
+                // TODO: Assign quest ui current quest 
+
                 QuestRequestUIController.Instance.AssignQuestUIValues(_currentQuest);
 
                 Debug.Log(_currentQuest.questTitle + "Requested");
@@ -109,7 +100,7 @@ namespace Rokemon {
 
         public void OnDeactivated()
         {
-            InventoryUIController.Instance.HideInventory();
+            DisableQuestSourcePanel();
             _active = false;
         }
 
@@ -121,7 +112,7 @@ namespace Rokemon {
                 {
                     RegisterAcceptedQuest();
                     _questSourceIdDatabase[_questSourceID] = true;  // TODO: Implement attatching to quest chain
-                    SwitchQuestPanel();
+                    DisableQuestSourcePanel();
                 }
                 else {
                     OnDeactivated();
@@ -132,10 +123,9 @@ namespace Rokemon {
 
         }
 
-        private void SwitchQuestPanel()
+        private void DisableQuestSourcePanel()
         {
-            bool val = false;
-            InventoryUIController.Instance.ActivateQuests(val);
+            QuestRequestUIController.Instance.HideRequestCanvas();
         }
 
         // register accepted quest

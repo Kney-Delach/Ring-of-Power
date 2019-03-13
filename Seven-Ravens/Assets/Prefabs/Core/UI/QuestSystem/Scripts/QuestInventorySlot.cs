@@ -24,10 +24,6 @@ namespace Rokemon {
         [SerializeField]
         private ItemInventorySlot[] _itemRewardSlots;
 
-
-   
-        
-
         private void Start()
         {
 

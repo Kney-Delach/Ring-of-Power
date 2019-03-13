@@ -90,6 +90,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemIcon: {fileID: 6701178575588780023}
   _removeItemButtonCanvasGroup: {fileID: 0}
+  _isQuest: 0
+  _isQSource: 1
 --- !u!1 &6483451369118323875
 GameObject:
   m_ObjectHideFlags: 0

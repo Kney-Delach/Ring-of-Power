@@ -19,7 +19,7 @@ namespace Rokemon
 
         private bool _isActive = false; 
 
-        private bool _qPressed = false;
+        private bool _cPressed = false;
 
         private bool _isColliding = false;
 
@@ -110,9 +110,9 @@ namespace Rokemon
                 _nextPressed = false;
             }
                 // TRIGGER CHOICES DISPALY AND WAIT FOR RESPONSE
-            if(Input.GetKeyDown(KeyCode.Q) && _isColliding && !_choiceReached)
+            if(Input.GetKeyDown(KeyCode.C) && _isColliding && !_choiceReached)
             {
-                _qPressed = true;
+                _cPressed = true;
             }
             if (Input.GetKeyDown(KeyCode.Space) && _isActive && !_choiceReached)
             {
@@ -145,11 +145,12 @@ namespace Rokemon
             if(collision.tag == _playerTag && _triggerNpc != null)
                 _triggerNpc.CanMove = false;
 
-            if(collision.tag == _playerTag && _qPressed && _triggerNpc != null)
+            if(collision.tag == _playerTag && _cPressed && _triggerNpc != null)
             {
+                InventoryUIController.Instance.HideInventory();
                 _isActive = true;
                 TriggerDialogue();
-                _qPressed = false;
+                _cPressed = false;
             }
 
             if (_nextPressed && collision.tag == _playerTag && _isActive)

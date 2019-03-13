@@ -629,8 +629,11 @@ GameObject:
   - component: {fileID: 8221906181349420802}
   - component: {fileID: 4871375974877502886}
   - component: {fileID: 3230740617657186678}
+  - component: {fileID: 3729659519330054779}
+  - component: {fileID: 3654803839525998535}
+  - component: {fileID: 1035118637979735817}
   m_Layer: 5
-  m_Name: QuestLogUI
+  m_Name: UIQuestLog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -724,10 +727,47 @@ CanvasGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4010513574823617012}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
+  m_Alpha: 0
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
   m_IgnoreParentGroups: 0
+--- !u!114 &3729659519330054779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010513574823617012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 761af3d9492b14979a6da55a642cb258, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _questSlots: 1
+--- !u!114 &3654803839525998535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010513574823617012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc431588fcffd45f29a7a0e19fb4f6cd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1035118637979735817
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4010513574823617012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba347da9c2c34118adb9dae535a18be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4326771297925935534
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,7 +17,7 @@ namespace Rokemon
 
         // reference to dialogue name text UI rect transform
         [SerializeField]
-        private RectTransform _nameTransform; 
+        private RectTransform _nameTransform;
 
         // reference to dialogue typing animator 
         [SerializeField]
