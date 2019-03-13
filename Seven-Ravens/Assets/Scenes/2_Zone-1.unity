@@ -17850,18 +17850,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1293007541}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1333602071 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-    type: 3}
-  m_PrefabInstance: {fileID: 1735581434221072148}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2463a82e5493d4e894fd699f3fc9ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!224 &1370152829 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 758008632694351288, guid: 1419ef4fc5100214cbf2342359f3d7e9,
@@ -24417,12 +24405,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _choices._choicesText.Array.data[1]
-      value: I hate going to that market, it's such a loud place, can't you just do
-        it?
-      objectReference: {fileID: 0}
     - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: _waypoints.Array.data[0]
@@ -24438,124 +24420,49 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[2]
       value: 
       objectReference: {fileID: 417161893}
-    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _quests.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _quests.Array.data[1].questRewards.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _quests.Array.data[1].questTitle
-      value: Mom Quest 2 Title
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _quests.Array.data[1].questDescription
-      value: The description of moms second quest
-      objectReference: {fileID: 0}
-    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _quests.Array.data[1].questRewards.Array.data[0]
-      value: 
-      objectReference: {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417,
-        type: 2}
-    - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _questDialogueTrigger
-      value: 
-      objectReference: {fileID: 1333602071}
     - target: {fileID: 2729055160443311671, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5737592585732240734, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 4766083495613476354, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_UseFullKinematicContacts
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4766083495613476354, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6515825264948430698, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022891930851389541, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1735581434221072151, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+    - {fileID: 1735581434221072152, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+    - {fileID: 1735581434221072159, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+    - {fileID: 1735581434221072153, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
---- !u!114 &1735581434221072149 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-    type: 3}
-  m_PrefabInstance: {fileID: 1735581434221072148}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735581434221072150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 566278a354fa4dc4a8bc04bcb0437919, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1735581434221072150 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1735581433798977659, guid: 239c09413ca73ba4f81be3b3ddd30a10,
     type: 3}
   m_PrefabInstance: {fileID: 1735581434221072148}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1735581434221072151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735581434221072150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77b4ce61d2ddc8498a7d70e888608f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questSourceID: 0
-  _quests:
-  - isActive: 0
-    questTitle: Mom Quest 1 Title
-    questDescription: The description of moms first quest
-    questRewards:
-    - {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417, type: 2}
-    questGoal:
-      collectionGoalComplete: 0
-      collectionGoal: 0
-      collectionItem: 
-      collectionAmount: 0
-      collectedAmount: 0
-      findNpcGoalComplete: 0
-      findNpcGoal: 1
-      npcTag: Juniper
-      battleGoalComplete: 0
-      battleGoal: 0
-      battleTag: 
-  _questDialogueTrigger: {fileID: 1735581434221072152}
---- !u!114 &1735581434221072152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735581434221072150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2463a82e5493d4e894fd699f3fc9ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerNpc: {fileID: 1735581434221072149}
-  _isItem: 0
-  _choices:
-    _choicesText:
-    - Sure mom, I was going down there anyway, see you later!
-    - I hate going to that market, it's such a loud place, can't you just do it?
-  _choiceIndex: 1
-  _questSource: {fileID: 1735581434221072151}
-  _dialogue:
-    speakerName: Mom
-    sentences:
-    - Good morning sunshine!
-    - 'Can you go and bring me the apples I ordered from the market today? '
-    - Great! Mrs Juniper has them stored in her blue booth over in west-quay, i'll
-      be awaiting your return!
-    - Fine, i'll get them myself! You need to start pulling your weight around here
-      sometime! Maybe your dad has something for you to do that might be to your liking....
---- !u!61 &1735581434221072153
+--- !u!61 &1735581434221072151
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -24565,7 +24472,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -24579,26 +24486,8 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.5}
+  m_Size: {x: 1.0625, y: 1.8125}
   m_EdgeRadius: 0
---- !u!114 &1735581434221072154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1735581434221072150}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db31bc85cfafd74285e6b2278a26f43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerNpc: {fileID: 1735581434221072149}
-  _isItem: 0
-  _dialogue:
-    speakerName: Mom
-    sentences:
-    - I'm looking forward to eating those apples!
 --- !u!4 &2745122285491479382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2745122285491479382, guid: 6aeda09536d99c24286959a6d08bc211,
@@ -24860,6 +24749,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SpawnManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 5513078322938561524, guid: 9ea6cf346e35d4847b299d7c7c1cb4e0,
+        type: 3}
+      propertyPath: m_TagString
+      value: PlayerSpawn
       objectReference: {fileID: 0}
     - target: {fileID: 7710690956532546145, guid: 9ea6cf346e35d4847b299d7c7c1cb4e0,
         type: 3}
