@@ -8,11 +8,14 @@ namespace Rokemon {
     {
         private Quest _activeQuest;
 
+        private int _questChainIndex;   // TODO: Utilise me
+
         private bool _activeQuestCompleted = false;
 
         private bool _assigned = false;
 
         #region #singleton
+
         // reference to instance 
         private static QuestManager _instance = null; 
         public static QuestManager Instance { get { return _instance ; } }
@@ -38,16 +41,26 @@ namespace Rokemon {
 
         #endregion
 
+        private void Update()
+        {
+            if(_assigned)
+            {
+                CheckGoals();
+            }
+        }
 
         // assign new quest to manager 
-        public void AssignQuest(Quest quest)
+        public void AssignQuest(Quest quest, int questIndex)
         {   
             if(!_assigned)
-            {
+            {   
+                _questChainIndex = questIndex;  // assign quest chain index 
+
                 _activeQuest = quest;
                 _activeQuest.isActive = true;
                 _activeQuestCompleted = false;
                 QuestInventory.Instance.Add(_activeQuest);
+                _assigned = true;
             }
             else 
             {

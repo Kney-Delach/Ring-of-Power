@@ -19,13 +19,15 @@ namespace Rokemon {
         private static Dictionary<int, bool> _questSourceIdDatabase;
         #endregion
         
+        // reference to the quest source's quests [Different quests depending on choices]
         [SerializeField]
         private Quest[] _quests;
 
-//        [SerializeField]
+        // reference to active quest
         private Quest _currentQuest; 
 
         // Todo: Utilise this to continue the world? 
+        // index of chosen quest
         private int _currentQuestIndex = 0;
 
         private bool _active = false;
@@ -130,7 +132,7 @@ namespace Rokemon {
         // register accepted quest
         private void RegisterAcceptedQuest()
         {
-            QuestManager.Instance.AssignQuest(_currentQuest);
+            QuestManager.Instance.AssignQuest(_currentQuest, _currentQuestIndex);
         }
     }
 }

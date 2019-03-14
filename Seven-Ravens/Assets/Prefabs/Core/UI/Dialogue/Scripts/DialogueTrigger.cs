@@ -8,7 +8,7 @@ namespace Rokemon
     public class DialogueTrigger : MonoBehaviour
     {        
         // reference to player tag 
-        private static string _playerTag = "Player";
+        private static string PLAYER_TAG = "Player";
 
         // reference to npc controller
         [SerializeField]
@@ -26,8 +26,7 @@ namespace Rokemon
         // reference to dialogue
         [SerializeField]
         private Dialogue _dialogue;
-        public Dialogue Dialogue { get { return _dialogue ; } }
-                
+        public Dialogue Dialogue { get { return _dialogue ; } }                
 
         private void Update()
         {   
@@ -56,7 +55,7 @@ namespace Rokemon
                     TriggerDialogue(); 
                     _itemProcessed = true;
                 }
-                
+
                 if(_isActive)
                 {
                     if(Input.GetKeyDown(KeyCode.Space))
@@ -78,7 +77,7 @@ namespace Rokemon
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.tag == _playerTag)
+            if(collision.tag == PLAYER_TAG)
             {
                 _isColliding = true;
             }
@@ -86,13 +85,12 @@ namespace Rokemon
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.tag == _playerTag && _triggerNpc != null)
+            if (collision.tag == PLAYER_TAG && _triggerNpc != null)
             {
                 _isActive = false;
                 ExitDialogue();                
                 _triggerNpc.CanMove = true;
                 _isColliding = false;
-
             }
         }
 

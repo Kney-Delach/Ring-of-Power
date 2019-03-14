@@ -8,14 +8,11 @@ namespace Rokemon
     public class QuestDialogueTrigger : MonoBehaviour
     {        
         // reference to player tag 
-        private static string _playerTag = "Player";
+        private static string PLAYER_TAG = "Player";
 
         // reference to npc controller
         [SerializeField]
         private NpcController _triggerNpc; 
-
-        [SerializeField]
-        private bool _isItem = false;
 
         private bool _isActive = false; 
 
@@ -43,17 +40,23 @@ namespace Rokemon
 
         private bool _choiceReached = false;
 
+        // reference to status of player pressing next
+        private bool _nextPressed = false; 
+
+
         [Header("Dialogue Context")]
         // reference to dialogue
         [SerializeField]
         private Dialogue _dialogue;
         public Dialogue Dialogue { get { return _dialogue ; } }
                 
-        // reference to status of player pressing next
-        private bool _nextPressed = false; 
+
 
         private void Start()
         {
+            if(_triggerNpc == null)
+                Debug.LogError("QuestDialogueTrigger Start ERROR: NPC trigger not attached to this object!");
+
             ChoiceUIController.Instance.onChoiceMadeCallback += EvaluateChoice;
         }
 
@@ -69,65 +72,41 @@ namespace Rokemon
             {
                 if(!_choiceReached)
                 {
-                    if(!_triggerNpc != null)
+                    if(Input.GetKeyDown(KeyCode.C))
                     {
-                        _triggerNpc.CanMove = false;
+                        _isActive = true;
+                        TriggerDialogue();
+                    } 
 
-                        if(Input.GetKeyDown(KeyCode.C))
-                        {
-                            //_cPressed = true; 
-                            _isActive = true;
-                            TriggerDialogue();
-                        } 
-
-                        if(_isActive)
-                        {
-                            if(Input.GetKeyDown(KeyCode.Space))
+                    if(_isActive)
+                    {
+                        if(Input.GetKeyDown(KeyCode.Space))
+                       {
+                            if(_choiceComplete)
                             {
-                                // if item, exit dialogue here
-                                if(_isItem) 
-                                {
-                                    ExitDialogue();
-                                    _isActive = false;
-                                    gameObject.SetActive(false);
-                                }
-                                else 
-                                {
-                                    _nextPressed = true;
-                                }
+                                ExitDialogue();
+
+                                transform.gameObject.GetComponent<QuestSource>().enabled = false; 
+                                transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
+                                transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
+                            }
+                            else
+                            {
+                                NextSentence();
                             }
 
-                            if(_nextPressed)
-                            {
-                                if(_choiceComplete)
-                                {
-                                    ExitDialogue();
-                                    _isActive = false; 
-                                    _triggerNpc.CanMove = true;
-                                    _isColliding = false;
-                                    transform.gameObject.GetComponent<QuestSource>().enabled = false; 
-                                    transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
-                                    transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
-                                }
-                                else
-                                {
-                                    NextSentence();
-                                    _nextPressed = false;
-                                }
-                            }
-                            else 
-                            {
-                                if(_choiceIndex != -1 && _choiceIndex == _currentIndex)
-                                {
-                                    ChoiceUIController.Instance.DispalyChoices(_choices);
-                                    _choiceReached = true;
-                                }
-                            }   
                         }
-                    }            
-                }
+                        else if(_choiceIndex != -1 && _choiceIndex == _currentIndex)
+                        {
+                            ChoiceUIController.Instance.DispalyChoices(_choices);
+                            _choiceReached = true;
+                        }
+                         
+                    }
+                }            
             }
         }
+      
 
         private void EvaluateChoice(int choiceMadeIndex)
         {               
@@ -169,25 +148,20 @@ namespace Rokemon
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if(collision.tag == _playerTag)
-                _isColliding = true;
-
-            // if item, set active
-            if(_triggerNpc == null && collision.tag == _playerTag)
+            if(collision.tag == PLAYER_TAG)
             {
-                _isActive = true;
-                TriggerDialogue(); 
+                _isColliding = true;
+                _triggerNpc.CanMove = false;
             }
         }
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.tag == _playerTag && _triggerNpc != null)
-            {
-                _isActive = false;
-                ExitDialogue();                
+            if (collision.tag == PLAYER_TAG)
+            {               
                 _triggerNpc.CanMove = true;
                 _isColliding = false;
+                ExitDialogue();                
 
             }
         }
@@ -217,17 +191,16 @@ namespace Rokemon
             QuestDialogueManager.Instance.EndDialogue();
             
             if(_choiceReached)
+            {
                 ChoiceUIController.Instance.DisableCanavs();
-            _questSource.OnDeactivated();
+                _choiceReached = false; 
 
+            }
+            _questSource.OnDeactivated();
             _choiceMadeIndex = 0;
             _isActive = false;
             _currentIndex = 0; 
-            _choiceMadeIndex = 0;
-            _choiceReached = false; 
-            _nextPressed = false;
             _choiceComplete = false;
-
         }
 
     }
