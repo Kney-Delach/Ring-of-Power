@@ -14,6 +14,10 @@ namespace Rokemon
         private bool _canMove = true;
         public bool CanMove { get { return _canMove; } set { _canMove = value; } }
 
+        // reference to freeze movement due to player trigger 
+        private bool _freezeMovement = false; 
+        public bool FreezeMovement { get { return _freezeMovement ; } set { _freezeMovement = value ; } }
+
         // reference to npc controller speed
         [SerializeField]
         private float _speed = 1;
@@ -57,11 +61,12 @@ namespace Rokemon
         private void Update()
         {
             if (_currentWaypoint != null && _canMove)
-            {
+            {   
                 MoveNpc();
             }
             else
             {
+                
                 _rigidbody.velocity = Vector2.zero;
                 _animator.SetFloat("MoveX", _rigidbody.velocity.x);
                 _animator.SetFloat("MoveY", _rigidbody.velocity.y);

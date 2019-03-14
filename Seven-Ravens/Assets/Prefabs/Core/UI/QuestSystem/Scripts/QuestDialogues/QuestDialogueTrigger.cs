@@ -69,7 +69,8 @@ namespace Rokemon
         private void ProcessDialogue()
         {
             if(_isColliding)
-            {
+            {              
+                _triggerNpc.CanMove = false;  
                 if(!_choiceReached)
                 {
                     if(Input.GetKeyDown(KeyCode.C))
@@ -151,7 +152,7 @@ namespace Rokemon
             if(collision.tag == PLAYER_TAG)
             {
                 _isColliding = true;
-                _triggerNpc.CanMove = false;
+                _triggerNpc.CanMove = false;  
             }
         }
 
@@ -159,10 +160,9 @@ namespace Rokemon
         {
             if (collision.tag == PLAYER_TAG)
             {               
-                _triggerNpc.CanMove = true;
                 _isColliding = false;
                 ExitDialogue();                
-
+                _triggerNpc.CanMove = true;
             }
         }
 
@@ -201,6 +201,16 @@ namespace Rokemon
             _isActive = false;
             _currentIndex = 0; 
             _choiceComplete = false;
+
+            // if(_isColliding)
+            // {
+            //     _isColliding = false;
+            //     _triggerNpc.CanMove = false;
+            // }
+            // else
+            // {
+            //     _triggerNpc.CanMove = true;
+            // }
         }
 
     }

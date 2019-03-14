@@ -41,7 +41,7 @@ namespace Rokemon
                 { 
                     if(_triggerNpc != null)
                     {
-                        _triggerNpc.CanMove = false;
+                        _triggerNpc.FreezeMovement = false;
                         if(Input.GetKeyDown(KeyCode.C))
                         {
                             _isActive = true;
@@ -89,7 +89,7 @@ namespace Rokemon
             {
                 _isActive = false;
                 ExitDialogue();                
-                _triggerNpc.CanMove = true;
+                _triggerNpc.FreezeMovement = true;
                 _isColliding = false;
             }
         }
@@ -99,7 +99,7 @@ namespace Rokemon
         {
             DialogueManager.Instance.StartDialogue(_dialogue);
             if(_triggerNpc != null)
-                _triggerNpc.CanMove = false;
+                _triggerNpc.FreezeMovement = false;
         }
 
         // function triggering next sentence
