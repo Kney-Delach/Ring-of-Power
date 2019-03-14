@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Rokemon {
+    // currently only manages one quest at a time
     public class QuestManager : MonoBehaviour
     {
         private Quest _activeQuest;
@@ -44,10 +45,6 @@ namespace Rokemon {
             if(!_assigned)
             {
                 _activeQuest = quest;
-                if(quest == null)
-                    Debug.Log("Reached A");
-                if(_activeQuest == null)
-                    Debug.Log("Reached B");
                 _activeQuest.isActive = true;
                 _activeQuestCompleted = false;
                 QuestInventory.Instance.Add(_activeQuest);
@@ -69,7 +66,7 @@ namespace Rokemon {
             }
         }
 
-        // check status of goals of active quest
+        // check status of goals of active quest[s]
         public void CheckGoals()
         {
             if(_activeQuest != null && _assigned && !_activeQuestCompleted)

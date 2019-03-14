@@ -85,13 +85,11 @@ namespace Rokemon {
 
                 QuestRequestUIController.Instance.AssignQuestUIValues(_currentQuest);
 
-                Debug.Log(_currentQuest.questTitle + "Requested");
 
                 return true;
             }
             else if(questIndex >= _quests.Length)
             {
-                Debug.Log("Quest Doesn't exist");
                 return false;
             }
 
@@ -132,7 +130,6 @@ namespace Rokemon {
         // register accepted quest
         private void RegisterAcceptedQuest()
         {
-            Debug.Log(_currentQuest);
             QuestManager.Instance.AssignQuest(_currentQuest);
         }
     }

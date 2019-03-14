@@ -22,6 +22,7 @@ namespace Rokemon
 
         // reference to visibility status of inventory UI 
         private bool _active  = false;
+        public bool Active { get { return _active ;} }
 
         #region Singleton 
 
@@ -64,11 +65,11 @@ namespace Rokemon
 
         private void Update()
         {
-            // TODO: Add check for other interfaces active
-            if(Input.GetKeyDown(KeyCode.I) && !_active)
-                DisplayInventory();
-            else if(Input.GetKeyDown(KeyCode.I) && _active)
-                HideInventory();
+            // // TODO: Add check for other interfaces active
+            // if(Input.GetKeyDown(KeyCode.I) && !_active)
+            //     DisplayInventory();
+            // else if(Input.GetKeyDown(KeyCode.I) && _active)
+            //     HideInventory();
         }
 
         public void DisplayInventory()

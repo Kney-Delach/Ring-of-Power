@@ -306,7 +306,7 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 686968623894277110}
-          m_MethodName: StopDisplayItemDescription
+          m_MethodName: HideItemDescription
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -484,3 +484,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemIcon: {fileID: 2528681987859244842}
   _removeItemButtonCanvasGroup: {fileID: 225831007379047807}
+  _isQuest: 0
+  _isQSource: 0

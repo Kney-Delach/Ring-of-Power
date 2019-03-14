@@ -14,6 +14,12 @@ namespace Rokemon{
 	    private List<Item> _items = new List<Item>();
         public List<Item> Items {get { return _items ; } }
         
+        // item change delegate 
+        public delegate void OnItemChanged();
+
+	    // instantiate item change observer set
+        public OnItemChanged onItemChangedCallback;
+        
         #region Singleton
 
         // reference to instance
@@ -41,18 +47,14 @@ namespace Rokemon{
 
         #endregion 
 
-        // item change delegate 
-        public delegate void OnItemChanged();
 
-	    // instantiate item change observer set
-        public OnItemChanged onItemChangedCallback;
 
-        // add a new item to inventory if enough room in inventory
+        // add a new item to inventory if enough room
         public void Add (Item item)
         {
             if (item.showInInventory) {
                 if (_items.Count >= _itemSlots) {
-                    Debug.Log("ItemInventory Add: Not enough room in inventory!");
+                    Debug.Log("ItemInventory Add: Not enough room in inventory!"); // TODO: Display UI notification
                     return;
                 }
 

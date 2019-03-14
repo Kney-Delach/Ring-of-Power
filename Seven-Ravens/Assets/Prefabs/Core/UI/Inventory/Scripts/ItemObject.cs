@@ -6,6 +6,7 @@ namespace Rokemon{
     [RequireComponent(typeof(Collider2D))]
     public class ItemObject : MonoBehaviour
     {
+        // reference to total item ID counts 
         private static int _itemIdCounter = 0;
 
         // reference to this item's ID
@@ -13,13 +14,15 @@ namespace Rokemon{
         private int _itemId; 
         public int ItemId {get { return _itemId ; } set { _itemId = value ; } }
 
+        // reference storing all item IDs and whether or not they have been collected
         private static Dictionary<int, bool> _itemIdDatabase;
 
+        // reference to this item object's item
         [SerializeField]
         private Item _item; 
 
         // reference to player tag
-        private string _playerTag = "Player";
+        private static string PLAYER_TAG = "Player";
 
         private void Awake()
         {
@@ -46,13 +49,11 @@ namespace Rokemon{
                 _itemIdDatabase.Add(_itemId, false);
                 gameObject.GetComponent<SpriteRenderer>().sprite = _item.icon;
             }
-
-
         }
 
          private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.tag == _playerTag)
+            if (collision.tag == PLAYER_TAG)
             {
                 ItemInventory.Instance.Add(_item);
                 gameObject.SetActive(false);

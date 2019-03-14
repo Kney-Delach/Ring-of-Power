@@ -10,7 +10,7 @@ namespace Rokemon
         private string _zoneName; 
         public string ZoneName { get; }
 
-        // Start is called before the first frame update
+        // initializes player position to zoner position on scene load if player previous location = spawner referenced location
         void Start()
         {
             if (PlayerInformationController.Instance.PreviousZoneName == _zoneName)

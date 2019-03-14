@@ -18,10 +18,12 @@ namespace Rokemon {
         // reference to image
         [SerializeField]
         private Image _descriptionImage;
-
+        
+        // reference to positional transform
         [SerializeField]
         private RectTransform _childTransform; 
 
+        // reference to active item
         private Item _item; 
 
         #region Singleton
@@ -59,14 +61,16 @@ namespace Rokemon {
             _descriptionCanvasGroup.alpha = 0;
         }
 
-        public void DisableCanvas()
+        // hides description canvas
+        public void HideCanvas()
         {
             _descriptionCanvasGroup.interactable = false; 
             _descriptionCanvasGroup.blocksRaycasts = false; 
             _descriptionCanvasGroup.alpha = 0;
         }
 
-        public void EnableCanvas(Item item, bool isLog, bool isQSource)
+        // displays description canvas
+        public void DisplayCanvas(Item item, bool isLog, bool isQSource)
         {   
             if(isLog)
                 _childTransform.anchoredPosition = new Vector2(850, -360); //localPosition = new Vector3(975, -360, transform.position.z);

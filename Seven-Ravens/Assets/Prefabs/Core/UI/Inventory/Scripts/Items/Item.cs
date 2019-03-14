@@ -30,8 +30,6 @@ namespace Rokemon {
 	public void RemoveFromInventory ()
 	{
 		ItemInventory.Instance.Remove(this);
-        Debug.Log("Removed item: " + name + " from inventory");
-
 	}
 
     }

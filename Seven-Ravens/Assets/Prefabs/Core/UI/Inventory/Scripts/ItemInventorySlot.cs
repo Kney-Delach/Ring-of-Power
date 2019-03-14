@@ -9,7 +9,7 @@ namespace Rokemon{
     // controls a single inventory slot
     public class ItemInventorySlot : MonoBehaviour
     {
-        // reference to slot icon
+        // reference to item slot icon
         [SerializeField] 
         private Image _itemIcon;
 
@@ -17,15 +17,18 @@ namespace Rokemon{
         [SerializeField]
         private CanvasGroup _removeItemButtonCanvasGroup; 
 
+        // reference to if slot is placed in quest request UI [used in description ui placement]
         [SerializeField]
         private bool _isQuest = false;
 
+        // reference to if slot is placed in quest log UI [used in description ui placement]
         [SerializeField]
         private bool _isQSource = false;
 
-        // reference to description controller instance
+        // reference to description UI controller instance
         private ItemDescriptionUIController _descriptionController; 
-        // reference to current item in inventory slot
+
+        // reference to item in slot
         private Item _item;
 
 
@@ -33,7 +36,8 @@ namespace Rokemon{
         {
             _descriptionController = ItemDescriptionUIController.Instance;
         }
-        // Add item to the slot
+
+        // add item to the slot
         public void AddItem (Item newItem)
         {
             _item = newItem;
@@ -49,7 +53,7 @@ namespace Rokemon{
             }
         }
 
-        // removes item from inventory slot
+        // remove item from slot
         public void ClearSlot ()
         {
             _item = null;
@@ -68,7 +72,6 @@ namespace Rokemon{
         // called if remove button pressed
         public void RemoveItemFromInventory ()
         {
-            //ItemInventory.Instance.Remove(_item);
             _item.RemoveFromInventory();
         }
 
@@ -82,15 +85,16 @@ namespace Rokemon{
             }
         }
 
+        // display item description on description UI
         public void DisplayItemDescription()
         {   
-            Debug.Log(_isQuest);
-            _descriptionController.EnableCanvas(_item, _isQuest, _isQSource); 
+            _descriptionController.DisplayCanvas(_item, _isQuest, _isQSource); 
         }
 
-        public void StopDisplayItemDescription()
+        // hide item description UI 
+        public void HideItemDescription()
         {
-            _descriptionController.DisableCanvas(); 
+            _descriptionController.HideCanvas(); 
         }
     }
 }

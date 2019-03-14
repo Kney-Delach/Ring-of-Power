@@ -30,9 +30,9 @@ namespace Rokemon {
         [SerializeField]
         private ItemInventorySlot[] _questContextRewardSlots;
 
-        //InventoryUIController _inventoryUiController;
-
-        private bool _active; 
+        // reference to active status of this UI
+        private bool _active = false; 
+        public bool Active {get { return _active; } }
         
         
         #region #singleton
@@ -74,13 +74,13 @@ namespace Rokemon {
         
         private void Update()
         {
-            if(Input.GetKeyDown(KeyCode.Q) && !_active)
-            {
-                DisplayQuestLog();
-            } else if(Input.GetKeyDown(KeyCode.Q) && _active)
-            {
-                HideQuestLog();
-            }
+            // if(Input.GetKeyDown(KeyCode.Q) && !_active)
+            // {
+            //     DisplayQuestLog();
+            // } else if(Input.GetKeyDown(KeyCode.Q) && _active)
+            // {
+            //     HideQuestLog();
+            // }
         }
 
         public void UpdateUI()

@@ -86,7 +86,6 @@ namespace Rokemon
             {
                 if(accepted)
                 {
-                    Debug.Log("Choice made: " + _choiceMadeIndex);
                     QuestDialogueManager.Instance.SkipNextSentence(_choiceMadeIndex);
                     _choiceReached = false;
                     NextSentence();
@@ -94,7 +93,6 @@ namespace Rokemon
                 }
                 else 
                 {
-                    Debug.Log("Quest Rejected, Exiting dialogue");
                     ExitDialogue();
                 }
             }
@@ -109,7 +107,6 @@ namespace Rokemon
 
                 if(_cPressed && _triggerNpc != null)
                 {
-                    InventoryUIController.Instance.HideInventory();
                     _isActive = true;
                     TriggerDialogue();
                     _cPressed = false;
@@ -126,10 +123,7 @@ namespace Rokemon
                         transform.gameObject.GetComponent<QuestSource>().enabled = false; 
                         transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
                         transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
-                        //transform.gameObject.SetActive(false);
-                        // TODO: Add dictionary code to not re-accept this quest
                     }
-
                     else
                     {
                         NextSentence();
@@ -138,19 +132,19 @@ namespace Rokemon
 
                 }
             
-
-
                 if(_choiceIndex != -1 && _choiceIndex == _currentIndex && _isActive && !_nextPressed && !_choiceReached)
                 {
                     ChoiceUIController.Instance.DispalyChoices(_choices);
                     _choiceReached = true;
                     _nextPressed = false;
                 }
-                    // TRIGGER CHOICES DISPALY AND WAIT FOR RESPONSE
+                
+                // TRIGGER CHOICES DISPALY AND WAIT FOR RESPONSE
                 if(Input.GetKeyDown(KeyCode.C) && !_choiceReached)
                 {
                     _cPressed = true;
                 }
+
                 if (Input.GetKeyDown(KeyCode.Space) && _isActive && !_choiceReached)
                 {
                     _nextPressed = true;
@@ -176,43 +170,6 @@ namespace Rokemon
                 _isActive = true;
                 TriggerDialogue(); 
             }
-        }
-
-        private void OnTriggerStay2D(Collider2D collision)
-        {
-            // if(collision.tag == _playerTag && _triggerNpc != null)
-            //     _triggerNpc.CanMove = false;
-
-            // if(collision.tag == _playerTag && _cPressed && _triggerNpc != null)
-            // {
-            //     InventoryUIController.Instance.HideInventory();
-            //     _isActive = true;
-            //     TriggerDialogue();
-            //     _cPressed = false;
-            // }
-
-            // if (_nextPressed && collision.tag == _playerTag && _isActive)
-            // {
-            //     if(_choiceComplete)
-            //     {
-            //         ExitDialogue();
-            //         _isActive = false; 
-            //         _triggerNpc.CanMove = true;
-            //         _isColliding = false;
-            //         transform.gameObject.GetComponent<QuestSource>().enabled = false; 
-            //         transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
-            //         transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
-            //         //transform.gameObject.SetActive(false);
-            //         // TODO: Add dictionary code to not re-accept this quest
-            //     }
-
-            //     else
-            //     {
-            //         NextSentence();
-            //        _nextPressed = false;
-            //     }
-
-            // }
         }
 
         private void OnTriggerExit2D(Collider2D collision)

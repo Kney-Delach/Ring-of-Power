@@ -68,11 +68,13 @@ namespace Rokemon
             }
         }
 
+        // stops npc from moving
         private void PauseMovement()
         {
             _canMove = !_canMove;
         }
 
+        // move npc between waypoints 
         private void MoveNpc()
         {
             // npc current position
@@ -113,6 +115,7 @@ namespace Rokemon
             }
         }
 
+        // continue to next waypoint in waypoint array
         private void NextWaypoint()
         {
             if (_looping)

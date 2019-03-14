@@ -15,7 +15,8 @@ namespace Rokemon
 
         // reference to right boundary vector
         private Vector3 _rightBound;
-
+        
+        // calculates future traversal positon
         private void Start()
         {
             _playerTransform = FindObjectOfType<PlayerController>().transform;

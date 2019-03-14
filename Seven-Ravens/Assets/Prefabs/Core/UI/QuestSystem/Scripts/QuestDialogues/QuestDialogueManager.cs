@@ -97,14 +97,14 @@ namespace Rokemon
         // skip the next sentence 
         public void SkipNextSentence(int numberOfSentences)
         {
-            Debug.Log(numberOfSentences);
             if(numberOfSentences == 0)
-                Debug.Log("Do nothing");
+            {
+                char a; // TODO: Fix this bug
+            }
             else
             {
                 StopAllCoroutines();
                 
-                Debug.Log("Skipping"+ numberOfSentences + " sentences");
                 for(int i = 0; i < numberOfSentences; i++)
                 {
                     string sentence = _sentences.Dequeue();

@@ -71,7 +71,6 @@ namespace Rokemon {
         // displays choices on buttons
         public void DispalyChoices(Choices choices)
         {
-            Debug.Log("Displaying choices");
             _choices = choices; 
             UpdateButtonText();
         }
@@ -109,7 +108,6 @@ namespace Rokemon {
         // disable choice canvas
         public void DisableCanavs()
         {
-            Debug.Log("Disabling Canvas");
             _choiceCanvas.alpha = 0; 
             _choiceCanvas.interactable = false; 
             _choiceCanvas.blocksRaycasts = false;

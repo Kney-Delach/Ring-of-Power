@@ -23,6 +23,11 @@ namespace Rokemon {
         #endregion
         // reference to whether or not the quest has been accepted
         private bool _acceptedStatus;
+
+        // reference to activity status of this UI 
+        private bool _active = false ;
+        public bool Active { get { return _active ; } }
+
         public delegate void OnRequestStatus(bool accepted);
         public OnRequestStatus onRequestChoiceMadeCallback;
 
@@ -90,13 +95,15 @@ namespace Rokemon {
         }
 
         public void HideRequestCanvas()
-        {
+        {   
+            _active = false;
             _questSourceCanvas.interactable = false;
             _questSourceCanvas.blocksRaycasts = false; 
             _questSourceCanvas.alpha = 0;
         }
         private void DisplayRequestCanvas()
-        {
+        {   
+            _active = true;
             _questSourceCanvas.interactable = true;
             _questSourceCanvas.blocksRaycasts = true; 
             _questSourceCanvas.alpha = 1;
