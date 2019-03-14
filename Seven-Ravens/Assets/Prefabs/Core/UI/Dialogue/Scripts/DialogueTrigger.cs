@@ -21,8 +21,6 @@ namespace Rokemon
 
         private bool _itemProcessed = false;
 
-        private bool _cPressed = false;
-
         private bool _isColliding = false;
 
         // reference to dialogue
@@ -30,24 +28,50 @@ namespace Rokemon
         private Dialogue _dialogue;
         public Dialogue Dialogue { get { return _dialogue ; } }
                 
-        // reference to status of player pressing next
-        private bool _nextPressed = false; 
 
         private void Update()
+        {   
+            ProcessDialogue();
+        }
+
+        private void ProcessDialogue()
         {
-            if(Input.GetKeyDown(KeyCode.C) && _isColliding)
+            if(_isColliding)
             {
-                _cPressed = true;
-            }
-            if (Input.GetKeyDown(KeyCode.Space) && _isActive)
-            {
-                _nextPressed = true;
-                if(_isItem)
+                if(!_isItem)
+                { 
+                    if(_triggerNpc != null)
+                    {
+                        _triggerNpc.CanMove = false;
+                        if(Input.GetKeyDown(KeyCode.C))
+                        {
+                            _isActive = true;
+                            TriggerDialogue();
+                        }
+                    }                      
+                }
+                else if(!_itemProcessed)
                 {
-                    ExitDialogue();
-                    _nextPressed = false;
-                    _isActive = false;
-                    gameObject.SetActive(false);
+                    _isActive = true;
+                    TriggerDialogue(); 
+                    _itemProcessed = true;
+                }
+                
+                if(_isActive)
+                {
+                    if(Input.GetKeyDown(KeyCode.Space))
+                    {
+                        if(_isItem)
+                        {
+                            ExitDialogue();
+                            _isActive = false;
+                            gameObject.SetActive(false);
+                        }
+                        else
+                        {
+                            NextSentence();
+                        }
+                    }
                 }
             }
         }
@@ -55,38 +79,8 @@ namespace Rokemon
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if(collision.tag == _playerTag)
+            {
                 _isColliding = true;
-
-            // if item, set active
-            if(_isItem && collision.tag == _playerTag && !_itemProcessed)
-            {
-                // hide inventory
-                InventoryUIController.Instance.HideInventory();
-                _isActive = true;
-                TriggerDialogue(); 
-                _itemProcessed = true;
-            }
-        }
-
-        private void OnTriggerStay2D(Collider2D collision)
-        {
-            if(!_isItem)
-            {
-                if(collision.tag == _playerTag && _triggerNpc != null)
-                    _triggerNpc.CanMove = false;
-                if(collision.tag == _playerTag && _cPressed && _triggerNpc != null)
-                {   
-                    InventoryUIController.Instance.HideInventory();
-                    _isActive = true;
-                    TriggerDialogue();
-                    _cPressed = false;
-                }
-            }
-
-            if (_nextPressed && collision.tag == _playerTag && _isActive)
-            {
-                NextSentence();
-                _nextPressed = false;
             }
         }
 

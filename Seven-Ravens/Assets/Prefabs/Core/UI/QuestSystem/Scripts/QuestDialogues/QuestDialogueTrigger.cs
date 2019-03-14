@@ -57,12 +57,84 @@ namespace Rokemon
             ChoiceUIController.Instance.onChoiceMadeCallback += EvaluateChoice;
         }
 
+        void Update()
+        {
+            ProcessDialogue();
+        }
+
+        // performs the logic for processing the quest dialogue 
+        private void ProcessDialogue()
+        {
+            if(_isColliding)
+            {
+                if(!_choiceReached)
+                {
+                    if(!_triggerNpc != null)
+                    {
+                        _triggerNpc.CanMove = false;
+
+                        if(Input.GetKeyDown(KeyCode.C))
+                        {
+                            //_cPressed = true; 
+                            _isActive = true;
+                            TriggerDialogue();
+                        } 
+
+                        if(_isActive)
+                        {
+                            if(Input.GetKeyDown(KeyCode.Space))
+                            {
+                                // if item, exit dialogue here
+                                if(_isItem) 
+                                {
+                                    ExitDialogue();
+                                    _isActive = false;
+                                    gameObject.SetActive(false);
+                                }
+                                else 
+                                {
+                                    _nextPressed = true;
+                                }
+                            }
+
+                            if(_nextPressed)
+                            {
+                                if(_choiceComplete)
+                                {
+                                    ExitDialogue();
+                                    _isActive = false; 
+                                    _triggerNpc.CanMove = true;
+                                    _isColliding = false;
+                                    transform.gameObject.GetComponent<QuestSource>().enabled = false; 
+                                    transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
+                                    transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
+                                }
+                                else
+                                {
+                                    NextSentence();
+                                    _nextPressed = false;
+                                }
+                            }
+                            else 
+                            {
+                                if(_choiceIndex != -1 && _choiceIndex == _currentIndex)
+                                {
+                                    ChoiceUIController.Instance.DispalyChoices(_choices);
+                                    _choiceReached = true;
+                                }
+                            }   
+                        }
+                    }            
+                }
+            }
+        }
+
         private void EvaluateChoice(int choiceMadeIndex)
         {               
             if(_isActive)
-            {
+            {   
+                // for some reason I index the buttons 1,2,3.... so this is necessary :shrug:
                 _choiceMadeIndex = choiceMadeIndex-1;
-                Debug.Log("Choice made A: " + _choiceMadeIndex);
                 bool questExists = _questSource.OnActivated(_choiceMadeIndex);
                 if(!questExists)
                 {   
@@ -70,13 +142,10 @@ namespace Rokemon
                     QuestDialogueManager.Instance.SkipNextSentence(_choiceMadeIndex);
                     _choiceReached = false;
                     NextSentence();
-                    Debug.Log("No Quest for selected choice, exiting");
+                    
+                    // TODO: Do something with this
+                    // no quest for choice, continue with dialogue - 
                 }
-
-                // buttons indexed 1,2,3 - so -1 necessary
-                //DialogueManager.Instance.SkipNextSentence(choiceIndex-1);
-                //_choiceReached = false;
-                //NextSentence();
             }
         }
 
@@ -84,77 +153,16 @@ namespace Rokemon
         {
             if(_isActive)
             {
+                _choiceReached = false; // should be true?
                 if(accepted)
                 {
                     QuestDialogueManager.Instance.SkipNextSentence(_choiceMadeIndex);
-                    _choiceReached = false;
                     NextSentence();
                     _choiceComplete = true;
                 }
                 else 
                 {
                     ExitDialogue();
-                }
-            }
-
-        }
-        void Update()
-        {
-            if(_isColliding)
-            {
-                if(_triggerNpc != null)
-                    _triggerNpc.CanMove = false;
-
-                if(_cPressed && _triggerNpc != null)
-                {
-                    _isActive = true;
-                    TriggerDialogue();
-                    _cPressed = false;
-                }
-
-                if (_nextPressed && _isActive)
-                {
-                    if(_choiceComplete)
-                    {
-                        ExitDialogue();
-                        _isActive = false; 
-                        _triggerNpc.CanMove = true;
-                        _isColliding = false;
-                        transform.gameObject.GetComponent<QuestSource>().enabled = false; 
-                        transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
-                        transform.gameObject.GetComponent<DialogueTrigger>().enabled = true;
-                    }
-                    else
-                    {
-                        NextSentence();
-                        _nextPressed = false;
-                    }
-
-                }
-            
-                if(_choiceIndex != -1 && _choiceIndex == _currentIndex && _isActive && !_nextPressed && !_choiceReached)
-                {
-                    ChoiceUIController.Instance.DispalyChoices(_choices);
-                    _choiceReached = true;
-                    _nextPressed = false;
-                }
-                
-                // TRIGGER CHOICES DISPALY AND WAIT FOR RESPONSE
-                if(Input.GetKeyDown(KeyCode.C) && !_choiceReached)
-                {
-                    _cPressed = true;
-                }
-
-                if (Input.GetKeyDown(KeyCode.Space) && _isActive && !_choiceReached)
-                {
-                    _nextPressed = true;
-                    if(_isItem)
-                    {
-                        ExitDialogue();
-                        _nextPressed = false;
-                        _isActive = false;
-                        gameObject.SetActive(false);
-                    }
                 }
             }
         }
@@ -187,7 +195,6 @@ namespace Rokemon
         // function riggering dialogue
         private void TriggerDialogue()
         {
-            //_questSource.OnActivated();
             QuestDialogueManager.Instance.StartDialogue(_dialogue);
             if(_triggerNpc != null)
                 _triggerNpc.CanMove = false;
