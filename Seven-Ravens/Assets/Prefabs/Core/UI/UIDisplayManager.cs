@@ -7,7 +7,7 @@ namespace Rokemon {
     {
         InventoryUIController _inventoryUI; 
         //QuestRequestUIController _questReqUI;
-        
+        EventDialogueManager _eventDialogueManager; 
         QuestDialogueManager _questDialogueManager;
         DialogueManager _dialogueManager; 
         QuestInventoryUIController _questLogUI;
@@ -41,16 +41,15 @@ namespace Rokemon {
 
         private void Start()
         {
+            _eventDialogueManager = EventDialogueManager.Instance;
             _inventoryUI = InventoryUIController.Instance; 
-            // _questReqUI = QuestRequestUIController.Instance;
             _questLogUI = QuestInventoryUIController.Instance;
             _questDialogueManager = QuestDialogueManager.Instance;
             _dialogueManager = DialogueManager.Instance; 
-
         }
         private void Update()
         {
-            if(!_questDialogueManager.DialogueExited || !_dialogueManager.DialogueExited)   // TODO: Replace this stupid naming convention
+            if(!_questDialogueManager.DialogueExited || _eventDialogueManager.Active || !_dialogueManager.DialogueExited)   // TODO: Replace this stupid naming convention
             {
                 _inventoryUI.HideInventory();
                 _questLogUI.HideQuestLog();

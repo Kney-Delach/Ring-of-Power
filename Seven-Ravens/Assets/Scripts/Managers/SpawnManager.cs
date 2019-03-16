@@ -11,6 +11,8 @@ namespace Rokemon
         [SerializeField]
         private GameObject _playerPrefab;
 
+        private bool _new = false;
+
         // reference to instance
         private static SpawnManager _instance = null; 
         public static SpawnManager Instance { get { return _instance ; } }
@@ -21,6 +23,15 @@ namespace Rokemon
                 Destroy(gameObject);
             else
                 _instance = this; 
+            
+             if (PlayerController.Instance == null)
+            {
+                _new = true;
+                GameObject dynamicParent = GameObject.FindGameObjectWithTag("DynamicParent");
+                GameObject spawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawn");
+
+                Instantiate(_playerPrefab, spawnPoint.transform.position, Quaternion.identity, dynamicParent.transform);
+            }
         }
 
         // remove instance if destroyed
@@ -34,12 +45,9 @@ namespace Rokemon
 
         private void Start()
         {
-            if (PlayerController.Instance == null)
+            if (_new)
             {
-                GameObject dynamicParent = GameObject.FindGameObjectWithTag("DynamicParent");
-                GameObject spawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawn");
-
-                Instantiate(_playerPrefab, spawnPoint.transform.position, Quaternion.identity, dynamicParent.transform);
+                // do nothing
             }
             else if(PlayerInformationController.Instance != null && PlayerInformationController.Instance.CurrentZoneName == "MainMenu")
             {

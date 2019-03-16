@@ -52,25 +52,45 @@ namespace Rokemon
         // reversal status of npc movement between waypoints
         private bool _isReversing = false;
 
+        // reference to event completion status (used to start npc movement)
+        [SerializeField]
+        private bool _eventComplete = false; 
+        public bool EventComplete { get { return _eventComplete ; } set { _eventComplete = value ; } }
+
         private void Start()
         {
             if (_waypoints.Length > 0)
                 _currentWaypoint = _waypoints[0];
+
+            _rigidbody.velocity = Vector2.zero;
+            _animator.SetFloat("MoveX", _rigidbody.velocity.x);
+            _animator.SetFloat("MoveY", _rigidbody.velocity.y);
+                
         }
 
-        private void Update()
+        private void UpdateNPC()
         {
             if (_currentWaypoint != null && _canMove)
             {   
                 MoveNpc();
             }
             else
-            {
-                
-                _rigidbody.velocity = Vector2.zero;
-                _animator.SetFloat("MoveX", _rigidbody.velocity.x);
-                _animator.SetFloat("MoveY", _rigidbody.velocity.y);
+            {                    
+                    _rigidbody.velocity = Vector2.zero;
+                    _animator.SetFloat("MoveX", _rigidbody.velocity.x);
+                    _animator.SetFloat("MoveY", _rigidbody.velocity.y);
+                    if(_eventComplete)
+                        _eventComplete = false;
             }
+        }
+
+        private void Update()
+        {
+            if(_eventComplete)
+            {
+                UpdateNPC();
+            }
+
         }
 
         // stops npc from moving

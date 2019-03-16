@@ -6,7 +6,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: NPC_Mom
+  m_Name: NPC_Wizard
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: MoveX
@@ -55,7 +55,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: a98cd0817934aa74d8ab86fd7c199cae, type: 2}
+    m_Motion: {fileID: 7400000, guid: 1222905fd75f5c8469604e411bf3786d, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -63,7 +63,7 @@ BlendTree:
     m_DirectBlendParameter: MoveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: eedde37b924ea8040857d05c2bf7aeec, type: 2}
+    m_Motion: {fileID: 7400000, guid: 4c709b59a5bca524dbe4bc9ab37c2cfe, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -71,7 +71,7 @@ BlendTree:
     m_DirectBlendParameter: MoveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: fb0c3ed6c1cc8de40890f97ab580e84f, type: 2}
+    m_Motion: {fileID: 7400000, guid: 597413aa90ce9ea40ad1cdd732cff7de, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -79,7 +79,7 @@ BlendTree:
     m_DirectBlendParameter: MoveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: e909fb6a49756b742a464a2fe97dd22f, type: 2}
+    m_Motion: {fileID: 7400000, guid: 190c2f8aae1ac0045a9d2d0f52c9e9d2, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -102,7 +102,7 @@ BlendTree:
   m_Name: Blend Tree
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: d703d9ad682ddf24190e0d396b2cf0d1, type: 2}
+    m_Motion: {fileID: 7400000, guid: 593408ee4789815498f97d506996868b, type: 2}
     m_Threshold: 0
     m_Position: {x: 0, y: -1}
     m_TimeScale: 1
@@ -110,7 +110,7 @@ BlendTree:
     m_DirectBlendParameter: MoveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 98e166c60d39b164385e29483534d573, type: 2}
+    m_Motion: {fileID: 7400000, guid: cdf2703c8f18f35478bbbb09e3fa7966, type: 2}
     m_Threshold: 0.33333334
     m_Position: {x: -1, y: 0}
     m_TimeScale: 1
@@ -118,7 +118,7 @@ BlendTree:
     m_DirectBlendParameter: MoveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 18338962b5d4c664193e21e75b23af73, type: 2}
+    m_Motion: {fileID: 7400000, guid: de1f6e5521bd6c94c8b27831def3ac1f, type: 2}
     m_Threshold: 0.6666667
     m_Position: {x: 1, y: 0}
     m_TimeScale: 1
@@ -126,7 +126,7 @@ BlendTree:
     m_DirectBlendParameter: MoveX
     m_Mirror: 0
   - serializedVersion: 2
-    m_Motion: {fileID: 7400000, guid: 6c1f6a8afd292ef4b8702f66d42ebec0, type: 2}
+    m_Motion: {fileID: 7400000, guid: 0c95c7b98a0f5e348aa87cafb076140d, type: 2}
     m_Threshold: 1
     m_Position: {x: 0, y: 1}
     m_TimeScale: 1
@@ -281,7 +281,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mom_Movement
+  m_Name: Wizard_Movement
   m_Speed: 0.2
   m_CycleOffset: 0
   m_Transitions:
@@ -308,7 +308,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Mom_Idle
+  m_Name: Wizard_Idle
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:

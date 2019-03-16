@@ -124,6 +124,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _eventComplete: 0
 --- !u!95 &7099301386393049588
 Animator:
   serializedVersion: 3
@@ -289,7 +290,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerNpc: {fileID: 7326345086891979187}
-  _isItem: 0
   _choices:
     _choicesText:
     - Sure mom, I was going down there anyway, see you later!
