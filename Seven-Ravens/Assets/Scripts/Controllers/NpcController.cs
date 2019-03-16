@@ -54,8 +54,8 @@ namespace Rokemon
 
         // reference to event completion status (used to start npc movement)
         [SerializeField]
-        private bool _eventComplete = false; 
-        public bool EventComplete { get { return _eventComplete ; } set { _eventComplete = value ; } }
+        private bool _cutscene = false; 
+        public bool Cutscene { get { return _cutscene ; } set { _cutscene = value ; } }
 
         private void Start()
         {
@@ -79,14 +79,14 @@ namespace Rokemon
                     _rigidbody.velocity = Vector2.zero;
                     _animator.SetFloat("MoveX", _rigidbody.velocity.x);
                     _animator.SetFloat("MoveY", _rigidbody.velocity.y);
-                    if(_eventComplete)
-                        _eventComplete = false;
+                    if(_cutscene)
+                        _cutscene = false;
             }
         }
 
         private void Update()
         {
-            if(_eventComplete)
+            if(_cutscene)
             {
                 UpdateNPC();
             }

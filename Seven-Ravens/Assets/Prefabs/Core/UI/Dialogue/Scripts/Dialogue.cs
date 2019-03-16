@@ -6,7 +6,17 @@ namespace Rokemon
 {
     [System.Serializable]
     public class Dialogue
-    {
+    {   
+        public string speakerTag;
+
+        public bool moveSpeaker;
+
+        public bool displayDialogue = true; 
+
+        public bool enableSpeakerVisibility;
+
+        public int[] moveSentenceIndexes;
+
         public string speakerName;
 
         [TextArea(3, 10)]

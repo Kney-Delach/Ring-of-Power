@@ -58,8 +58,8 @@ namespace Rokemon
         // starts a new dialogue 
         public void StartDialogue(Dialogue dialogue)
         {
-            if(!QuestDialogueManager.Instance.DialogueExited)
-                QuestDialogueManager.Instance.EndDialogue();
+            // if(!QuestDialogueManager.Instance.DialogueExited)
+            //     QuestDialogueManager.Instance.EndDialogue();
                 
             _dialogueExited = false;
             _dialogueGroup.alpha = 1;
