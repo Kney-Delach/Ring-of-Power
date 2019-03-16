@@ -22,10 +22,13 @@ namespace Rokemon {
 
         [SerializeField]
         private NpcController[] _cutsceneNpcs;
+        
+        private PlayerController _playerConroller; 
 
         private void Start()
         {
             _dialogueCounts = _dialogues.Length;
+            _playerConroller = FindObjectOfType<PlayerController>();
         }
 
         private void Update()
@@ -33,7 +36,10 @@ namespace Rokemon {
             if(_curDialogueIndex < _dialogueCounts)
             {
                 if(Input.GetKeyDown(KeyCode.K))
+                {
                     BeginCutscene();
+                    _playerConroller.FreezePlayer();
+                }
 
                 if(_nextDialogue)
                 {   
@@ -60,6 +66,10 @@ namespace Rokemon {
 
                     }
                 }
+            }
+            else 
+            {
+                _playerConroller.UnfreezePlayer();
             }
         }
             
