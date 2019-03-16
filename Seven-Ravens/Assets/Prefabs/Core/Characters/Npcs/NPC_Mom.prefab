@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 7099301386393049588}
   - component: {fileID: 4766083495613476354}
   - component: {fileID: 6515825264948430698}
+  - component: {fileID: 1735581434221072151}
   m_Layer: 0
   m_Name: NPC_Mom
   m_TagString: Untagged
@@ -92,7 +93,7 @@ CircleCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735581433798977659}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -123,6 +124,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  _eventComplete: 0
 --- !u!95 &7099301386393049588
 Animator:
   serializedVersion: 3
@@ -170,7 +172,7 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1735581433798977659}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -188,6 +190,32 @@ BoxCollider2D:
   m_AutoTiling: 0
   serializedVersion: 2
   m_Size: {x: 1.0625, y: 0.8629849}
+  m_EdgeRadius: 0
+--- !u!61 &1735581434221072151
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1735581433798977659}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.0625, y: 1.8125}
+    newSize: {x: 0.17, y: 0.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.0625, y: 1.8125}
   m_EdgeRadius: 0
 --- !u!1 &2729055160443311671
 GameObject:
@@ -262,11 +290,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _triggerNpc: {fileID: 7326345086891979187}
-  _isItem: 0
   _choices:
     _choicesText:
     - Sure mom, I was going down there anyway, see you later!
-    - I hate going to that market, its such a loud place, can't you just do it?
+    - I hate going to that market, it's such a loud place, can't you just do it?
   _choiceIndex: 1
   _questSource: {fileID: 8726404859877337287}
   _dialogue:
@@ -297,7 +324,19 @@ MonoBehaviour:
     questDescription: The description of moms first quest
     questRewards:
     - {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417, type: 2}
-  _questDialogueTrigger: {fileID: 0}
+    questGoal:
+      collectionGoalComplete: 0
+      collectionGoal: 0
+      collectionItem: 
+      collectionAmount: 0
+      collectedAmount: 0
+      findNpcGoalComplete: 0
+      findNpcGoal: 1
+      npcTag: Juniper
+      battleGoalComplete: 0
+      battleGoal: 0
+      battleTag: 
+  _questDialogueTrigger: {fileID: 2778928083967667256}
 --- !u!114 &1805957030037437636
 MonoBehaviour:
   m_ObjectHideFlags: 0

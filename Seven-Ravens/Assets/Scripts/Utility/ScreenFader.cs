@@ -43,7 +43,6 @@ public class ScreenFader : MonoBehaviour
     // changes the alpha of graphics to target value over duration
     private void Fade(float targetAlpha, float duration)
     {
-        //Debug.Log("Fading");
         foreach (MaskableGraphic graphic in graphicsToFade)
         {
             if (graphic != null)

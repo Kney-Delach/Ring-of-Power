@@ -363,6 +363,24 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114143696639940468, guid: e09d9a6256241490ea36592350a099ff,
+        type: 3}
+      propertyPath: m_Text
+      value: '<size=100>The Seven Ravens</size>
+
+
+
+
+
+
+
+        PRESS SPACE TO START'
+      objectReference: {fileID: 0}
+    - target: {fileID: 224179245043563330, guid: e09d9a6256241490ea36592350a099ff,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -59
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e09d9a6256241490ea36592350a099ff, type: 3}
 --- !u!1 &1414079975

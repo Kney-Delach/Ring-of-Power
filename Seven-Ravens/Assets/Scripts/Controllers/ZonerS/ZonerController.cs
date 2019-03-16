@@ -32,7 +32,8 @@ namespace Rokemon
             if (collision.tag == _playerTag)
                 StartCoroutine(OnZonerTriggered());
         }
-
+        
+        // called when zone is triggered
         private IEnumerator OnZonerTriggered()
         {
             PlayerController.Instance.FreezePlayer();

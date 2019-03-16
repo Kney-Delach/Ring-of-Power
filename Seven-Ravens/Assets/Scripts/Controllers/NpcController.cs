@@ -14,6 +14,10 @@ namespace Rokemon
         private bool _canMove = true;
         public bool CanMove { get { return _canMove; } set { _canMove = value; } }
 
+        // reference to freeze movement due to player trigger 
+        private bool _freezeMovement = false; 
+        public bool FreezeMovement { get { return _freezeMovement ; } set { _freezeMovement = value ; } }
+
         // reference to npc controller speed
         [SerializeField]
         private float _speed = 1;
@@ -48,31 +52,54 @@ namespace Rokemon
         // reversal status of npc movement between waypoints
         private bool _isReversing = false;
 
+        // reference to event completion status (used to start npc movement)
+        [SerializeField]
+        private bool _cutscene = false; 
+        public bool Cutscene { get { return _cutscene ; } set { _cutscene = value ; } }
+
         private void Start()
         {
             if (_waypoints.Length > 0)
                 _currentWaypoint = _waypoints[0];
+
+            _rigidbody.velocity = Vector2.zero;
+            _animator.SetFloat("MoveX", _rigidbody.velocity.x);
+            _animator.SetFloat("MoveY", _rigidbody.velocity.y);
+                
+        }
+
+        private void UpdateNPC()
+        {
+            if (_currentWaypoint != null && _canMove)
+            {   
+                MoveNpc();
+            }
+            else
+            {                    
+                    _rigidbody.velocity = Vector2.zero;
+                    _animator.SetFloat("MoveX", _rigidbody.velocity.x);
+                    _animator.SetFloat("MoveY", _rigidbody.velocity.y);
+                    if(_cutscene)
+                        _cutscene = false;
+            }
         }
 
         private void Update()
         {
-            if (_currentWaypoint != null && _canMove)
+            if(_cutscene)
             {
-                MoveNpc();
+                UpdateNPC();
             }
-            else
-            {
-                _rigidbody.velocity = Vector2.zero;
-                _animator.SetFloat("MoveX", _rigidbody.velocity.x);
-                _animator.SetFloat("MoveY", _rigidbody.velocity.y);
-            }
+
         }
 
+        // stops npc from moving
         private void PauseMovement()
         {
             _canMove = !_canMove;
         }
 
+        // move npc between waypoints 
         private void MoveNpc()
         {
             // npc current position
@@ -113,6 +140,7 @@ namespace Rokemon
             }
         }
 
+        // continue to next waypoint in waypoint array
         private void NextWaypoint()
         {
             if (_looping)
