@@ -1,22 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LevelManagement; 
 
 namespace Rokemon {
     public class CutsceneDialogueManager : MonoBehaviour
     {
+        [Header("Transition FX")]  
+        // reference to transition prefab
+        [SerializeField]
+        private TransitionFader _transitionPrefab;
+
+        // if cutscene triggered automatically, set to true
+        [Header("Cutscene automation trigger")]
+        [SerializeField]
+        private bool _nextDialogue;
+
+
+        [SerializeField]
+        private float _playDelay = 0.5f;
+
         [Header("List of dialogues")]
         [SerializeField]
         private Dialogue[] _dialogues; 
 
         [SerializeField]
         private float[] _waitTimes;
-        private bool _nextDialogue;
+        
+
 
         private int _curDialogueIndex = 0;
 
         //[SerializeField]
         private int _dialogueCounts; 
+
+        private bool _complete = false;
 
         [Header("List of active npc's for this scene")]
 
@@ -24,6 +42,31 @@ namespace Rokemon {
         private NpcController[] _cutsceneNpcs;
         
         private PlayerController _playerConroller; 
+
+        #region  singleton
+        private static CutsceneDialogueManager _instance; 
+        public static CutsceneDialogueManager Instance { get { return _instance ;} }
+
+        private void Awake()
+        {
+            if (_instance != null)
+                Destroy(gameObject);
+            else
+            {
+                _instance = this;
+            }
+        }
+
+        // remove instance if destroyed
+        private void OnDestroy()
+        {
+            if (_instance == this)
+            {
+                _instance = null;
+            }
+        }
+
+        #endregion
 
         private void Start()
         {
@@ -33,13 +76,12 @@ namespace Rokemon {
 
         private void Update()
         {   
-            if(_curDialogueIndex < _dialogueCounts)
+            if(_curDialogueIndex < _dialogueCounts && !_complete)
             {
-                if(Input.GetKeyDown(KeyCode.K))
-                {
-                    BeginCutscene();
-                    _playerConroller.FreezePlayer();
-                }
+                // if(Input.GetKeyDown(KeyCode.K))
+                // {
+                //     BeginCutscene();
+                // }
 
                 if(_nextDialogue)
                 {   
@@ -67,17 +109,31 @@ namespace Rokemon {
                     }
                 }
             }
-            else 
+            else if(!_complete)
             {
-                _playerConroller.UnfreezePlayer();
+                _complete = true;
+                StartCoroutine(CutsceneCompleteRoutine());
             }
         }
             
+        // called when zone is triggered
+        private IEnumerator CutsceneCompleteRoutine()
+        {   
+            //PlayerController.Instance.FreezePlayer();
+            TransitionFader.PlayTransition(_transitionPrefab, "Home");
+            yield return new WaitForSeconds(_playDelay);
+            Destroy(_playerConroller.gameObject);
+            //PlayerInformationController.Instance.UpdateZones("Home");
+            LevelLoader.LoadNextLevel();
+            //LevelLoader.LoadLevel(_zoneSceneName);
+            PlayerController.Instance.UnfreezePlayer();
+        }
          
 
-        private void BeginCutscene()
+        public void BeginCutscene()
         {
             _nextDialogue = true;
+            _playerConroller.FreezePlayer();
         }
 
 

@@ -15,9 +15,12 @@ EditorBuildSettings:
     path: Assets/Scenes/1_MainMenu.unity
     guid: ffe51224fae6fdc4fa1f84e75f789f04
   - enabled: 1
-    path: Assets/Scenes/2_Zone-1.unity
-    guid: 4e621fa0e1bbb744dae73c0d4413c063
+    path: Assets/Scenes/2_TrainingGround.unity
+    guid: d440d5bc62a18074cbebcbed9b2f0d2e
   - enabled: 1
-    path: Assets/Scenes/3_Zone-2.unity
-    guid: 8f2bfd88bde5e604d89950734dc39c5c
+    path: Assets/Scenes/3_HomeNight.unity
+    guid: 006d71b8db3d7404fbe830ab09b97bad
+  - enabled: 1
+    path: Assets/Scenes/4_HomeDay.unity
+    guid: 9cf51da9b1239274ea96c90c6c8a86a7
   m_configObjects: {}

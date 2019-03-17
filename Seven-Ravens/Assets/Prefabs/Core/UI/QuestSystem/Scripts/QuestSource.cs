@@ -4,9 +4,16 @@ using UnityEngine;
 
 namespace Rokemon {
 
+     public enum QuestExists {
+        Yes, 
+        No, 
+        NotAQuest
+    }
+
     [RequireComponent(typeof(QuestDialogueTrigger))]
     public class QuestSource : MonoBehaviour
     {
+
         #region ID REGISTRATION
         // reference to quest source ID counter 
         private static int _itemIdCounter = 0;
@@ -68,13 +75,13 @@ namespace Rokemon {
             }
         }
 
-        public bool OnActivated(int questIndex)
+        public QuestExists OnActivated(int questIndex)
         {
             // TODO: quest reference to quest inventory
             if(_quests == null)
             {
-                Debug.LogError("QuestSource OnActivated: Quests == null error, add a quest to this source");
-                return false;
+                Debug.Log("QuestSource OnActivated: Quests == null, add a quest to this source");
+                return QuestExists.NotAQuest;
             }
 
             if(questIndex < _quests.Length)
@@ -88,14 +95,18 @@ namespace Rokemon {
                 QuestRequestUIController.Instance.AssignQuestUIValues(_currentQuest);
 
 
-                return true;
+                return QuestExists.Yes;
+            }
+            else if(questIndex == 0 && _quests.Length == 0)
+            {
+                return QuestExists.NotAQuest;
             }
             else if(questIndex >= _quests.Length)
             {
-                return false;
+                return QuestExists.No;
             }
 
-            return false;
+            return QuestExists.No;
             
         } 
 

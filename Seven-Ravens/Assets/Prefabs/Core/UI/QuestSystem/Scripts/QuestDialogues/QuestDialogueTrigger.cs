@@ -112,11 +112,13 @@ namespace Rokemon
         private void EvaluateChoice(int choiceMadeIndex)
         {               
             if(_isActive)
-            {   
+            {    
                 // for some reason I index the buttons 1,2,3.... so this is necessary :shrug:
                 _choiceMadeIndex = choiceMadeIndex-1;
-                bool questExists = _questSource.OnActivated(_choiceMadeIndex);
-                if(!questExists)
+                QuestExists questExists = _questSource.OnActivated(_choiceMadeIndex);
+                Debug.Log(questExists);
+
+                if(questExists == QuestExists.No)
                 {   
                     // no quest for selected choice
                     QuestDialogueManager.Instance.SkipNextSentence(_choiceMadeIndex);
@@ -125,6 +127,27 @@ namespace Rokemon
                     
                     // TODO: Do something with this
                     // no quest for choice, continue with dialogue - 
+                }
+                else if(questExists == QuestExists.NotAQuest)
+                {
+                    if(CutsceneDialogueManager.Instance != null)
+                    {
+                        _isColliding = false;
+                        _triggerNpc.CanMove = true;
+                        
+                        QuestDialogueManager.Instance.EndDialogue();
+                        
+                        CutsceneDialogueManager.Instance.BeginCutscene();
+                        
+                        transform.gameObject.GetComponent<QuestSource>().enabled = false; 
+                        transform.gameObject.GetComponent<Collider2D>().enabled = false;
+                        transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = false;
+                        
+
+
+                        
+
+                    }
                 }
             }
         }
@@ -158,7 +181,7 @@ namespace Rokemon
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if (collision.tag == PLAYER_TAG)
+            if (collision.tag == PLAYER_TAG && _isColliding)
             {               
                 _isColliding = false;
                 ExitDialogue();                

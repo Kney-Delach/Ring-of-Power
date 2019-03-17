@@ -45,7 +45,7 @@ namespace Rokemon
 
         // reference to current objective waypoint
         private GameObject _currentWaypoint;
-
+        
         // reference to current waypoint index
         private int _waypointIndex;
 
