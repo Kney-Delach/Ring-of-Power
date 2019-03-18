@@ -54,7 +54,7 @@ namespace Rokemon {
                 //GetComponent<Animator>().SetTrigger("impact");
                 _rigidBody.velocity = Vector2.zero;
                 _target = null;
-                Destroy(this);
+                Destroy(gameObject);
             }
         }
     }
