@@ -35,6 +35,7 @@ namespace Rokemon {
 
         // reference to current stat value 
         private float _currentValue; 
+        //public float CurrentValue { get { return _currentValue ; }}
 
         private void Start()
         {   
@@ -61,7 +62,7 @@ namespace Rokemon {
         private void UpdateUI()
         {
             _currentFill = _currentValue / _maxValue;
-            _displayText.text = _currentValue + " / " + _maxValue; 
+            _displayText.text = _currentValue.ToString("f0") + " / " + _maxValue; 
         }
 
         // add an amount to stat value
@@ -102,6 +103,14 @@ namespace Rokemon {
             }
 
             UpdateUI();
+        }
+
+        public bool CompareMaximum()
+        {
+            if(_currentValue < _maxValue)
+                return true; 
+            else 
+                return false;
         }
     }
 }

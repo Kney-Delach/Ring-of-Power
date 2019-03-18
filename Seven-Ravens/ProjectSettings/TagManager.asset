@@ -29,6 +29,7 @@ TagManager:
   - Mana
   - HealthText
   - ManaText
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -38,7 +39,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Targetable
   - 
   - 
   - 

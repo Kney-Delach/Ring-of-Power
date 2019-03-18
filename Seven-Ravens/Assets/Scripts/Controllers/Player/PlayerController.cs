@@ -5,8 +5,8 @@ using UnityEngine;
 namespace Rokemon
 {
     public class PlayerController : MonoBehaviour
-    {
-        #region STATISTIC VARIABLES
+    {   
+        #region STATS VARIABLES
 
         [Header("Player Stats")]
         // refernece to player health stat
@@ -16,6 +16,19 @@ namespace Rokemon
         [SerializeField] 
         private Stats _mana; 
         
+        #endregion
+
+        #region ABILITIES VARIABLES
+
+        private Transform _currentTarget; 
+
+        // reference to the player's ability  database
+        private static Dictionary<string, Ability> _abilitiesDatabase;
+        
+        [Header("Player Abilities")]
+        [SerializeField]
+        private Ability[] _abilities; 
+
         #endregion
 
         #region MOVEMENT VARIABLES
@@ -57,6 +70,17 @@ namespace Rokemon
                 Destroy(gameObject);
             else
                 _instance = this;
+            
+        
+            if(_abilitiesDatabase == null)
+            {
+                _abilitiesDatabase = new Dictionary<string, Ability>();
+                foreach(Ability abil in _abilities)
+                    _abilitiesDatabase.Add(abil.name, abil);
+            }
+
+            
+        
         }
 
         // destroy instance on destroy
@@ -73,6 +97,7 @@ namespace Rokemon
         {
            ProcessMovement();
            ProcessStats();
+           ProcessAbilities();
         }
 
         #region MOVEMENT 
@@ -122,13 +147,95 @@ namespace Rokemon
         #endregion 
 
         #region ABILITIES
+        
+        private void ProcessAbilities()
+        {
+            if(Input.GetKeyDown(KeyCode.E))
+            {   
+                CastSpell("Firebolt");
+            }
+            if(Input.GetKeyDown(KeyCode.R))
+            {
+                Debug.Log("Pressed Key: R");
+            }
+            if(Input.GetKeyDown(KeyCode.T))
+            {
+                Debug.Log("Pressed Key: T");
+            }
+            if(Input.GetKeyDown(KeyCode.F))
+            {
+                Debug.Log("Pressed Key: F");
+            }
+            if(Input.GetKeyDown(KeyCode.G))
+            {
+                Debug.Log("Pressed Key: G");
+            }
+            if(Input.GetKeyDown(KeyCode.Z))
+            {
+                Debug.Log("Pressed Key: Z");
+            }
+            if(Input.GetKeyDown(KeyCode.X))
+            {
+                Debug.Log("Pressed Key: X");
+            }
+            if(Input.GetKeyDown(KeyCode.C))
+            {
+                Debug.Log("Pressed Key: C");
+            }
+        }
+        public void CastSpell(string spellName)
+        {
+            switch (spellName)
+            {
+                case "Firebolt":
+                if(_abilitiesDatabase[spellName]._active)
+                    Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
+                    
+                    Debug.Log("Casting Spell: " + spellName);
+                    break;
+                case "Invisibility":
+                if(_abilitiesDatabase[spellName]._active)
+                    Debug.Log("Casting Spell: " + spellName);
+                    break;
+                case "Haste":
+                if(_abilitiesDatabase[spellName]._active)
+                    Debug.Log("Casting Spell: " + spellName);
+                    break;
+                case "ProtectiveBubble":
+                if(_abilitiesDatabase[spellName]._active)
+                    Debug.Log("Casting Spell: " + spellName);
+                    break;
+                case "RemoveRoots":
+                if(_abilitiesDatabase[spellName]._active)
+                    Debug.Log("Casting Spell: " + spellName);
+                    break;
+                case "WaterFreeze":
+                if(_abilitiesDatabase[spellName]._active)
+                    Debug.Log("Casting Spell: " + spellName);
+                    break;
+                case "Polymorph":
+                if(_abilitiesDatabase[spellName]._active)
+                    Debug.Log("Casting Spell: " + spellName);
+                    break;
+                case "Heal":
+                if(_abilitiesDatabase[spellName]._active)
+                    Debug.Log("Casting Spell: " + spellName);
+                    break;
+                default:
+                    break;
+            }
+        }
 
         #endregion 
 
         #region STATS
 
         private void ProcessStats()
-        {
+        {   
+            if(_mana.CompareMaximum())
+            {
+                _mana.AddValue(0.15f);
+            }
             if(Input.GetKeyDown(KeyCode.M))
             {
                 _health.ReduceValue(10f);
@@ -137,6 +244,11 @@ namespace Rokemon
             if(Input.GetKeyDown(KeyCode.N))
             {
                 _mana.ReduceValue(10f);
+            }
+
+            if(Input.GetKeyDown(KeyCode.L))
+            {
+                _mana.AddValue(1f);
             }
         }
         #endregion

@@ -11,7 +11,7 @@ namespace Rokemon
         [SerializeField]
         private GameObject _playerPrefab;
 
-        private bool _new = false;
+        private static bool _new = false;
 
         // reference to instance
         private static SpawnManager _instance = null; 
@@ -24,13 +24,15 @@ namespace Rokemon
             else
                 _instance = this; 
             
-             if (PlayerController.Instance == null)
+            if (PlayerController.Instance != null && !_new)
             {
                 _new = true;
-                GameObject dynamicParent = GameObject.FindGameObjectWithTag("DynamicParent");
+                //GameObject dynamicParent = GameObject.FindGameObjectWithTag("DynamicParent");
                 GameObject spawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawn");
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-                Instantiate(_playerPrefab, spawnPoint.transform.position, Quaternion.identity, dynamicParent.transform);
+                player.transform.position = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
+                //Instantiate(_playerPrefab, spawnPoint.transform.position, Quaternion.identity, dynamicParent.transform);
             }
         }
 

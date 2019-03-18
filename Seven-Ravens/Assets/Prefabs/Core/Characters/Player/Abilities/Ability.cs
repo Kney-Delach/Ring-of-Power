@@ -4,18 +4,27 @@ using UnityEngine;
 
 namespace Rokemon {
 
-    public class Ability : MonoBehaviour
+    [CreateAssetMenu(fileName = "New Item", menuName = "Abilities/Spell")]
+    public class Ability : ScriptableObject
     {
+        public bool _active = true;
+        public string _name = "Ability Name"; 
 
-        [SerializeField]
-        private string _name = "Ability Name"; 
+        //public Sprite _sprite; 
 
-        [SerializeField]
-        private Sprite _sprite; 
+        public string _description = "Description of ability goes here"; 
 
-        [SerializeField]
-        private string _description = "Description of ability goes here"; 
+        public int _damage =  0; 
 
+        public float _speed = 0; 
+
+        public float _reloadTime = 1; 
+
+        public float _castTime = 0; 
+
+        public Color _castBarColor; 
+
+        public GameObject _prefab;
     }
 
 }
