@@ -6,6 +6,20 @@ namespace Rokemon
 {
     public class PlayerController : MonoBehaviour
     {
+        #region STATISTIC VARIABLES
+
+        [Header("Player Stats")]
+        // refernece to player health stat
+        [SerializeField]
+        private Stats _health;
+        // reference to player mana stat
+        [SerializeField] 
+        private Stats _mana; 
+        
+        #endregion
+
+        #region MOVEMENT VARIABLES
+        [Header("Movement Variables")]
         // reference to player controller rigidbody
         [SerializeField]
         private Rigidbody2D _rigidbody;
@@ -19,10 +33,6 @@ namespace Rokemon
         [SerializeField]
         private Animator _animator;
 
-        // this controller's instance 
-        private static PlayerController _instance;
-        public static PlayerController Instance { get { return _instance; } }
-
         // reference to movement capability status 
         private bool _canMove = true;
         public bool CanMove { get { return _canMove ; } set { _canMove = value ; } } 
@@ -32,6 +42,13 @@ namespace Rokemon
 
         // reference to right bound limits
         private Vector3 _rightBoundary;
+
+        #endregion
+
+        #region SINGELTON
+        // this controller's instance 
+        private static PlayerController _instance;
+        public static PlayerController Instance { get { return _instance; } }
 
         // initialize instance
         void Awake()
@@ -49,8 +66,18 @@ namespace Rokemon
                 _instance = null;
         }
 
+        #endregion
+
         // move player within bound limts
         void Update()
+        {
+           ProcessMovement();
+           ProcessStats();
+        }
+
+        #region MOVEMENT 
+        // process characters movement 
+        private void ProcessMovement()
         {
             if (_canMove)
                 _rigidbody.velocity = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical")) * _speed;
@@ -70,7 +97,7 @@ namespace Rokemon
             }
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, _leftBoundary.x, _rightBoundary.x), Mathf.Clamp(transform.position.y, _leftBoundary.y, _rightBoundary.y), transform.position.z);
         }
-
+        
         // set background map bounds of current level, stops player character from walking out of bounds
         public void SetBounds(Vector3 botLeft, Vector3 topRight)
         {
@@ -78,16 +105,40 @@ namespace Rokemon
             _rightBoundary = topRight + new Vector3(-.5f, -1f, 0f);
         }
 
+        // freeze character movement
         public void FreezePlayer()
         {
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeAll;
             _canMove = false; 
         }
 
+        // unfreeze character movement 
         public void UnfreezePlayer()
         {
             _rigidbody.constraints = RigidbodyConstraints2D.FreezeRotation;
             _canMove = true;
         }
+
+        #endregion 
+
+        #region ABILITIES
+
+        #endregion 
+
+        #region STATS
+
+        private void ProcessStats()
+        {
+            if(Input.GetKeyDown(KeyCode.M))
+            {
+                _health.ReduceValue(10f);
+            }
+
+            if(Input.GetKeyDown(KeyCode.N))
+            {
+                _mana.ReduceValue(10f);
+            }
+        }
+        #endregion
     }
 }
