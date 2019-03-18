@@ -42,10 +42,12 @@ namespace Rokemon
         // reference to waypoint array
         [SerializeField]
         private GameObject[] _waypoints;
+        public GameObject[] Waypoints {get { return _waypoints ; } }
 
         // reference to current objective waypoint
         private GameObject _currentWaypoint;
-        
+        public GameObject CurrentWaypoint {get { return _currentWaypoint ; } }
+
         // reference to current waypoint index
         private int _waypointIndex;
 

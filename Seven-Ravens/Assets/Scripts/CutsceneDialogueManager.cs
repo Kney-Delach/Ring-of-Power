@@ -26,8 +26,6 @@ namespace Rokemon {
 
         [SerializeField]
         private float[] _waitTimes;
-        
-
 
         private int _curDialogueIndex = 0;
 
@@ -76,6 +74,12 @@ namespace Rokemon {
 
         private void Update()
         {   
+            ProcessCutscene();
+        }
+
+
+        private void ProcessCutscene()
+        {
             if(_curDialogueIndex < _dialogueCounts && !_complete)
             {
                 // if(Input.GetKeyDown(KeyCode.K))
@@ -108,14 +112,16 @@ namespace Rokemon {
 
                     }
                 }
+
+                //SkipScene(_curDialogueIndex);
             }
             else if(!_complete)
             {
                 _complete = true;
                 StartCoroutine(CutsceneCompleteRoutine());
             }
-        }
-            
+        }    
+
         // called when zone is triggered
         private IEnumerator CutsceneCompleteRoutine()
         {   
@@ -133,7 +139,8 @@ namespace Rokemon {
         public void BeginCutscene()
         {
             _nextDialogue = true;
-            _playerConroller.FreezePlayer();
+            if(_playerConroller != null)
+                _playerConroller.FreezePlayer();
         }
 
 
@@ -150,7 +157,25 @@ namespace Rokemon {
             _curDialogueIndex++;
             _nextDialogue = true;
            
+        
+        }
 
-        }    
+        // private void SkipScene(int index)
+        // {
+        //     if(Input.GetKeyDown(KeyCode.Space))
+        //     {
+        //         StopAllCoroutines();
+        //         foreach(NpcController npcCont in _cutsceneNpcs)
+        //         {
+        //             if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].moveSpeaker)
+        //             {
+        //                 npcCont.transform.position = new Vector3(npcCont.transform.position.x, npcCont.transform.position.y, npcCont.transform.position.z);
+        //             }
+        //         }
+        //         _curDialogueIndex++;
+        //         _nextDialogue = true;
+        //     }
+        // } 
+           
     }   
 }
