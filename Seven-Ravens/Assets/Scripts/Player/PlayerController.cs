@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 namespace Rokemon
 {
@@ -74,7 +75,7 @@ namespace Rokemon
         public static PlayerController Instance { get { return _instance; } }
 
         // initialize instance
-        void Awake()
+        private void Awake()
         {
             if (_instance != null)
                 Destroy(gameObject);
@@ -87,7 +88,7 @@ namespace Rokemon
                 _abilitiesDatabase = new Dictionary<string, Ability>();
                 foreach(Ability abil in _abilities)
                     _abilitiesDatabase.Add(abil.name, abil);
-            }                
+            }     
         }
 
         // destroy instance on destroy
@@ -102,12 +103,13 @@ namespace Rokemon
         // move player within bound limts
         void Update()
         {  
-            if(DialogueManager.Instance.DialogueExited && QuestDialogueManager.Instance.DialogueExited && !CutsceneDialogueManager.Instance.Active)
+            //&& !CutsceneDialogueManager.Instance.Active
+            if(!ComManager.Instance.Active)
             {
                 ProcessTargetting();
+                ProcessMovement();
                 ProcessAbilities();
             }
-            ProcessMovement();
             ProcessStats();
         }
 
@@ -168,10 +170,17 @@ namespace Rokemon
         }
         
         // set background map bounds of current level, stops player character from walking out of bounds
-        public void SetBounds(Vector3 botLeft, Vector3 topRight)
+        public void SetBounds()
         {
-            _leftBoundary = botLeft + new Vector3(.5f, 1f, 0f);
-            _rightBoundary = topRight + new Vector3(-.5f, -1f, 0f);
+            float orthographicHeight = Camera.main.orthographicSize;
+
+            float orthographicWidth = orthographicHeight * Camera.main.aspect;
+
+            Tilemap backgroundTilemap = GameObject.FindGameObjectWithTag("BackGround").GetComponent<Tilemap>();
+            backgroundTilemap.CompressBounds();
+
+            _leftBoundary = backgroundTilemap.localBounds.min + new Vector3(.5f, 1f, 0f);
+            _rightBoundary = backgroundTilemap.localBounds.max + new Vector3(-.5f, -1f, 0f);
         }
 
         // freeze character movement

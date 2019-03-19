@@ -4,7 +4,7 @@ using UnityEngine;
 using LevelManagement; 
 
 namespace Rokemon {
-    public class CutsceneDialogueManager : MonoBehaviour
+    public class CutsceneManager : MonoBehaviour
     {
         [Header("Transition FX")]  
         // reference to transition prefab
@@ -45,8 +45,8 @@ namespace Rokemon {
         private PlayerController _playerConroller; 
 
         #region  singleton
-        private static CutsceneDialogueManager _instance; 
-        public static CutsceneDialogueManager Instance { get { return _instance ;} }
+        private static CutsceneManager _instance; 
+        public static CutsceneManager Instance { get { return _instance ;} }
 
         private void Awake()
         {

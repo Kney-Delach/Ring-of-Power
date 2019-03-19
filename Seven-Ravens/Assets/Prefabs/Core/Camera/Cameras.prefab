@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 7421903738011418204}
   - component: {fileID: 7421903738011418194}
   - component: {fileID: 7421903738011418195}
-  - component: {fileID: 3216582432738446322}
+  - component: {fileID: 648670880}
   m_Layer: 0
   m_Name: MainCamera
   m_TagString: MainCamera
@@ -58,7 +58,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7421903738011418205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: -0.21, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7421903736141494794}
@@ -114,7 +114,7 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7421903738011418205}
   m_Enabled: 1
---- !u!114 &3216582432738446322
+--- !u!114 &648670880
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -123,6 +123,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7421903738011418205}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c7bb7130bfdae448a6ed6f9b4fb3bf5, type: 3}
+  m_Script: {fileID: 11500000, guid: 33342ff779aa34442b1a5116de259c78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

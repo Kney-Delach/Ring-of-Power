@@ -75,7 +75,7 @@ namespace Rokemon
                 else 
                     QuestDialogueManager.Instance.DisableContinue();
 
-                _triggerNpc.CanMove = false;  
+                //_triggerNpc.CanMove = false;  
                 if(!_choiceReached)
                 {
                     if(Input.GetKeyDown(KeyCode.C))
@@ -135,14 +135,14 @@ namespace Rokemon
                 }
                 else if(questExists == QuestExists.NotAQuest)
                 {
-                    if(CutsceneDialogueManager.Instance != null)
+                    if(CutsceneManager.Instance != null)
                     {
                         _isColliding = false;
                         _triggerNpc.CanMove = true;
                         
                         QuestDialogueManager.Instance.EndDialogue();
                         
-                        CutsceneDialogueManager.Instance.BeginCutscene();
+                        CutsceneManager.Instance.BeginCutscene();
                         
                         transform.gameObject.GetComponent<QuestSource>().enabled = false; 
                         transform.gameObject.GetComponent<Collider2D>().enabled = false;

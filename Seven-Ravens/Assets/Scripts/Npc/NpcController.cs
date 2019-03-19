@@ -78,11 +78,11 @@ namespace Rokemon
             }
             else
             {                    
-                    _rigidbody.velocity = Vector2.zero;
-                    _animator.SetFloat("MoveX", _rigidbody.velocity.x);
-                    _animator.SetFloat("MoveY", _rigidbody.velocity.y);
-                    if(_cutscene)
-                        _cutscene = false;
+                _rigidbody.velocity = Vector2.zero;
+                _animator.SetFloat("MoveX", _rigidbody.velocity.x);
+                _animator.SetFloat("MoveY", _rigidbody.velocity.y);
+                if(_cutscene)
+                    _cutscene = false;
             }
         }
 
