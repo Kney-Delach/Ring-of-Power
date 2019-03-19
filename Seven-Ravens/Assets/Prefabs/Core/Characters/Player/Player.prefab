@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Health
-  _fillSpeed: 4
+  _currentFill: 1
+  _fillSpeed: 1
   _isPlayer: 1
   _maxValue: 100
 --- !u!1 &2801891913963124346
@@ -91,7 +92,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _name: Mana
-  _fillSpeed: 4
+  _currentFill: 1
+  _fillSpeed: 1
   _isPlayer: 1
   _maxValue: 100
 --- !u!1 &4686994119298673117
