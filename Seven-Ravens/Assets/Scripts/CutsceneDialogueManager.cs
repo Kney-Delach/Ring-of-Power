@@ -102,7 +102,7 @@ namespace Rokemon {
                     }
                     
                     if(_dialogues[_curDialogueIndex].displayDialogue)
-                    {
+                    {   
                         DialogueManager.Instance.StartDialogue(_dialogues[_curDialogueIndex]);
                         StartCoroutine(CutsceneWaitRoutine(true));
                     }
@@ -125,6 +125,8 @@ namespace Rokemon {
         // called when zone is triggered
         private IEnumerator CutsceneCompleteRoutine()
         {   
+            DialogueManager.Instance.EnableContinue();
+
             //PlayerController.Instance.FreezePlayer();
             TransitionFader.PlayTransition(_transitionPrefab, "Home");
             yield return new WaitForSeconds(_playDelay);
@@ -141,6 +143,8 @@ namespace Rokemon {
             _nextDialogue = true;
             if(_playerConroller != null)
                 _playerConroller.FreezePlayer();
+            
+            DialogueManager.Instance.DisableContinue(); // disable "press space to continue" dialogue text
         }
 
 

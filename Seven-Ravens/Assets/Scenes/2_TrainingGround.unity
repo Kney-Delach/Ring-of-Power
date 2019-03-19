@@ -127,12 +127,12 @@ PrefabInstance:
     - target: {fileID: 7445326623200806178, guid: 01ed9a271a7e0c2478c1fe58750cd7ca,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -17.31
+      value: -22
       objectReference: {fileID: 0}
     - target: {fileID: 7445326623200806178, guid: 01ed9a271a7e0c2478c1fe58750cd7ca,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.85
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7445326623200806178, guid: 01ed9a271a7e0c2478c1fe58750cd7ca,
         type: 3}
@@ -380,7 +380,7 @@ PrefabInstance:
     - target: {fileID: 1735581433798977636, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22999954
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1735581433798977636, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
@@ -495,7 +495,7 @@ PrefabInstance:
     - target: {fileID: 8726404859877337287, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2729055160443311671, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
@@ -505,7 +505,7 @@ PrefabInstance:
     - target: {fileID: 1735581434221072151, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
@@ -515,7 +515,7 @@ PrefabInstance:
     - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
@@ -563,10 +563,32 @@ PrefabInstance:
       propertyPath: _choiceIndex
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _dialogue.displayContinue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1805957030037437636, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805957030037437636, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _dialogue.speakerTag
+      value: MOM
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805957030037437636, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Okay sweety, now practice using your abilities in this secluded forest
+        area, the dummy won't be destroyed no matter how much damage you inflict to
+        it. Let me know when you get tired of practicing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1805957030037437636, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _isItem
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5737592585732240734, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
@@ -774,6 +796,7 @@ MonoBehaviour:
   _dialogues:
   - speakerTag: MOM
     moveSpeaker: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -782,6 +805,7 @@ MonoBehaviour:
     - Great job today sweety, you did great learning to control your spells.
   - speakerTag: MOM
     moveSpeaker: 1
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -790,6 +814,7 @@ MonoBehaviour:
     - I'm thirsty, i'm going to drink some water from the picnic booth we setup
   - speakerTag: WIZARD
     moveSpeaker: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 1
     moveSentenceIndexes: 
@@ -801,6 +826,7 @@ MonoBehaviour:
       to get them back!  '
   - speakerTag: WIZARD
     moveSpeaker: 1
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -809,6 +835,7 @@ MonoBehaviour:
     - '*Transforms into raven* KA KA KA KA KA KA *BITE* *BITE* *BITE* *BITE* *BITE*'
   - speakerTag: WIZARD
     moveSpeaker: 1
+    displayContinue: 1
     displayDialogue: 0
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -816,6 +843,7 @@ MonoBehaviour:
     sentences: []
   - speakerTag: MOM
     moveSpeaker: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -824,6 +852,7 @@ MonoBehaviour:
     - Mother F**cker, that raven just bit me!
   - speakerTag: MOM
     moveSpeaker: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -832,6 +861,7 @@ MonoBehaviour:
     - Mom! Are you okay? Why did he attack you?
   - speakerTag: MOM
     moveSpeaker: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -840,6 +870,7 @@ MonoBehaviour:
     - Yes i'm fine sweety, its just a scratch, it'll heal.
   - speakerTag: MOM
     moveSpeaker: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -849,6 +880,7 @@ MonoBehaviour:
       around it is turning black too.
   - speakerTag: MOM
     moveSpeaker: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -857,6 +889,7 @@ MonoBehaviour:
     - Maybe you're right, i'm beginning to feel very dizzy. Lets go home now.
   - speakerTag: MOM
     moveSpeaker: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -1171,17 +1204,17 @@ PrefabInstance:
     - target: {fileID: 4686994119298673105, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4686994119298673105, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4686994119298673105, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4686994119298673105, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
@@ -1191,7 +1224,7 @@ PrefabInstance:
     - target: {fileID: 4686994119298673105, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4686994119298673105, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
@@ -1281,6 +1314,16 @@ PrefabInstance:
         type: 3}
       propertyPath: orthographic size
       value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421903738011418204, guid: 72a0d65e79f76764fb73f83a417d97c2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.21
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
@@ -30879,6 +30922,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Firebolt
       objectReference: {fileID: 0}
+    - target: {fileID: 3589298519776283733, guid: 69bd7bbb53a00e841a20c2ba98cc49cd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3589298519776283731, guid: 69bd7bbb53a00e841a20c2ba98cc49cd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -30971,6 +31019,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Enemy
       objectReference: {fileID: 0}
+    - target: {fileID: 8221122689524222026, guid: 89b864e8688c3c4459f96487a55e4b5f,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8221122689524222025, guid: 89b864e8688c3c4459f96487a55e4b5f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -31053,12 +31106,12 @@ PrefabInstance:
     - target: {fileID: 7971395788974391645, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 22.87
+      value: 23.7
       objectReference: {fileID: 0}
     - target: {fileID: 7971395788974391645, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.22999954
+      value: -0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7971395788974391645, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}

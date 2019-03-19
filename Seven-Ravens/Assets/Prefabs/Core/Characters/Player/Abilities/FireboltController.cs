@@ -40,7 +40,7 @@ namespace Rokemon {
             }
             else
             {
-                _target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
+                //_target = GameObject.FindGameObjectWithTag("Enemy").GetComponent<Transform>();
 
             }
 

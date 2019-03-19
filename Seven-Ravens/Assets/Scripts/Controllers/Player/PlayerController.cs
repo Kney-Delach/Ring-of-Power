@@ -94,11 +94,42 @@ namespace Rokemon
 
         // move player within bound limts
         void Update()
-        {
-           ProcessMovement();
-           ProcessStats();
-           ProcessAbilities();
+        {  
+            ProcessTargetting();
+            ProcessMovement();
+            ProcessStats();
+            ProcessAbilities();
         }
+
+        #region TARGETTING 
+        
+        // process the clicking on targets
+        private void ProcessTargetting()
+        {
+            if (Input.GetMouseButtonDown(0))
+            {
+                //Debug.Log(LayerMask.GetMask("Clickable"));
+                
+                // raycast from the mouse position into the game world
+                RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition),Vector2.zero,Mathf.Infinity,256);
+
+                if (hit.collider != null) // if hit something
+                {
+                    if (hit.collider.tag == "Enemy") // check if we hit an enemy
+                    {
+                        _currentTarget = hit.transform;
+                    }
+                
+                }
+                else
+                {
+                    //Detargets the target
+                    _currentTarget = null;
+                }
+            }
+        }
+
+        #endregion
 
         #region MOVEMENT 
         // process characters movement 
@@ -152,7 +183,17 @@ namespace Rokemon
         {
             if(Input.GetKeyDown(KeyCode.E))
             {   
-                CastSpell("Firebolt");
+                if(_currentTarget != null)
+                {
+                     if(_currentTarget.tag == "Enemy")
+                        CastSpell("Firebolt");
+                    else 
+                        Debug.Log("PlayerController ProcessAbilities: Current target is ["+ _currentTarget.tag +"] .. target an enemy to cast fireball");
+                }
+                else 
+                {
+                    Debug.Log("PlayerController ProcessAbilities: No target, cannot cast fireball");
+                }
             }
             if(Input.GetKeyDown(KeyCode.R))
             {
@@ -185,12 +226,15 @@ namespace Rokemon
         }
         public void CastSpell(string spellName)
         {
+            GameObject ability = null; 
             switch (spellName)
             {
                 case "Firebolt":
                 if(_abilitiesDatabase[spellName]._active)
-                    Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
-                    
+                    ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
+                    if( ability != null)
+                        ability.GetComponent<FireboltController>()._target = _currentTarget;
+
                     Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "Invisibility":

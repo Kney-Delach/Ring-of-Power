@@ -69,7 +69,12 @@ namespace Rokemon
         private void ProcessDialogue()
         {
             if(_isColliding)
-            {              
+            {   
+                if(_dialogue.displayContinue)            
+                    QuestDialogueManager.Instance.EnableContinue();
+                else 
+                    QuestDialogueManager.Instance.DisableContinue();
+
                 _triggerNpc.CanMove = false;  
                 if(!_choiceReached)
                 {

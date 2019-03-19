@@ -24,16 +24,7 @@ namespace Rokemon
             else
                 _instance = this; 
             
-            if (PlayerController.Instance != null && !_new)
-            {
-                _new = true;
-                //GameObject dynamicParent = GameObject.FindGameObjectWithTag("DynamicParent");
-                GameObject spawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawn");
-                GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-                player.transform.position = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
-                //Instantiate(_playerPrefab, spawnPoint.transform.position, Quaternion.identity, dynamicParent.transform);
-            }
+            
         }
 
         // remove instance if destroyed
@@ -47,6 +38,17 @@ namespace Rokemon
 
         private void Start()
         {
+            if (PlayerController.Instance != null && !_new)
+            {
+                _new = true;
+                //GameObject dynamicParent = GameObject.FindGameObjectWithTag("DynamicParent");
+                GameObject spawnPoint = GameObject.FindGameObjectWithTag("PlayerSpawn");
+                GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+                player.transform.position = new Vector3(spawnPoint.transform.position.x, spawnPoint.transform.position.y, spawnPoint.transform.position.z);
+                //Instantiate(_playerPrefab, spawnPoint.transform.position, Quaternion.identity, dynamicParent.transform);
+            }
+            
             if (_new)
             {
                 // do nothing
