@@ -22,6 +22,8 @@ namespace Rokemon {
 
         public float _castTime = 0; 
 
+        public float _cost; 
+
         public Color _castBarColor; 
 
         public GameObject _prefab;

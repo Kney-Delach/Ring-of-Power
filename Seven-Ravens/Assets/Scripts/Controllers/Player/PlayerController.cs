@@ -237,13 +237,15 @@ namespace Rokemon
         public void CastSpell(string spellName)
         {
             GameObject ability = null; 
+
             switch (spellName)
             {
                 case "Firebolt":
-                if(_abilitiesDatabase[spellName]._active)
+                if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
                     ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
                     if( ability != null)
                     {
+                        UseMana(_abilitiesDatabase[spellName]._cost);
                         FireboltController fireboltController = ability.GetComponent<FireboltController>();
                         fireboltController._target = _currentTarget;
                         fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
@@ -282,6 +284,12 @@ namespace Rokemon
                 default:
                     break;
             }
+        }
+
+        // reduce mana value
+        private void UseMana(float amount)
+        {
+            _mana.ReduceValue(amount);
         }
 
         #endregion 

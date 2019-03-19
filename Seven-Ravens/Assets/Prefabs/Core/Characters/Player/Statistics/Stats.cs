@@ -40,6 +40,7 @@ namespace Rokemon {
 
         // reference to current stat value 
         private float _currentValue; 
+        public float CurrentValue { get { return _currentValue ; } }
         //public float CurrentValue { get { return _currentValue ; }}
 
         private void Start()
