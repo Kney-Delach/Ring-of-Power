@@ -17,6 +17,22 @@ TagManager:
   - Quest-1
   - MOM
   - WIZARD
+  - DAD
+  - BROTHER1
+  - BROTHER2
+  - BROTHER3
+  - BROTHER4
+  - BROTHER5
+  - BROTHER6
+  - BROTHER7
+  - Health
+  - Mana
+  - HealthText
+  - ManaText
+  - Enemy
+  - HealthEnemy
+  - HealthEnemyText
+  - TargetSprite
   layers:
   - Default
   - TransparentFX
@@ -26,7 +42,7 @@ TagManager:
   - UI
   - 
   - 
-  - 
+  - Clickable
   - 
   - 
   - 

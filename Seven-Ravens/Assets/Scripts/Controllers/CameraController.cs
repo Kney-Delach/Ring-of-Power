@@ -37,8 +37,8 @@ namespace Rokemon
         // updates camera position to track player movement
         void LateUpdate()
         {
-            transform.position = new Vector3(_playerTransform.position.x, _playerTransform.position.y, transform.position.z);
-            transform.position = new Vector3(Mathf.Clamp(transform.position.x, _leftBoundary.x, _rightBound.x), Mathf.Clamp(transform.position.y, _leftBoundary.y, _rightBound.y), transform.position.z);
+            //transform.position = new Vector3(_playerTransform.position.x, _playerTransform.position.y, transform.position.z);
+            //transform.position = new Vector3(Mathf.Clamp(transform.position.x, _leftBoundary.x, _rightBound.x), Mathf.Clamp(transform.position.y, _leftBoundary.y, _rightBound.y), transform.position.z);
         }
     }
 }

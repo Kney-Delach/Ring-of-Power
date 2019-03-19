@@ -23,6 +23,7 @@ namespace Rokemon
 
         private bool _isColliding = false;
 
+        
         // reference to dialogue
         [SerializeField]
         private Dialogue _dialogue;
@@ -30,7 +31,31 @@ namespace Rokemon
 
         private void Update()
         {   
-            ProcessDialogue();
+            if(_isItem && _triggerNpc != null)
+            {
+                PlayerController.Instance.FreezePlayer();
+                if(!_itemProcessed)
+                {
+                    DialogueManager.Instance.StartDialogue(_dialogue);
+                    _itemProcessed = true;
+                }
+                else 
+                {
+                    if(Input.GetKeyDown(KeyCode.Space))
+                    {
+                        ExitDialogue();
+                        PlayerController.Instance.UnfreezePlayer();
+                        
+                        transform.gameObject.GetComponent<DialogueTrigger>().enabled = false;
+                        transform.gameObject.GetComponent<QuestSource>().enabled = true; 
+                        transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = true;
+                    }
+                }
+            }
+            else 
+            {
+                ProcessDialogue();
+            }
         }
 
         private void ProcessDialogue()
@@ -64,7 +89,8 @@ namespace Rokemon
                         {
                             ExitDialogue();
                             _isActive = false;
-                            gameObject.SetActive(false);
+                            //gameObject.SetActive(false);
+
                         }
                         else
                         {
@@ -109,7 +135,7 @@ namespace Rokemon
             if(DialogueManager.Instance.DialogueExited)
             {
                 ExitDialogue();
-                InventoryUIController.Instance.HideInventory();
+                //InventoryUIController.Instance.HideInventory();
             }
         }
 
@@ -118,10 +144,16 @@ namespace Rokemon
         {
             DialogueManager.Instance.EndDialogue();
             _isActive = false;
-            if(_isItem)
-            {
+            if(_isItem && _triggerNpc == null)
+            {   
                 gameObject.SetActive(false);
-            }
+            } 
+            // else if(_isItem && _triggerNpc != null)
+            // {
+            //     transform.gameObject.GetComponent<DialogueTrigger>().enabled = false;
+            //     transform.gameObject.GetComponent<QuestSource>().enabled = true; 
+            //     transform.gameObject.GetComponent<QuestDialogueTrigger>().enabled = true;
+            // }
         }
 
     }

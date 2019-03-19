@@ -7,6 +7,7 @@ namespace Rokemon
 {
     public class QuestDialogueManager : MonoBehaviour
     {
+        [Header("UI Components")]
         // reference to dialogue name text UI object
         [SerializeField]
         private Text _nameText;
@@ -22,6 +23,10 @@ namespace Rokemon
         // reference to dialogue typing animator 
         [SerializeField]
         private CanvasGroup _dialogueGroup;
+
+        // reference to press space to continue text
+        [SerializeField]
+        private Text _continueText;
 
         // reference to queue of sentences for current dialogue 
         private Queue<string> _sentences;
@@ -131,5 +136,14 @@ namespace Rokemon
             _dialogueExited = true;
         }
 
+        public void DisableContinue()
+        {
+            _continueText.enabled = false;
+        }
+
+        public void EnableContinue()
+        {
+            _continueText.enabled = true;
+        }
     }
 }

@@ -11,6 +11,8 @@ namespace Rokemon
 
         public bool moveSpeaker;
 
+        public bool displayContinue = true;
+        
         public bool displayDialogue = true; 
 
         public bool enableSpeakerVisibility;
