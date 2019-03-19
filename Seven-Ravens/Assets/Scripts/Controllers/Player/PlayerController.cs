@@ -102,10 +102,13 @@ namespace Rokemon
         // move player within bound limts
         void Update()
         {  
-            ProcessTargetting();
+            if(DialogueManager.Instance.DialogueExited && QuestDialogueManager.Instance.DialogueExited && !CutsceneDialogueManager.Instance.Active)
+            {
+                ProcessTargetting();
+                ProcessAbilities();
+            }
             ProcessMovement();
             ProcessStats();
-            ProcessAbilities();
         }
 
         #region TARGETTING 

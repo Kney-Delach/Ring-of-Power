@@ -16,6 +16,9 @@ namespace Rokemon {
         [SerializeField]
         private bool _nextDialogue;
 
+        // reference to active status of cutscene
+        private bool _active = false;
+        public bool Active { get { return _active ; } }
 
         [SerializeField]
         private float _playDelay = 0.5f;
@@ -135,11 +138,14 @@ namespace Rokemon {
             LevelLoader.LoadNextLevel();
             //LevelLoader.LoadLevel(_zoneSceneName);
             PlayerController.Instance.UnfreezePlayer();
+            _active = false;
         }
          
 
         public void BeginCutscene()
         {
+            TargetUIController.Instance.TargetChange(null); // remove target UI's target
+            _active = true;
             _nextDialogue = true;
             if(_playerConroller != null)
                 _playerConroller.FreezePlayer();

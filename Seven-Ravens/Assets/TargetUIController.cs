@@ -68,7 +68,7 @@ namespace Rokemon {
                 _targetHealth.HandleFillBar();
         }
 
-        private void TargetChange(GameObject target)
+        public void TargetChange(GameObject target)
         {   
             if(target == null)
             {
