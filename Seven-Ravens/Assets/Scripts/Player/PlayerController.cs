@@ -107,9 +107,9 @@ namespace Rokemon
             if(!ComManager.Instance.Active)
             {
                 ProcessTargetting();
-                ProcessMovement();
                 ProcessAbilities();
             }
+            ProcessMovement();
             ProcessStats();
         }
 

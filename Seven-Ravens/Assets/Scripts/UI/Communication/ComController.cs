@@ -98,7 +98,7 @@ namespace Rokemon {
         {
             if(!_sceneStarter && collision.tag == PLAYER_TAG)
             {
-                _isCollding = true;
+                _isCollding = false;
             }
         }
 

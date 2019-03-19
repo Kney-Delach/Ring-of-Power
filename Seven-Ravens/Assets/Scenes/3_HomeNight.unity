@@ -13694,8 +13694,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 9ea6cf346e35d4847b299d7c7c1cb4e0, type: 3}
 --- !u!4 &506438437 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7710690956532546145, guid: 9ea6cf346e35d4847b299d7c7c1cb4e0,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 506438436}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &511110738 stripped
@@ -13755,11 +13754,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionPrefab: {fileID: 114970023746679392, guid: 613757411f6b548a5b3aff05cbf09ad8,
     type: 3}
-  _nextDialogue: 1
+  _playNextDialogue: 1
   _playDelay: 0.5
   _dialogues:
   - speakerTag: MOM
     moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -13768,6 +13769,8 @@ MonoBehaviour:
     - Z Z Z.....
   - speakerTag: WIZARD
     moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -13777,6 +13780,8 @@ MonoBehaviour:
       my slave, ma ma!
   - speakerTag: MOM
     moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
@@ -13787,6 +13792,7 @@ MonoBehaviour:
   - 3
   - 6
   - 4
+  _playerController: {fileID: 0}
   _cutsceneNpcs:
   - {fileID: 511110738}
   - {fileID: 2059573772}
@@ -17446,11 +17452,6 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9022891930851389541, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 2778928083967667256, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: _dialogue.sentences.Array.size
@@ -17508,6 +17509,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1805957030037437636, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9022891930851389541, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_Enabled
       value: 0
@@ -17589,11 +17595,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7421903738011418194, guid: 72a0d65e79f76764fb73f83a417d97c2,
-        type: 3}
-      propertyPath: orthographic size
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 7421903738011418204, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -17603,6 +17604,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: -4.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421903738011418194, guid: 72a0d65e79f76764fb73f83a417d97c2,
+        type: 3}
+      propertyPath: orthographic size
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
@@ -19855,8 +19861,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 01ed9a271a7e0c2478c1fe58750cd7ca, type: 3}
 --- !u!4 &1585485980 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7445326623200806178, guid: 01ed9a271a7e0c2478c1fe58750cd7ca,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 1585485979}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1669758191

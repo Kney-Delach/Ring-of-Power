@@ -6,10 +6,6 @@ namespace Rokemon {
     public class UIDisplayManager : MonoBehaviour
     {
         InventoryUIController _inventoryUI; 
-        //QuestRequestUIController _questReqUI;
-        EventDialogueManager _eventDialogueManager; 
-        QuestDialogueManager _questDialogueManager;
-        DialogueManager _dialogueManager; 
         QuestInventoryUIController _questLogUI;
 
         #region Singleton 
@@ -41,34 +37,28 @@ namespace Rokemon {
 
         private void Start()
         {
-            _eventDialogueManager = EventDialogueManager.Instance;
             _inventoryUI = InventoryUIController.Instance; 
-            _questLogUI = QuestInventoryUIController.Instance;
-            _questDialogueManager = QuestDialogueManager.Instance;
-            _dialogueManager = DialogueManager.Instance; 
+            if(QuestInventoryUIController.Instance != null)
+                _questLogUI = QuestInventoryUIController.Instance;
         }
         private void Update()
         {
-            if(!_questDialogueManager.DialogueExited || _eventDialogueManager.Active || !_dialogueManager.DialogueExited)   // TODO: Replace this stupid naming convention
-            {
-                _inventoryUI.HideInventory();
-                _questLogUI.HideQuestLog();
-            }
-            else 
+            if(!ComManager.Instance.Active) 
             {   
                 if(Input.GetKeyDown(KeyCode.I))
                 {
                     if(!_inventoryUI.Active)
                     {
                         _inventoryUI.DisplayInventory();
-                        _questLogUI.HideQuestLog();
+                        if(_questLogUI != null)
+                            _questLogUI.HideQuestLog();
                     }
                     else 
                     {                
                         _inventoryUI.HideInventory();                        
                     }
                 } 
-                else if(Input.GetKeyDown(KeyCode.Q))
+                else if(Input.GetKeyDown(KeyCode.Q) && _questLogUI != null)
                 {
                     if(!_questLogUI.Active)
                     {

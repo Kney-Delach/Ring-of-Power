@@ -77,7 +77,7 @@ namespace Rokemon {
             else if(isQSource)
                 _childTransform.anchoredPosition = new Vector2(850, -275); 
             else 
-                _childTransform.anchoredPosition = new Vector3(800, 200);
+                _childTransform.anchoredPosition = new Vector3(800, 400);
            
             _item = item;
             _descriptionText.text = _item.description; 

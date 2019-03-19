@@ -145,6 +145,28 @@ namespace Rokemon {
             }
         }
         #region Communications
+        
+        public void BeginCommunication(ComType type, Dialogue dialogue)
+        {
+            if(_active)
+            {
+                Debug.Log("ComManager BeginCommunication Error: Communications already active, cannot begin new communication session!");
+            }
+            else 
+            {
+                if(InventoryUIController.Instance != null)
+                    InventoryUIController.Instance.HideInventory();
+                if(QuestInventoryUIController.Instance != null)
+                    QuestInventoryUIController.Instance.HideQuestLog();
+
+                TargetUIController.Instance.TargetChange(null); // remove target UI's target
+                _currentDialogue = dialogue;    // set current dialogue reference
+                PlayerController.Instance.FreezePlayer(); // freeze player movement
+                _active = true;         // set active
+                _currentComType = type; // update current communication type
+                StartCommDialogue(dialogue); // start the dailogue
+            }
+        }
 
         public void BeginCommunication(ComType type, Dialogue dialogue, ComController currentController)
         {
@@ -154,6 +176,12 @@ namespace Rokemon {
             }
             else 
             {
+                if(InventoryUIController.Instance != null)
+                    InventoryUIController.Instance.HideInventory();
+                if(QuestInventoryUIController.Instance != null)
+                    QuestInventoryUIController.Instance.HideQuestLog();
+
+                TargetUIController.Instance.TargetChange(null); // remove target UI's target
                  _currentController = currentController; // reference to current com controller
                 _currentDialogue = dialogue;    // set current dialogue reference
 
@@ -172,6 +200,12 @@ namespace Rokemon {
             }
             else 
             {
+                if(InventoryUIController.Instance != null)
+                    InventoryUIController.Instance.HideInventory();
+                if(QuestInventoryUIController.Instance != null)
+                    QuestInventoryUIController.Instance.HideQuestLog();
+
+                TargetUIController.Instance.TargetChange(null); // remove target UI's target
                 _currentController = currentController; // reference to current com controller
                 _currentReponses = responses; // assing current responses
                 _choiceIndex = choiceIndex;
@@ -188,8 +222,9 @@ namespace Rokemon {
         // reset variables for ending communication
         public void EndCommunication()
         {
-            _currentController.Instance.TriggerComplete();
-            
+            if(_currentController != null)
+                _currentController.Instance.TriggerComplete();
+
             _currentController = null; // reset reference to com controller
             _currentReponses = null;
             _currentIndex = 0;  // reset current index
@@ -225,7 +260,7 @@ namespace Rokemon {
         // process dialogue communication type
         private void ProcessCutscene()
         {
-            CutsceneManager.Instance.BeginCutscene();
+            // TODO: Delete this call?
         }
 
         #endregion
@@ -253,10 +288,7 @@ namespace Rokemon {
                 ChoiceUIController.Instance.DispalyChoices(_currentChoices);
                 _currentIndex++;
             }
-            else 
-            {
-               // Debug.Log("Waiting for choice response");
-            }
+            // TODO : add update options for after choice complete?
         }
 
         // evaluate the choice made by the user
@@ -271,6 +303,7 @@ namespace Rokemon {
                     if(CutsceneManager.Instance != null)
                     {
                         Debug.Log("ComManager EvaluateChoice: Choice type response: " + responseChosen);
+                        EndCommunication();
                         CutsceneManager.Instance.BeginCutscene();
                     }
                     break;
@@ -343,8 +376,14 @@ namespace Rokemon {
         // starts a new communication dialogue 
         public void StartCommDialogue(Dialogue dialogue)
         {
+
             if(dialogue.displayDialogue)
             {
+                if(dialogue.displayContinue)
+                    _dialogueContinueText.enabled = true;
+                 else 
+                    _dialogueContinueText.enabled = false;
+                
                 DisplayDialogueUI();
                 InitialiseSentences(dialogue);
                 DisplayNextSentence();      // display initial sentence

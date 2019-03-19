@@ -14,7 +14,7 @@ namespace Rokemon {
         // if cutscene triggered automatically, set to true
         [Header("Cutscene automation trigger")]
         [SerializeField]
-        private bool _nextDialogue;
+        private bool _playNextDialogue;
 
         // reference to active status of cutscene
         private bool _active = false;
@@ -42,8 +42,6 @@ namespace Rokemon {
         [SerializeField]
         private NpcController[] _cutsceneNpcs;
         
-        private PlayerController _playerConroller; 
-
         #region  singleton
         private static CutsceneManager _instance; 
         public static CutsceneManager Instance { get { return _instance ;} }
@@ -72,51 +70,51 @@ namespace Rokemon {
         private void Start()
         {
             _dialogueCounts = _dialogues.Length;
-            _playerConroller = FindObjectOfType<PlayerController>();
         }
 
         private void Update()
         {   
-            ProcessCutscene();
+            if(_active)
+                ProcessCutscene();
         }
 
-
+        // process npcs for cutscene event 
+        private void ProcessNpcs()
+        {
+            foreach(NpcController npcCont in _cutsceneNpcs)
+            {
+                if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].enableSpeakerVisibility)
+                    npcCont.gameObject.SetActive(true);
+                
+                if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].moveSpeaker)
+                {
+                    npcCont.Cutscene = true;
+                }
+            }
+        }
+        
+        // process cutscene events
         private void ProcessCutscene()
         {
             if(_curDialogueIndex < _dialogueCounts && !_complete)
             {
-                // if(Input.GetKeyDown(KeyCode.K))
-                // {
-                //     BeginCutscene();
-                // }
-
-                if(_nextDialogue)
+                if(_playNextDialogue)
                 {   
-                    foreach(NpcController npcCont in _cutsceneNpcs)
-                    {
-                        if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].enableSpeakerVisibility)
-                            npcCont.gameObject.SetActive(true);
-                        
-                        if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].moveSpeaker)
-                        {
-                            npcCont.Cutscene = true;
-                            Debug.Log("NPC: " + npcCont.gameObject.tag + npcCont.Cutscene);
-                        }
-                    }
-                    
-                    if(_dialogues[_curDialogueIndex].displayDialogue)
-                    {   
-                        DialogueManager.Instance.StartDialogue(_dialogues[_curDialogueIndex]);
-                        StartCoroutine(CutsceneWaitRoutine(true));
-                    }
-                    else 
-                    {
-                        StartCoroutine(CutsceneWaitRoutine(false));
+                    ProcessNpcs();
+                    ComManager.Instance.BeginCommunication(ComType.Cutscene, _dialogues[_curDialogueIndex]);
+                    StartCoroutine(CutsceneWaitRoutine());
+                    // if(_dialogues[_curDialogueIndex].displayDialogue)
+                    // {   
+                    //     //DialogueManager.Instance.StartDialogue(_dialogues[_curDialogueIndex]);
+                    //     ComManager.Instance.BeginCommunication(ComType.Cutscene, _dialogues[_curDialogueIndex]);
+                    //     StartCoroutine(CutsceneWaitRoutine(true));
+                    // }
+                    // else 
+                    // {
+                    //     StartCoroutine(CutsceneWaitRoutine(false));
 
-                    }
+                    // }
                 }
-
-                //SkipScene(_curDialogueIndex);
             }
             else if(!_complete)
             {
@@ -128,44 +126,33 @@ namespace Rokemon {
         // called when zone is triggered
         private IEnumerator CutsceneCompleteRoutine()
         {   
-            DialogueManager.Instance.EnableContinue();
-
-            //PlayerController.Instance.FreezePlayer();
             TransitionFader.PlayTransition(_transitionPrefab, "Home");
             yield return new WaitForSeconds(_playDelay);
-            Destroy(_playerConroller.gameObject);
-            //PlayerInformationController.Instance.UpdateZones("Home");
+            
+            ComManager.Instance.EndCommunication(); // end communication
+            
             LevelLoader.LoadNextLevel();
-            //LevelLoader.LoadLevel(_zoneSceneName);
-            PlayerController.Instance.UnfreezePlayer();
             _active = false;
         }
          
 
         public void BeginCutscene()
         {
-            TargetUIController.Instance.TargetChange(null); // remove target UI's target
             _active = true;
-            _nextDialogue = true;
-            if(_playerConroller != null)
-                _playerConroller.FreezePlayer();
-            
-            DialogueManager.Instance.DisableContinue(); // disable "press space to continue" dialogue text
+            _playNextDialogue = true;
         }
 
 
-        IEnumerator CutsceneWaitRoutine(bool activateNextScene)
+        IEnumerator CutsceneWaitRoutine()
         {
-            _nextDialogue = false; 
+            _playNextDialogue = false; 
             yield return new WaitForSeconds(_waitTimes[_curDialogueIndex]);
 
-            if(activateNextScene)
-            {
-                DialogueManager.Instance.DisplayNextSentence();
-            }
+            //if(communicationActive)
+            ComManager.Instance.EndCommunication();
 
             _curDialogueIndex++;
-            _nextDialogue = true;
+            _playNextDialogue = true;
            
         
         }
