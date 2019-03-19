@@ -64,6 +64,25 @@ namespace Rokemon {
 
         #endregion
 
+        #region Choices Data Variables
+
+        private ResponseType[] _currentReponses;
+        // reference to current choice options 
+        private Choices _currentChoices;
+
+        private int _choiceIndex = 0;
+
+        private int _currentIndex = 0;
+
+        #endregion 
+
+        #region Controller References
+
+        private ComController _currentController = null;
+
+        #endregion 
+
+
         #region Singleton Initialization
 
         // reference to communication instance
@@ -77,6 +96,8 @@ namespace Rokemon {
                 Destroy(gameObject);
             else
                 _instance = this;
+            
+            _sentences = new Queue<string>();
         }
 
         // destroy instance on destroy
@@ -92,7 +113,7 @@ namespace Rokemon {
         // initialise sentences queue
         private void Start()
         {
-            _sentences = new Queue<string>();
+            ChoiceUIController.Instance.onChoiceMadeCallback += EvaluateChoice;
         }
 
         // process communication if active
@@ -125,7 +146,7 @@ namespace Rokemon {
         }
         #region Communications
 
-        public void BeginCommunication(ComType type, Dialogue dialogue)
+        public void BeginCommunication(ComType type, Dialogue dialogue, ComController currentController)
         {
             if(_active)
             {
@@ -133,6 +154,28 @@ namespace Rokemon {
             }
             else 
             {
+                 _currentController = currentController; // reference to current com controller
+                _currentDialogue = dialogue;    // set current dialogue reference
+
+                PlayerController.Instance.FreezePlayer(); // freeze player movement
+                _active = true;         // set active
+                _currentComType = type; // update current communication type
+                StartCommDialogue(dialogue); // start the dailogue
+            }
+        }
+
+        public void BeginCommunication(ComType type, Dialogue dialogue, Choices choices, int choiceIndex, ResponseType[] responses, ComController currentController)
+        {
+            if(_active)
+            {
+                Debug.Log("ComManager BeginCommunication Error: Communications already active, cannot begin new communication session!");
+            }
+            else 
+            {
+                _currentController = currentController; // reference to current com controller
+                _currentReponses = responses; // assing current responses
+                _choiceIndex = choiceIndex;
+                _currentChoices = choices;
                 _currentDialogue = dialogue;    // set current dialogue reference
 
                 PlayerController.Instance.FreezePlayer(); // freeze player movement
@@ -145,6 +188,12 @@ namespace Rokemon {
         // reset variables for ending communication
         public void EndCommunication()
         {
+            _currentController.Instance.TriggerComplete();
+            
+            _currentController = null; // reset reference to com controller
+            _currentReponses = null;
+            _currentIndex = 0;  // reset current index
+            _choiceIndex = 0;   // reset choices index
             _currentDialogue = null; // update active dialogue reference
             _active = false;         // set inactive
             _currentComType = ComType.None;  // update current communication type
@@ -192,10 +241,55 @@ namespace Rokemon {
 
         #region Choice
         
+        // process choice communication
         private void ProcessChoice()
         {
-            
+            if(_currentIndex < _choiceIndex)
+            {
+                ProcessDialogue();
+            }
+            else if(_currentIndex == _choiceIndex)
+            {
+                ChoiceUIController.Instance.DispalyChoices(_currentChoices);
+                _currentIndex++;
+            }
+            else 
+            {
+               // Debug.Log("Waiting for choice response");
+            }
         }
+
+        // evaluate the choice made by the user
+        public void EvaluateChoice(int choiceMadeIndex)
+        {  
+            Debug.Log("Evaluating Choice");
+            ResponseType responseChosen = _currentReponses[choiceMadeIndex-1];
+
+            switch(responseChosen)
+            {
+                case ResponseType.Cutscene:
+                    if(CutsceneManager.Instance != null)
+                    {
+                        Debug.Log("ComManager EvaluateChoice: Choice type response: " + responseChosen);
+                        CutsceneManager.Instance.BeginCutscene();
+                    }
+                    break;
+                case ResponseType.Kill:
+                    Debug.Log("Process Kill Choice");
+                    break;
+                case ResponseType.Trade:
+                    Debug.Log("Process Trade Choice");
+                    break;
+                case ResponseType.Nothing:
+                    Debug.Log("Process Nothing Choice");
+                    EndCommunication();
+                    break;
+                default:
+                    Debug.Log("ComManager EvaluateChoice: Choice type response: " + responseChosen);
+                    break;
+            }
+        }
+
 
         #endregion
 
@@ -225,7 +319,7 @@ namespace Rokemon {
                 EndCommunication();
                 return;
             }
-
+            _currentIndex++;
             string sentence = _sentences.Dequeue();
             StopAllCoroutines();
             StartCoroutine(TypeSentence(sentence));

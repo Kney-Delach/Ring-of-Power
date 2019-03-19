@@ -4,6 +4,13 @@ using UnityEngine;
 
 namespace Rokemon {
     
+    public enum ResponseType
+    {
+        Cutscene, 
+        Kill, 
+        Trade,
+        Nothing
+    }
     // initialises a new communication trigger
     public class ComTrigger : MonoBehaviour
     {   
@@ -21,9 +28,25 @@ namespace Rokemon {
 
         #endregion
 
-        public void TriggerCommunication()
+        #region Choice Info
+        [Header("Choice Information")]
+        [SerializeField]
+        private Choices _choices;  
+
+        [SerializeField]
+        private int _choiceIndex = 0;
+
+        [SerializeField]
+        private ResponseType[] _responseOptions;
+
+        #endregion
+
+        public void TriggerCommunication(ComController _controller)
         {
-            ComManager.Instance.BeginCommunication(_comType, _dialogue);
+            if(_comType == ComType.Dialogue)
+                ComManager.Instance.BeginCommunication(_comType, _dialogue, _controller);
+            else if(_comType == ComType.Choice)
+                ComManager.Instance.BeginCommunication(_comType, _dialogue, _choices, _choiceIndex, _responseOptions, _controller);
         }
 
         public void EndCommunication()
