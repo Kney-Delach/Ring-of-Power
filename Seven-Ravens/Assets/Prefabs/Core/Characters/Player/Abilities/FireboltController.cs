@@ -15,6 +15,9 @@ namespace Rokemon {
 
         private bool _targetSet = false; 
 
+        private float _damage = 0;
+        public float Damage{  set { _damage = value ; } } 
+
         // Use this for initialization
         void Start ()
         {
@@ -53,6 +56,7 @@ namespace Rokemon {
             {
                 //GetComponent<Animator>().SetTrigger("impact");
                 _rigidBody.velocity = Vector2.zero;
+                _target.GetComponent<Stats>().ReduceValue(_damage);
                 _target = null;
                 Destroy(gameObject);
             }

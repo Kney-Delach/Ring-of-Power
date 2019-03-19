@@ -30,6 +30,9 @@ TagManager:
   - HealthText
   - ManaText
   - Enemy
+  - HealthEnemy
+  - HealthEnemyText
+  - TargetSprite
   layers:
   - Default
   - TransparentFX

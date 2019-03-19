@@ -12,12 +12,14 @@ namespace Rokemon {
         private string _name; 
         // reference to stat display image
         private Image _displayImage; 
+        public Image DisplayImage { set { _displayImage = value ; } }
 
         // reference to stat display text
         private Text _displayText; 
+        public Text DisplayText { set { _displayText = value ; } }
 
         // reference to current fill amount of stat
-        private float _currentFill = 1; 
+        public float _currentFill = 1; 
 
         [Header("Stat Values")]        
         [SerializeField]
@@ -27,6 +29,9 @@ namespace Rokemon {
         // reference to stat name
         private string _statName; 
         public string StatName { get { return _statName ; } set { _statName = value ; } }
+
+        [SerializeField]
+        private bool _isPlayer = false;
 
         // reference to stat value 
         [SerializeField]
@@ -39,30 +44,36 @@ namespace Rokemon {
 
         private void Start()
         {   
-            _displayImage = GameObject.FindGameObjectWithTag(name).GetComponent<Image>(); 
-            _displayText = GameObject.FindGameObjectWithTag(name + "Text").GetComponent<Text>();
+            if(_isPlayer)
+            {
+                _displayImage = GameObject.FindGameObjectWithTag(name).GetComponent<Image>(); 
+                _displayText = GameObject.FindGameObjectWithTag(name + "Text").GetComponent<Text>();
+            }
+
 
             _currentValue = _maxValue;
         }
 
         private void Update()
         {
-            HandleFillBar();
+            if(_isPlayer)
+                HandleFillBar();
         }
 
         // handle progress bar filling smoothly
-        private void HandleFillBar()
-        {
+        public void HandleFillBar()
+        {   
             if(_currentFill != _displayImage.fillAmount)
             {
                 _displayImage.fillAmount = Mathf.Lerp(_displayImage.fillAmount, _currentFill, Time.deltaTime * _fillSpeed);
             }
         }
         // update ui components of stat
-        private void UpdateUI()
+        public void UpdateUI()
         {
             _currentFill = _currentValue / _maxValue;
-            _displayText.text = _currentValue.ToString("f0") + " / " + _maxValue; 
+            if(_displayText != null)
+                _displayText.text = _currentValue.ToString("f0") + " / " + _maxValue; 
         }
 
         // add an amount to stat value

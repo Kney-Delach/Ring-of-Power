@@ -58,6 +58,16 @@ namespace Rokemon
 
         #endregion
 
+        #region OBSERVERS 
+
+        // declare new target delegate type 
+        public delegate void OnTargetChange(GameObject target); 
+
+        // instantiate target observer set
+        public event OnTargetChange notifyTargetObservers; 
+
+        #endregion
+
         #region SINGELTON
         // this controller's instance 
         private static PlayerController _instance;
@@ -77,10 +87,7 @@ namespace Rokemon
                 _abilitiesDatabase = new Dictionary<string, Ability>();
                 foreach(Ability abil in _abilities)
                     _abilitiesDatabase.Add(abil.name, abil);
-            }
-
-            
-        
+            }                
         }
 
         // destroy instance on destroy
@@ -119,12 +126,15 @@ namespace Rokemon
                     {
                         _currentTarget = hit.transform;
                     }
-                
+                    
+                    notifyTargetObservers(_currentTarget.gameObject);
+
                 }
                 else
                 {
                     //Detargets the target
                     _currentTarget = null;
+                    notifyTargetObservers(null);
                 }
             }
         }
@@ -233,7 +243,11 @@ namespace Rokemon
                 if(_abilitiesDatabase[spellName]._active)
                     ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
                     if( ability != null)
-                        ability.GetComponent<FireboltController>()._target = _currentTarget;
+                    {
+                        FireboltController fireboltController = ability.GetComponent<FireboltController>();
+                        fireboltController._target = _currentTarget;
+                        fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
+                    }
 
                     Debug.Log("Casting Spell: " + spellName);
                     break;

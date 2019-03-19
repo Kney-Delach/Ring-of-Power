@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 8221122689524222025}
   - component: {fileID: 8221122689524222024}
   - component: {fileID: 2476578296058725166}
-  m_Layer: 0
+  - component: {fileID: 69001310}
+  m_Layer: 8
   m_Name: Enemy-Dummy
-  m_TagString: ManaText
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -25,7 +26,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8221122689524222026}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -15.65, y: 6.29, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -106,3 +107,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1875, y: 1.8125}
   m_EdgeRadius: 0
+--- !u!114 &69001310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8221122689524222026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25a53e0788b556c4b85ae3c94f015029, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _name: Health
+  _fillSpeed: 1
+  _isPlayer: 0
+  _maxValue: 100
