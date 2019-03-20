@@ -229,7 +229,7 @@ namespace Rokemon
                 if(_currentTarget != null)
                 {
                      if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy")
-                        CastSpell("Firebolt");
+                        CastSpell("Firebolt");  // cast firebolt
                     else 
                         Debug.Log("PlayerController ProcessAbilities: Current target is ["+ _currentTarget.tag +"] .. target an enemy to cast fireball");
                 }
@@ -240,6 +240,7 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.R))
             {
+                CastSpell("Haste"); // cast haste
                 Debug.Log("Pressed Key: R");
             }
             if(Input.GetKeyDown(KeyCode.T))
@@ -260,14 +261,24 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.X))
             {
-                Debug.Log("Pressed Key: X");
+                Debug.Log("Pressed Key: X");                
             }
             if(Input.GetKeyDown(KeyCode.C))
             {
-                if(_currentTarget != null)
-                CastSpell("Heal");
+                CastSpell("Heal");  // cast heal
             }
         }
+
+
+        private IEnumerator HasteCoroutine(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            _speed /=2;
+
+        }
+
+        // TODO : Add checks for reload 
+        // function casting a spell
         public void CastSpell(string spellName)
         {
             GameObject ability = null; 
@@ -291,7 +302,10 @@ namespace Rokemon
                         Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "Haste":
-                    if(_abilitiesDatabase[spellName]._active)
+                    if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
+                        UseMana(_abilitiesDatabase[spellName]._cost);
+                        _speed *= 2; 
+                        StartCoroutine(HasteCoroutine(_abilitiesDatabase[spellName]._damage));
                         Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "ProtectiveBubble":
