@@ -140,6 +140,9 @@ namespace Rokemon {
             if(_activatePlayer && PlayerController.Instance != null)
             {
                 PlayerController.Instance.UnfreezePlayer();
+                
+                PlayerController.Instance.DisplayHUD();
+                
                 // TODO: REPLACE PLAYER POSITION
                 PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Player";    
                 PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;  
@@ -152,6 +155,9 @@ namespace Rokemon {
 
         public void BeginCutscene()
         {
+            if(PlayerController.Instance != null)
+                PlayerController.Instance.HideHUD();
+
             _active = true;
             _playNextDialogue = true;
         }

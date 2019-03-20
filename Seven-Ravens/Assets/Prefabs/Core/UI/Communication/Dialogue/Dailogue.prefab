@@ -547,7 +547,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6646790022175042077}
   - component: {fileID: 8732802068207024263}
-  - component: {fileID: 3948808226926383674}
   m_Layer: 0
   m_Name: Dailogue
   m_TagString: Dialogue
@@ -582,20 +581,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ba347da9c2c34118adb9dae535a18be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3948808226926383674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7593303003884848645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ad2066d28af5d074db3e79cfc124d718, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _nameText: {fileID: 2510445127670386312}
-  _dialogueText: {fileID: 7917711311200031828}
-  _nameTransform: {fileID: 1946738469778278588}
-  _dialogueGroup: {fileID: 1282059835546624618}
-  _continueText: {fileID: 1216649991812772505}

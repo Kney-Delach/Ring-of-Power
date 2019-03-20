@@ -1867,6 +1867,24 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1119775937}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &840961928 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1595058345822716277, guid: b58eee04774abdc428c3c849bfc68061,
+    type: 3}
+  m_PrefabInstance: {fileID: 8993244562705981441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &840961929
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 840961928}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1 &906267600
 GameObject:
   m_ObjectHideFlags: 0
@@ -2219,6 +2237,24 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2dfd752c3289f3841a227f3ab67af4cc, type: 3}
+--- !u!1 &1272329731 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8935152272094352775, guid: f89d86cccb52f8e4184fbe7fafc938f1,
+    type: 3}
+  m_PrefabInstance: {fileID: 8935152273524769641}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &1272329732
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1272329731}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 0
+  m_BlocksRaycasts: 0
+  m_IgnoreParentGroups: 0
 --- !u!1001 &1347893510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2286,6 +2322,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4686994119298673106, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
+        type: 3}
+      propertyPath: _hudGroups.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4686994119298673106, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
+        type: 3}
+      propertyPath: _hudGroups.Array.data[0]
+      value: 
+      objectReference: {fileID: 1272329732}
+    - target: {fileID: 4686994119298673106, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
+        type: 3}
+      propertyPath: _hudGroups.Array.data[1]
+      value: 
+      objectReference: {fileID: 840961929}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de87d0245efb9f42a5b2de7e8d3f04f, type: 3}
 --- !u!1001 &1370967562
@@ -31683,11 +31734,6 @@ PrefabInstance:
     - target: {fileID: 6646790022175042077, guid: 2dc5ed0dbc072724e87b72a158cf6bac,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3948808226926383674, guid: 2dc5ed0dbc072724e87b72a158cf6bac,
-        type: 3}
-      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

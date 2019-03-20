@@ -2,11 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 
 namespace Rokemon
 {
     public class PlayerController : MonoBehaviour
     {   
+        #region Player HUD UI Components
+
+        [SerializeField]
+        private CanvasGroup[] _hudGroups;
+
+        #endregion 
         #region STATS VARIABLES
 
         [Header("Player Stats")]
@@ -112,6 +119,20 @@ namespace Rokemon
             ProcessMovement();
             ProcessStats();
         }
+
+        #region HUD Hiding 
+        public void HideHUD()
+        {
+            foreach(CanvasGroup group in _hudGroups)
+                group.alpha = 0;
+        }
+
+        public void DisplayHUD()
+        {
+            foreach(CanvasGroup group in _hudGroups)
+                group.alpha = 1;
+        }
+        #endregion
 
         #region TARGETTING 
         
