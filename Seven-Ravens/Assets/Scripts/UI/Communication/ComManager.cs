@@ -145,7 +145,8 @@ namespace Rokemon {
             }
         }
         #region Communications
-        
+
+        // function performing generic steps in beginning communication
         public void BeginCommunication(ComType type, Dialogue dialogue)
         {
             if(_active)
@@ -154,12 +155,14 @@ namespace Rokemon {
             }
             else 
             {
+                
                 if(InventoryUIController.Instance != null)
                     InventoryUIController.Instance.HideInventory();
                 if(QuestInventoryUIController.Instance != null)
                     QuestInventoryUIController.Instance.HideQuestLog();
-
+                
                 TargetUIController.Instance.TargetChange(null); // remove target UI's target
+
                 _currentDialogue = dialogue;    // set current dialogue reference
                 PlayerController.Instance.FreezePlayer(); // freeze player movement
                 _active = true;         // set active
@@ -168,6 +171,7 @@ namespace Rokemon {
             }
         }
 
+        // regular dialogue communication initializer 
         public void BeginCommunication(ComType type, Dialogue dialogue, ComController currentController)
         {
             if(_active)
@@ -176,22 +180,12 @@ namespace Rokemon {
             }
             else 
             {
-                if(InventoryUIController.Instance != null)
-                    InventoryUIController.Instance.HideInventory();
-                if(QuestInventoryUIController.Instance != null)
-                    QuestInventoryUIController.Instance.HideQuestLog();
-
-                TargetUIController.Instance.TargetChange(null); // remove target UI's target
-                 _currentController = currentController; // reference to current com controller
-                _currentDialogue = dialogue;    // set current dialogue reference
-
-                PlayerController.Instance.FreezePlayer(); // freeze player movement
-                _active = true;         // set active
-                _currentComType = type; // update current communication type
-                StartCommDialogue(dialogue); // start the dailogue
+                _currentController = currentController; // reference to current com controller
+                BeginCommunication(type, dialogue);
             }
         }
-
+        
+        // choice dialouge communication initialzer 
         public void BeginCommunication(ComType type, Dialogue dialogue, Choices choices, int choiceIndex, ResponseType[] responses, ComController currentController)
         {
             if(_active)
@@ -200,22 +194,12 @@ namespace Rokemon {
             }
             else 
             {
-                if(InventoryUIController.Instance != null)
-                    InventoryUIController.Instance.HideInventory();
-                if(QuestInventoryUIController.Instance != null)
-                    QuestInventoryUIController.Instance.HideQuestLog();
-
-                TargetUIController.Instance.TargetChange(null); // remove target UI's target
-                _currentController = currentController; // reference to current com controller
                 _currentReponses = responses; // assing current responses
                 _choiceIndex = choiceIndex;
                 _currentChoices = choices;
-                _currentDialogue = dialogue;    // set current dialogue reference
+                _currentController = currentController; // reference to current com controller
 
-                PlayerController.Instance.FreezePlayer(); // freeze player movement
-                _active = true;         // set active
-                _currentComType = type; // update current communication type
-                StartCommDialogue(dialogue); // start the dailogue
+                BeginCommunication(type, dialogue);
             }
         }
 

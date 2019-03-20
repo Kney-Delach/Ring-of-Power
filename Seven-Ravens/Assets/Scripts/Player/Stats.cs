@@ -14,6 +14,10 @@ namespace Rokemon {
         private Image _displayImage; 
         public Image DisplayImage { set { _displayImage = value ; } }
 
+        private Image _worldDisplayImage; 
+        public Image WorldDisplayImage { set { _worldDisplayImage = value ; } }
+
+
         // reference to stat display text
         private Text _displayText; 
         public Text DisplayText { set { _displayText = value ; } }
@@ -64,7 +68,13 @@ namespace Rokemon {
         // handle progress bar filling smoothly
         public void HandleFillBar()
         {   
-            if(_currentFill != _displayImage.fillAmount)
+            if(_worldDisplayImage != null && _currentFill != _worldDisplayImage.fillAmount)
+            {
+                _worldDisplayImage.fillAmount = Mathf.Lerp(_worldDisplayImage.fillAmount, _currentFill, Time.deltaTime * _fillSpeed);
+
+            }
+
+            if(_displayImage != null && _currentFill != _displayImage.fillAmount)
             {
                 _displayImage.fillAmount = Mathf.Lerp(_displayImage.fillAmount, _currentFill, Time.deltaTime * _fillSpeed);
             }
