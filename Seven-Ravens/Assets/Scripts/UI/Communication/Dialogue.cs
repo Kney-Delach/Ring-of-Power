@@ -7,6 +7,7 @@ namespace Rokemon
     [System.Serializable]
     public class Dialogue
     {   
+        public bool transformNpcs = false;
         public string speakerTag;
 
         public bool moveSpeaker;

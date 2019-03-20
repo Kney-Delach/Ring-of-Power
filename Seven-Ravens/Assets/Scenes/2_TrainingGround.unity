@@ -264,6 +264,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _comType: 0
   _dialogue:
+    transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
     displayName: 1
@@ -1641,12 +1642,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _transitionPrefab: {fileID: 114970023746679392, guid: 613757411f6b548a5b3aff05cbf09ad8,
     type: 3}
+  _transitionName: Home
   _playNextDialogue: 0
   _deactivatePlayer: 1
   _activatePlayer: 0
+  _transformNpcObjects: []
+  _transformNewObjects: []
   _playDelay: 0.5
   _dialogues:
-  - speakerTag: MOM
+  - transformNpcs: 0
+    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
@@ -1656,7 +1661,8 @@ MonoBehaviour:
     speakerName: Mom
     sentences:
     - Great job today sweety, you did great learning to control your spells.
-  - speakerTag: MOM
+  - transformNpcs: 0
+    speakerTag: MOM
     moveSpeaker: 1
     displayName: 1
     displayContinue: 0
@@ -1666,7 +1672,8 @@ MonoBehaviour:
     speakerName: Mom
     sentences:
     - I'm thirsty, i'm going to drink some water from the picnic booth we setup
-  - speakerTag: WIZARD
+  - transformNpcs: 0
+    speakerTag: WIZARD
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
@@ -1679,7 +1686,8 @@ MonoBehaviour:
       I''m going to lure her to my lair ontop of the glass mountain by mind controlling
       her mother and forcing her to bring me the girl''s 7 brothers, she will do anything
       to get them back!  '
-  - speakerTag: WIZARD
+  - transformNpcs: 0
+    speakerTag: WIZARD
     moveSpeaker: 1
     displayName: 1
     displayContinue: 0
@@ -1689,7 +1697,8 @@ MonoBehaviour:
     speakerName: Evil Wizard
     sentences:
     - '*Transforms into raven* KA KA KA KA KA KA *BITE* *BITE* *BITE* *BITE* *BITE*'
-  - speakerTag: WIZARD
+  - transformNpcs: 0
+    speakerTag: WIZARD
     moveSpeaker: 1
     displayName: 1
     displayContinue: 0
@@ -1698,7 +1707,8 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences: []
-  - speakerTag: MOM
+  - transformNpcs: 0
+    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
@@ -1708,7 +1718,8 @@ MonoBehaviour:
     speakerName: Mom
     sentences:
     - Mother F**cker, that raven just bit me!
-  - speakerTag: MOM
+  - transformNpcs: 0
+    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
@@ -1718,7 +1729,8 @@ MonoBehaviour:
     speakerName: Girl
     sentences:
     - Mom! Are you okay? Why did he attack you?
-  - speakerTag: MOM
+  - transformNpcs: 0
+    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
@@ -1728,7 +1740,8 @@ MonoBehaviour:
     speakerName: Mom
     sentences:
     - Yes i'm fine sweety, its just a scratch, it'll heal.
-  - speakerTag: MOM
+  - transformNpcs: 0
+    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
@@ -1739,7 +1752,8 @@ MonoBehaviour:
     sentences:
     - It looks really black mom, are you sure that's just a scratch .... the skin
       around it is turning black too.
-  - speakerTag: MOM
+  - transformNpcs: 0
+    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
@@ -1749,7 +1763,8 @@ MonoBehaviour:
     speakerName: Mom
     sentences:
     - Maybe you're right, i'm beginning to feel very dizzy. Lets go home now.
-  - speakerTag: MOM
+  - transformNpcs: 0
+    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0

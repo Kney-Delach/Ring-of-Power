@@ -11,6 +11,10 @@ namespace Rokemon {
         [SerializeField]
         private TransitionFader _transitionPrefab;
 
+        // reference to transition name 
+        [SerializeField]
+        private string _transitionName; 
+
         // if cutscene triggered automatically, set to true
         [Header("Cutscene automation trigger")]
         [SerializeField]
@@ -21,6 +25,12 @@ namespace Rokemon {
 
         [SerializeField]
         private bool _activatePlayer = false;
+
+        [SerializeField]
+        private GameObject[] _transformNpcObjects; 
+
+        [SerializeField]
+        private GameObject[] _transformNewObjects; 
 
         // reference to active status of cutscene
         private bool _active = false;
@@ -93,13 +103,24 @@ namespace Rokemon {
         {
             foreach(NpcController npcCont in _cutsceneNpcs)
             {
-                if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].enableSpeakerVisibility)
-                    npcCont.gameObject.SetActive(true);
-                
-                if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].moveSpeaker)
-                {
-                    npcCont.Cutscene = true;
+                if(_dialogues[_curDialogueIndex].speakerTag != null){
+                    if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].enableSpeakerVisibility)
+                        npcCont.gameObject.SetActive(true);
+                    
+                    if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].moveSpeaker)
+                    {
+                        npcCont.Cutscene = true;
+                    }
                 }
+                
+            }
+
+            if(_dialogues[_curDialogueIndex].transformNpcs && _transformNpcObjects.Length > 0)
+            {
+                foreach(GameObject npc in _transformNpcObjects)
+                    npc.SetActive(false);
+                foreach(GameObject newNpc in _transformNewObjects)
+                    newNpc.SetActive(true);
             }
         }
         
@@ -125,7 +146,7 @@ namespace Rokemon {
         // called when zone is triggered
         private IEnumerator CutsceneCompleteRoutine()
         {   
-            TransitionFader.PlayTransition(_transitionPrefab, "Home");
+            TransitionFader.PlayTransition(_transitionPrefab, _transitionName);
             yield return new WaitForSeconds(_playDelay);
             
             ComManager.Instance.EndCommunication(); // end communication
@@ -142,7 +163,7 @@ namespace Rokemon {
                 PlayerController.Instance.UnfreezePlayer();
                 
                 PlayerController.Instance.DisplayHUD();
-                
+
                 // TODO: REPLACE PLAYER POSITION
                 PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Player";    
                 PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;  
