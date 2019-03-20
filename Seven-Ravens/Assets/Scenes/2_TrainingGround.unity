@@ -1642,6 +1642,8 @@ MonoBehaviour:
   _transitionPrefab: {fileID: 114970023746679392, guid: 613757411f6b548a5b3aff05cbf09ad8,
     type: 3}
   _playNextDialogue: 0
+  _deactivatePlayer: 1
+  _activatePlayer: 0
   _playDelay: 0.5
   _dialogues:
   - speakerTag: MOM

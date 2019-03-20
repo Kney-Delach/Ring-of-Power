@@ -16,6 +16,12 @@ namespace Rokemon {
         [SerializeField]
         private bool _playNextDialogue;
 
+        [SerializeField]
+        private bool _deactivatePlayer = false; 
+
+        [SerializeField]
+        private bool _activatePlayer = false;
+
         // reference to active status of cutscene
         private bool _active = false;
         public bool Active { get { return _active ; } }
@@ -70,10 +76,14 @@ namespace Rokemon {
         private void Start()
         {
             _dialogueCounts = _dialogues.Length;
+            
+            if(_playNextDialogue)
+                _active = true;
+
         }
 
         private void Update()
-        {   
+        {
             if(_active)
                 ProcessCutscene();
         }
@@ -103,17 +113,6 @@ namespace Rokemon {
                     ProcessNpcs();
                     ComManager.Instance.BeginCommunication(ComType.Cutscene, _dialogues[_curDialogueIndex]);
                     StartCoroutine(CutsceneWaitRoutine());
-                    // if(_dialogues[_curDialogueIndex].displayDialogue)
-                    // {   
-                    //     //DialogueManager.Instance.StartDialogue(_dialogues[_curDialogueIndex]);
-                    //     ComManager.Instance.BeginCommunication(ComType.Cutscene, _dialogues[_curDialogueIndex]);
-                    //     StartCoroutine(CutsceneWaitRoutine(true));
-                    // }
-                    // else 
-                    // {
-                    //     StartCoroutine(CutsceneWaitRoutine(false));
-
-                    // }
                 }
             }
             else if(!_complete)
@@ -130,6 +129,21 @@ namespace Rokemon {
             yield return new WaitForSeconds(_playDelay);
             
             ComManager.Instance.EndCommunication(); // end communication
+            
+            if(_deactivatePlayer && PlayerController.Instance != null)
+            {
+                PlayerController.Instance.FreezePlayer();
+                PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Ground";    
+                PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingOrder = -10;  
+            }
+            
+            if(_activatePlayer && PlayerController.Instance != null)
+            {
+                PlayerController.Instance.UnfreezePlayer();
+                // TODO: REPLACE PLAYER POSITION
+                PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Player";    
+                PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;  
+            }
             
             LevelLoader.LoadNextLevel();
             _active = false;
@@ -148,7 +162,6 @@ namespace Rokemon {
             _playNextDialogue = false; 
             yield return new WaitForSeconds(_waitTimes[_curDialogueIndex]);
 
-            //if(communicationActive)
             ComManager.Instance.EndCommunication();
 
             _curDialogueIndex++;
