@@ -148,7 +148,7 @@ namespace Rokemon
 
                 if (hit.collider != null) // if hit something
                 {
-                    if (hit.collider.tag == "Enemy") // check if we hit an enemy
+                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy") // check if we hit an enemy
                     {
                         _currentTarget = hit.transform;
                     }
@@ -228,7 +228,7 @@ namespace Rokemon
             {   
                 if(_currentTarget != null)
                 {
-                     if(_currentTarget.tag == "Enemy")
+                     if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy")
                         CastSpell("Firebolt");
                     else 
                         Debug.Log("PlayerController ProcessAbilities: Current target is ["+ _currentTarget.tag +"] .. target an enemy to cast fireball");
@@ -264,7 +264,8 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.C))
             {
-                Debug.Log("Pressed Key: C");
+                if(_currentTarget != null)
+                CastSpell("Heal");
             }
         }
         public void CastSpell(string spellName)
@@ -274,45 +275,60 @@ namespace Rokemon
             switch (spellName)
             {
                 case "Firebolt":
-                if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
-                    ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
-                    if( ability != null)
-                    {
-                        UseMana(_abilitiesDatabase[spellName]._cost);
-                        FireboltController fireboltController = ability.GetComponent<FireboltController>();
-                        fireboltController._target = _currentTarget;
-                        fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
-                    }
-
+                    if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
+                        ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
+                        if( ability != null)
+                        {
+                            UseMana(_abilitiesDatabase[spellName]._cost);
+                            FireboltController fireboltController = ability.GetComponent<FireboltController>();
+                            fireboltController._target = _currentTarget;
+                            fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
+                        }
                     Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "Invisibility":
-                if(_abilitiesDatabase[spellName]._active)
-                    Debug.Log("Casting Spell: " + spellName);
+                    if(_abilitiesDatabase[spellName]._active)
+                        Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "Haste":
-                if(_abilitiesDatabase[spellName]._active)
-                    Debug.Log("Casting Spell: " + spellName);
+                    if(_abilitiesDatabase[spellName]._active)
+                        Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "ProtectiveBubble":
-                if(_abilitiesDatabase[spellName]._active)
-                    Debug.Log("Casting Spell: " + spellName);
+                    if(_abilitiesDatabase[spellName]._active)
+                        Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "RemoveRoots":
-                if(_abilitiesDatabase[spellName]._active)
-                    Debug.Log("Casting Spell: " + spellName);
+                    if(_abilitiesDatabase[spellName]._active)
+                        Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "WaterFreeze":
-                if(_abilitiesDatabase[spellName]._active)
-                    Debug.Log("Casting Spell: " + spellName);
+                    if(_abilitiesDatabase[spellName]._active)
+                        Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "Polymorph":
-                if(_abilitiesDatabase[spellName]._active)
-                    Debug.Log("Casting Spell: " + spellName);
+                    if(_abilitiesDatabase[spellName]._active)
+                        Debug.Log("Casting Spell: " + spellName);
                     break;
                 case "Heal":
-                if(_abilitiesDatabase[spellName]._active)
-                    Debug.Log("Casting Spell: " + spellName);
+                    if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
+                    {
+                        Debug.Log("Casting Spell: " + spellName);
+                        if(_currentTarget != null && _currentTarget.tag == "HealableEnemy" && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != _currentTarget.gameObject.GetComponent<Stats>().MaxValue) )
+                        {
+                            UseMana(_abilitiesDatabase[spellName]._cost);
+                            _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
+                        }
+                        else if(_health.CurrentValue != _health.MaxValue)
+                        {
+                            UseMana(_abilitiesDatabase[spellName]._cost);
+                            _health.AddValue(_abilitiesDatabase[spellName]._damage);                       
+                        }
+                    }
+                    else 
+                    {
+                        Debug.Log("PlayerController CastSpell: Ability inactive - Heal cannot be cast");
+                    }
                     break;
                 default:
                     break;

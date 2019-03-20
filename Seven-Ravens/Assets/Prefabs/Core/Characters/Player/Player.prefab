@@ -231,10 +231,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9cc13c5ae1abf0489d2492175114099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _hudGroups: []
   _health: {fileID: 7427759676101546734}
   _mana: {fileID: 7636080386025877500}
   _abilities:
   - {fileID: 11400000, guid: 620905ff4401fce499d38c30ce504622, type: 2}
+  - {fileID: 11400000, guid: e895719f22d1c504eb44659f13910b17, type: 2}
   _rigidbody: {fileID: 4686994119298673118}
   _speed: 10
   _animator: {fileID: 4686994119298673107}
