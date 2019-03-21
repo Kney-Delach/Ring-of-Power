@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1b420d30c62584696b36150d5859b9, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: 
+  _inCooldown: 0
   _active: 1
   _name: Heal
   _description: Heals a player or healable creature for 10 health.
   _damage: 10
   _speed: 1
-  _reloadTime: 4
+  _reloadTime: 5
   _castTime: 1
   _cost: 30
   _castBarColor: {r: 0.13243146, g: 0.9056604, b: 0.85106564, a: 0}
