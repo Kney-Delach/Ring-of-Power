@@ -151,13 +151,20 @@ namespace Rokemon
                     if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy" || hit.collider.tag == "CharmableEnemy") // check if we hit an enemy
                     {
                         _currentTarget = hit.transform;
+                        notifyTargetObservers(_currentTarget.gameObject);
+
+                    }
+                    else if (hit.collider.tag == "TransformableGround")
+                    {
+                        _currentTarget = hit.transform;
+                        Debug.Log("Hit transformable ground");
                     }
                     
-                    notifyTargetObservers(_currentTarget.gameObject);
 
                 }
                 else
                 {
+                    Debug.Log("Nothing hit");
                     //Detargets the target
                     _currentTarget = null;
                     notifyTargetObservers(null);
@@ -265,6 +272,10 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.Z))
             {
+                if(_currentTarget != null && _currentTarget.tag == "TransformableGround")
+                {
+                    CastSpell("WaterFreeze");
+                }
                 Debug.Log("Pressed Key: Z");
             }
             if(Input.GetKeyDown(KeyCode.X))
@@ -302,7 +313,7 @@ namespace Rokemon
         {
             GameObject target = charmTarget;
             yield return new WaitForSeconds(waitTime);
-            target.GetComponent<SpriteRenderer>().color = Color.white;    
+            //target.GetComponent<SpriteRenderer>().color = Color.white;    
         }
 
         // TODO : Add checks for reload 
@@ -350,7 +361,11 @@ namespace Rokemon
                     case "RemoveRoots":
                         Debug.Log("Casting Spell: " + spellName);
                         break;
-                    case "StoneBuilder":
+                    case "WaterFreeze":
+                        UseMana(_abilitiesDatabase[spellName]._cost);
+                        TransformReference reference = _currentTarget.GetComponentInChildren<TransformReference>();
+                        reference.TransformedObject.SetActive(true);
+                        _currentTarget.gameObject.SetActive(false);
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "Charm":

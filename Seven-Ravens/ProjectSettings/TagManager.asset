@@ -35,6 +35,8 @@ TagManager:
   - TargetSprite
   - HealableEnemy
   - CharmableEnemy
+  - TransformableGround
+  - TransformedGround
   layers:
   - Default
   - TransparentFX
