@@ -52,7 +52,7 @@ namespace Rokemon {
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if ((collision.tag == "Enemy" ||  collision.tag == "HealableEnemy") && collision.transform == _target)
+            if ((collision.tag == "Enemy" ||  collision.tag == "HealableEnemy" || collision.tag == "CharmableEnemy") && collision.transform == _target)
             {
                 //GetComponent<Animator>().SetTrigger("impact");
                 _rigidBody.velocity = Vector2.zero;

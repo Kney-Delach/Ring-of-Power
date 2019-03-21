@@ -148,16 +148,23 @@ namespace Rokemon
 
                 if (hit.collider != null) // if hit something
                 {
-                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy") // check if we hit an enemy
+                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy" || hit.collider.tag == "CharmableEnemy") // check if we hit an enemy
                     {
                         _currentTarget = hit.transform;
+                        notifyTargetObservers(_currentTarget.gameObject);
+
+                    }
+                    else if (hit.collider.tag == "TransformableGround")
+                    {
+                        _currentTarget = hit.transform;
+                        Debug.Log("Hit transformable ground");
                     }
                     
-                    notifyTargetObservers(_currentTarget.gameObject);
 
                 }
                 else
                 {
+                    Debug.Log("Nothing hit");
                     //Detargets the target
                     _currentTarget = null;
                     notifyTargetObservers(null);
@@ -190,6 +197,12 @@ namespace Rokemon
             transform.position = new Vector3(Mathf.Clamp(transform.position.x, _leftBoundary.x, _rightBoundary.x), Mathf.Clamp(transform.position.y, _leftBoundary.y, _rightBoundary.y), transform.position.z);
         }
         
+        // sets player controller gameobject position
+        public void SetPosition(Transform newPosition)
+        {
+            GetComponent<Transform>().position = new Vector3(newPosition.position.x, newPosition.position.y, newPosition.position.z);
+        }
+
         // set background map bounds of current level, stops player character from walking out of bounds
         public void SetBounds()
         {
@@ -228,7 +241,7 @@ namespace Rokemon
             {   
                 if(_currentTarget != null)
                 {
-                     if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy")
+                     if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy" || _currentTarget.tag == "CharmableEnemy")
                         CastSpell("Firebolt");  // cast firebolt
                     else 
                         Debug.Log("PlayerController ProcessAbilities: Current target is ["+ _currentTarget.tag +"] .. target an enemy to cast fireball");
@@ -245,10 +258,12 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.T))
             {
+                CastSpell("Invisibility");  // cast invisibility
                 Debug.Log("Pressed Key: T");
             }
             if(Input.GetKeyDown(KeyCode.F))
             {
+                CastSpell("ProtectiveBubble");  // cast protective bubble
                 Debug.Log("Pressed Key: F");
             }
             if(Input.GetKeyDown(KeyCode.G))
@@ -257,10 +272,15 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.Z))
             {
+                if(_currentTarget != null && _currentTarget.tag == "TransformableGround")
+                {
+                    CastSpell("WaterFreeze");
+                }
                 Debug.Log("Pressed Key: Z");
             }
             if(Input.GetKeyDown(KeyCode.X))
             {
+                CastSpell("Charm");         // cast charm
                 Debug.Log("Pressed Key: X");                
             }
             if(Input.GetKeyDown(KeyCode.C))
@@ -276,17 +296,38 @@ namespace Rokemon
             _speed /=2;
 
         }
+        private IEnumerator InvisibleCoroutine(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            GetComponent<SpriteRenderer>().color = Color.white; 
+        }
+
+        private IEnumerator ShieldRoutine(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            _health.DeactivateShield();
+            GetComponent<SpriteRenderer>().color = Color.white; 
+        }
+        
+        private IEnumerator CharmRoutine(float waitTime, GameObject charmTarget)
+        {
+            GameObject target = charmTarget;
+            yield return new WaitForSeconds(waitTime);
+            //target.GetComponent<SpriteRenderer>().color = Color.white;    
+        }
 
         // TODO : Add checks for reload 
         // function casting a spell
         public void CastSpell(string spellName)
         {
-            GameObject ability = null; 
-
-            switch (spellName)
+            if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
             {
-                case "Firebolt":
-                    if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
+                GameObject ability = null; 
+
+                switch (spellName)
+                {
+                    case "Firebolt":
+                        // if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
                         ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
                         if( ability != null)
                         {
@@ -295,39 +336,48 @@ namespace Rokemon
                             fireboltController._target = _currentTarget;
                             fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
                         }
-                    Debug.Log("Casting Spell: " + spellName);
-                    break;
-                case "Invisibility":
-                    if(_abilitiesDatabase[spellName]._active)
                         Debug.Log("Casting Spell: " + spellName);
-                    break;
-                case "Haste":
-                    if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
+                        break;
+                    case "Invisibility":
+                        GetComponent<SpriteRenderer>().color = Color.blue; 
+                        // TODO: Implement invisibility 
+                        UseMana(_abilitiesDatabase[spellName]._cost);
+                        StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage));
+                        Debug.Log("Casting Spell: " + spellName);
+                        break;
+                    case "Haste":
                         UseMana(_abilitiesDatabase[spellName]._cost);
                         _speed *= 2; 
                         StartCoroutine(HasteCoroutine(_abilitiesDatabase[spellName]._damage));
                         Debug.Log("Casting Spell: " + spellName);
-                    break;
-                case "ProtectiveBubble":
-                    if(_abilitiesDatabase[spellName]._active)
+                        break;
+                    case "ProtectiveBubble":
+                        UseMana(_abilitiesDatabase[spellName]._cost);
+                        GetComponent<SpriteRenderer>().color = Color.yellow; 
+                        _health.ActivateShield();
+                        StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._damage));
                         Debug.Log("Casting Spell: " + spellName);
-                    break;
-                case "RemoveRoots":
-                    if(_abilitiesDatabase[spellName]._active)
+                        break;
+                    case "RemoveRoots":
                         Debug.Log("Casting Spell: " + spellName);
-                    break;
-                case "WaterFreeze":
-                    if(_abilitiesDatabase[spellName]._active)
+                        break;
+                    case "WaterFreeze":
+                        UseMana(_abilitiesDatabase[spellName]._cost);
+                        TransformReference reference = _currentTarget.GetComponentInChildren<TransformReference>();
+                        reference.TransformedObject.SetActive(true);
+                        _currentTarget.gameObject.SetActive(false);
                         Debug.Log("Casting Spell: " + spellName);
-                    break;
-                case "Polymorph":
-                    if(_abilitiesDatabase[spellName]._active)
+                        break;
+                    case "Charm":
+                        if(_currentTarget != null && _currentTarget.tag == "CharmableEnemy")
+                        {
+                            UseMana(_abilitiesDatabase[spellName]._cost);
+                            _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
+                            StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage, _currentTarget.gameObject));
+                        }                     
                         Debug.Log("Casting Spell: " + spellName);
-                    break;
-                case "Heal":
-                    if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
-                    {
-                        Debug.Log("Casting Spell: " + spellName);
+                        break;
+                    case "Heal":
                         if(_currentTarget != null && _currentTarget.tag == "HealableEnemy" && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != _currentTarget.gameObject.GetComponent<Stats>().MaxValue) )
                         {
                             UseMana(_abilitiesDatabase[spellName]._cost);
@@ -338,15 +388,17 @@ namespace Rokemon
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             _health.AddValue(_abilitiesDatabase[spellName]._damage);                       
                         }
-                    }
-                    else 
-                    {
-                        Debug.Log("PlayerController CastSpell: Ability inactive - Heal cannot be cast");
-                    }
-                    break;
-                default:
-                    break;
+                        Debug.Log("Casting Spell: " + spellName);
+                        break;
+                    default:
+                        break;
+                }
             }
+            else 
+            {
+
+            }
+           
         }
 
         // reduce mana value
