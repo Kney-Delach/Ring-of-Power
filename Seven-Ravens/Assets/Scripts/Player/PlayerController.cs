@@ -148,7 +148,7 @@ namespace Rokemon
 
                 if (hit.collider != null) // if hit something
                 {
-                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy") // check if we hit an enemy
+                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy" || hit.collider.tag == "CharmableEnemy") // check if we hit an enemy
                     {
                         _currentTarget = hit.transform;
                     }
@@ -234,7 +234,7 @@ namespace Rokemon
             {   
                 if(_currentTarget != null)
                 {
-                     if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy")
+                     if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy" || _currentTarget.tag == "CharmableEnemy")
                         CastSpell("Firebolt");  // cast firebolt
                     else 
                         Debug.Log("PlayerController ProcessAbilities: Current target is ["+ _currentTarget.tag +"] .. target an enemy to cast fireball");
@@ -256,7 +256,7 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.F))
             {
-                CastSpell("ProtectiveBubble");
+                CastSpell("ProtectiveBubble");  // cast protective bubble
                 Debug.Log("Pressed Key: F");
             }
             if(Input.GetKeyDown(KeyCode.G))
@@ -269,6 +269,7 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.X))
             {
+                CastSpell("Charm");         // cast charm
                 Debug.Log("Pressed Key: X");                
             }
             if(Input.GetKeyDown(KeyCode.C))
@@ -296,7 +297,13 @@ namespace Rokemon
             _health.DeactivateShield();
             GetComponent<SpriteRenderer>().color = Color.white; 
         }
-
+        
+        private IEnumerator CharmRoutine(float waitTime, GameObject charmTarget)
+        {
+            GameObject target = charmTarget;
+            yield return new WaitForSeconds(waitTime);
+            target.GetComponent<SpriteRenderer>().color = Color.white;    
+        }
 
         // TODO : Add checks for reload 
         // function casting a spell
@@ -343,10 +350,16 @@ namespace Rokemon
                     case "RemoveRoots":
                         Debug.Log("Casting Spell: " + spellName);
                         break;
-                    case "WaterFreeze":
+                    case "StoneBuilder":
                         Debug.Log("Casting Spell: " + spellName);
                         break;
-                    case "Polymorph":
+                    case "Charm":
+                        if(_currentTarget != null && _currentTarget.tag == "CharmableEnemy")
+                        {
+                            UseMana(_abilitiesDatabase[spellName]._cost);
+                            _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
+                            StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage, _currentTarget.gameObject));
+                        }                     
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "Heal":
