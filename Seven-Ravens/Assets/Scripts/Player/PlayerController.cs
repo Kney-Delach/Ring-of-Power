@@ -157,6 +157,8 @@ namespace Rokemon
                     else if (hit.collider.tag == "TransformableGround")
                     {
                         _currentTarget = hit.transform;
+                        notifyTargetObservers(null);
+
                         Debug.Log("Hit transformable ground");
                     }
                     
