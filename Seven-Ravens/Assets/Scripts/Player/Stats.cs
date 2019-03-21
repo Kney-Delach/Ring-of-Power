@@ -112,7 +112,8 @@ namespace Rokemon {
 
         // reduce an amount from stat value 
         public void ReduceValue(float amount)
-        {   if(_shieldActive)
+        {   
+            if(_shieldActive)
             {
                 Debug.Log("Invincible shield activated");
             }

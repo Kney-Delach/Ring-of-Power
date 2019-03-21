@@ -76,19 +76,25 @@ namespace Rokemon {
                 {
                     _targetHealth.DisplayImage = null;
                     _targetHealth.DisplayText = null;
+                    _targetHealth = null;
+                    _target = null;
+                    UpdateUI();
+
                 }
-                _targetHealth = null;
-                _target = target;
 
             }
             else 
             {
+                if(_target != null && _target != target )
+                {
+                    _targetHealth.DisplayImage = null;
+                    _targetHealth.DisplayText = null;
+                    _targetHealth = null;
+                }
                 _target = target;
-
                 _targetHealth = _target.GetComponent<Stats>(); 
-
+                UpdateUI();
             }
-            UpdateUI();
         }
 
         private void UpdateUI()

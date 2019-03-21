@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1b420d30c62584696b36150d5859b9, type: 3}
   m_Name: Haste
   m_EditorClassIdentifier: 
+  _inCooldown: 0
   _active: 1
   _name: Haste
   _description: Increases player speed

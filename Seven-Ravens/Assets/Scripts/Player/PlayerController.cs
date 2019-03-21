@@ -157,6 +157,8 @@ namespace Rokemon
                     else if (hit.collider.tag == "TransformableGround")
                     {
                         _currentTarget = hit.transform;
+                        notifyTargetObservers(null);
+
                         Debug.Log("Hit transformable ground");
                     }
                     
@@ -289,30 +291,50 @@ namespace Rokemon
             }
         }
 
-
-        private IEnumerator HasteCoroutine(float waitTime)
+        private IEnumerator SpellWaitCoroutine(float waitTime, string spellName)
         {
+            _abilitiesDatabase[spellName]._inCooldown = true;
             yield return new WaitForSeconds(waitTime);
+            _abilitiesDatabase[spellName]._inCooldown = false;
+        }
+        private IEnumerator HasteCoroutine(float abilityTime, float waitTime, string spellName)
+        {
+            float temp = waitTime - abilityTime; 
+
+            _abilitiesDatabase[spellName]._inCooldown = true;
+            yield return new WaitForSeconds(abilityTime);
+            Debug.Log(waitTime);
             _speed /=2;
+            yield return new WaitForSeconds(temp);
+            Debug.Log(temp);
+            _abilitiesDatabase[spellName]._inCooldown = false;
+            
 
         }
-        private IEnumerator InvisibleCoroutine(float waitTime)
+        private IEnumerator InvisibleCoroutine(float waitTime, string spellName)
         {
+            _abilitiesDatabase[spellName]._inCooldown = true;
             yield return new WaitForSeconds(waitTime);
+            _abilitiesDatabase[spellName]._inCooldown = false;            
             GetComponent<SpriteRenderer>().color = Color.white; 
         }
 
-        private IEnumerator ShieldRoutine(float waitTime)
+        private IEnumerator ShieldRoutine(float waitTime, string spellName)
         {
+            _abilitiesDatabase[spellName]._inCooldown = true;
             yield return new WaitForSeconds(waitTime);
+            _abilitiesDatabase[spellName]._inCooldown = false;     
+
             _health.DeactivateShield();
             GetComponent<SpriteRenderer>().color = Color.white; 
         }
         
-        private IEnumerator CharmRoutine(float waitTime, GameObject charmTarget)
+        private IEnumerator CharmRoutine(float waitTime, GameObject charmTarget, string spellName)
         {
             GameObject target = charmTarget;
+            _abilitiesDatabase[spellName]._inCooldown = true;
             yield return new WaitForSeconds(waitTime);
+            _abilitiesDatabase[spellName]._inCooldown = false;
             //target.GetComponent<SpriteRenderer>().color = Color.white;    
         }
 
@@ -320,7 +342,7 @@ namespace Rokemon
         // function casting a spell
         public void CastSpell(string spellName)
         {
-            if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
+            if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost && !_abilitiesDatabase[spellName]._inCooldown)
             {
                 GameObject ability = null; 
 
@@ -335,6 +357,7 @@ namespace Rokemon
                             FireboltController fireboltController = ability.GetComponent<FireboltController>();
                             fireboltController._target = _currentTarget;
                             fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
+                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                         }
                         Debug.Log("Casting Spell: " + spellName);
                         break;
@@ -342,20 +365,20 @@ namespace Rokemon
                         GetComponent<SpriteRenderer>().color = Color.blue; 
                         // TODO: Implement invisibility 
                         UseMana(_abilitiesDatabase[spellName]._cost);
-                        StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage));
+                        StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "Haste":
                         UseMana(_abilitiesDatabase[spellName]._cost);
                         _speed *= 2; 
-                        StartCoroutine(HasteCoroutine(_abilitiesDatabase[spellName]._damage));
+                        StartCoroutine(HasteCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName));
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "ProtectiveBubble":
                         UseMana(_abilitiesDatabase[spellName]._cost);
                         GetComponent<SpriteRenderer>().color = Color.yellow; 
                         _health.ActivateShield();
-                        StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._damage));
+                        StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._reloadTime,spellName));
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "RemoveRoots":
@@ -366,6 +389,7 @@ namespace Rokemon
                         TransformReference reference = _currentTarget.GetComponentInChildren<TransformReference>();
                         reference.TransformedObject.SetActive(true);
                         _currentTarget.gameObject.SetActive(false);
+                        StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "Charm":
@@ -373,7 +397,7 @@ namespace Rokemon
                         {
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
-                            StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage, _currentTarget.gameObject));
+                            StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage, _currentTarget.gameObject, spellName));
                         }                     
                         Debug.Log("Casting Spell: " + spellName);
                         break;
@@ -382,11 +406,13 @@ namespace Rokemon
                         {
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
+                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                         }
                         else if(_health.CurrentValue != _health.MaxValue)
                         {
                             UseMana(_abilitiesDatabase[spellName]._cost);
-                            _health.AddValue(_abilitiesDatabase[spellName]._damage);                       
+                            _health.AddValue(_abilitiesDatabase[spellName]._damage);    
+                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                         }
                         Debug.Log("Casting Spell: " + spellName);
                         break;
