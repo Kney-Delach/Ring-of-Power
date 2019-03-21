@@ -256,6 +256,7 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.F))
             {
+                CastSpell("ProtectiveBubble");
                 Debug.Log("Pressed Key: F");
             }
             if(Input.GetKeyDown(KeyCode.G))
@@ -288,6 +289,14 @@ namespace Rokemon
             yield return new WaitForSeconds(waitTime);
             GetComponent<SpriteRenderer>().color = Color.white; 
         }
+
+        private IEnumerator ShieldRoutine(float waitTime)
+        {
+            yield return new WaitForSeconds(waitTime);
+            _health.DeactivateShield();
+            GetComponent<SpriteRenderer>().color = Color.white; 
+        }
+
 
         // TODO : Add checks for reload 
         // function casting a spell
@@ -325,6 +334,10 @@ namespace Rokemon
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "ProtectiveBubble":
+                        UseMana(_abilitiesDatabase[spellName]._cost);
+                        GetComponent<SpriteRenderer>().color = Color.yellow; 
+                        _health.ActivateShield();
+                        StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._damage));
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "RemoveRoots":

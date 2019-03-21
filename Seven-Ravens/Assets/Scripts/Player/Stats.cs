@@ -37,6 +37,9 @@ namespace Rokemon {
         [SerializeField]
         private bool _isPlayer = false;
 
+        // reference to whether or not invincibility shield is active
+        private bool _shieldActive = false; 
+
         // reference to stat value 
         [SerializeField]
         private float _maxValue = 100; 
@@ -109,22 +112,29 @@ namespace Rokemon {
 
         // reduce an amount from stat value 
         public void ReduceValue(float amount)
-        {   
-            if(amount < 0)
-                Debug.LogError("Stats AddValue Error: Attempting to reduce negative amounts to stat!");
- 
-            // verify addition of value not below min
-            float tempVal = _currentValue - amount; 
-            if(tempVal < 0)
+        {   if(_shieldActive)
             {
-                _currentValue = 0;
-            } 
-            else
-            {
-                _currentValue = tempVal;     
+                Debug.Log("Invincible shield activated");
             }
+            else 
+            {
+                if(amount < 0)
+                    Debug.LogError("Stats AddValue Error: Attempting to reduce negative amounts to stat!");
+    
+                // verify addition of value not below min
+                float tempVal = _currentValue - amount; 
+                if(tempVal < 0)
+                {
+                    _currentValue = 0;
+                } 
+                else
+                {
+                    _currentValue = tempVal;     
+                }
 
-            UpdateUI();
+                UpdateUI();
+            }
+            
         }
 
         public bool CompareMaximum()
@@ -133,6 +143,18 @@ namespace Rokemon {
                 return true; 
             else 
                 return false;
+        }
+
+        public void ActivateShield()
+        {
+            if(!_shieldActive && _isPlayer)
+                _shieldActive = true; 
+        }
+
+        public void DeactivateShield()
+        {
+            if(_shieldActive && _isPlayer)
+                _shieldActive = false; 
         }
     }
 }
