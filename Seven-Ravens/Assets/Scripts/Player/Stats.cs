@@ -172,7 +172,9 @@ namespace Rokemon {
         public void DeactivateShield()
         {
             if(_shieldActive && _isPlayer)
-            {
+            {            
+                Debug.Log("Deactivating shield");
+
                 _shieldActive = false; 
                 _displayImage.color = Color.white;
 

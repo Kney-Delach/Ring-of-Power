@@ -8,8 +8,13 @@ namespace Rokemon {
         // Start is called before the first frame update
         void Start()
         {
-            PlayerController player = Object.FindObjectOfType<PlayerController>(); 
-            player.SetPosition(GetComponent<Transform>());
+            if(PlayerInformationController.Instance.PreviousZoneName != "Fire Valley")
+            {
+                PlayerController player = Object.FindObjectOfType<PlayerController>(); 
+                player.SetPosition(GetComponent<Transform>());
+                PlayerInformationController.Instance.UpdateZones("Forest Roads");
+            }
+
         }
 
     }

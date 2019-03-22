@@ -195,6 +195,16 @@ namespace Rokemon
             }
         }
 
+        // function removing the roots selectable 
+        public void RemoveRootTarget()
+        {
+            if(_currentTarget.tag == "Roots")
+            {
+                _currentTarget = null;
+                notifyTargetObservers(null);
+            }
+        }
+
         #endregion
 
         #region MOVEMENT 

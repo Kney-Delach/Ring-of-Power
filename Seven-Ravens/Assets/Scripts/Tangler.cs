@@ -50,7 +50,10 @@ namespace Rokemon {
         public void DestroyRoot()
         {
             if(_triggered)
+            {
                 PlayerController.Instance.UnfreezePlayer();
+                PlayerController.Instance.RemoveRootTarget();
+            }
                 
             gameObject.SetActive(false);
         }
