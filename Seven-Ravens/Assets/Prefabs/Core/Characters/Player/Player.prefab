@@ -45,6 +45,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Health
   _currentFill: 1
+  _isRoot: 0
+  ADD_MORE_REFERENCES_HERE: 0
+  _oneHealthComController: {fileID: 0}
   _fillSpeed: 1
   _isPlayer: 1
   _maxValue: 100
@@ -93,6 +96,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Mana
   _currentFill: 1
+  _isRoot: 0
+  ADD_MORE_REFERENCES_HERE: 0
+  _oneHealthComController: {fileID: 0}
   _fillSpeed: 1
   _isPlayer: 1
   _maxValue: 100
@@ -231,9 +237,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9cc13c5ae1abf0489d2492175114099, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hudGroups: []
+  _hudGroups:
+  - {fileID: 0}
+  - {fileID: 0}
   _health: {fileID: 7427759676101546734}
   _mana: {fileID: 7636080386025877500}
+  _attackDistance: 10
   _abilities:
   - {fileID: 11400000, guid: 620905ff4401fce499d38c30ce504622, type: 2}
   - {fileID: 11400000, guid: e895719f22d1c504eb44659f13910b17, type: 2}
