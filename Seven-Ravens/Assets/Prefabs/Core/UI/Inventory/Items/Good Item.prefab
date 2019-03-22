@@ -94,7 +94,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1.592648, y: 0}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -105,7 +105,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 10.555892, y: 1}
+  m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
 --- !u!114 &5906983535767163545
 MonoBehaviour:
@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737dac158393577418e25ef4331c1aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemId: 3
-  _item: {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417, type: 2}
+  _itemId: 1
+  _item: {fileID: 11400000, guid: 27790a9b94cd649c8a6bbb16be700548, type: 2}
 --- !u!1 &2964898281399499701
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2964898281399499700
 Transform:
   m_ObjectHideFlags: 0
@@ -147,9 +147,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2964898281399499701}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 16.3, y: -1.7, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 7043563960870004343}
   m_Father: {fileID: 0}
@@ -203,9 +203,9 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Good item
+    speakerName: Ruby Gem
     sentences:
-    - Good tem Description
+    - You picked up the Ruby Gem, only 6 gems left to go!
   _choices:
     _choicesText: []
   _choiceIndex: 0

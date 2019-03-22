@@ -25,11 +25,12 @@ namespace Rokemon
 
         // static reference to player tag to be checked on trigger in every instance 
         private static string _playerTag = "Player";
-
+        
+        private bool _active = true; 
         // if triggered by player, trigger scene switch
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if (collision.tag == _playerTag)
+            if (collision.tag == _playerTag && _active)
                 StartCoroutine(OnZonerTriggered());
         }
         
@@ -42,6 +43,11 @@ namespace Rokemon
             PlayerInformationController.Instance.UpdateZones(_zoneName);
             LevelLoader.LoadLevel(_zoneSceneName);
             PlayerController.Instance.UnfreezePlayer();
+        }
+
+        public void SetInactive()
+        {
+            _active = false;
         }
     }
 }

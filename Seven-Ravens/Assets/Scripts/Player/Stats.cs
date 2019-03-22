@@ -38,6 +38,9 @@ namespace Rokemon {
         [SerializeField]
         private ComController _oneHealthComController; 
 
+        [SerializeField]
+        private ZonerController _prevZonerController;
+
         private bool _oneHealthTrigger = false; 
         public bool OneHealthTrigger { get {return _oneHealthTrigger ; } set { _oneHealthTrigger = value ; } }
 
@@ -182,6 +185,9 @@ namespace Rokemon {
             if(_movePosition != null)
                 transform.position = _movePosition.position;
             
+            if(_prevZonerController != null)
+                _prevZonerController.SetInactive();
+                
             ActionBarUIController.Instance.ActivateHealFlash();
             ActionBarUIController.Instance.ActivateFireboltFlash();
             _oneHealthComController.ComEventTrigger(0,false);
