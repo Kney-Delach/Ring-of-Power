@@ -163,13 +163,20 @@ namespace Rokemon {
         public void ActivateShield()
         {
             if(!_shieldActive && _isPlayer)
+            {
                 _shieldActive = true; 
+                _displayImage.color = Color.blue;
+            }
         }
 
         public void DeactivateShield()
         {
             if(_shieldActive && _isPlayer)
+            {
                 _shieldActive = false; 
+                _displayImage.color = Color.white;
+
+            }
         }
     }
 }

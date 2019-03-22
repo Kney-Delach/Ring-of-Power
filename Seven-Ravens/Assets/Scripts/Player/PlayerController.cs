@@ -341,14 +341,21 @@ namespace Rokemon
             GetComponent<SpriteRenderer>().color = Color.white; 
         }
 
-        private IEnumerator ShieldRoutine(float waitTime, string spellName)
+        private IEnumerator ShieldRoutine(float abilityTime, float waitTime, string spellName)
         {
+            float temp = waitTime - abilityTime; 
             _reloadingCheckDatabase[spellName] = true;
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(abilityTime);
+            _health.DeactivateShield();
+
+            GetComponent<SpriteRenderer>().color = Color.white; 
+            Debug.Log("Deactivating shield 2");
+            yield return new WaitForSeconds(temp);
+
             _reloadingCheckDatabase[spellName] = false;
 
-            _health.DeactivateShield();
-            GetComponent<SpriteRenderer>().color = Color.white; 
+
+            
         }
         
         private IEnumerator CharmRoutine(float waitTime, GameObject charmTarget, string spellName)
@@ -400,7 +407,7 @@ namespace Rokemon
                         UseMana(_abilitiesDatabase[spellName]._cost);
                         GetComponent<SpriteRenderer>().color = Color.yellow; 
                         _health.ActivateShield();
-                        StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._reloadTime,spellName));
+                        StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._damage ,_abilitiesDatabase[spellName]._reloadTime,spellName));
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "RemoveRoots":
