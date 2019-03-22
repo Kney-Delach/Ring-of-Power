@@ -169,7 +169,7 @@ namespace Rokemon
 
                 if (hit.collider != null) // if hit something
                 {
-                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy" || hit.collider.tag == "CharmableEnemy") // check if we hit an enemy
+                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy" || hit.collider.tag == "CharmableEnemy" || hit.collider.tag == "Roots") // check if we hit an enemy
                     {
                         _currentTarget = hit.transform;
                         notifyTargetObservers(_currentTarget.gameObject);
@@ -264,7 +264,7 @@ namespace Rokemon
             {   
                 if(_currentTarget != null)
                 {
-                     if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy" || _currentTarget.tag == "CharmableEnemy")
+                     if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy" || _currentTarget.tag == "CharmableEnemy" || _currentTarget.tag == "Roots")
                         CastSpell("Firebolt");  // cast firebolt
                     else 
                         Debug.Log("PlayerController ProcessAbilities: Current target is ["+ _currentTarget.tag +"] .. target an enemy to cast fireball");
@@ -404,10 +404,16 @@ namespace Rokemon
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "RemoveRoots":
-                        //TODO Implement remove roots
-                        UseMana(_abilitiesDatabase[spellName]._cost);
-                        StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
-                        Debug.Log("Casting Spell: " + spellName);
+                        if(_currentTarget != null && _currentTarget.tag == "Roots")
+                        {   
+                            UseMana(_abilitiesDatabase[spellName]._cost);
+                            
+                            Tangler targetTangler = _currentTarget.gameObject.GetComponentInParent<Tangler>();
+                            targetTangler.DestroyRoot();
+
+                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                            Debug.Log("Casting Spell: " + spellName);
+                        }                       
                         break;
                     case "WaterFreeze":
                         UseMana(_abilitiesDatabase[spellName]._cost);

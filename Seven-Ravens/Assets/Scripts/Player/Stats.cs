@@ -25,6 +25,13 @@ namespace Rokemon {
         // reference to current fill amount of stat
         public float _currentFill = 1; 
 
+        [Header("Death Reference components")]
+        [SerializeField]
+        private bool _isRoot = false; 
+
+        [SerializeField]
+        private bool ADD_MORE_REFERENCES_HERE = false;
+
         [Header("Stat Values")]        
         [SerializeField]
         private float _fillSpeed = 1;
@@ -121,7 +128,6 @@ namespace Rokemon {
             {
                 if(amount < 0)
                     Debug.LogError("Stats AddValue Error: Attempting to reduce negative amounts to stat!");
-    
                 // verify addition of value not below min
                 float tempVal = _currentValue - amount; 
                 if(tempVal < 0)
@@ -132,10 +138,18 @@ namespace Rokemon {
                 {
                     _currentValue = tempVal;     
                 }
+                if(_currentValue <= 0)
+                    ProcessDeath();
 
                 UpdateUI();
             }
             
+        }
+
+        private void ProcessDeath()
+        {
+            if(_isRoot)
+                GetComponentInParent<Tangler>().DestroyRoot();
         }
 
         public bool CompareMaximum()

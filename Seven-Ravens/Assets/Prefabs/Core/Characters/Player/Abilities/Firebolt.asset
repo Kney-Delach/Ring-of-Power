@@ -12,11 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1b420d30c62584696b36150d5859b9, type: 3}
   m_Name: Firebolt
   m_EditorClassIdentifier: 
-  _inCooldown: 0
-  _active: 1
   _name: Firebolt
   _description: Sends a bolt of fire in the direction specified
-  _damage: 10
+  _damage: 25
   _speed: 1
   _reloadTime: 3
   _castTime: 2
