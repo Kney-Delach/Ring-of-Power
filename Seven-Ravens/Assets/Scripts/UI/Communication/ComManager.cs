@@ -165,6 +165,7 @@ namespace Rokemon {
 
                 _currentDialogue = dialogue;    // set current dialogue reference
                 PlayerController.Instance.FreezePlayer(); // freeze player movement
+                PlayerController.Instance.RemoveTarget();
                 _active = true;         // set active
                 _currentComType = type; // update current communication type
                 StartCommDialogue(dialogue); // start the dailogue

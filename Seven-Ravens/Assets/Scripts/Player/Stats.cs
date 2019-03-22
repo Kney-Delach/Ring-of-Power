@@ -61,6 +61,8 @@ namespace Rokemon {
         private float _maxValue = 100; 
         public float MaxValue { get { return _maxValue ;}}
 
+        // reference to whether or not stat owner is dead
+        private bool _isDead; 
 
         // reference to current stat value 
         private float _currentValue; 
@@ -116,6 +118,8 @@ namespace Rokemon {
                 GetComponent<ItemDropper>().DropGoodItem();
                 //_shieldActive = true;
                 gameObject.tag = "Untagged";
+                ActionBarUIController.Instance.HideFireboltFlash();
+                ActionBarUIController.Instance.HideHealFlash();
                 _oneHealthComController.ComEventTrigger(1,true);
             }
             else 
@@ -165,7 +169,7 @@ namespace Rokemon {
                     _oneHealthTrigger = false;
                     _currentValue = 1; 
                 }
-                else if (_currentValue <= 0)
+                else if (!_isDead && _currentValue <= 0)
                     ProcessDeath();
 
                 UpdateUI();
@@ -177,16 +181,22 @@ namespace Rokemon {
         {
             if(_movePosition != null)
                 transform.position = _movePosition.position;
+            
+            ActionBarUIController.Instance.ActivateHealFlash();
+            ActionBarUIController.Instance.ActivateFireboltFlash();
             _oneHealthComController.ComEventTrigger(0,false);
             
         }
 
         private void ProcessDeath()
         {
+            _isDead = true;
             if(_isRoot)
                 GetComponentInParent<Tangler>().DestroyRoot();
             if(_isPhoenix)
             {
+                ActionBarUIController.Instance.HideFireboltFlash();
+                ActionBarUIController.Instance.HideHealFlash();
                 GetComponent<ItemDropper>().DropCursedItem();
                 _oneHealthComController.ComEventTrigger(2,true);
 

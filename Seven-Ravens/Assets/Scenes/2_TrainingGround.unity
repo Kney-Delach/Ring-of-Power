@@ -2655,27 +2655,6 @@ MonoBehaviour:
   _cutsceneNpcs:
   - {fileID: 767456818}
   - {fileID: 7326345087893666665}
---- !u!1 &715143954 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1595058345822716277, guid: b58eee04774abdc428c3c849bfc68061,
-    type: 3}
-  m_PrefabInstance: {fileID: 8993244562705981441}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &715143955
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 715143954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdef1590966289b4a85d4dab15e73263, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _flashAnimators: []
-  _reloadImages: []
-  _reloadTexts: []
 --- !u!114 &767456818 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
@@ -17783,6 +17762,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1720737959 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3380459310364080842, guid: 2dfd752c3289f3841a227f3ab67af4cc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1160098078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1720737961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720737959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba347da9c2c34118adb9dae535a18be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1769470556 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1244666056205515655, guid: 5351688b8bee4bd4d8a016e425263333,
@@ -34074,11 +34071,6 @@ PrefabInstance:
     - target: {fileID: 1595058345822716277, guid: b58eee04774abdc428c3c849bfc68061,
         type: 3}
       propertyPath: m_Name
-      value: ActionBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 1595058345822716277, guid: b58eee04774abdc428c3c849bfc68061,
-        type: 3}
-      propertyPath: m_TagString
       value: ActionBar
       objectReference: {fileID: 0}
     - target: {fileID: 3470985979860738569, guid: b58eee04774abdc428c3c849bfc68061,

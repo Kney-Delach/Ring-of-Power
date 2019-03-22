@@ -856,9 +856,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdef1590966289b4a85d4dab15e73263, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _flashAnimators:
-  - {fileID: 5558657900850133358}
-  - {fileID: 8982438550356127415}
+  _fireboltFlashAnimator: {fileID: 5558657900850133358}
+  _healFlashAnimator: {fileID: 8982438550356127415}
+  _invisFlashAnimator: {fileID: 0}
+  _charmFlashAnimator: {fileID: 0}
+  _unrootFlashAnimator: {fileID: 0}
   _reloadImages: []
   _reloadTexts: []
 --- !u!1 &1704405217245281567

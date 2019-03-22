@@ -160,6 +160,7 @@ namespace Rokemon
 
         #region TARGETTING 
         
+        
         // process the clicking on targets
         private void ProcessTargetting()
         {
@@ -198,6 +199,12 @@ namespace Rokemon
             }
         }
 
+        // function removing current player target reference
+        public void RemoveTarget()
+        {
+            _currentTarget = null;
+            notifyTargetObservers(null);
+        }
         // function removing the roots selectable 
         public void RemoveRootTarget()
         {
@@ -277,7 +284,7 @@ namespace Rokemon
             {   
                 if(_currentTarget != null)
                 {
-                     if(_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy" || _currentTarget.tag == "CharmableEnemy" || _currentTarget.tag == "Roots")
+                     if((_currentTarget.tag == "Enemy" || _currentTarget.tag == "HealableEnemy" || _currentTarget.tag == "CharmableEnemy" || _currentTarget.tag == "Roots") && _currentTarget.GetComponent<Stats>().CurrentValue > 0)
                         CastSpell("Firebolt");  // cast firebolt
                     else 
                         Debug.Log("PlayerController ProcessAbilities: Current target is ["+ _currentTarget.tag +"] .. target an enemy to cast fireball");
