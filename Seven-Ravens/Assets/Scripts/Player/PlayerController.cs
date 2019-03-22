@@ -32,6 +32,11 @@ namespace Rokemon
 
         // reference to the player's ability  database
         private static Dictionary<string, Ability> _abilitiesDatabase;
+
+
+        private static Dictionary<string, bool> _activeCheckDatabase; 
+
+        private static Dictionary <string, bool> _reloadingCheckDatabase; 
         
         [Header("Player Abilities")]
         [SerializeField]
@@ -89,10 +94,26 @@ namespace Rokemon
             else
                 _instance = this;
             
-        
+            // TODO: Optimize this into a single iteration
+
+            if(_activeCheckDatabase == null)
+            {
+                _activeCheckDatabase = new Dictionary<string, bool>(); 
+                foreach(Ability abil in _abilities)
+                    _activeCheckDatabase.Add(abil.name, true);
+            }
+
+            if(_reloadingCheckDatabase == null)
+            {
+                _reloadingCheckDatabase = new Dictionary<string, bool>(); 
+                foreach(Ability abil in _abilities)
+                    _reloadingCheckDatabase.Add(abil.name, false);
+            }
+
             if(_abilitiesDatabase == null)
             {
                 _abilitiesDatabase = new Dictionary<string, Ability>();
+
                 foreach(Ability abil in _abilities)
                     _abilitiesDatabase.Add(abil.name, abil);
             }     
@@ -293,37 +314,37 @@ namespace Rokemon
 
         private IEnumerator SpellWaitCoroutine(float waitTime, string spellName)
         {
-            _abilitiesDatabase[spellName]._inCooldown = true;
+            _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(waitTime);
-            _abilitiesDatabase[spellName]._inCooldown = false;
+            _reloadingCheckDatabase[spellName] = false;
         }
         private IEnumerator HasteCoroutine(float abilityTime, float waitTime, string spellName)
         {
             float temp = waitTime - abilityTime; 
 
-            _abilitiesDatabase[spellName]._inCooldown = true;
+            _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(abilityTime);
             Debug.Log(waitTime);
             _speed /=2;
             yield return new WaitForSeconds(temp);
             Debug.Log(temp);
-            _abilitiesDatabase[spellName]._inCooldown = false;
+            _reloadingCheckDatabase[spellName] = false;
             
 
         }
         private IEnumerator InvisibleCoroutine(float waitTime, string spellName)
         {
-            _abilitiesDatabase[spellName]._inCooldown = true;
+            _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(waitTime);
-            _abilitiesDatabase[spellName]._inCooldown = false;            
+            _reloadingCheckDatabase[spellName] = false;
             GetComponent<SpriteRenderer>().color = Color.white; 
         }
 
         private IEnumerator ShieldRoutine(float waitTime, string spellName)
         {
-            _abilitiesDatabase[spellName]._inCooldown = true;
+            _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(waitTime);
-            _abilitiesDatabase[spellName]._inCooldown = false;     
+            _reloadingCheckDatabase[spellName] = false;
 
             _health.DeactivateShield();
             GetComponent<SpriteRenderer>().color = Color.white; 
@@ -332,9 +353,9 @@ namespace Rokemon
         private IEnumerator CharmRoutine(float waitTime, GameObject charmTarget, string spellName)
         {
             GameObject target = charmTarget;
-            _abilitiesDatabase[spellName]._inCooldown = true;
+            _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(waitTime);
-            _abilitiesDatabase[spellName]._inCooldown = false;
+            _reloadingCheckDatabase[spellName] = false;
             //target.GetComponent<SpriteRenderer>().color = Color.white;    
         }
 
@@ -342,7 +363,7 @@ namespace Rokemon
         // function casting a spell
         public void CastSpell(string spellName)
         {
-            if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost && !_abilitiesDatabase[spellName]._inCooldown)
+            if( _activeCheckDatabase[spellName] && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost && !_reloadingCheckDatabase[spellName])
             {
                 GameObject ability = null; 
 

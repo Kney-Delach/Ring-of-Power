@@ -7,8 +7,6 @@ namespace Rokemon {
     [CreateAssetMenu(fileName = "New Item", menuName = "Abilities/Spell")]
     public class Ability : ScriptableObject
     {
-        public bool _inCooldown = false;
-        public bool _active = true;
         public string _name = "Ability Name"; 
 
         //public Sprite _sprite; 
