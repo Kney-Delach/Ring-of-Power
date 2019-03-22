@@ -49,10 +49,11 @@ namespace Rokemon {
             }
         }
 
-        public void ComEventTrigger()
+        public void ComEventTrigger(bool finalTrigger)
         {
             _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
-            gameObject.SetActive(false);
+            if(finalTrigger)
+                gameObject.SetActive(false);
         }
 
         private void Update()

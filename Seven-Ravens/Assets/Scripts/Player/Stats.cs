@@ -32,6 +32,12 @@ namespace Rokemon {
         [SerializeField]
         private bool ADD_MORE_REFERENCES_HERE = false;
 
+        [SerializeField]
+        private ComController _oneHealthComController; 
+
+        private bool _oneHealthTrigger = false; 
+        public bool OneHealthTrigger { get {return _oneHealthTrigger ; } set { _oneHealthTrigger = value ; } }
+
         [Header("Stat Values")]        
         [SerializeField]
         private float _fillSpeed = 1;
@@ -51,6 +57,7 @@ namespace Rokemon {
         [SerializeField]
         private float _maxValue = 100; 
         public float MaxValue { get { return _maxValue ;}}
+
 
         // reference to current stat value 
         private float _currentValue; 
@@ -138,12 +145,23 @@ namespace Rokemon {
                 {
                     _currentValue = tempVal;     
                 }
-                if(_currentValue <= 0)
+                if(_currentValue <= 0 && _oneHealthTrigger)
+                {
+                    processOneHealth(); 
+                    _oneHealthTrigger = false;
+                    _currentValue = 1; 
+                }
+                else if (_currentValue <= 0)
                     ProcessDeath();
 
                 UpdateUI();
             }
             
+        }
+
+        private void processOneHealth()
+        {
+            _oneHealthComController.ComEventTrigger(true);
         }
 
         private void ProcessDeath()

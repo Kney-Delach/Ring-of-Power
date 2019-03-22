@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Rokemon {
-
-    public class FireboltController : MonoBehaviour {
+    public class EnemyFireboltController : MonoBehaviour
+    {
 
         private Rigidbody2D _rigidBody;
         
@@ -52,11 +52,12 @@ namespace Rokemon {
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if ((collision.tag == "Enemy" ||  collision.tag == "HealableEnemy" || collision.tag == "CharmableEnemy" || collision.tag == "Roots" || collision.tag == "Player") && collision.transform == _target)
+            if ((collision.tag == "Player") && collision.transform == _target)
             {
                 //GetComponent<Animator>().SetTrigger("impact");
                 _rigidBody.velocity = Vector2.zero;
-                _target.GetComponent<Stats>().ReduceValue(_damage);
+                PlayerController.Instance.ReduceHealth(_damage);
+                //_target.GetComponent<PlayerController>().ReduceValue(_damage);
                 _target = null;
                 Destroy(gameObject);
             }

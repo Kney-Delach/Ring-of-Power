@@ -482,6 +482,12 @@ namespace Rokemon
             _mana.ReduceValue(amount);
         }
 
+        // reduce player health
+        public void ReduceHealth(float amount)
+        {
+            _health.ReduceValue(amount);
+        }
+
         #endregion 
 
         #region STATS
