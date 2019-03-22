@@ -20,10 +20,14 @@ namespace Rokemon {
         [SerializeField]
         private bool _eventTrigger = false;
 
+        [SerializeField]
+        private bool _isItem = false;
+
         private bool _isCollding = false;
 
         private bool _isActive = false;
 
+        private bool _itemActivated = false;
         private bool _currentComActive = false;
 
         private bool _currentComComplete = false;
@@ -49,11 +53,12 @@ namespace Rokemon {
             }
         }
 
-        public void ComEventTrigger(bool finalTrigger)
+        public void ComEventTrigger(int triggerIndex ,bool finalTrigger)
         {
-            _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
+            _triggers[triggerIndex].TriggerCommunication(_instance);
             if(finalTrigger)
                 gameObject.SetActive(false);
+
         }
 
         private void Update()
@@ -62,8 +67,18 @@ namespace Rokemon {
             {
                 if(_isCollding)
                 {
-                    if(Input.GetKeyDown(KeyCode.K))
+                    if(_isItem && !_itemActivated)
+                    {
+                        _itemActivated = true;
                         _isActive = true;
+                    }else if(_isItem && _itemActivated)
+                    {
+
+                    }
+                    else if(Input.GetKeyDown(KeyCode.K))
+                    {
+                        _isActive = true;
+                    }
                     
                     if(_isActive)
                     {
@@ -85,6 +100,8 @@ namespace Rokemon {
                 _currentTriggerIndex ++;
             _isActive = false;
             _currentComActive = false;
+            if(_isItem && _itemActivated)
+                gameObject.SetActive(false);
         }
 
         private void OnTriggerEnter2D(Collider2D collision)

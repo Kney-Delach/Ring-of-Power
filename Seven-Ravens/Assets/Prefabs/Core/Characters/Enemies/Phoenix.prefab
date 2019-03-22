@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 754207773188409975}
   - component: {fileID: 6502813757213819153}
   - component: {fileID: 2448846358222814542}
+  - component: {fileID: 6833311717807267334}
   m_Layer: 8
   m_Name: Phoenix
   m_TagString: HealableEnemy
@@ -125,11 +126,26 @@ MonoBehaviour:
   _name: Health
   _currentFill: 1
   _isRoot: 0
+  _isPhoenix: 1
   ADD_MORE_REFERENCES_HERE: 0
   _oneHealthComController: {fileID: 6554878402546121457}
   _fillSpeed: 1
   _isPlayer: 0
   _maxValue: 100
+--- !u!114 &6833311717807267334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 754207773188409973}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 978955012e3884be2acb808011c6612a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cursedItem: {fileID: 0}
+  _goodItem: {fileID: 0}
 --- !u!1 &6741289158114033961
 GameObject:
   m_ObjectHideFlags: 0
@@ -178,6 +194,7 @@ MonoBehaviour:
   - {fileID: 2105975206167309409}
   _sceneStarter: 0
   _eventTrigger: 0
+  _movePosition: {fileID: 0}
 --- !u!1 &7411414965319403622
 GameObject:
   m_ObjectHideFlags: 0

@@ -30,7 +30,10 @@ namespace Rokemon {
         private bool _isRoot = false; 
 
         [SerializeField]
-        private bool ADD_MORE_REFERENCES_HERE = false;
+        private bool _isPhoenix = false; 
+
+        [SerializeField]
+        Transform _movePosition; 
 
         [SerializeField]
         private ComController _oneHealthComController; 
@@ -107,18 +110,29 @@ namespace Rokemon {
         // add an amount to stat value
         public void AddValue(float amount)
         {   
-            if(amount < 0)
-                Debug.LogError("Stats AddValue Error: Attempting to add negative amounts to stat!");
-
-            // verify addition of value not above max
-            float tempVal = amount + _currentValue; 
-            if(amount > _maxValue || tempVal > _maxValue)
+            if(_isPhoenix)
             {
                 _currentValue = _maxValue;
-            } 
-            else
+                GetComponent<ItemDropper>().DropGoodItem();
+                //_shieldActive = true;
+                gameObject.tag = "Untagged";
+                _oneHealthComController.ComEventTrigger(1,true);
+            }
+            else 
             {
-                _currentValue = tempVal;     
+                if(amount < 0)
+                    Debug.LogError("Stats AddValue Error: Attempting to add negative amounts to stat!");
+
+                // verify addition of value not above max
+                float tempVal = amount + _currentValue; 
+                if(amount > _maxValue || tempVal > _maxValue)
+                {
+                    _currentValue = _maxValue;
+                } 
+                else
+                {
+                    _currentValue = tempVal;     
+                }
             }
 
             UpdateUI();
@@ -129,7 +143,7 @@ namespace Rokemon {
         {   
             if(_shieldActive)
             {
-                Debug.Log("Invincible shield activated");
+                Debug.Log("Invincible shield active");
             }
             else 
             {
@@ -161,13 +175,23 @@ namespace Rokemon {
 
         private void processOneHealth()
         {
-            _oneHealthComController.ComEventTrigger(true);
+            if(_movePosition != null)
+                transform.position = _movePosition.position;
+            _oneHealthComController.ComEventTrigger(0,false);
+            
         }
 
         private void ProcessDeath()
         {
             if(_isRoot)
                 GetComponentInParent<Tangler>().DestroyRoot();
+            if(_isPhoenix)
+            {
+                GetComponent<ItemDropper>().DropCursedItem();
+                _oneHealthComController.ComEventTrigger(2,true);
+
+            }
+
         }
 
         public bool CompareMaximum()

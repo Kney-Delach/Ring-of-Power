@@ -463,7 +463,7 @@ namespace Rokemon
                             _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
                             StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                         }
-                        else if(_health.CurrentValue != _health.MaxValue)
+                        else if(_currentTarget == null && (_health.CurrentValue != _health.MaxValue) && _health.CurrentValue != 0)
                         {
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             _health.AddValue(_abilitiesDatabase[spellName]._damage);    
