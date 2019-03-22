@@ -2655,6 +2655,27 @@ MonoBehaviour:
   _cutsceneNpcs:
   - {fileID: 767456818}
   - {fileID: 7326345087893666665}
+--- !u!1 &715143954 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1595058345822716277, guid: b58eee04774abdc428c3c849bfc68061,
+    type: 3}
+  m_PrefabInstance: {fileID: 8993244562705981441}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &715143955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 715143954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdef1590966289b4a85d4dab15e73263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flashAnimators: []
+  _reloadImages: []
+  _reloadTexts: []
 --- !u!114 &767456818 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
@@ -3298,11 +3319,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4686994119298673106, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
-        type: 3}
-      propertyPath: _hudGroups.Array.size
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4686994119298673106, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
@@ -34058,6 +34074,11 @@ PrefabInstance:
     - target: {fileID: 1595058345822716277, guid: b58eee04774abdc428c3c849bfc68061,
         type: 3}
       propertyPath: m_Name
+      value: ActionBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 1595058345822716277, guid: b58eee04774abdc428c3c849bfc68061,
+        type: 3}
+      propertyPath: m_TagString
       value: ActionBar
       objectReference: {fileID: 0}
     - target: {fileID: 3470985979860738569, guid: b58eee04774abdc428c3c849bfc68061,

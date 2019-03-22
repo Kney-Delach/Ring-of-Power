@@ -37,9 +37,9 @@ namespace Rokemon {
         }
 
         private void Update()
-        {
-            if(_aggro)
-            {
+        {   
+            if(_aggro && _enemyHealth.OneHealthTrigger)
+            {   
                 if(_canCastFirebolt)
                 {
                     StartCoroutine(FireboltRoutine());

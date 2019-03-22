@@ -28,6 +28,9 @@ namespace Rokemon
 
         #region ABILITIES VARIABLES
 
+        [SerializeField]
+        private float _attackDistance = 6; 
+
         private Transform _currentTarget; 
 
         // reference to the player's ability  database
@@ -388,17 +391,20 @@ namespace Rokemon
                 switch (spellName)
                 {
                     case "Firebolt":
-                        // if(_abilitiesDatabase[spellName]._active && _mana.CurrentValue >= _abilitiesDatabase[spellName]._cost)
-                        ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
-                        if( ability != null)
+                        float dist = Vector3.Distance(_currentTarget.position, transform.position);
+                        if(dist < _attackDistance)
                         {
-                            UseMana(_abilitiesDatabase[spellName]._cost);
-                            FireboltController fireboltController = ability.GetComponent<FireboltController>();
-                            fireboltController._target = _currentTarget;
-                            fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
-                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                            ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
+                            if( ability != null)
+                            {
+                                UseMana(_abilitiesDatabase[spellName]._cost);
+                                FireboltController fireboltController = ability.GetComponent<FireboltController>();
+                                fireboltController._target = _currentTarget;
+                                fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
+                                StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                            }
+                            Debug.Log("Casting Spell: " + spellName);
                         }
-                        Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "Invisibility":
                         GetComponent<SpriteRenderer>().color = Color.blue; 
@@ -451,7 +457,7 @@ namespace Rokemon
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "Heal":
-                        if(_currentTarget != null && _currentTarget.tag == "HealableEnemy" && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != _currentTarget.gameObject.GetComponent<Stats>().MaxValue) )
+                        if(_currentTarget != null && _currentTarget.tag == "HealableEnemy" && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != _currentTarget.gameObject.GetComponent<Stats>().MaxValue) && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != 0) && (!_currentTarget.gameObject.GetComponent<Stats>().OneHealthTrigger))
                         {
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
