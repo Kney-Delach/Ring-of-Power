@@ -25658,6 +25658,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cursed Item
       objectReference: {fileID: 0}
+    - target: {fileID: 4923738103601880747, guid: 2228ede249a9d4908a21de2d067cab84,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4923738103601880746, guid: 2228ede249a9d4908a21de2d067cab84,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -25726,6 +25731,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Good Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 2964898281399499701, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2964898281399499700, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
         type: 3}
