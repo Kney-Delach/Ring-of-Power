@@ -291,6 +291,7 @@ namespace Rokemon
             }
             if(Input.GetKeyDown(KeyCode.G))
             {
+                CastSpell("RemoveRoots");
                 Debug.Log("Pressed Key: G");
             }
             if(Input.GetKeyDown(KeyCode.Z))
@@ -403,6 +404,9 @@ namespace Rokemon
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "RemoveRoots":
+                        //TODO Implement remove roots
+                        UseMana(_abilitiesDatabase[spellName]._cost);
+                        StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "WaterFreeze":
@@ -416,6 +420,7 @@ namespace Rokemon
                     case "Charm":
                         if(_currentTarget != null && _currentTarget.tag == "CharmableEnemy")
                         {
+                            // TODO: Implement Charm
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
                             StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage, _currentTarget.gameObject, spellName));
