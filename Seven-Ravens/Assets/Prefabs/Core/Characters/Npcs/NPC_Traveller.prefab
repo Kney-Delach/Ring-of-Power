@@ -29,7 +29,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5958550289454303568}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &8619731163758332183
 SpriteRenderer:
@@ -108,7 +108,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 5958550289454303568}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &20266840637295988
 SpriteRenderer:
@@ -174,11 +174,11 @@ GameObject:
   - component: {fileID: 5958550289045974563}
   m_Layer: 0
   m_Name: NPC_Traveller
-  m_TagString: BROTHER1
+  m_TagString: Traveller
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &5958550289454303568
 Transform:
   m_ObjectHideFlags: 0
@@ -190,7 +190,6 @@ Transform:
   m_LocalPosition: {x: 3.35, y: -6.43, z: 0}
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_Children:
-  - {fileID: 1071613841341959435}
   - {fileID: 3811808667032662038}
   - {fileID: 8167735341841533707}
   m_Father: {fileID: 0}
@@ -251,19 +250,18 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5958550289454303567}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 566278a354fa4dc4a8bc04bcb0437919, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _npcName: Mom
+  _npcName: Traveller
   _speed: 2
   _rigidbody: {fileID: 613479498591293238}
   _animator: {fileID: 2892097155374594240}
   _looping: 0
   _pauseAmount: 1
   _waypoints:
-  - {fileID: 0}
   - {fileID: 0}
   _cutscene: 0
 --- !u!95 &2892097155374594240
@@ -276,7 +274,7 @@ Animator:
   m_GameObject: {fileID: 5958550289454303567}
   m_Enabled: 0
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 62d94fd6b16f48542895d27ec6e0c2cd, type: 2}
+  m_Controller: {fileID: 9100000, guid: 2190c3257c7c9c74b98b7e31ff03f4a1, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -332,136 +330,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.0625, y: 1.8125}
   m_EdgeRadius: 0
---- !u!1 &8032326894622603011
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1071613841341959435}
-  - component: {fileID: 4003915103153082705}
-  - component: {fileID: 7797912021216759052}
-  - component: {fileID: 3728251554786658803}
-  - component: {fileID: 6032307460723727856}
-  m_Layer: 0
-  m_Name: NpcTriggers
-  m_TagString: Quest-1
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1071613841341959435
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032326894622603011}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 5958550289454303568}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &4003915103153082705
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032326894622603011}
-  m_Enabled: 0
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2.5}
-  m_EdgeRadius: 0
---- !u!114 &7797912021216759052
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032326894622603011}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2463a82e5493d4e894fd699f3fc9ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerNpc: {fileID: 3389921888787468423}
-  _choices:
-    _choicesText:
-    - Yeah, i'm feeling exhausted, lets go home.
-    - No, i'm just taking a break, i'll continue practicing my spells in a minute.
-  _choiceIndex: 0
-  _questSource: {fileID: 3728251554786658803}
-  _dialogue:
-    transformNpcs: 0
-    speakerTag: MOM
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 1
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Mom
-    sentences:
-    - 'Hey sweety, are you done training for the day? '
-    - Okay!
---- !u!114 &3728251554786658803
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032326894622603011}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e77b4ce61d2ddc8498a7d70e888608f8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _questSourceID: 0
-  _quests: []
-  _questDialogueTrigger: {fileID: 7797912021216759052}
---- !u!114 &6032307460723727856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8032326894622603011}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db31bc85cfafd74285e6b2278a26f43, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _triggerNpc: {fileID: 3389921888787468423}
-  _isItem: 0
-  _dialogue:
-    transformNpcs: 0
-    speakerTag: 
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 1
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Mom
-    sentences:
-    - I'm looking forward to eating those apples!

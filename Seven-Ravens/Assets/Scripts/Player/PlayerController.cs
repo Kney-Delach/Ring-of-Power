@@ -420,14 +420,19 @@ namespace Rokemon
                         }
                         break;
                     case "Invisibility":
-                        GetComponent<SpriteRenderer>().color = Color.blue; 
                         GameObject targetField = GameObject.FindGameObjectWithTag("EnemyTargetField");
-                        EnemyController targetController = targetField.GetComponent<EnemyController>(); 
-                        if(targetController != null)
-                            targetController.TogglePlayerInvisibility();
-                        // TODO: Implement invisibility 
-                        UseMana(_abilitiesDatabase[spellName]._cost);
-                        StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName, targetController));
+                        if(targetField != null)
+                        {
+                            EnemyController targetController = targetField.GetComponent<EnemyController>(); 
+                            if(targetController != null)
+                            {
+                                GetComponent<SpriteRenderer>().color = Color.blue; 
+                                targetController.TogglePlayerInvisibility();
+                                UseMana(_abilitiesDatabase[spellName]._cost);
+                                StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName, targetController));
+                            }                            
+                        }
+                        
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "Haste":

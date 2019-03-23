@@ -19,6 +19,7 @@ namespace Rokemon {
 
         [SerializeField]
         private bool _eventTrigger = false;
+        public bool EventTrigger { get { return _eventTrigger ; } }
 
         [SerializeField]
         private bool _isItem = false;
@@ -30,8 +31,11 @@ namespace Rokemon {
         private bool _itemActivated = false;
         private bool _currentComActive = false;
 
-        private bool _currentComComplete = false;
         private static string PLAYER_TAG = "Player";
+        
+        //[Header("Event Communication References")]
+
+        private bool _currentEventComplete = false;
 
         private ComController _instance;
         public ComController Instance { get { return _instance ; } }
@@ -96,17 +100,53 @@ namespace Rokemon {
 
         public void TriggerComplete()
         {
-            if(!_singleTrigger)
-                _currentTriggerIndex ++;
-            _isActive = false;
-            _currentComActive = false;
-            if(_isItem && _itemActivated)
-                gameObject.SetActive(false);
+            if(_eventTrigger)
+            {
+                _currentTriggerIndex++;
+                Debug.Log(_currentTriggerIndex);
+                if(_currentEventComplete)
+                {
+                    // PlayerController.Instance.UnfreezePlayer();
+                    // gameObject.SetActive(false); // set gameobject inactive 
+                }
+                else if(_currentTriggerIndex < _triggers.Length) 
+                {
+                    Debug.Log("REACHED SIMULATION POINT 4");
+                    PlayerController.Instance.FreezePlayer();
+                    TriggerCommunicationEvents();
+                }
+                else 
+                {
+                    _currentEventComplete = true;
+                    PlayerController.Instance.UnfreezePlayer();
+                    Debug.Log("Exiting ComController");
+                    gameObject.SetActive(false);
+                }
+            }
+            else 
+            {
+                if(!_singleTrigger)
+                    _currentTriggerIndex ++;
+                _isActive = false;
+                _currentComActive = false;
+                if(_isItem && _itemActivated)
+                    gameObject.SetActive(false);
+            }
+           
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+
+        private void TriggerCommunicationEvents()
         {
-            if(!_sceneStarter && collision.tag == PLAYER_TAG)
+            _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
+        }
+        private void OnTriggerEnter2D(Collider2D collision)
+        {   
+            if(_eventTrigger &&  collision.tag == PLAYER_TAG)
+            {
+                TriggerCommunicationEvents();
+            }
+            else if(!_sceneStarter && collision.tag == PLAYER_TAG)
             {
                 _isCollding = true;
             }
@@ -114,7 +154,11 @@ namespace Rokemon {
 
         private void OnTriggerExit2D(Collider2D collision)
         {
-            if(!_sceneStarter && collision.tag == PLAYER_TAG)
+            if(_eventTrigger &&  collision.tag == PLAYER_TAG)
+            {
+
+            }
+            else if(!_sceneStarter && collision.tag == PLAYER_TAG)
             {
                 _isCollding = false;
             }

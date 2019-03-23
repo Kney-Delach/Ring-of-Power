@@ -55,6 +55,15 @@ namespace Rokemon {
         
         #endregion
 
+        // TODO: Utilise
+        public void HideAllFlashes()
+        {
+            _fireboltFlashAnimator.SetBool("Active", false);
+            _healFlashAnimator.SetBool("Active", false);
+            _invisFlashAnimator.SetBool("Active", false);
+            _charmFlashAnimator.SetBool("Active", false);
+            _unrootFlashAnimator.SetBool("Active", false);
+        }
         public void ActivateFireboltFlash()
         {
             _fireboltFlashAnimator.SetBool("Active", true);
