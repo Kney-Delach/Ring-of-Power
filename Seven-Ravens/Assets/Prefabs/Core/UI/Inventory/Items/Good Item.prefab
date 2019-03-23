@@ -203,9 +203,10 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Ruby Gem
+    speakerName: Good Item
     sentences:
-    - You picked up the Ruby Gem, only 6 gems left to go!
+    - 'You picked up a good item, this can be used to transform cursed souls back
+      to their initial state. '
   _choices:
     _choicesText: []
   _choiceIndex: 0
