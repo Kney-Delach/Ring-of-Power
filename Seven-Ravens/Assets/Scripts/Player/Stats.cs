@@ -30,6 +30,9 @@ namespace Rokemon {
         private bool _isRoot = false; 
 
         [SerializeField]
+        private bool _isTraveller = false; 
+
+        [SerializeField]
         private bool _isPhoenix = false; 
 
         [SerializeField]
@@ -196,6 +199,8 @@ namespace Rokemon {
 
         private void ProcessDeath()
         {
+
+
             _isDead = true;
             if(_isRoot)
                 GetComponentInParent<Tangler>().DestroyRoot();
@@ -205,7 +210,15 @@ namespace Rokemon {
                 ActionBarUIController.Instance.HideHealFlash();
                 GetComponent<ItemDropper>().DropCursedItem();
                 _oneHealthComController.ComEventTrigger(2,true);
+            }
 
+            if(_isTraveller)
+            {
+                GetComponent<Collider2D>().enabled = false;
+                gameObject.layer = 1;   
+                PlayerController.Instance.RemoveTarget();
+                ActionBarUIController.Instance.HideFireboltFlash();
+                GetComponent<ItemDropper>().DropCursedItem();
             }
 
         }

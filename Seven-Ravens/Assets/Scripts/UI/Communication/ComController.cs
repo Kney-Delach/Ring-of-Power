@@ -33,7 +33,14 @@ namespace Rokemon {
 
         private static string PLAYER_TAG = "Player";
         
-        //[Header("Event Communication References")]
+        [Header("Event Communication References")]
+        [SerializeField]
+        private GameObject _npc;
+        public GameObject Npc { get { return _npc ; } } 
+
+        [SerializeField]
+        private string _abilityName;
+        public string AbilityName { get { return _abilityName ; } } 
 
         private bool _currentEventComplete = false;
 

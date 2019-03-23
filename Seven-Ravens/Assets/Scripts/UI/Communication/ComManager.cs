@@ -331,9 +331,18 @@ namespace Rokemon {
                     _choiceMade = true;
                     SkipSentences(choiceMadeIndex-1);
                     DisplayNextSentence();
+                    PlayerController.Instance.DeactivateAbility(_currentController.AbilityName);
+                    _currentController.Npc.layer = 1;
+                    _currentController.Npc.SetActive(false);
+                    _currentController.Npc.GetComponent<ItemDropper>().DropGoodItem();
                     Debug.Log("Process Trade Choice");
                     break;
                 case ResponseType.Nothing:
+                    _choiceMade = true;
+                    SkipSentences(choiceMadeIndex-1);
+                    DisplayNextSentence();
+                    _currentController.Npc.layer = 1;
+                    _currentController.Npc.SetActive(false);
                     Debug.Log("Process Nothing Choice");
                     EndCommunication();
                     break;
