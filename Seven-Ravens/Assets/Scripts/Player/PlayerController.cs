@@ -353,12 +353,14 @@ namespace Rokemon
             
 
         }
-        private IEnumerator InvisibleCoroutine(float waitTime, string spellName)
+        private IEnumerator InvisibleCoroutine(float waitTime, string spellName, EnemyController targetController)
         {
             _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(waitTime);
             _reloadingCheckDatabase[spellName] = false;
             GetComponent<SpriteRenderer>().color = Color.white; 
+            if(targetController != null)
+                targetController.TogglePlayerInvisibility();
         }
 
         private IEnumerator ShieldRoutine(float abilityTime, float waitTime, string spellName)
@@ -415,9 +417,13 @@ namespace Rokemon
                         break;
                     case "Invisibility":
                         GetComponent<SpriteRenderer>().color = Color.blue; 
+                        GameObject targetField = GameObject.FindGameObjectWithTag("EnemyTargetField");
+                        EnemyController targetController = targetField.GetComponent<EnemyController>(); 
+                        if(targetController != null)
+                            targetController.TogglePlayerInvisibility();
                         // TODO: Implement invisibility 
                         UseMana(_abilitiesDatabase[spellName]._cost);
-                        StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                        StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName, targetController));
                         Debug.Log("Casting Spell: " + spellName);
                         break;
                     case "Haste":

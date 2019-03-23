@@ -463,11 +463,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 754207773188409974}
     m_Modifications:
-    - target: {fileID: 8175191304479750631, guid: 744fffc34607fe14fb70fa014bb44deb,
-        type: 3}
-      propertyPath: m_Name
-      value: WorldHUD
-      objectReference: {fileID: 0}
     - target: {fileID: 8175191304479750630, guid: 744fffc34607fe14fb70fa014bb44deb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -572,6 +567,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175191304479750631, guid: 744fffc34607fe14fb70fa014bb44deb,
+        type: 3}
+      propertyPath: m_Name
+      value: WorldHUD
       objectReference: {fileID: 0}
     - target: {fileID: 8863423020779833809, guid: 744fffc34607fe14fb70fa014bb44deb,
         type: 3}
