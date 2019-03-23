@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
+using LevelManagement;
 
 namespace Rokemon {
     public class Stats : MonoBehaviour
@@ -34,6 +35,9 @@ namespace Rokemon {
 
         [SerializeField]
         private bool _isPhoenix = false; 
+
+        [SerializeField]
+        private bool _isCerberus = false;
 
         [SerializeField]
         Transform _movePosition; 
@@ -75,7 +79,7 @@ namespace Rokemon {
 
         // reference to current stat value 
         private float _currentValue; 
-        public float CurrentValue { get { return _currentValue ; } }
+        public float CurrentValue { get { return _currentValue ; } set { _currentValue = value ; } }
         //public float CurrentValue { get { return _currentValue ; }}
 
         private void Start()
@@ -213,7 +217,12 @@ namespace Rokemon {
                 GetComponent<ItemDropper>().DropCursedItem();
                 _oneHealthComController.ComEventTrigger(2,true);
             }
-
+            if(_isCerberus)
+            {
+                GetComponent<Collider2D>().enabled = false;
+                PlayerController.Instance.RemoveTarget();
+                gameObject.layer = 1;   
+            }
             if(_isTraveller)
             {
                 PlayerController.Instance.Mana.MaxValue += 20; 
@@ -227,6 +236,24 @@ namespace Rokemon {
                 GetComponent<ItemDropper>().DropCursedItem();
             }
 
+            if(_isPlayer)
+            {
+                StartCoroutine(RespawnRoutine());
+            }
+
+        }
+        private IEnumerator RespawnRoutine()
+        {
+            PlayerController.Instance.RemoveTarget();
+            PlayerController.Instance.FreezePlayer();
+            yield return new WaitForSeconds(0.3f);
+            _currentValue = _maxValue;
+            PlayerController.Instance.Mana.CurrentValue = PlayerController.Instance.Mana.MaxValue;
+            LevelLoader.ReloadLevel();
+            UpdateUI();
+            PlayerController.Instance.Mana.UpdateUI();
+            _isDead = false;
+            PlayerController.Instance.UnfreezePlayer();
         }
 
         public bool CompareMaximum()

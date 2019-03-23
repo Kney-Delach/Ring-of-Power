@@ -24,6 +24,9 @@ namespace Rokemon {
         [SerializeField]
         private bool _oneHealthTrigger = false; 
 
+        [SerializeField]
+        private bool _isCerberus = false;
+
         private bool _aggro = false; 
 
         private bool _playerInvisibile = false;
@@ -46,6 +49,10 @@ namespace Rokemon {
                 {
                     StartCoroutine(FireboltRoutine());
                 }
+            }else if(_aggro && !_playerInvisibile && _isCerberus && _enemyHealth.CurrentValue != 0)
+            {
+                if(_canCastFirebolt)
+                    StartCoroutine(FireboltRoutine());
             }
         }
 

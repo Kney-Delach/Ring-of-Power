@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Firebolt
   _description: Sends a bolt of fire in the direction specified
-  _damage: 20
+  _damage: 100
   _speed: 1
   _reloadTime: 1
   _castTime: 2

@@ -356,15 +356,18 @@ namespace Rokemon
             
 
         }
-        private IEnumerator InvisibleCoroutine(float abilityTime,float waitTime, string spellName, EnemyController targetController)
+        private IEnumerator InvisibleCoroutine(float abilityTime,float waitTime, string spellName, List<EnemyController> targetControllers)
         {
             float temp = waitTime - abilityTime; 
             _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(abilityTime);
 
             GetComponent<SpriteRenderer>().color = Color.white; 
-            if(targetController != null)
-                targetController.TogglePlayerInvisibility();
+            if(targetControllers != null)
+            {
+                foreach(EnemyController controller in targetControllers)
+                    controller.TogglePlayerInvisibility();
+            }
 
             yield return new WaitForSeconds(temp);
             _reloadingCheckDatabase[spellName] = false;
@@ -381,9 +384,6 @@ namespace Rokemon
             yield return new WaitForSeconds(temp);
 
             _reloadingCheckDatabase[spellName] = false;
-
-
-            
         }
         
         private IEnumerator CharmRoutine(float waitTime, GameObject charmTarget, string spellName)
@@ -420,20 +420,29 @@ namespace Rokemon
                         }
                         break;
                     case "Invisibility":
-                        GameObject targetField = GameObject.FindGameObjectWithTag("EnemyTargetField");
-                        if(targetField != null)
+                        GameObject[] targetField = GameObject.FindGameObjectsWithTag("EnemyTargetField");
+                        List<EnemyController> targetControllersList = new List<EnemyController>(); 
+                        
+                        if(targetField.Length != 0)
                         {
-                            EnemyController targetController = targetField.GetComponent<EnemyController>(); 
-                            if(targetController != null)
+                            foreach(GameObject target in targetField)
+                            {
+                                targetControllersList.Add(target.GetComponent<EnemyController>()); 
+                            }
+                            if(targetControllersList.Count != 0)
                             {
                                 GetComponent<SpriteRenderer>().color = Color.blue; 
-                                targetController.TogglePlayerInvisibility();
+                                foreach(EnemyController controller in targetControllersList)
+                                {
+                                    controller.TogglePlayerInvisibility();
+                                }
                                 UseMana(_abilitiesDatabase[spellName]._cost);
-                                StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, targetController));
+                                StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, targetControllersList));
                             }                            
                         }
                         else
                         {
+                            Debug.Log("fUCK");
                             GetComponent<SpriteRenderer>().color = Color.blue; 
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, null));
