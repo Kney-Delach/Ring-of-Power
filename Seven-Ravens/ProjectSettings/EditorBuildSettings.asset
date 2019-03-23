@@ -48,9 +48,24 @@ EditorBuildSettings:
     path: Assets/Scenes/12_InsideElvesHouse.unity
     guid: 088f8bcc8879748b99e635cf9722c519
   - enabled: 1
-    path: Assets/Scenes/13_EnchantedForestWolf.unity
+    path: Assets/Scenes/13_EntangledForestWolf.unity
     guid: fc78c03058fa64726816fc981a34f4aa
-  - enabled: 0
+  - enabled: 1
+    path: Assets/Scenes/14_A_ForestPupTrapped.unity
+    guid: a3d8de75cb3bb44c8a8a970716d844c8
+  - enabled: 1
+    path: Assets/Scenes/14_B_ForestPupDead.unity
+    guid: c530455ef6a2741758762de97d0197d5
+  - enabled: 1
+    path: Assets/Scenes/14_C_ForestFamilyThank.unity
+    guid: b024177d9cff24f298cc7692d7acc6e1
+  - enabled: 1
+    path: Assets/Scenes/15_Riverbank.unity
+    guid: c65acf7a9259b4397b65e887dc5bce62
+  - enabled: 1
     path: Assets/Scenes/16_BottomMountain.unity
     guid: 6c9a3d2b811034100bb62965cad18e81
+  - enabled: 1
+    path: Assets/Scenes/17_EvilLair.unity
+    guid: 6e20d3ac1cf1f468fa61bfba9f202321
   m_configObjects: {}
