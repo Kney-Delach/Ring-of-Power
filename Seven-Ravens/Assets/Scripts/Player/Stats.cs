@@ -68,7 +68,7 @@ namespace Rokemon {
         // reference to stat value 
         [SerializeField]
         private float _maxValue = 100; 
-        public float MaxValue { get { return _maxValue ;}}
+        public float MaxValue { get { return _maxValue ; } set { _maxValue = value ; } }
 
         // reference to whether or not stat owner is dead
         private bool _isDead; 
@@ -202,13 +202,12 @@ namespace Rokemon {
 
         private void ProcessDeath()
         {
-
-
             _isDead = true;
             if(_isRoot)
                 GetComponentInParent<Tangler>().DestroyRoot();
             if(_isPhoenix)
             {
+                PlayerController.Instance.Mana.MaxValue += 20; 
                 ActionBarUIController.Instance.HideFireboltFlash();
                 ActionBarUIController.Instance.HideHealFlash();
                 GetComponent<ItemDropper>().DropCursedItem();
@@ -217,6 +216,7 @@ namespace Rokemon {
 
             if(_isTraveller)
             {
+                PlayerController.Instance.Mana.MaxValue += 20; 
                 if(_deathComController != null)
                     _deathComController.Instance.TriggerCommunicationEvents();
                 ActionBarUIController.Instance.HideFireboltFlash();

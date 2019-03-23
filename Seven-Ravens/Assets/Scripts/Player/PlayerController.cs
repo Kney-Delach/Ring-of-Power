@@ -20,9 +20,11 @@ namespace Rokemon
         // refernece to player health stat
         [SerializeField]
         private Stats _health;
+        public Stats Health { get { return _health ; } }
         // reference to player mana stat
         [SerializeField] 
         private Stats _mana; 
+        public Stats Mana { get { return _mana ; } }
         
         #endregion
 

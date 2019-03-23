@@ -14,10 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _name: Firebolt
   _description: Sends a bolt of fire in the direction specified
-  _damage: 100
+  _damage: 20
   _speed: 1
-  _reloadTime: 3
+  _reloadTime: 1
   _castTime: 2
-  _cost: 20
+  _cost: 30
   _castBarColor: {r: 1, g: 0.23281917, b: 0, a: 0}
   _prefab: {fileID: 3589298519776283733, guid: 69bd7bbb53a00e841a20c2ba98cc49cd, type: 3}
