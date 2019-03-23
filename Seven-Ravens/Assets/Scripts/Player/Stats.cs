@@ -42,6 +42,9 @@ namespace Rokemon {
         private ComController _oneHealthComController; 
 
         [SerializeField]
+        private ComController _deathComController;
+
+        [SerializeField]
         private ZonerController _prevZonerController;
 
         private bool _oneHealthTrigger = false; 
@@ -214,6 +217,8 @@ namespace Rokemon {
 
             if(_isTraveller)
             {
+                if(_deathComController != null)
+                    _deathComController.Instance.TriggerCommunicationEvents();
                 ActionBarUIController.Instance.HideFireboltFlash();
                 GetComponent<Collider2D>().enabled = false;
                 gameObject.layer = 1;   

@@ -24,6 +24,9 @@ namespace Rokemon {
         [SerializeField]
         private bool _isItem = false;
 
+        [SerializeField]
+        private bool _isDeathCom = false; 
+
         private bool _isCollding = false;
 
         private bool _isActive = false;
@@ -74,7 +77,7 @@ namespace Rokemon {
 
         private void Update()
         {
-            if(!_sceneStarter && !_eventTrigger)
+            if(!_sceneStarter && !_eventTrigger && !_isDeathCom)
             {
                 if(_isCollding)
                 {
@@ -143,7 +146,7 @@ namespace Rokemon {
         }
 
 
-        private void TriggerCommunicationEvents()
+        public void TriggerCommunicationEvents()
         {
             _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
         }

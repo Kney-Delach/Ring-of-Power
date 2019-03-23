@@ -22674,17 +22674,15 @@ MonoBehaviour:
     - Hey miss! Miss! I beg you for your help, there are a group of bandits chasing
       me, I need a way to hide from them! They will find me, and they will kill me!
     - 'Is there any way in which you can help me? '
-    - NO, DON'T DO IT! :'(
+    - Okay okay, just don't kill me please. Jeez you're scarier than the bandits.
     - Thank you kind witch <3
-    - Well thanks for nothing! Have an day bitch.
   _choices:
     _choicesText:
-    - I'm going to kill you, cunt.
+    - I can't help you! Now leave me alone! Grr!
     - I don't have time to stay and help you fight them, but I can channel you my
       power of invisibility, you can use it to hide from them!
-    - I don't have time for this, please fuck off out of my way.
   _choiceIndex: 2
-  _responseOptions: 010000000200000003000000
+  _responseOptions: 0100000002000000
   _moveNpc: 1
   _npcToMove: {fileID: 752771680}
 --- !u!1 &1896701892

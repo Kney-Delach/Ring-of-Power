@@ -59,7 +59,7 @@ namespace Rokemon {
             else if(_comType == ComType.Choice)
                 ComManager.Instance.BeginCommunication(_comType, _dialogue, _choices, _choiceIndex, _responseOptions, _controller);
         }
-
+        
         public void EndCommunication()
         {
             ComManager.Instance.EndCommunication();
