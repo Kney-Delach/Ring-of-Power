@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 737dac158393577418e25ef4331c1aa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemId: 0
-  _item: {fileID: 0}
+  _itemId: 2
+  _item: {fileID: 11400000, guid: 06bdbd789c16050458be3d1b2d60e417, type: 2}
 --- !u!1 &9119784046091612118
 GameObject:
   m_ObjectHideFlags: 0
@@ -131,14 +131,15 @@ GameObject:
   m_Component:
   - component: {fileID: 9119784046091612119}
   - component: {fileID: 9119784046091612113}
-  - component: {fileID: 8945386666349239803}
+  - component: {fileID: 1195191238}
+  - component: {fileID: 1195191237}
   m_Layer: 0
   m_Name: Item
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &9119784046091612119
 Transform:
   m_ObjectHideFlags: 0
@@ -180,7 +181,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &8945386666349239803
+--- !u!114 &1195191238
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -189,11 +190,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 9119784046091612118}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5db31bc85cfafd74285e6b2278a26f43, type: 3}
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _triggerNpc: {fileID: 0}
-  _isItem: 1
+  _comType: 0
   _dialogue:
-    speakerName: Item
-    sentences: []
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Item Name
+    sentences:
+    - Item description goes in here
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+--- !u!114 &1195191237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9119784046091612118}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27a6e1e79fbbb418d02c11e907b8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 1195191238}
+  _sceneStarter: 0
+  _eventTrigger: 0
+  _isItem: 1

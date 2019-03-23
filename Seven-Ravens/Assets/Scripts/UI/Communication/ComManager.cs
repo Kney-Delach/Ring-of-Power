@@ -74,6 +74,9 @@ namespace Rokemon {
 
         private int _currentIndex = 0;
 
+        private bool _choiceMade = false;
+
+
         #endregion 
 
         #region Controller References
@@ -165,6 +168,7 @@ namespace Rokemon {
 
                 _currentDialogue = dialogue;    // set current dialogue reference
                 PlayerController.Instance.FreezePlayer(); // freeze player movement
+                PlayerController.Instance.RemoveTarget();
                 _active = true;         // set active
                 _currentComType = type; // update current communication type
                 StartCommDialogue(dialogue); // start the dailogue
@@ -203,13 +207,8 @@ namespace Rokemon {
             }
         }
 
-        // reset variables for ending communication
-        public void EndCommunication()
+        private void EndComHelper()
         {
-            if(_currentController != null)
-                _currentController.Instance.TriggerComplete();
-
-            _currentController = null; // reset reference to com controller
             _currentReponses = null;
             _currentIndex = 0;  // reset current index
             _choiceIndex = 0;   // reset choices index
@@ -218,7 +217,32 @@ namespace Rokemon {
             _currentComType = ComType.None;  // update current communication type
             HideDialogueUI();
             _sentences.Clear();
-            PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
+        }
+        // reset variables for ending communication
+        public void EndCommunication()
+        {
+            
+            if(_currentController != null && _currentController.EventTrigger)
+            {
+                EndComHelper();
+                _currentController.TriggerComplete();
+                Debug.Log("REACHED SIMULATION POINT");
+            }
+            else if(_currentController != null)
+            {
+                EndComHelper();
+                PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
+                _currentController.Instance.TriggerComplete();
+                _currentController = null; // reset reference to com controller
+                Debug.Log("REACHED SIMULATION POINT 2");
+            } else
+            {
+                EndComHelper();
+                PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
+                Debug.Log("REACHED SIMULATION POINT 3");
+            }
+            
+           
         }
 
         #endregion
@@ -271,6 +295,13 @@ namespace Rokemon {
             {
                 ChoiceUIController.Instance.DispalyChoices(_currentChoices);
                 _currentIndex++;
+            }else if(_currentIndex > _choiceIndex && _choiceMade)
+            {
+                if(Input.GetKeyDown(KeyCode.Space))
+                {
+                    EndCommunication();
+                }
+                
             }
             // TODO : add update options for after choice complete?
         }
@@ -280,7 +311,6 @@ namespace Rokemon {
         {  
             Debug.Log("Evaluating Choice");
             ResponseType responseChosen = _currentReponses[choiceMadeIndex-1];
-
             switch(responseChosen)
             {
                 case ResponseType.Cutscene:
@@ -292,12 +322,27 @@ namespace Rokemon {
                     }
                     break;
                 case ResponseType.Kill:
+                    _choiceMade = true;
+                    SkipSentences(choiceMadeIndex-1);
+                    DisplayNextSentence();
                     Debug.Log("Process Kill Choice");
                     break;
                 case ResponseType.Trade:
+                    _choiceMade = true;
+                    SkipSentences(choiceMadeIndex-1);
+                    DisplayNextSentence();
+                    PlayerController.Instance.DeactivateAbility(_currentController.AbilityName);
+                    _currentController.Npc.layer = 1;
+                    _currentController.Npc.SetActive(false);
+                    _currentController.Npc.GetComponent<ItemDropper>().DropGoodItem();
                     Debug.Log("Process Trade Choice");
                     break;
                 case ResponseType.Nothing:
+                    _choiceMade = true;
+                    SkipSentences(choiceMadeIndex-1);
+                    DisplayNextSentence();
+                    _currentController.Npc.layer = 1;
+                    _currentController.Npc.SetActive(false);
                     Debug.Log("Process Nothing Choice");
                     EndCommunication();
                     break;

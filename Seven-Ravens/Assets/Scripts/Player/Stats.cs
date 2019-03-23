@@ -30,10 +30,19 @@ namespace Rokemon {
         private bool _isRoot = false; 
 
         [SerializeField]
-        private bool ADD_MORE_REFERENCES_HERE = false;
+        private bool _isTraveller = false; 
+
+        [SerializeField]
+        private bool _isPhoenix = false; 
+
+        [SerializeField]
+        Transform _movePosition; 
 
         [SerializeField]
         private ComController _oneHealthComController; 
+
+        [SerializeField]
+        private ZonerController _prevZonerController;
 
         private bool _oneHealthTrigger = false; 
         public bool OneHealthTrigger { get {return _oneHealthTrigger ; } set { _oneHealthTrigger = value ; } }
@@ -58,6 +67,8 @@ namespace Rokemon {
         private float _maxValue = 100; 
         public float MaxValue { get { return _maxValue ;}}
 
+        // reference to whether or not stat owner is dead
+        private bool _isDead; 
 
         // reference to current stat value 
         private float _currentValue; 
@@ -107,18 +118,31 @@ namespace Rokemon {
         // add an amount to stat value
         public void AddValue(float amount)
         {   
-            if(amount < 0)
-                Debug.LogError("Stats AddValue Error: Attempting to add negative amounts to stat!");
-
-            // verify addition of value not above max
-            float tempVal = amount + _currentValue; 
-            if(amount > _maxValue || tempVal > _maxValue)
+            if(_isPhoenix)
             {
                 _currentValue = _maxValue;
-            } 
-            else
+                GetComponent<ItemDropper>().DropGoodItem();
+                //_shieldActive = true;
+                gameObject.tag = "Untagged";
+                ActionBarUIController.Instance.HideFireboltFlash();
+                ActionBarUIController.Instance.HideHealFlash();
+                _oneHealthComController.ComEventTrigger(1,true);
+            }
+            else 
             {
-                _currentValue = tempVal;     
+                if(amount < 0)
+                    Debug.LogError("Stats AddValue Error: Attempting to add negative amounts to stat!");
+
+                // verify addition of value not above max
+                float tempVal = amount + _currentValue; 
+                if(amount > _maxValue || tempVal > _maxValue)
+                {
+                    _currentValue = _maxValue;
+                } 
+                else
+                {
+                    _currentValue = tempVal;     
+                }
             }
 
             UpdateUI();
@@ -129,7 +153,7 @@ namespace Rokemon {
         {   
             if(_shieldActive)
             {
-                Debug.Log("Invincible shield activated");
+                Debug.Log("Invincible shield active");
             }
             else 
             {
@@ -151,7 +175,7 @@ namespace Rokemon {
                     _oneHealthTrigger = false;
                     _currentValue = 1; 
                 }
-                else if (_currentValue <= 0)
+                else if (!_isDead && _currentValue <= 0)
                     ProcessDeath();
 
                 UpdateUI();
@@ -161,13 +185,42 @@ namespace Rokemon {
 
         private void processOneHealth()
         {
-            _oneHealthComController.ComEventTrigger(true);
+            if(_movePosition != null)
+                transform.position = _movePosition.position;
+            
+            if(_prevZonerController != null)
+                _prevZonerController.SetInactive();
+                
+            ActionBarUIController.Instance.ActivateHealFlash();
+            ActionBarUIController.Instance.ActivateFireboltFlash();
+            _oneHealthComController.ComEventTrigger(0,false);
+            
         }
 
         private void ProcessDeath()
         {
+
+
+            _isDead = true;
             if(_isRoot)
                 GetComponentInParent<Tangler>().DestroyRoot();
+            if(_isPhoenix)
+            {
+                ActionBarUIController.Instance.HideFireboltFlash();
+                ActionBarUIController.Instance.HideHealFlash();
+                GetComponent<ItemDropper>().DropCursedItem();
+                _oneHealthComController.ComEventTrigger(2,true);
+            }
+
+            if(_isTraveller)
+            {
+                GetComponent<Collider2D>().enabled = false;
+                gameObject.layer = 1;   
+                PlayerController.Instance.RemoveTarget();
+                ActionBarUIController.Instance.HideFireboltFlash();
+                GetComponent<ItemDropper>().DropCursedItem();
+            }
+
         }
 
         public bool CompareMaximum()

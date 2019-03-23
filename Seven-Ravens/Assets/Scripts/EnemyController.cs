@@ -26,6 +26,8 @@ namespace Rokemon {
 
         private bool _aggro = false; 
 
+        private bool _playerInvisibile = false;
+
         private bool _reloading = false; 
         private void Start()
         {
@@ -38,7 +40,7 @@ namespace Rokemon {
 
         private void Update()
         {   
-            if(_aggro && _enemyHealth.OneHealthTrigger)
+            if(_aggro && _enemyHealth.OneHealthTrigger && !_playerInvisibile)
             {   
                 if(_canCastFirebolt)
                 {
@@ -47,6 +49,10 @@ namespace Rokemon {
             }
         }
 
+        public void TogglePlayerInvisibility()
+        {
+            _playerInvisibile = !_playerInvisibile;
+        }
         private void OnTriggerEnter2D(Collider2D collision)
         {
             if(collision.tag == PLAYER_TAG)

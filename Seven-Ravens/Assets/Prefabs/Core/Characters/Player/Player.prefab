@@ -46,8 +46,10 @@ MonoBehaviour:
   _name: Health
   _currentFill: 1
   _isRoot: 0
-  ADD_MORE_REFERENCES_HERE: 0
+  _isPhoenix: 0
+  _movePosition: {fileID: 0}
   _oneHealthComController: {fileID: 0}
+  _prevZonerController: {fileID: 0}
   _fillSpeed: 1
   _isPlayer: 1
   _maxValue: 100
@@ -97,8 +99,10 @@ MonoBehaviour:
   _name: Mana
   _currentFill: 1
   _isRoot: 0
-  ADD_MORE_REFERENCES_HERE: 0
+  _isPhoenix: 0
+  _movePosition: {fileID: 0}
   _oneHealthComController: {fileID: 0}
+  _prevZonerController: {fileID: 0}
   _fillSpeed: 1
   _isPlayer: 1
   _maxValue: 100

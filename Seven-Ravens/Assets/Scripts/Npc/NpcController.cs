@@ -49,7 +49,7 @@ namespace Rokemon
         public GameObject CurrentWaypoint {get { return _currentWaypoint ; } }
 
         // reference to current waypoint index
-        private int _waypointIndex;
+        private int _waypointIndex = 0;
 
         // reversal status of npc movement between waypoints
         private bool _isReversing = false;
