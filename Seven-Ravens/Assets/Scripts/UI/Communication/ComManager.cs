@@ -322,6 +322,7 @@ namespace Rokemon {
                     }
                     break;
                 case ResponseType.Kill:
+                    ActionBarUIController.Instance.ActivateFireboltFlash();
                     _choiceMade = true;
                     SkipSentences(choiceMadeIndex-1);
                     DisplayNextSentence();

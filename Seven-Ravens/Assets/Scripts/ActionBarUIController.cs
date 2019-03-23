@@ -58,11 +58,20 @@ namespace Rokemon {
         // TODO: Utilise
         public void HideAllFlashes()
         {
-            _fireboltFlashAnimator.SetBool("Active", false);
-            _healFlashAnimator.SetBool("Active", false);
-            _invisFlashAnimator.SetBool("Active", false);
-            _charmFlashAnimator.SetBool("Active", false);
-            _unrootFlashAnimator.SetBool("Active", false);
+            if(_fireboltFlashAnimator != null)
+                _fireboltFlashAnimator.SetBool("Active", false);
+            
+            if(_healFlashAnimator != null)
+                _healFlashAnimator.SetBool("Active", false);
+            
+            if(_invisFlashAnimator != null)
+                _invisFlashAnimator.SetBool("Active", false);
+
+            if(_charmFlashAnimator != null)
+                _charmFlashAnimator.SetBool("Active", false);
+            
+            if(_unrootFlashAnimator != null)
+                _unrootFlashAnimator.SetBool("Active", false);
         }
         public void ActivateFireboltFlash()
         {

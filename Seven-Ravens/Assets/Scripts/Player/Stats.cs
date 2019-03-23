@@ -214,6 +214,7 @@ namespace Rokemon {
 
             if(_isTraveller)
             {
+                ActionBarUIController.Instance.HideFireboltFlash();
                 GetComponent<Collider2D>().enabled = false;
                 gameObject.layer = 1;   
                 PlayerController.Instance.RemoveTarget();

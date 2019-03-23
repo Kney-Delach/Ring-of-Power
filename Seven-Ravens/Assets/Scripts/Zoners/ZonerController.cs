@@ -37,6 +37,7 @@ namespace Rokemon
         // called when zone is triggered
         private IEnumerator OnZonerTriggered()
         {
+            ActionBarUIController.Instance.HideAllFlashes();    // hide all flashes when zoning to new zone 
             PlayerController.Instance.FreezePlayer();
             TransitionFader.PlayTransition(_transitionPrefab, _zoneName);
             yield return new WaitForSeconds(_playDelay);
