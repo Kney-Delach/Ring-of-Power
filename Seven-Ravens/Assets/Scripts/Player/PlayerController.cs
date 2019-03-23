@@ -202,8 +202,12 @@ namespace Rokemon
         // function removing current player target reference
         public void RemoveTarget()
         {
-            _currentTarget = null;
-            notifyTargetObservers(null);
+            if(_currentTarget != null)
+            {
+                _currentTarget = null;
+                notifyTargetObservers(null);
+            }
+
         }
         // function removing the roots selectable 
         public void RemoveRootTarget()
