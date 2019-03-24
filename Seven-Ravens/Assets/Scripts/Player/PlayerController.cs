@@ -470,7 +470,7 @@ namespace Rokemon
                         
                         float distance = Vector3.Distance(_currentTarget.position, transform.position);
 
-                        if(_currentTarget != null && _currentTarget.tag == "Roots" && distance < _attackDistance)
+                        if(_currentTarget != null && _currentTarget.tag == "Roots" && distance <= _attackDistance)
                         {   
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             
