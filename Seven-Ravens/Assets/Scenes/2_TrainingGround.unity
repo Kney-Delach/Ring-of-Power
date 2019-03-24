@@ -608,9 +608,9 @@ MonoBehaviour:
     transformNpcs: 0
     speakerTag: MOM
     moveSpeaker: 0
-    displayName: 0
+    displayName: 1
     displayContinue: 0
-    displayDialogue: 0
+    displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
     speakerName: Mom
@@ -1739,17 +1739,28 @@ MonoBehaviour:
     sentences:
     - Let's go home, I'm just going to grab a drink from our supply store.
   - transformNpcs: 0
-    speakerTag: MOM
+    speakerTag: WIZARD
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
     displayDialogue: 1
     enableSpeakerVisibility: 1
     moveSentenceIndexes: 
-    speakerName: Mom
+    speakerName: Evil Wizard
     sentences:
     - Oh my, that girl has such a strong firebolt spell, I must aquire it for myself!
       I'll need to lure her to my lair, the mother could be useful for this!
+  - transformNpcs: 1
+    speakerTag: WIZARD
+    moveSpeaker: 1
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - KA KA KA KA KA KA
   - transformNpcs: 0
     speakerTag: WIZARD
     moveSpeaker: 1
@@ -1760,19 +1771,9 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences:
-    - '*Transforms into raven* KA KA KA KA KA KA *BITE* *BITE* *BITE* *BITE* *BITE*'
+    - KA KA KA KA KA KA
   - transformNpcs: 0
     speakerTag: WIZARD
-    moveSpeaker: 1
-    displayName: 1
-    displayContinue: 0
-    displayDialogue: 0
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Evil Wizard
-    sentences: []
-  - transformNpcs: 0
-    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
@@ -1817,9 +1818,9 @@ MonoBehaviour:
     - That looks really black, lets get you home so you can rest!
   _waitTimes:
   - 2
-  - 2
-  - 9
-  - 4.5
+  - 5
+  - 4
+  - 0
   - 2
   - 2
   - 2
