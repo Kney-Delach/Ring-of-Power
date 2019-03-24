@@ -207,6 +207,7 @@ namespace Rokemon {
             
         }
 
+        // TODO: Refractor Traveller / Serpent
         private void ProcessDeath()
         {
             _isDead = true;

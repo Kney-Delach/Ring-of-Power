@@ -22,6 +22,12 @@ namespace Rokemon {
         [SerializeField]
         private bool _initialTrigger = false;
 
+        [SerializeField]
+        private bool _isBunny = false;
+
+        [SerializeField]
+        private ComController _bunnyController;
+
         private bool _triggered = false;
 
         private void Start()
@@ -39,7 +45,7 @@ namespace Rokemon {
 
                 ActionBarUIController.Instance.ActivateRootsFlash();
                 ActionBarUIController.Instance.ActivateFireboltFlash();
-                
+
                 TriggerRoot();
             }
         }
@@ -53,6 +59,9 @@ namespace Rokemon {
 
         public void DestroyRoot()
         {
+            if(_isBunny)
+                _bunnyController.TriggerCommunicationEvents();
+                
             if(_triggered)
             {
                 PlayerController.Instance.UnfreezePlayer();

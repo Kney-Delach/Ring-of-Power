@@ -325,7 +325,7 @@ namespace Rokemon {
                 case ResponseType.Kill:
 
                     PlayerInformationController.Instance.AddChoice(ChoicesMadeType.Neutral); // set neutral decision made
-
+                    
                     ActionBarUIController.Instance.ActivateFireboltFlash();
                     _choiceMade = true;
                     SkipSentences(choiceMadeIndex-1);

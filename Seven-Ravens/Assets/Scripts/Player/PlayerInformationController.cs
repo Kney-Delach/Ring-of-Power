@@ -69,6 +69,8 @@ namespace Rokemon
 
         public void AddChoice(ChoicesMadeType choice)
         {
+            if(BunnySceneController.Instance != null)
+                BunnySceneController.Instance.ActivateZoner(choice);
             _choicesMadeHistory.Add(choice);
             
             Debug.Log(_choicesMadeHistory[_currentChoiceIndex]);
@@ -79,6 +81,9 @@ namespace Rokemon
 
         public void ReplaceChoice(ChoicesMadeType choice)
         {
+            if(BunnySceneController.Instance != null)
+                BunnySceneController.Instance.ActivateZoner(choice);
+
             _choicesMadeHistory[_currentChoiceIndex-1] = choice;
 
             Debug.Log(_choicesMadeHistory[_currentChoiceIndex-1]);
@@ -87,7 +92,6 @@ namespace Rokemon
         public ChoicesMadeType GetRecentChoiceMade()
         {
             return _choicesMadeHistory[_currentChoiceIndex-1];
-
         }
 
 
