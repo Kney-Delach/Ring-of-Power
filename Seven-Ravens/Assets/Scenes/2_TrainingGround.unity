@@ -219,6 +219,139 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9bf9f367316a2a844875a7e1cd526b07, type: 3}
+--- !u!1 &257097337
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257097338}
+  - component: {fileID: 257097339}
+  m_Layer: 0
+  m_Name: End-Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &257097338
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257097337}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 442055632}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &257097339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257097337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 2
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: MOM
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Mom
+    sentences:
+    - I think you might've mastered your abilities!
+    - You can also hide from your enemies by turning invisible with [T]. Alongside
+      covering yourself with a protective bubble [F]
+    - 
+  _choices:
+    _choicesText:
+    - Thanks Mom, I'm shattered, lets go home and see Dad!
+    - Can we stay a little longer? I'd like to practice some more
+  _choiceIndex: 2
+  _responseOptions: 0000000003000000
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+--- !u!1 &345232484
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 345232485}
+  - component: {fileID: 345232486}
+  m_Layer: 0
+  m_Name: Freezing-Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &345232485
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345232484}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 442055632}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &345232486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345232484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: MOM
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Mom
+    sentences:
+    - Miraculous!
+    - Water and Rivers may block your path but if you target them and press [Z] you
+      can freeze them to walk across!
+  _choices:
+    _choicesText:
+    - Choice 1
+    - Choice 2
+  _choiceIndex: 0
+  _responseOptions: 0000000003000000
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1 &381460748
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +471,79 @@ PrefabInstance:
       propertyPath: _waypoints.Array.data[1]
       value: 
       objectReference: {fileID: 906267600}
+    - target: {fileID: 819293611, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: m_Name
+      value: Fireball-Trigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 614430076}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1023786763}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[3]
+      value: 
+      objectReference: {fileID: 935811581}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[4]
+      value: 
+      objectReference: {fileID: 1653302925}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[5]
+      value: 
+      objectReference: {fileID: 345232486}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[6]
+      value: 
+      objectReference: {fileID: 257097339}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[7]
+      value: 
+      objectReference: {fileID: 614430076}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[8]
+      value: 
+      objectReference: {fileID: 1888179525}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _triggers.Array.data[9]
+      value: 
+      objectReference: {fileID: 1888179525}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _eventTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 198090416, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _isItem
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Time for your spell practice! Try shooting a fireball at that dummy on
+        the left by pressing [E]
+      objectReference: {fileID: 0}
+    - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _comType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _choiceIndex
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _dialogue.sentences.Array.data[1]
+      value: Come back and speak to me when you're done.
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
 --- !u!4 &442055632 stripped
@@ -1264,6 +1470,70 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &614430074
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614430075}
+  - component: {fileID: 614430076}
+  m_Layer: 0
+  m_Name: Charm-Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &614430075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614430074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 442055632}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &614430076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 614430074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: MOM
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Mom
+    sentences:
+    - Great Shooting! Now Charm the middle dummy with [X], Come back when you're ready!
+  _choices:
+    _choicesText:
+    - Choice 1
+    - Choice 2
+  _choiceIndex: 0
+  _responseOptions: 0000000003000000
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &621102437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1727,6 +1997,75 @@ Transform:
   m_Father: {fileID: 212278135}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &935811579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 935811580}
+  - component: {fileID: 935811581}
+  m_Layer: 0
+  m_Name: Unroot-Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &935811580
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935811579}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 442055632}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &935811581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 935811579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: MOM
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Mom
+    sentences:
+    - Speedy!
+    - Some vines in the forest will snare you if you step onto them! Luckily you have
+      the ability to untangle yourself!
+    - Try walking into one of the vines by the dummies and targetting it.
+    - Then press [G] to unroot yourself. Alternatively you can fireball your way out,
+      but that takes a bit longer
+  _choices:
+    _choicesText:
+    - Choice 1
+    - Choice 2
+  _choiceIndex: 0
+  _responseOptions: 0000000003000000
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!114 &963854630 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 47763814460920682, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
@@ -1771,6 +2110,72 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1023786761
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1023786762}
+  - component: {fileID: 1023786763}
+  m_Layer: 0
+  m_Name: Haste-Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1023786762
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023786761}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 442055632}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1023786763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1023786761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: MOM
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Mom
+    sentences:
+    - Nicely Done!
+    - Using the haste ability [R] Lets you run faster for a short space of time.
+    - Try doing a lap of the training ground and come back to me!
+  _choices:
+    _choicesText:
+    - Choice 1
+    - Choice 2
+  _choiceIndex: 0
+  _responseOptions: 0000000003000000
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1 &1073374349
 GameObject:
   m_ObjectHideFlags: 0
@@ -16239,6 +16644,72 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8265059230550439389}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1653302923
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653302924}
+  - component: {fileID: 1653302925}
+  m_Layer: 0
+  m_Name: Heal-Trigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1653302924
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653302923}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 442055632}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1653302925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653302923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: MOM
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Mom
+    sentences:
+    - Good Work!
+    - You can heal yourself and others by pressing [C]
+    - Why don't you try it out on the dummy you injured earlier?
+  _choices:
+    _choicesText:
+    - Choice 1
+    - Choice 2
+  _choiceIndex: 0
+  _responseOptions: 0000000003000000
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1 &1711934027
 GameObject:
   m_ObjectHideFlags: 0
@@ -30839,6 +31310,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1888179525 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+    type: 3}
+  m_PrefabInstance: {fileID: 442055631}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1922903327
 GameObject:
   m_ObjectHideFlags: 0
@@ -33312,6 +33795,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Honey, why aren't you walking? Remember, its [W,A,S,D], Come over here
+        and speak to me by pressing [K]
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
