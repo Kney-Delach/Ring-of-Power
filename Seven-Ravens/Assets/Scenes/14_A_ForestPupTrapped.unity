@@ -25590,6 +25590,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Bunny
       objectReference: {fileID: 0}
+    - target: {fileID: 3285246443230570614, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3285246443230570601, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61553,6 +61558,11 @@ PrefabInstance:
       propertyPath: _bunnyController
       value: 
       objectReference: {fileID: 2055355689}
+    - target: {fileID: 5591311204566286382, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: _npcBunny
+      value: 
+      objectReference: {fileID: 815614543}
     - target: {fileID: 7305331185635886075, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_IsActive

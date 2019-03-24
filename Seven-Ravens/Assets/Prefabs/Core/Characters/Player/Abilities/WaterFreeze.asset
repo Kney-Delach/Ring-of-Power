@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1b420d30c62584696b36150d5859b9, type: 3}
   m_Name: WaterFreeze
   m_EditorClassIdentifier: 
-  _inCooldown: 0
-  _active: 1
   _name: WaterFreeze
   _description: Freezes water into a walkable layer of ice
   _damage: 0
   _speed: 0
   _reloadTime: 60
   _castTime: 5
-  _cost: 100
+  _cost: 90
   _castBarColor: {r: 0, g: 0.15047431, b: 1, a: 0}
   _prefab: {fileID: 0}

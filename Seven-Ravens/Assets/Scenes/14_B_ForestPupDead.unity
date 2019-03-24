@@ -15920,6 +15920,11 @@ PrefabInstance:
       propertyPath: _isTraveller
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2940862282938995559, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe3424ff6eb34856ac0f87bd0b96484, type: 3}
 --- !u!1 &288680170
@@ -24973,8 +24978,8 @@ Transform:
   - {fileID: 713088832}
   - {fileID: 1057519990}
   - {fileID: 2003817143}
-  - {fileID: 128494139}
   - {fileID: 1852680887}
+  - {fileID: 128494139}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

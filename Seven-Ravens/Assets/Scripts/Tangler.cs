@@ -28,6 +28,9 @@ namespace Rokemon {
         [SerializeField]
         private ComController _bunnyController;
 
+        [SerializeField]
+        private GameObject _npcBunny;
+
         private bool _triggered = false;
 
         private void Start()
@@ -60,8 +63,11 @@ namespace Rokemon {
         public void DestroyRoot()
         {
             if(_isBunny)
+            {
+                _npcBunny.layer = 8;
                 _bunnyController.TriggerCommunicationEvents();
-                
+            }
+
             if(_triggered)
             {
                 PlayerController.Instance.UnfreezePlayer();
