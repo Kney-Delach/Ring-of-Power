@@ -14458,7 +14458,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences:
-    - 'Now follow me my little pets, lets go to my lair atop the glass mountain! '
+    - 'Now follow me my little pets, lets go to my lair! '
   _waitTimes:
   - 3
   - 3
@@ -23015,36 +23015,6 @@ PrefabInstance:
       propertyPath: m_TagString
       value: MOM
       objectReference: {fileID: 0}
-    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _waypoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _waypoints.Array.data[0]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _waypoints.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _waypoints.Array.data[2]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: _looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1735581433798977636, guid: 239c09413ca73ba4f81be3b3ddd30a10,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23099,6 +23069,36 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _waypoints.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _waypoints.Array.data[0]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _waypoints.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _waypoints.Array.data[2]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: _looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 198090414, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
       propertyPath: m_IsActive
@@ -23439,6 +23439,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cameras
       objectReference: {fileID: 0}
+    - target: {fileID: 7421903738011418194, guid: 72a0d65e79f76764fb73f83a417d97c2,
+        type: 3}
+      propertyPath: orthographic size
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 7421903736141494794, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23494,11 +23499,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7421903738011418194, guid: 72a0d65e79f76764fb73f83a417d97c2,
-        type: 3}
-      propertyPath: orthographic size
-      value: 15
-      objectReference: {fileID: 0}
     - target: {fileID: 7421903738011418204, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -23509,14 +23509,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.4
       objectReference: {fileID: 0}
+    - target: {fileID: 648670880, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 648670880, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}

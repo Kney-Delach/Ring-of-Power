@@ -173,10 +173,47 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
+    speakerName: Dad
+    sentences:
+    - Did we ever tell you about the break in before you were born?
+  - transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - Did you hear that sound dad? I have a bad feeling about this...
+    - No? Was anybody hurt?!
+  - transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Dad
+    sentences:
+    - No one was injured, however they took one think from beside everyone's bed,
+      except mine. On my table was a single Raven Feather
+  - transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Girl
+    sentences:
+    - How peculiar! Wait... Did you hear that sound? I hope everyone is ok!
   _waitTimes:
+  - 2
+  - 2
+  - 4
   - 5
   _cutsceneNpcs:
   - {fileID: 849269261}
@@ -3744,14 +3781,14 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4.4
       objectReference: {fileID: 0}
+    - target: {fileID: 648670880, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
       propertyPath: m_Enabled
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 648670880, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}

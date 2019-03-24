@@ -12281,22 +12281,9 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Girl
-    sentences:
-    - 'Dad, why wouldn''t mom let me come with them to the forest today? '
-  - transformNpcs: 0
-    speakerTag: MOM
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 0
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
     speakerName: Dad
     sentences:
-    - I don't know sweety, she seemed strange this morning, I think she wants us to
-      spend more time together, are you ready to bake our famous son & daughter chocolate
-      cake!
+    - Are you ready to bake this cake?
   - transformNpcs: 0
     speakerTag: MOM
     moveSpeaker: 0
@@ -12307,12 +12294,11 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - I'm ready! Lets bake it!
+    - Yeah, lets get to it!
   _waitTimes:
   - 4
-  - 5
-  - 5
-  - 5
+  - 2
+  - 2
   _cutsceneNpcs:
   - {fileID: 511110738}
 --- !u!1 &713083250

@@ -1729,17 +1729,6 @@ MonoBehaviour:
   _dialogues:
   - transformNpcs: 0
     speakerTag: MOM
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 0
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Mom
-    sentences:
-    - Great job today sweety, you did great learning to control your spells.
-  - transformNpcs: 0
-    speakerTag: MOM
     moveSpeaker: 1
     displayName: 1
     displayContinue: 0
@@ -1748,21 +1737,19 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Mom
     sentences:
-    - I'm thirsty, i'm going to drink some water from the picnic booth we setup
+    - Let's go home, I'm just going to grab a drink from our supply store.
   - transformNpcs: 0
-    speakerTag: WIZARD
+    speakerTag: MOM
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
     displayDialogue: 1
     enableSpeakerVisibility: 1
     moveSentenceIndexes: 
-    speakerName: Evil Wizard
+    speakerName: Mom
     sentences:
-    - 'Oh my, that girl has such a strong firebolt spell, I must aquire it for myself!
-      I''m going to lure her to my lair ontop of the glass mountain by mind controlling
-      her mother and forcing her to bring me the girl''s 7 brothers, she will do anything
-      to get them back!  '
+    - Oh my, that girl has such a strong firebolt spell, I must aquire it for myself!
+      I'll need to lure her to my lair, the mother could be useful for this!
   - transformNpcs: 0
     speakerTag: WIZARD
     moveSpeaker: 1
@@ -1792,9 +1779,9 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Mom
+    speakerName: Evil Wizard
     sentences:
-    - Mother F**cker, that raven just bit me!
+    - Owch! That raven just bit me!
   - transformNpcs: 0
     speakerTag: MOM
     moveSpeaker: 0
@@ -1805,7 +1792,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - Mom! Are you okay? Why did he attack you?
+    - Are you ok?
   - transformNpcs: 0
     speakerTag: MOM
     moveSpeaker: 0
@@ -1816,7 +1803,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Mom
     sentences:
-    - Yes i'm fine sweety, its just a scratch, it'll heal.
+    - Yes I'm fine, it'll heal, it's just a scratch.
   - transformNpcs: 0
     speakerTag: MOM
     moveSpeaker: 0
@@ -1827,42 +1814,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - It looks really black mom, are you sure that's just a scratch .... the skin
-      around it is turning black too.
-  - transformNpcs: 0
-    speakerTag: MOM
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 0
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Mom
-    sentences:
-    - Maybe you're right, i'm beginning to feel very dizzy. Lets go home now.
-  - transformNpcs: 0
-    speakerTag: MOM
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 0
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Girl
-    sentences:
-    - I think that's a good idea. Let's go.
+    - That looks really black, lets get you home so you can rest!
   _waitTimes:
-  - 1.5
-  - 2.5
+  - 2
+  - 2
   - 9
   - 4.5
   - 2
   - 2
   - 2
   - 3
-  - 3
-  - 2.5
-  - 2
   _cutsceneNpcs:
   - {fileID: 767456818}
   - {fileID: 7326345087893666665}
