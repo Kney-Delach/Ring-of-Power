@@ -23829,6 +23829,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZonerOut-A
       objectReference: {fileID: 0}
+    - target: {fileID: 7662803215438386427, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2745122285491479382, guid: 6aeda09536d99c24286959a6d08bc211,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -58262,6 +58267,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ZonerOut-C
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662803215438386427, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2745122285491479382, guid: 6aeda09536d99c24286959a6d08bc211,
         type: 3}

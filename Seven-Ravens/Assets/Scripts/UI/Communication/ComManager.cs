@@ -332,7 +332,13 @@ namespace Rokemon {
                     DisplayNextSentence();
                     GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
                     foreach(GameObject obj in objects)
-                        obj.SetActive(false);
+                    {
+                        EnemyController tempController = obj.GetComponentInChildren<EnemyController>();
+                        if(tempController != null)
+                            tempController.CanCastFirebolt = false;
+                    }
+                    //     obj.SetActive(false);
+                    
                      _currentController.Npc.SetActive(true);
                     Debug.Log("Process Kill Choice");
                     break;
@@ -344,8 +350,13 @@ namespace Rokemon {
                     DisplayNextSentence();
                     PlayerController.Instance.DeactivateAbility(_currentController.AbilityName);
                     GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
-                    foreach(GameObject obj in objs)
-                        obj.SetActive(false);
+                     foreach(GameObject obj in objs)
+                     {
+                        EnemyController tempController = obj.GetComponentInChildren<EnemyController>();
+                        if(tempController != null)
+                            tempController.CanCastFirebolt = false;
+                     }
+                    //     obj.SetActive(false);
                      _currentController.Npc.SetActive(true);
                     _currentController.Npc.layer = 1;
                     _currentController.Npc.SetActive(false);

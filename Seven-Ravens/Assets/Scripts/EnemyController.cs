@@ -11,6 +11,7 @@ namespace Rokemon {
 
         [SerializeField]
         private bool _canCastFirebolt = false;
+        public bool CanCastFirebolt { set { _canCastFirebolt = value ; } }
 
         private static string PLAYER_TAG = "Player";
 
