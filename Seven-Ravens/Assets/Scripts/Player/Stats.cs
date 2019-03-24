@@ -40,6 +40,9 @@ namespace Rokemon {
         private bool _isCerberus = false;
 
         [SerializeField]
+        private bool _isSerpent = false;
+
+        [SerializeField]
         Transform _movePosition; 
 
         [SerializeField]
@@ -234,9 +237,25 @@ namespace Rokemon {
                 PlayerController.Instance.RemoveTarget();
                 ActionBarUIController.Instance.HideFireboltFlash();
                 GetComponent<ItemDropper>().DropCursedItem();
+
+                PlayerInformationController.Instance.ReplaceChoice(ChoicesMadeType.Bad);
             }
 
+            if(_isSerpent)
+            {
+                PlayerController.Instance.Mana.MaxValue += 20; 
+                if(_deathComController != null)
+                    _deathComController.Instance.TriggerCommunicationEvents();
+                //ActionBarUIController.Instance.HideFireboltFlash();
+                GetComponent<Collider2D>().enabled = false;
+                gameObject.layer = 1;   
+                PlayerController.Instance.RemoveTarget();
+                ActionBarUIController.Instance.HideFireboltFlash();
+                GetComponent<ItemDropper>().DropCursedItem();
+                
+                PlayerInformationController.Instance.ReplaceChoice(ChoicesMadeType.Bad);
 
+            }
             if(_isPlayer)
             {
                 StartCoroutine(RespawnRoutine());

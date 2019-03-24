@@ -15223,15 +15223,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4
       objectReference: {fileID: 0}
-    - target: {fileID: 7421903738011418205, guid: 72a0d65e79f76764fb73f83a417d97c2,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7421903738011418205, guid: 72a0d65e79f76764fb73f83a417d97c2,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
@@ -22214,6 +22214,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.074995995
       objectReference: {fileID: 0}
+    - target: {fileID: 8380364460085776813, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8256419191060897100, guid: 6aeda09536d99c24286959a6d08bc211,
         type: 3}
       propertyPath: _zoneName
@@ -22244,6 +22249,12 @@ PrefabInstance:
 --- !u!4 &1568811708 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2745122285491479382, guid: 6aeda09536d99c24286959a6d08bc211,
+    type: 3}
+  m_PrefabInstance: {fileID: 1568811707}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1568811709 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8380364460085776813, guid: 6aeda09536d99c24286959a6d08bc211,
     type: 3}
   m_PrefabInstance: {fileID: 1568811707}
   m_PrefabAsset: {fileID: 0}
@@ -22339,6 +22350,16 @@ PrefabInstance:
       propertyPath: _itemId
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _isGem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _unlockedZone
+      value: 
+      objectReference: {fileID: 1568811709}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f078c9ae70eeb4f9eb1e6d7709727a5e, type: 3}
 --- !u!4 &1594195463 stripped

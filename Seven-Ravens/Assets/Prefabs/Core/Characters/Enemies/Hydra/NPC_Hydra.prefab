@@ -35,6 +35,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2940862282938995558}
+  - {fileID: 80730981369285241}
+  - {fileID: 9046332741973347708}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -187,10 +189,13 @@ MonoBehaviour:
   _name: Health
   _currentFill: 1
   _isRoot: 0
-  _isTraveller: 1
+  _isTraveller: 0
   _isPhoenix: 0
+  _isCerberus: 0
+  _isSerpent: 1
   _movePosition: {fileID: 0}
   _oneHealthComController: {fileID: 0}
+  _deathComController: {fileID: 0}
   _prevZonerController: {fileID: 0}
   _fillSpeed: 1
   _isPlayer: 0
@@ -209,6 +214,119 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cursedItem: {fileID: 0}
   _goodItem: {fileID: 0}
+--- !u!1 &4141561959212904209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 80730981369285241}
+  - component: {fileID: 3254190501896329430}
+  m_Layer: 8
+  m_Name: DeathComm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &80730981369285241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141561959212904209}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.59, y: -1.98, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3285246443230570601}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3254190501896329430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4141561959212904209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27a6e1e79fbbb418d02c11e907b8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 6451845737021871628}
+  _sceneStarter: 0
+  _eventTrigger: 0
+  _isItem: 0
+  _isDeathCom: 0
+  _npc: {fileID: 0}
+  _abilityName: 
+--- !u!1 &6273902748269189270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9046332741973347708}
+  - component: {fileID: 6451845737021871628}
+  m_Layer: 8
+  m_Name: DeathTrigg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9046332741973347708
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6273902748269189270}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 21.59, y: -1.98, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3285246443230570601}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6451845737021871628
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6273902748269189270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Traveller
+    sentences:
+    - Curse you little witch! *Dies*
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &6459313635512347264
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -216,11 +334,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3285246443230570601}
     m_Modifications:
-    - target: {fileID: 8175191304479750631, guid: 744fffc34607fe14fb70fa014bb44deb,
-        type: 3}
-      propertyPath: m_Name
-      value: WorldHUD
-      objectReference: {fileID: 0}
     - target: {fileID: 8175191304479750630, guid: 744fffc34607fe14fb70fa014bb44deb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -335,6 +448,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5555556
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175191304479750631, guid: 744fffc34607fe14fb70fa014bb44deb,
+        type: 3}
+      propertyPath: m_Name
+      value: WorldHUD
       objectReference: {fileID: 0}
     - target: {fileID: 8863423020779833809, guid: 744fffc34607fe14fb70fa014bb44deb,
         type: 3}

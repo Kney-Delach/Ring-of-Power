@@ -21,6 +21,12 @@ namespace Rokemon{
         [SerializeField]
         private Item _item; 
 
+        [SerializeField]
+        private bool _isGem = false;
+
+        [SerializeField]
+        private Collider2D _unlockedZone;
+
         // reference to player tag
         private static string PLAYER_TAG = "Player";
 
@@ -58,6 +64,10 @@ namespace Rokemon{
                 ItemInventory.Instance.Add(_item);
                 gameObject.SetActive(false);
                 _itemIdDatabase[_itemId] = true; // set collected in database
+
+                if(_isGem && _unlockedZone != null)
+                    _unlockedZone.enabled = true;
+                    
                 //Destroy(gameObject);
             }
         }

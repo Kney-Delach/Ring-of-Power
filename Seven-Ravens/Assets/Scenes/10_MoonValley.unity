@@ -12186,7 +12186,7 @@ MonoBehaviour:
   _choiceIndex: 2
   _responseOptions: 0100000002000000
   _moveNpc: 0
-  _npcToMove: {fileID: 0}
+  _npcToMove: {fileID: 1064000337}
 --- !u!4 &684470508
 Transform:
   m_ObjectHideFlags: 0
@@ -12471,6 +12471,11 @@ PrefabInstance:
       propertyPath: m_Size.y
       value: 0.074995995
       objectReference: {fileID: 0}
+    - target: {fileID: 8380364460085776813, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8256419191060897100, guid: 6aeda09536d99c24286959a6d08bc211,
         type: 3}
       propertyPath: _zoneName
@@ -12501,6 +12506,12 @@ PrefabInstance:
 --- !u!4 &763354036 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2745122285491479382, guid: 6aeda09536d99c24286959a6d08bc211,
+    type: 3}
+  m_PrefabInstance: {fileID: 763354035}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &763354037 stripped
+BoxCollider2D:
+  m_CorrespondingSourceObject: {fileID: 8380364460085776813, guid: 6aeda09536d99c24286959a6d08bc211,
     type: 3}
   m_PrefabInstance: {fileID: 763354035}
   m_PrefabAsset: {fileID: 0}
@@ -13066,6 +13077,18 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1064000335}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1064000337 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5777524790153294270, guid: d34dee5c604774689a1f36149f92b276,
+    type: 3}
+  m_PrefabInstance: {fileID: 1064000335}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1064000336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566278a354fa4dc4a8bc04bcb0437919, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1074063956
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27760,6 +27783,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _itemId
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _unlockedZone
+      value: 
+      objectReference: {fileID: 763354037}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _isGem
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f078c9ae70eeb4f9eb1e6d7709727a5e, type: 3}

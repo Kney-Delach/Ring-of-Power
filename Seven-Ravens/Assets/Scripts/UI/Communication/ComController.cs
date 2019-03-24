@@ -18,6 +18,9 @@ namespace Rokemon {
         private bool _sceneStarter = false;
 
         [SerializeField]
+        private bool _decisionTypeCheck = false;
+
+        [SerializeField]
         private bool _eventTrigger = false;
         public bool EventTrigger { get { return _eventTrigger ; } }
 
@@ -62,11 +65,36 @@ namespace Rokemon {
             
             if(_sceneStarter)
             {
-                _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
-                gameObject.SetActive(false);
+                if(_decisionTypeCheck)
+                {
+                    PerformCommFromCheck(PlayerInformationController.Instance.GetRecentChoiceMade());
+                }
+                else 
+                {
+                    _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
+                    gameObject.SetActive(false);
+                }
+
             }
         }
 
+        public void PerformCommFromCheck(ChoicesMadeType type)
+        {
+            switch(type)
+            {
+                case ChoicesMadeType.Good:
+                    _triggers[0].TriggerCommunication(_instance);
+                    break;
+                case ChoicesMadeType.Neutral:
+                    _triggers[1].TriggerCommunication(_instance);
+                    break;
+                case ChoicesMadeType.Bad:
+                    _triggers[2].TriggerCommunication(_instance);
+                    break;
+                default:
+                    break;
+            }
+        }
         public void ComEventTrigger(int triggerIndex ,bool finalTrigger)
         {
             _triggers[triggerIndex].TriggerCommunication(_instance);
