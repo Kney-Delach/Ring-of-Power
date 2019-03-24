@@ -467,17 +467,19 @@ namespace Rokemon
                         StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._damage ,_abilitiesDatabase[spellName]._reloadTime,spellName));
                         break;
                     case "RemoveRoots":
-                        
-                        float distance = Vector3.Distance(_currentTarget.position, transform.position);
 
-                        if(_currentTarget != null && _currentTarget.tag == "Roots" && distance < _attackDistance)
+                        if(_currentTarget != null && _currentTarget.tag == "Roots")
                         {   
-                            UseMana(_abilitiesDatabase[spellName]._cost);
-                            
-                            Tangler targetTangler = _currentTarget.gameObject.GetComponentInParent<Tangler>();
-                            targetTangler.DestroyRoot();
-                            RemoveTarget();
-                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                            float distance = Vector3.Distance(_currentTarget.position, transform.position);
+                            if(distance <= _attackDistance)
+                            {
+                                UseMana(_abilitiesDatabase[spellName]._cost);
+                                Tangler targetTangler = _currentTarget.gameObject.GetComponentInParent<Tangler>();
+                                targetTangler.DestroyRoot();
+                                RemoveTarget();
+                                StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                            }
+                          
                         }                       
                         break;
                     case "WaterFreeze":

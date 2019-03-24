@@ -25591,6 +25591,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: NPC_Bunny
       objectReference: {fileID: 0}
+    - target: {fileID: 3285246443230570614, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
+        type: 3}
+      propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3285246443230570601, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -61362,7 +61367,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _triggers.Array.data[0]
       value: 
-      objectReference: {fileID: 2055355690}
+      objectReference: {fileID: 55816573}
     - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _isItem
@@ -61431,18 +61436,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c27a6e1e79fbbb418d02c11e907b8b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2055355690 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-    type: 3}
-  m_PrefabInstance: {fileID: 2055355687}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &2055355691 stripped
@@ -61559,6 +61552,16 @@ PrefabInstance:
       propertyPath: _bunnyController
       value: 
       objectReference: {fileID: 2055355689}
+    - target: {fileID: 5591311204566286382, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: _npcBunny
+      value: 
+      objectReference: {fileID: 815614543}
+    - target: {fileID: 7305331185635886075, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_IsActive
