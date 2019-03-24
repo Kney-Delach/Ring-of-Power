@@ -1761,6 +1761,17 @@ MonoBehaviour:
     speakerName: Evil Wizard
     sentences:
     - KA KA KA KA KA KA
+  - transformNpcs: 1
+    speakerTag: WIZARD
+    moveSpeaker: 1
+    displayName: 0
+    displayContinue: 0
+    displayDialogue: 0
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - 
   - transformNpcs: 0
     speakerTag: WIZARD
     moveSpeaker: 1
@@ -1769,18 +1780,7 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Evil Wizard
-    sentences:
-    - KA KA KA KA KA KA
-  - transformNpcs: 0
-    speakerTag: WIZARD
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 0
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Evil Wizard
+    speakerName: Mom
     sentences:
     - Owch! That raven just bit me!
   - transformNpcs: 0
@@ -1819,8 +1819,8 @@ MonoBehaviour:
   _waitTimes:
   - 2
   - 5
-  - 4
-  - 0
+  - 3
+  - 1
   - 2
   - 2
   - 2
@@ -34128,7 +34128,7 @@ PrefabInstance:
     - target: {fileID: 1376544750174935178, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
       propertyPath: _speed
-      value: 8
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 1376544750174935178, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
