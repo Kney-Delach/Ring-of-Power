@@ -265,6 +265,7 @@ namespace Rokemon {
         }
         private IEnumerator RespawnRoutine()
         {
+            ComManager.Instance.EndCommunication();
             PlayerController.Instance.RemoveTarget();
             PlayerController.Instance.FreezePlayer();
             yield return new WaitForSeconds(0.3f);
