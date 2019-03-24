@@ -46,9 +46,12 @@ MonoBehaviour:
   _name: Health
   _currentFill: 1
   _isRoot: 0
+  _isTraveller: 0
   _isPhoenix: 0
+  _isCerberus: 0
   _movePosition: {fileID: 0}
   _oneHealthComController: {fileID: 0}
+  _deathComController: {fileID: 0}
   _prevZonerController: {fileID: 0}
   _fillSpeed: 1
   _isPlayer: 1
@@ -99,9 +102,12 @@ MonoBehaviour:
   _name: Mana
   _currentFill: 1
   _isRoot: 0
+  _isTraveller: 0
   _isPhoenix: 0
+  _isCerberus: 0
   _movePosition: {fileID: 0}
   _oneHealthComController: {fileID: 0}
+  _deathComController: {fileID: 0}
   _prevZonerController: {fileID: 0}
   _fillSpeed: 1
   _isPlayer: 1
@@ -246,7 +252,7 @@ MonoBehaviour:
   - {fileID: 0}
   _health: {fileID: 7427759676101546734}
   _mana: {fileID: 7636080386025877500}
-  _attackDistance: 10
+  _attackDistance: 8
   _abilities:
   - {fileID: 11400000, guid: 620905ff4401fce499d38c30ce504622, type: 2}
   - {fileID: 11400000, guid: e895719f22d1c504eb44659f13910b17, type: 2}

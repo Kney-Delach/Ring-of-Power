@@ -326,6 +326,10 @@ namespace Rokemon {
                     _choiceMade = true;
                     SkipSentences(choiceMadeIndex-1);
                     DisplayNextSentence();
+                    GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
+                    foreach(GameObject obj in objects)
+                        obj.SetActive(false);
+                     _currentController.Npc.SetActive(true);
                     Debug.Log("Process Kill Choice");
                     break;
                 case ResponseType.Trade:
@@ -333,6 +337,11 @@ namespace Rokemon {
                     SkipSentences(choiceMadeIndex-1);
                     DisplayNextSentence();
                     PlayerController.Instance.DeactivateAbility(_currentController.AbilityName);
+                    GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
+                    foreach(GameObject obj in objs)
+                        obj.SetActive(false);
+                        
+                     _currentController.Npc.SetActive(true);
                     _currentController.Npc.layer = 1;
                     _currentController.Npc.SetActive(false);
                     _currentController.Npc.GetComponent<ItemDropper>().DropGoodItem();
