@@ -85,6 +85,9 @@ namespace Rokemon {
         public float CurrentValue { get { return _currentValue ; } set { _currentValue = value ; } }
         //public float CurrentValue { get { return _currentValue ; }}
 
+        [SerializeField]
+        private bool _isDeadBunny = false;
+
         private void Start()
         {   
             if(_isPlayer)
@@ -95,6 +98,13 @@ namespace Rokemon {
 
 
             _currentValue = _maxValue;
+
+            if(_isDeadBunny)
+            {
+                _isDead = true; 
+                _currentValue = 0;
+                UpdateUI();
+            }
         }
 
         private void Update()

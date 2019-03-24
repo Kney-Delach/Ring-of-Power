@@ -15935,11 +15935,6 @@ PrefabInstance:
       propertyPath: _hudGroups.Array.data[1]
       value: 
       objectReference: {fileID: 1525554254}
-    - target: {fileID: 4686994119298673106, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
-        type: 3}
-      propertyPath: _speed
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de87d0245efb9f42a5b2de7e8d3f04f, type: 3}
 --- !u!1 &910447589

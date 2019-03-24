@@ -12,14 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1b420d30c62584696b36150d5859b9, type: 3}
   m_Name: Charm
   m_EditorClassIdentifier: 
-  _inCooldown: 0
-  _active: 1
   _name: Charm
   _description: Can charm certain creatures, turning them friendly
   _damage: 10
   _speed: 0
   _reloadTime: 20
   _castTime: 5
-  _cost: 100
-  _castBarColor: {r: 1, g: 0, b: 0.64893913, a: 0}
+  _cost: 50
+  _castBarColor: {r: 1, g: 0, b: 0.64893913, a: 1}
   _prefab: {fileID: 0}

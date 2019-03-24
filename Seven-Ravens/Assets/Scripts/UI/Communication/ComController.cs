@@ -164,7 +164,9 @@ namespace Rokemon {
             else 
             {
                 if(!_singleTrigger)
+                {
                     _currentTriggerIndex ++;
+                }
                 _isActive = false;
                 _currentComActive = false;
                 if(_isItem && _itemActivated)
@@ -198,7 +200,7 @@ namespace Rokemon {
             }
             else if(!_sceneStarter && collision.tag == PLAYER_TAG)
             {
-                _isCollding = false;
+                _currentComActive = false;
             }
         }
 
