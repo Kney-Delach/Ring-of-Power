@@ -212,6 +212,7 @@ namespace Rokemon {
             _currentReponses = null;
             _currentIndex = 0;  // reset current index
             _choiceIndex = 0;   // reset choices index
+            _choiceMade = false;
             _currentDialogue = null; // update active dialogue reference
             _active = false;         // set inactive
             _currentComType = ComType.None;  // update current communication type
@@ -325,7 +326,7 @@ namespace Rokemon {
                 case ResponseType.Kill:
 
                     PlayerInformationController.Instance.AddChoice(ChoicesMadeType.Neutral); // set neutral decision made
-                    
+
                     ActionBarUIController.Instance.ActivateFireboltFlash();
                     _choiceMade = true;
                     SkipSentences(choiceMadeIndex-1);

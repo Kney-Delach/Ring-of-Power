@@ -49,6 +49,7 @@ MonoBehaviour:
   _isTraveller: 0
   _isPhoenix: 0
   _isCerberus: 0
+  _isSerpent: 0
   _movePosition: {fileID: 0}
   _oneHealthComController: {fileID: 0}
   _deathComController: {fileID: 0}
@@ -56,6 +57,7 @@ MonoBehaviour:
   _fillSpeed: 1
   _isPlayer: 1
   _maxValue: 100
+  _isDeadBunny: 0
 --- !u!1 &2801891913963124346
 GameObject:
   m_ObjectHideFlags: 0
@@ -105,6 +107,7 @@ MonoBehaviour:
   _isTraveller: 0
   _isPhoenix: 0
   _isCerberus: 0
+  _isSerpent: 0
   _movePosition: {fileID: 0}
   _oneHealthComController: {fileID: 0}
   _deathComController: {fileID: 0}
@@ -112,6 +115,7 @@ MonoBehaviour:
   _fillSpeed: 1
   _isPlayer: 1
   _maxValue: 100
+  _isDeadBunny: 0
 --- !u!1 &4686994119298673117
 GameObject:
   m_ObjectHideFlags: 0

@@ -492,6 +492,7 @@ namespace Rokemon
                         {
                             // TODO: Implement Charm
                             UseMana(_abilitiesDatabase[spellName]._cost);
+                            //Debug.Log(_currentTarget.gameObject.GetComponent<SpriteRenderer>().color);
                             _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
                             StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage, _currentTarget.gameObject, spellName));
                         }                     
@@ -556,7 +557,7 @@ namespace Rokemon
 
             if(Input.GetKeyDown(KeyCode.L))
             {
-                _mana.AddValue(1f);
+                _mana.AddValue(100f);
             }
         }
         #endregion
