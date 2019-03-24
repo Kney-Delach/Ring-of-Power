@@ -288,6 +288,13 @@ namespace Rokemon
         {
             // TODO: Implement actionbar scrubbing for deactivated ability
             _activeCheckDatabase[abilityName] = false;
+            ActionBarUIController.Instance.BlockAbility(abilityName);
+        }
+
+        // returns whether or not ability is currently active
+        public bool CheckAbilityStats(string abilityName)
+        {
+            return _activeCheckDatabase[abilityName];
         }
         private void ProcessAbilities()
         {

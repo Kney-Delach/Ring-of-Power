@@ -198,9 +198,9 @@ namespace Rokemon {
             if(_prevZonerController != null)
                 _prevZonerController.SetInactive();
                 
+            _oneHealthComController.ComEventTrigger(0,false);
             ActionBarUIController.Instance.ActivateHealFlash();
             ActionBarUIController.Instance.ActivateFireboltFlash();
-            _oneHealthComController.ComEventTrigger(0,false);
             
         }
 

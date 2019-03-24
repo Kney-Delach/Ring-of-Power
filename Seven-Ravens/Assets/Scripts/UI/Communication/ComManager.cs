@@ -309,6 +309,7 @@ namespace Rokemon {
         // evaluate the choice made by the user
         public void EvaluateChoice(int choiceMadeIndex)
         {  
+            ActionBarUIController.Instance.HideAllFlashes();
             Debug.Log("Evaluating Choice");
             ResponseType responseChosen = _currentReponses[choiceMadeIndex-1];
             switch(responseChosen)
@@ -322,6 +323,7 @@ namespace Rokemon {
                     }
                     break;
                 case ResponseType.Kill:
+
                     ActionBarUIController.Instance.ActivateFireboltFlash();
                     _choiceMade = true;
                     SkipSentences(choiceMadeIndex-1);
@@ -340,7 +342,6 @@ namespace Rokemon {
                     GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
                     foreach(GameObject obj in objs)
                         obj.SetActive(false);
-                        
                      _currentController.Npc.SetActive(true);
                     _currentController.Npc.layer = 1;
                     _currentController.Npc.SetActive(false);

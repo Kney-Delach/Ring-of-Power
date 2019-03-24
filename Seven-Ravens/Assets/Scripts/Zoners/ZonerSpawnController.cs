@@ -15,6 +15,20 @@ namespace Rokemon
         {
             if (PlayerInformationController.Instance.PreviousZoneName == _zoneName)
             {
+                ActionBarUIController.Instance.HideAllFlashes();
+                if(_zoneName == "Road To Moon Valley")
+                {
+                    if(PlayerController.Instance.CheckAbilityStats("Invisibility"))
+                    {
+                        ActionBarUIController.Instance.ActivateInvisibilityFlash();
+                    }
+                    else 
+                    {
+                        ActionBarUIController.Instance.ActivateBubbleFlash();
+                    }
+                    
+                    ActionBarUIController.Instance.ActivateHasteFlash();
+                } 
                 PlayerController.Instance.transform.position = gameObject.transform.position;
             }
         }

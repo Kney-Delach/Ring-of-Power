@@ -87,6 +87,9 @@ namespace Rokemon {
                 fireboltController.Damage = _ability._damage;
             }
             yield return new WaitForSeconds(4f);
+
+            //ActionBarUIController.Instance.HideBubbleFlash();
+
             _canCastFirebolt = true;
         }    
     }

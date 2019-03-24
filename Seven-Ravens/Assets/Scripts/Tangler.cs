@@ -36,6 +36,10 @@ namespace Rokemon {
                 _triggered = true; 
                 PlayerController.Instance.FreezePlayer();
                 PlayerController.Instance.SetPosition(GetComponent<Transform>());
+
+                ActionBarUIController.Instance.ActivateRootsFlash();
+                ActionBarUIController.Instance.ActivateFireboltFlash();
+                
                 TriggerRoot();
             }
         }
@@ -53,6 +57,9 @@ namespace Rokemon {
             {
                 PlayerController.Instance.UnfreezePlayer();
                 PlayerController.Instance.RemoveRootTarget();
+
+                ActionBarUIController.Instance.HideRootsFlash();
+                ActionBarUIController.Instance.HideFireboltFlash();
             }
                 
             gameObject.SetActive(false);
