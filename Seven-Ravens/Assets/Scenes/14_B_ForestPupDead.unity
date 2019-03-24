@@ -15900,6 +15900,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.556
       objectReference: {fileID: 0}
+    - target: {fileID: 1189866455734543587, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
+        type: 3}
+      propertyPath: _isTraveller
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3285246443230570600, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
         type: 3}
       propertyPath: m_Color.r
@@ -15914,11 +15919,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.6226415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1189866455734543587, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
-        type: 3}
-      propertyPath: _isTraveller
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9fe3424ff6eb34856ac0f87bd0b96484, type: 3}
@@ -24973,8 +24973,8 @@ Transform:
   - {fileID: 713088832}
   - {fileID: 1057519990}
   - {fileID: 2003817143}
-  - {fileID: 128494139}
   - {fileID: 1852680887}
+  - {fileID: 128494139}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -25264,6 +25264,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -25317,9 +25322,8 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Looks like this baby bunny died from a tangle trap, must be a baby of
-        the last bunny I met, maybe if I hadn't killed her this one would still be
-        alive....
+      value: Looks like this baby bunny died from a tangle trap, maybe if I'd helped
+        the last one this wouldn't have happened...
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
@@ -25345,11 +25349,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _moveNpc
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
@@ -60038,6 +60037,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_Name
+      value: InitialTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -60106,8 +60115,7 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Looks like a bunch of dead bunnies.... they must have died to the tangler
-        traps...
+      value: Looks like a bunch of dead bunnies....
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
@@ -60133,16 +60141,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _moveNpc
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_Name
-      value: InitialTrigger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}

@@ -15875,6 +15875,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -15958,11 +15963,6 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _moveNpc
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -24966,16 +24966,17 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Bunny
     sentences:
-    - Thank you for your help kind witch.
-    - '*Insert dialogue about family dying to all these roots* - Ask witch for help'
+    - Thank you for your help.
+    - My family are always getting tangled in there, many of us have perished. Is
+      there any way you can help us?
     - Fine! I just hope none of my family die because of you, also you're scary please
       don't hurt me
     - Thank you kind witch, I will go and save my family now who I am sure are stuck
       somewhere in this forest!
   _choices:
     _choicesText:
-    - I can't help you! I don't have time for any of this nonsense. *Threaten Bunny*
-    - I will channel you my do-root ability. Good luck with your family
+    - 'I can''t help you, I don''t have time for any of this nonsense. '
+    - I can give you my unroot ability. Good luck with your family!
   _choiceIndex: 2
   _responseOptions: 0100000002000000
   _moveNpc: 0
@@ -47264,6 +47265,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_Name
+      value: InitialTrigger
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -47358,16 +47369,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _moveNpc
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_Name
-      value: InitialTrigger
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
@@ -47632,6 +47633,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7305331185635886075, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5591311204566286382, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: _isBunny
@@ -47642,11 +47648,6 @@ PrefabInstance:
       propertyPath: _bunnyController
       value: 
       objectReference: {fileID: 263469836}
-    - target: {fileID: 7305331185635886075, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_IsActive
@@ -60171,7 +60172,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Bunny
     sentences:
-    - Curse you little witch! *Dies*
+    - Curse you little witch! You will pay for this some day!
   _choices:
     _choicesText: []
   _choiceIndex: 0

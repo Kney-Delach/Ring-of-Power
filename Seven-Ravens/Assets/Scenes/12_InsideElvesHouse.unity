@@ -16185,6 +16185,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -16268,11 +16273,6 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _moveNpc
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -17318,16 +17318,14 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Injurted Serpent
+    speakerName: Injured Serpent
     sentences:
-    - You want me to leave? But I can't, everywhere I go I am in danger, I will die
-      if I leave this place.
-    - Wait a minute, i've heard of you, the strong witch of mordor, can you help me
-      survive out in the wild?
-    - I'm going to die out there, you may aswell kill me where I stand :( "Neutral
-      Decision"
-    - Thank you kind witch, I will tell everyone I meet of the kind deed which you
-      have done here today. You are the best! "Good Decision"
+    - You want me to leave? But I can't, everywhere I go I am in danger!
+    - Wait a minute, i've heard of you, the strong witch of [INSERT TOWN NAME HERE],
+      can you help me survive out in the wild?
+    - I'm going to die out there, you may aswell kill me where I lay.
+    - Thank you kind witch, I will tell everyone I meet of the good which you have
+      done here today. Take this item as a thank you.
   _choices:
     _choicesText:
     - I can't help you! Just get out of here!
@@ -17546,6 +17544,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _isDeathCom
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451845737021871628, guid: 460cc15bd7214fc4fa89a1f5395ca290,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Curse you little witch!
+      objectReference: {fileID: 0}
+    - target: {fileID: 6451845737021871628, guid: 460cc15bd7214fc4fa89a1f5395ca290,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Injured Serpent
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 460cc15bd7214fc4fa89a1f5395ca290, type: 3}

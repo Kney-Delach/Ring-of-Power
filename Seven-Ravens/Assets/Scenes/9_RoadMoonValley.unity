@@ -15223,15 +15223,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4
       objectReference: {fileID: 0}
-    - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7421903738011418205, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
@@ -22562,8 +22562,8 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[2]
-      value: 'Oh my god! Is that really who I think it is.....it is! It''s the red
-        headed witch of mordor, maybe she can help me out! '
+      value: 'Oh my god! Is that really who I think it is? The red headed witch of
+        [INSERT TOWN HERE], maybe she can help me out! '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
@@ -22692,16 +22692,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Traveller
     sentences:
-    - Hey miss! Miss! I beg you for your help, there are a group of bandits chasing
-      me, I need a way to hide from them! They will find me, and they will kill me!
+    - Hey miss! I beg for your help, there are a group of bandits chasing me, I need
+      to hide from them! They will find and kill me!
     - 'Is there any way in which you can help me? '
     - Okay okay, just don't kill me please. Jeez you're scarier than the bandits.
-    - Thank you kind witch <3
+    - Thank you kind witch. Take this as a token of my appreciation!
   _choices:
     _choicesText:
-    - I can't help you! Now leave me alone! Grr!
-    - I don't have time to stay and help you fight them, but I can channel you my
-      power of invisibility, you can use it to hide from them!
+    - I can't help you! Get out of my way!
+    - I don't have time to stay and help you fight them, but I can give you my power
+      of invisibility, you can use it to hide from them!
   _choiceIndex: 2
   _responseOptions: 0100000002000000
   _moveNpc: 1

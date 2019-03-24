@@ -12188,17 +12188,17 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Injured Turtle
     sentences:
-    - Hey miss! Miss! I beg you for your help, I broke my leg and am unable to move.
+    - Hey! Excuse me! please help me, I have broken my leg and am unable to move.
     - Please can you carry me to a safe place. I am in such terrible pain.
-    - Oh no, the Cerberus' will catch up to me, you may aswell kill me where you stand
+    - Oh no, the Cerberus' will catch up to me, you may aswell kill me where I stand
       as I am a dead turtle. I will miss my family so much.
     - Thank you kind witch, I will tell all my brothers of the kind deed which you
-      have done here today. You are the best!
+      have done here today. Take this gift, as a marker of your kindess!
   _choices:
     _choicesText:
-    - I can't help you! Now leave me alone! Grr!
-    - I don't have time to stay and help, but here, let me channel you this haste
-      ability to allow you to move.
+    - I can't help you! Now leave me alone!
+    - I don't have time to stay and help, but here, let me give you this haste ability
+      to allow you to move yourself to aid.
   _choiceIndex: 2
   _responseOptions: 0100000002000000
   _moveNpc: 0
@@ -12284,6 +12284,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -12354,11 +12359,6 @@ PrefabInstance:
       propertyPath: _dialogue.sentences.Array.data[2]
       value: 'Oh my god! Is that really who I think it is.....it is! It''s the red
         headed witch of mordor, maybe she can help me out! '
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}

@@ -195,6 +195,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_Name
+      value: InitialTrigger-Good
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -263,9 +273,9 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Thank you kind witch! We thank you for freeing our home of that monster.
-        We just saw him walk away happy with the protective bubble you gave him, you're
-        so kind! *Good Dialogue*
+      value: Thank you kind witch! Our home is now free of that monster. We saw him
+        walk away happy, and safe, with the protective bubble you gave him, you're
+        so kind!
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
@@ -291,16 +301,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _moveNpc
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_Name
-      value: InitialTrigger-Good
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
@@ -679,6 +679,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5958550289045974563, guid: 5d80d183421b645c792b962c841fa1cc,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3389921888787468423, guid: 5d80d183421b645c792b962c841fa1cc,
         type: 3}
       propertyPath: m_Enabled
@@ -705,11 +710,6 @@ PrefabInstance:
       value: Elf
       objectReference: {fileID: 0}
     - target: {fileID: 2892097155374594240, guid: 5d80d183421b645c792b962c841fa1cc,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5958550289045974563, guid: 5d80d183421b645c792b962c841fa1cc,
         type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -20727,8 +20727,8 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Tiny Tree Elf
     sentences:
-    - Thank you kind witch! We thank you for freeing our home of that monster. We'll
-      bury its body out back. Have a safe journey! *Bad Dialogue*
+    - 'Thank you kind witch! We thank you for freeing our home of that monster. We''ll
+      find somewhere to bury its body. Have a safe journey! '
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -29951,8 +29951,8 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Tiny Tree Elf
     sentences:
-    - Thank you kind witch! We just saw that serpent leave, we can go home now, woo!
-      Have a safe journey. *Neutral Dialogue*
+    - Thank you kind witch! We just saw that serpent leave, we can go home now!  Have
+      a safe journey.
   _choices:
     _choicesText: []
   _choiceIndex: 0
