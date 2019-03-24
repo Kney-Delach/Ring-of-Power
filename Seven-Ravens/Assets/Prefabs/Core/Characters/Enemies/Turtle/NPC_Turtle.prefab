@@ -1,5 +1,118 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &129566237945428406
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4090681764633148732}
+  - component: {fileID: 6733434539030804056}
+  m_Layer: 8
+  m_Name: DeathTrigg
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4090681764633148732
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129566237945428406}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8611112, y: -3.5722222, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3285246443230570601}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6733434539030804056
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129566237945428406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Injured Turtle
+    sentences:
+    - Curse you little witch! *Dies*
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+--- !u!1 &2888654305075733400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8583715555535871655}
+  - component: {fileID: 2324251305834540108}
+  m_Layer: 8
+  m_Name: DeathComm
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8583715555535871655
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888654305075733400}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.8611112, y: -3.5722222, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 3285246443230570601}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2324251305834540108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2888654305075733400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27a6e1e79fbbb418d02c11e907b8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 6733434539030804056}
+  _sceneStarter: 0
+  _eventTrigger: 0
+  _isItem: 0
+  _isDeathCom: 0
+  _npc: {fileID: 0}
+  _abilityName: 
 --- !u!1 &3285246443230570614
 GameObject:
   m_ObjectHideFlags: 0
@@ -35,6 +148,8 @@ Transform:
   m_LocalScale: {x: 1.8, y: 1.8, z: 1}
   m_Children:
   - {fileID: 2940862282938995558}
+  - {fileID: 8583715555535871655}
+  - {fileID: 4090681764633148732}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -189,8 +304,10 @@ MonoBehaviour:
   _isRoot: 0
   _isTraveller: 1
   _isPhoenix: 0
+  _isCerberus: 0
   _movePosition: {fileID: 0}
   _oneHealthComController: {fileID: 0}
+  _deathComController: {fileID: 2324251305834540108}
   _prevZonerController: {fileID: 0}
   _fillSpeed: 1
   _isPlayer: 0
@@ -216,11 +333,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3285246443230570601}
     m_Modifications:
-    - target: {fileID: 8175191304479750631, guid: 744fffc34607fe14fb70fa014bb44deb,
-        type: 3}
-      propertyPath: m_Name
-      value: WorldHUD
-      objectReference: {fileID: 0}
     - target: {fileID: 8175191304479750630, guid: 744fffc34607fe14fb70fa014bb44deb,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -335,6 +447,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5555556
+      objectReference: {fileID: 0}
+    - target: {fileID: 8175191304479750631, guid: 744fffc34607fe14fb70fa014bb44deb,
+        type: 3}
+      propertyPath: m_Name
+      value: WorldHUD
       objectReference: {fileID: 0}
     - target: {fileID: 8863423020779833809, guid: 744fffc34607fe14fb70fa014bb44deb,
         type: 3}

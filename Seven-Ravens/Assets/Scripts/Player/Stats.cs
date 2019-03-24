@@ -228,13 +228,14 @@ namespace Rokemon {
                 PlayerController.Instance.Mana.MaxValue += 20; 
                 if(_deathComController != null)
                     _deathComController.Instance.TriggerCommunicationEvents();
-                ActionBarUIController.Instance.HideFireboltFlash();
+                //ActionBarUIController.Instance.HideFireboltFlash();
                 GetComponent<Collider2D>().enabled = false;
                 gameObject.layer = 1;   
                 PlayerController.Instance.RemoveTarget();
                 ActionBarUIController.Instance.HideFireboltFlash();
                 GetComponent<ItemDropper>().DropCursedItem();
             }
+
 
             if(_isPlayer)
             {
