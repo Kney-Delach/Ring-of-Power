@@ -12633,6 +12633,12 @@ PrefabInstance:
       propertyPath: _itemId
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 4361767894338434951, guid: 2228ede249a9d4908a21de2d067cab84,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 1bf93a8a4980643d3961e1e3700029a6,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2228ede249a9d4908a21de2d067cab84, type: 3}
 --- !u!4 &842873546 stripped
@@ -16022,6 +16028,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Good Item
       objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[3]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[4]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[5]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _itemId
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 9850a70e50c554188b10474101f826bb,
+        type: 2}
     - target: {fileID: 2964898281399499700, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16076,41 +16123,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[1]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[2]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[3]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[4]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[5]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _itemId
-      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b855a53d3e8e4e56947d07e0344d9ff, type: 3}

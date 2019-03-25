@@ -16152,6 +16152,12 @@ PrefabInstance:
       propertyPath: _itemId
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: f643c52ff473d4198be09eeeee883603,
+        type: 2}
     - target: {fileID: 2964898281399499700, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60984,6 +60990,12 @@ PrefabInstance:
       propertyPath: _itemId
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4361767894338434951, guid: 2228ede249a9d4908a21de2d067cab84,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 07af337b37d8849e7bc41947805ae39f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2228ede249a9d4908a21de2d067cab84, type: 3}
 --- !u!4 &1958983277 stripped
@@ -61168,6 +61180,7 @@ MonoBehaviour:
   _isDeathCom: 1
   _npc: {fileID: 0}
   _abilityName: 
+  _isFinalPhoenixDeath: 0
 --- !u!4 &1993422751
 Transform:
   m_ObjectHideFlags: 0

@@ -15905,6 +15905,11 @@ PrefabInstance:
       propertyPath: _isTraveller
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1189866455734543587, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
+        type: 3}
+      propertyPath: _isTraveller
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3285246443230570600, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
         type: 3}
       propertyPath: m_Color.r
@@ -15919,11 +15924,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 0.6226415
-      objectReference: {fileID: 0}
-    - target: {fileID: 1189866455734543587, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
-        type: 3}
-      propertyPath: _isTraveller
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2940862282938995559, guid: 9fe3424ff6eb34856ac0f87bd0b96484,
         type: 3}
@@ -25274,46 +25274,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _sceneStarter
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _eventTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.data[1]
-      value: 
-      objectReference: {fileID: 1730604121}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _npc
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _abilityName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.data[0]
-      value: 
-      objectReference: {fileID: 1000218184}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.size
@@ -25360,6 +25320,46 @@ PrefabInstance:
       propertyPath: _moveNpc
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _sceneStarter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _eventTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1730604121}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _abilityName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1000218184}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
 --- !u!1 &1000218183 stripped
@@ -25589,6 +25589,12 @@ PrefabInstance:
       propertyPath: _itemId
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4361767894338434951, guid: 2228ede249a9d4908a21de2d067cab84,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: 07af337b37d8849e7bc41947805ae39f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2228ede249a9d4908a21de2d067cab84, type: 3}
 --- !u!4 &1073141463 stripped
@@ -60047,6 +60053,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _responseOptions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Girl
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Looks like a bunch of dead bunnies....
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[1]
+      value: 'There''s a serpent in our home and we can''t get it to leave! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _comType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[2]
+      value: We'll be waiting for your return!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npcToMove
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _moveNpc
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: m_IsActive
@@ -60106,51 +60157,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _triggers.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _responseOptions.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.speakerName
-      value: Girl
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[0]
-      value: Looks like a bunch of dead bunnies....
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[1]
-      value: 'There''s a serpent in our home and we can''t get it to leave! '
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _comType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[2]
-      value: We'll be waiting for your return!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _npcToMove
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _moveNpc
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
@@ -60257,6 +60263,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Good Item
       objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1715438836}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1715438836}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[3]
+      value: 
+      objectReference: {fileID: 1715438836}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[4]
+      value: 
+      objectReference: {fileID: 1715438836}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[5]
+      value: 
+      objectReference: {fileID: 1715438836}
+    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _itemId
+      value: 21
+      objectReference: {fileID: 0}
+    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _item
+      value: 
+      objectReference: {fileID: 11400000, guid: f643c52ff473d4198be09eeeee883603,
+        type: 2}
     - target: {fileID: 2964898281399499700, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -60311,41 +60358,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[1]
-      value: 
-      objectReference: {fileID: 1715438836}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[2]
-      value: 
-      objectReference: {fileID: 1715438836}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[3]
-      value: 
-      objectReference: {fileID: 1715438836}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[4]
-      value: 
-      objectReference: {fileID: 1715438836}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[5]
-      value: 
-      objectReference: {fileID: 1715438836}
-    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _itemId
-      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b855a53d3e8e4e56947d07e0344d9ff, type: 3}
@@ -60775,6 +60787,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _itemId
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _isGem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _unlockedZone
+      value: 
+      objectReference: {fileID: 1107739571}
     - target: {fileID: 3439349815149163353, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -60795,21 +60822,6 @@ PrefabInstance:
       propertyPath: _triggers.Array.data[3]
       value: 
       objectReference: {fileID: 2146402427}
-    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
-        type: 3}
-      propertyPath: _itemId
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
-        type: 3}
-      propertyPath: _isGem
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
-        type: 3}
-      propertyPath: _unlockedZone
-      value: 
-      objectReference: {fileID: 1107739571}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f078c9ae70eeb4f9eb1e6d7709727a5e, type: 3}
 --- !u!4 &2146402426 stripped

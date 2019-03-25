@@ -10,10 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a97bcb46c087b9c468ad975238931a04, type: 3}
-  m_Name: Item-1-Cursed
+  m_Name: 3-Blue-Cursed
   m_EditorClassIdentifier: 
   name: Cursed Item 1
   icon: {fileID: 21300000, guid: a6bd2874992824c86bcee5dc2777f739, type: 2}
   description: This used to undo curses, but it seems to be cursed and non-functional
     now...
   showInInventory: 1
+  isGem: 0
+  isUsable: 0
+  brotherRefColor: 2
