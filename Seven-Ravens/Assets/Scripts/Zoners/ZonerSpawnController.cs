@@ -33,8 +33,6 @@ namespace Rokemon
                 if(_zoneName == "Deeper Into The Forest")
                 {
                     ActionBarUIController.Instance.ActivateFreezeFlash();
-                    ActionBarUIController.Instance.ActivateFireboltFlash();
-                    ActionBarUIController.Instance.ActivateCharmFlash();
                 }
                 PlayerController.Instance.transform.position = gameObject.transform.position;
             }

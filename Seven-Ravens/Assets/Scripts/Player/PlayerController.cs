@@ -499,7 +499,15 @@ namespace Rokemon
                         reference.TransformedObject.SetActive(true);
                         _currentTarget.gameObject.SetActive(false);
                         StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));   
-                        ActionBarUIController.Instance.HideFreezeFlash();                            
+                        ActionBarUIController.Instance.HideFreezeFlash(); 
+                        
+                        GoodItem tempItem = FindObjectOfType<GoodItem>();
+                        if(tempItem != null)
+                        {
+                            ActionBarUIController.Instance.ActivateFireboltFlash();
+                            ActionBarUIController.Instance.ActivateCharmFlash();
+                        }                        
+
                         break;
                     case "Charm":
                         if(_currentTarget != null && _currentTarget.tag == "CharmableEnemy" && _currentTarget.GetComponent<Stats>().CurrentValue > 0)
@@ -533,22 +541,22 @@ namespace Rokemon
                         }                     
                         break;
                     case "Heal":
+                        if(_currentTarget != null && _currentTarget.tag == "HealableEnemy" && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != _currentTarget.gameObject.GetComponent<Stats>().MaxValue) && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != 0) && (!_currentTarget.gameObject.GetComponent<Stats>().OneHealthTrigger))
+                        {
                             float distanceHeal = Vector3.Distance(_currentTarget.position, transform.position);
-                            if(distanceHeal < _attackDistance)
+                            if(distanceHeal <= _attackDistance)
                             {
-                                if(_currentTarget != null && _currentTarget.tag == "HealableEnemy" && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != _currentTarget.gameObject.GetComponent<Stats>().MaxValue) && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != 0) && (!_currentTarget.gameObject.GetComponent<Stats>().OneHealthTrigger))
-                                {
-                                    UseMana(_abilitiesDatabase[spellName]._cost);
-                                    _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
-                                    StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
-                                }
-                                else if(_currentTarget == null && (_health.CurrentValue != _health.MaxValue) && _health.CurrentValue != 0)
-                                {
-                                    UseMana(_abilitiesDatabase[spellName]._cost);
-                                    _health.AddValue(_abilitiesDatabase[spellName]._damage);    
-                                    StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
-                                }
+                                UseMana(_abilitiesDatabase[spellName]._cost);
+                                _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
+                                StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                             }
+                        }
+                        else if(_currentTarget == null && (_health.CurrentValue != _health.MaxValue) && _health.CurrentValue != 0)
+                        {
+                            UseMana(_abilitiesDatabase[spellName]._cost);
+                            _health.AddValue(_abilitiesDatabase[spellName]._damage);    
+                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                        }                           
                         
                         break;
                     default:
