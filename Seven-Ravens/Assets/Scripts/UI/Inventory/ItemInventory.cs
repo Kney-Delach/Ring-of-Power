@@ -96,7 +96,7 @@ namespace Rokemon{
                 }
             }
         }
-
+        
         public Dictionary<BrotherRefColor,bool> RemoveTransformItems()
         {
             Dictionary<BrotherRefColor, bool> dictionary = new Dictionary<BrotherRefColor,bool>();

@@ -61,6 +61,9 @@ namespace Rokemon {
         private bool _oneHealthTrigger = false; 
         public bool OneHealthTrigger { get {return _oneHealthTrigger ; } set { _oneHealthTrigger = value ; } }
 
+        [SerializeField]
+        private bool _oneHealthTriggerWizard = false;
+
         [Header("Stat Values")]        
         [SerializeField]
         private float _fillSpeed = 1;
@@ -142,7 +145,7 @@ namespace Rokemon {
         // add an amount to stat value
         public void AddValue(float amount)
         {   
-            if(_isWizard && _oneHealthTrigger)
+            if(_isWizard && _oneHealthTriggerWizard)
             {
                 ProcessWizardSpared();
             }
@@ -201,16 +204,17 @@ namespace Rokemon {
         // reduce an amount from stat value 
         public void ReduceValue(float amount)
         {   
-            if(_isWizard && _oneHealthTrigger)
+            if(_isWizard && _oneHealthTriggerWizard)
             {
                 ProcessWizardDeath();
                
             }
-            else if(_isWizard && !_oneHealthTrigger)
+            else if(_isWizard && !_oneHealthTriggerWizard)
             {
                 _currentValue = _currentValue - amount;
                 UpdateUI();
-                _oneHealthTrigger = true;
+                //_oneHealthTrigger = true;
+                _oneHealthTriggerWizard = true;
                 PlayerController.Instance.RemoveTarget();
                 gameObject.tag = "HealableEnemy";
                 gameObject.layer = 8;
