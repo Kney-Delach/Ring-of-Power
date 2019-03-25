@@ -33537,6 +33537,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BodyText
       objectReference: {fileID: 0}
+    - target: {fileID: 4628093965384358238, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f28ebef0b7820e4fb6f291e570ac1dc, type: 3}
 --- !u!1001 &1244666057791628344
