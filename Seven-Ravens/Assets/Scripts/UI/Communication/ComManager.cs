@@ -227,7 +227,6 @@ namespace Rokemon {
             {
                 EndComHelper();
                 _currentController.TriggerComplete();
-                Debug.Log("REACHED SIMULATION POINT");
             }
             else if(_currentController != null)
             {
@@ -235,15 +234,22 @@ namespace Rokemon {
                 PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
                 _currentController.Instance.TriggerComplete();
                 _currentController = null; // reset reference to com controller
-                Debug.Log("REACHED SIMULATION POINT 2");
             } else
             {
                 EndComHelper();
                 PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
-                Debug.Log("REACHED SIMULATION POINT 3");
+            }                       
+        }
+
+        private void EndCommunication(ResponseType type)
+        {
+            if(_currentController != null && type == ResponseType.Nothing)
+            {
+                _currentController.TriggerCompleteNoIncrement();
+                EndComHelper();
+                PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
+                _currentController = null;
             }
-            
-           
         }
 
         #endregion
@@ -318,7 +324,6 @@ namespace Rokemon {
                 case ResponseType.Cutscene:
                     if(CutsceneManager.Instance != null)
                     {
-                        Debug.Log("ComManager EvaluateChoice: Choice type response: " + responseChosen);
                         EndCommunication();
                         CutsceneManager.Instance.BeginCutscene();
                     }
@@ -341,7 +346,6 @@ namespace Rokemon {
                     //     obj.SetActive(false);
                     
                      _currentController.Npc.SetActive(true);
-                    Debug.Log("Process Kill Choice");
                     break;
                 case ResponseType.Trade:
                     PlayerInformationController.Instance.AddChoice(ChoicesMadeType.Good); // set good decision made
@@ -362,16 +366,14 @@ namespace Rokemon {
                     _currentController.Npc.layer = 1;
                     _currentController.Npc.SetActive(false);
                     _currentController.Npc.GetComponent<ItemDropper>().DropGoodItem();
-                    Debug.Log("Process Trade Choice");
                     break;
                 case ResponseType.Nothing:
                     _choiceMade = true;
-                    SkipSentences(choiceMadeIndex-1);
-                    DisplayNextSentence();
-                    _currentController.Npc.layer = 1;
-                    _currentController.Npc.SetActive(false);
-                    Debug.Log("Process Nothing Choice");
-                    EndCommunication();
+                    // SkipSentences(choiceMadeIndex-1);
+                    // DisplayNextSentence();
+                    // _currentController.Npc.layer = 1;
+                    // _currentController.Npc.SetActive(false);
+                    EndCommunication(ResponseType.Nothing);
                     break;
                 default:
                     Debug.Log("ComManager EvaluateChoice: Choice type response: " + responseChosen);
@@ -453,9 +455,16 @@ namespace Rokemon {
         private void InitialiseSentences(Dialogue dialogue)
         {
             if (!dialogue.displayName)
+            {
+                _dialogueNameTransform.gameObject.SetActive(false);
                 _dialogueNameText.gameObject.SetActive(false);
+            }
             else
+            {
+                _dialogueNameTransform.gameObject.SetActive(true);
+                _dialogueNameText.gameObject.SetActive(true);
                 _dialogueNameText.text = dialogue.speakerName;
+            }
 
             _sentences.Clear();
 

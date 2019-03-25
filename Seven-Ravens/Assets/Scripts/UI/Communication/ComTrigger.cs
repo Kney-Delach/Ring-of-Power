@@ -45,19 +45,22 @@ namespace Rokemon {
         [SerializeField]
         private NpcController _npcToMove; 
 
+        private ComController _curController;
+
         #endregion
 
-        public void TriggerCommunication(ComController _controller)
+        public void TriggerCommunication(ComController controller)
         {
+            _curController = controller;
             if(_moveNpc && _npcToMove != null)
             {
                 _moveNpc = false;
                 _npcToMove.Cutscene = true;
             }
             if(_comType == ComType.Dialogue)
-                ComManager.Instance.BeginCommunication(_comType, _dialogue, _controller);
+                ComManager.Instance.BeginCommunication(_comType, _dialogue, controller);
             else if(_comType == ComType.Choice)
-                ComManager.Instance.BeginCommunication(_comType, _dialogue, _choices, _choiceIndex, _responseOptions, _controller);
+                ComManager.Instance.BeginCommunication(_comType, _dialogue, _choices, _choiceIndex, _responseOptions, controller);
         }
         
         public void EndCommunication()

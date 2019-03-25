@@ -59,6 +59,9 @@ namespace Rokemon
         private bool _cutscene = false; 
         public bool Cutscene { get { return _cutscene ; } set { _cutscene = value ; } }
 
+        [SerializeField]
+        private bool _idleMoving = false;
+
         private void Start()
         {
             if (_waypoints.Length > 0)
@@ -88,7 +91,11 @@ namespace Rokemon
 
         private void Update()
         {
-            if(_cutscene)
+            if(_idleMoving)
+            {
+                UpdateNPC();
+            }
+            else if(_cutscene)
             {
                 UpdateNPC();
             }
