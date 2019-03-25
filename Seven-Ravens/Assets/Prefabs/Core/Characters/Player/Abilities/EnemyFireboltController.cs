@@ -67,6 +67,8 @@ namespace Rokemon {
                 _target.GetComponent<Stats>().ReduceValue(_damage);
                 _target = null;
                 Debug.Log("Wizard attacked by phoenix");
+
+                
                 Destroy(gameObject);
             }
         }

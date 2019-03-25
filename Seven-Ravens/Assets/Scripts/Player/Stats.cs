@@ -144,8 +144,7 @@ namespace Rokemon {
         {   
             if(_isWizard && _oneHealthTrigger)
             {
-                UpdateUI();
-                Debug.Log("WIZARD HAS BEEN KILLED");
+                ProcessWizardSpared();
             }
             else 
             {
@@ -183,13 +182,29 @@ namespace Rokemon {
 
         }
 
+        private void ProcessWizardSpared()
+        {
+            _currentValue = _maxValue;
+            UpdateUI();
+            Debug.Log("WIZARD HAS BEEN Spared");
+            WizardFightController.Instance.ProcessWizardSparedComplete();
+        }
+
+        private void ProcessWizardDeath()
+        { 
+            _currentValue = 0;
+            UpdateUI();
+            _isDead = true;
+            Debug.Log("WIZARD HAS BEEN KILLED");
+            WizardFightController.Instance.ProcessWizardKilledComplete();
+        }
         // reduce an amount from stat value 
         public void ReduceValue(float amount)
         {   
             if(_isWizard && _oneHealthTrigger)
             {
-                UpdateUI();
-                Debug.Log("WIZARD HAS BEEN SAVED");
+                ProcessWizardDeath();
+               
             }
             else if(_isWizard && !_oneHealthTrigger)
             {
@@ -328,9 +343,19 @@ namespace Rokemon {
   
 
             }
-            if(_isPlayer)
+            if(_isPlayer && WizardFightController.Instance == null)
             {
                 StartCoroutine(RespawnRoutine());
+            } 
+            else if(_isPlayer && WizardFightController.Instance != null)
+            {
+                PlayerController.Instance.RemoveTarget();
+                PlayerController.Instance.FreezePlayer();
+                _currentValue = 0;
+                PlayerController.Instance.Mana.CurrentValue = 0;
+                UpdateUI();
+                PlayerController.Instance.Mana.UpdateUI();
+                WizardFightController.Instance.ProcessGirlDeath();
             }
 
         }

@@ -48,6 +48,9 @@ namespace Rokemon
         [SerializeField]
         private Ability[] _abilities; 
 
+        private bool _regenMana = true; 
+        public bool RegenMana { set { _regenMana = value ; } }
+
         #endregion
 
         #region MOVEMENT VARIABLES
@@ -593,7 +596,7 @@ namespace Rokemon
 
         private void ProcessStats()
         {   
-            if(_mana.CompareMaximum())
+            if(_mana.CompareMaximum() && _regenMana)
             {
                 _mana.AddValue(0.15f);
             }

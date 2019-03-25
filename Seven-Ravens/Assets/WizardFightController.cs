@@ -7,17 +7,20 @@ namespace Rokemon {
     {
 
         [SerializeField]
-        private ComController _fightWonComms;
+        private ComController _wizardKilledComms;
 
         [SerializeField]
-        private ComController _fightLostComms;
+        private ComController _wizardSparedComms;
+
+        [SerializeField]
+        private ComController _wizardVictorComms;
 
         [SerializeField]
         private GameObject[] _enemies; 
 
-        private bool _fightWon = false;
+        [SerializeField]
+        private EnemyController _phoenixController;
 
-        private bool _fightLost = false;
     
         [SerializeField]
         private Ability _ability;
@@ -36,18 +39,6 @@ namespace Rokemon {
 
         public void Update()
         {
-            if(_fightWon)
-            {
-                _fightWon = false;
-                _fightWonComms.TriggerCommunicationEvents();
-                // perform fight win routine 
-            }
-            else if(_fightLost)
-            {
-                _fightLost = false ;
-                _fightLostComms.TriggerCommunicationEvents();
-                // perform fight lost routine 
-            }
         }
 
         public void InstantiateFirebolt()
@@ -65,14 +56,29 @@ namespace Rokemon {
             foreach(GameObject enemy in _enemies)
                 enemy.SetActive(false);
         }
-        public void WinFight()
+        public void ProcessWizardKilledComplete()
         {
-            _fightWon = true;
+            _wizardKilledComms.TriggerCommunicationEvents();
         }
 
-        public void LoseFight()
+        public void ProcessWizardSparedComplete()
         {
+            _wizardSparedComms.TriggerCommunicationEvents();
+        }
 
+        public void ProcessGirlDeath()
+        {
+            RemoveEnemies();
+            _phoenixController.StopFireboltActivity();
+            _wizardVictorComms.TriggerCommunicationEvents();
+            PlayerController.Instance.RegenMana = false;
+            FireboltController[] firebolts = FindObjectsOfType<FireboltController>();
+            EnemyFireboltController[] enemyFirebolts = FindObjectsOfType<EnemyFireboltController>();
+
+            foreach(FireboltController cont in firebolts)
+                Destroy(cont.gameObject);
+            foreach(EnemyFireboltController econt in enemyFirebolts)
+                Destroy(econt.gameObject);
         }
         
     }

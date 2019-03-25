@@ -112,6 +112,69 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &9481754
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9481755}
+  - component: {fileID: 9481756}
+  m_Layer: 8
+  m_Name: Trigger-Cursed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &9481755
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9481754}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 216162885}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9481756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9481754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Phoenix
+    sentences:
+    - You may have absorbed some power, but can you live with the consequences of
+      your actions?
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &20167948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -593,12 +656,12 @@ PrefabInstance:
     - target: {fileID: 2105975206167309409, guid: 66dec6422c8fd1740a01b2d8287c175f,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Ouch Cunt
+      value: Ouch, that hurt you cunt.
       objectReference: {fileID: 0}
     - target: {fileID: 2105975206167309409, guid: 66dec6422c8fd1740a01b2d8287c175f,
         type: 3}
       propertyPath: _dialogue.speakerName
-      value: 'AHHHH I Dieeeeee '
+      value: Phoenix
       objectReference: {fileID: 0}
     - target: {fileID: 271771687, guid: 66dec6422c8fd1740a01b2d8287c175f, type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
@@ -626,12 +689,12 @@ PrefabInstance:
     - target: {fileID: 6502813757213819153, guid: 66dec6422c8fd1740a01b2d8287c175f,
         type: 3}
       propertyPath: m_Offset.y
-      value: 0.6562736
+      value: 0.9954889
       objectReference: {fileID: 0}
     - target: {fileID: 6502813757213819153, guid: 66dec6422c8fd1740a01b2d8287c175f,
         type: 3}
       propertyPath: m_Size.y
-      value: 5.3856997
+      value: 4.707269
       objectReference: {fileID: 0}
     - target: {fileID: 271771685, guid: 66dec6422c8fd1740a01b2d8287c175f, type: 3}
       propertyPath: m_IsActive
@@ -679,6 +742,26 @@ PrefabInstance:
         type: 3}
       propertyPath: _isCerberus
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568560028524796409, guid: 66dec6422c8fd1740a01b2d8287c175f,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 4.143749
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568560028524796409, guid: 66dec6422c8fd1740a01b2d8287c175f,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 15.970343
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568560028524796409, guid: 66dec6422c8fd1740a01b2d8287c175f,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -2.9562137
+      objectReference: {fileID: 0}
+    - target: {fileID: 7568560028524796409, guid: 66dec6422c8fd1740a01b2d8287c175f,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10.161604
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6833311717807267334, guid: 66dec6422c8fd1740a01b2d8287c175f, type: 3}
@@ -1214,6 +1297,62 @@ PrefabInstance:
       objectReference: {fileID: 1572012612}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6de87d0245efb9f42a5b2de7e8d3f04f, type: 3}
+--- !u!1 &216162884
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 216162885}
+  - component: {fileID: 216162886}
+  m_Layer: 8
+  m_Name: WizardSparedCom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &216162885
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216162884}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.599999, y: -1.1799996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1694733789}
+  - {fileID: 471492025}
+  - {fileID: 9481755}
+  m_Father: {fileID: 1959743590}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &216162886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216162884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27a6e1e79fbbb418d02c11e907b8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 1694733790}
+  _sceneStarter: 0
+  _decisionTypeCheck: 0
+  _eventTrigger: 1
+  _isItem: 0
+  _isDeathCom: 0
+  _npc: {fileID: 0}
+  _abilityName: 
+  _isFinalPhoenixDeath: 0
 --- !u!1 &226213360
 GameObject:
   m_ObjectHideFlags: 0
@@ -16835,6 +16974,124 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &232183905
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 232183906}
+  - component: {fileID: 232183907}
+  m_Layer: 8
+  m_Name: Trigger-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &232183906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232183905}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 270588169}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &232183907
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 232183905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - CAREFUL PHOENIX, DON'T YOU GO WILD IN HERE
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+--- !u!1 &270588167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 270588169}
+  - component: {fileID: 270588168}
+  m_Layer: 8
+  m_Name: Wizard1HPCom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &270588168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270588167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27a6e1e79fbbb418d02c11e907b8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 1909495459}
+  _sceneStarter: 0
+  _decisionTypeCheck: 0
+  _eventTrigger: 1
+  _isItem: 0
+  _isDeathCom: 0
+  _npc: {fileID: 0}
+  _abilityName: 
+  _isFinalPhoenixDeath: 0
+--- !u!4 &270588169
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 270588167}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.20000076, y: -8.639999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1909495460}
+  - {fileID: 232183906}
+  - {fileID: 1962286712}
+  m_Father: {fileID: 166421815}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &288680170
 GameObject:
   m_ObjectHideFlags: 0
@@ -17006,7 +17263,7 @@ PrefabInstance:
     - target: {fileID: 8175191304479750630, guid: 744fffc34607fe14fb70fa014bb44deb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8175191304479750630, guid: 744fffc34607fe14fb70fa014bb44deb,
         type: 3}
@@ -17035,6 +17292,68 @@ PrefabInstance:
       objectReference: {fileID: 1246888876}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 744fffc34607fe14fb70fa014bb44deb, type: 3}
+--- !u!1 &307186689
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 307186690}
+  - component: {fileID: 307186691}
+  m_Layer: 8
+  m_Name: Trigger-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &307186690
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307186689}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2013641549}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &307186691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307186689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - CAREFUL PHOENIX, DON'T YOU GO WILD IN HERE
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &321994699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18139,6 +18458,187 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0747861ab53ccde40a50a5396c81be17, type: 3}
+--- !u!1 &462140170
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462140172}
+  - component: {fileID: 462140171}
+  m_Layer: 8
+  m_Name: WizardDeathCom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &462140171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462140170}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27a6e1e79fbbb418d02c11e907b8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 1624804594}
+  _sceneStarter: 0
+  _decisionTypeCheck: 0
+  _eventTrigger: 1
+  _isItem: 0
+  _isDeathCom: 0
+  _npc: {fileID: 0}
+  _abilityName: 
+  _isFinalPhoenixDeath: 0
+--- !u!4 &462140172
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462140170}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.599999, y: -1.1799996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1624804595}
+  - {fileID: 782049251}
+  - {fileID: 633163008}
+  m_Father: {fileID: 1959743590}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &465783056
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 465783057}
+  - component: {fileID: 465783058}
+  m_Layer: 8
+  m_Name: Trigger-Cursed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &465783057
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465783056}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2013641549}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &465783058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465783056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Phoenix
+    sentences:
+    - You may have absorbed some power, but can you live with the consequences of
+      your actions?
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+--- !u!1 &471492024
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 471492025}
+  - component: {fileID: 471492026}
+  m_Layer: 8
+  m_Name: Trigger-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &471492025
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471492024}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 216162885}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &471492026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 471492024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - CAREFUL PHOENIX, DON'T YOU GO WILD IN HERE
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &478639473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18568,6 +19068,69 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 618983544}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &633163007
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 633163008}
+  - component: {fileID: 633163009}
+  m_Layer: 8
+  m_Name: Trigger-Cursed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &633163008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633163007}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462140172}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &633163009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 633163007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Phoenix
+    sentences:
+    - You may have absorbed some power, but can you live with the consequences of
+      your actions?
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &655739491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19070,6 +19633,68 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 693435188}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &782049250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 782049251}
+  - component: {fileID: 782049252}
+  m_Layer: 8
+  m_Name: Trigger-2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &782049251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782049250}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462140172}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &782049252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 782049250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - CAREFUL PHOENIX, DON'T YOU GO WILD IN HERE
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &851342869
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23020,7 +23645,7 @@ MonoBehaviour:
   _isSerpent: 0
   _isWizard: 1
   _movePosition: {fileID: 0}
-  _oneHealthComController: {fileID: 0}
+  _oneHealthComController: {fileID: 270588168}
   _deathComController: {fileID: 0}
   _prevZonerController: {fileID: 0}
   _oneHealthTrigger: 0
@@ -23028,6 +23653,18 @@ MonoBehaviour:
   _isPlayer: 0
   _maxValue: 1000
   _isDeadBunny: 0
+--- !u!114 &1252748516 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5752135611834317200, guid: 66dec6422c8fd1740a01b2d8287c175f,
+    type: 3}
+  m_PrefabInstance: {fileID: 81317109}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5481d59505d5be84abaabec3d1f55bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1313991352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1391158754991369671, guid: 25e473ae5a52b09438cd7e8610659e43,
@@ -23120,6 +23757,68 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1353524252}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1392235239
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1392235241}
+  - component: {fileID: 1392235240}
+  m_Layer: 8
+  m_Name: Trigger_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1392235240
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392235239}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - Wizard Victor
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+--- !u!4 &1392235241
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1392235239}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2013641549}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1410260315
 GameObject:
   m_ObjectHideFlags: 0
@@ -32298,6 +32997,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4628093965384358238, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
     - target: {fileID: 5850842047298604634, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -32449,6 +33153,68 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 669464668}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1624804593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1624804595}
+  - component: {fileID: 1624804594}
+  m_Layer: 8
+  m_Name: Trigger_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1624804594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624804593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - Wizard Death
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+--- !u!4 &1624804595
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1624804593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 462140172}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1631157828
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32571,6 +33337,68 @@ Grid:
   m_CellGap: {x: 0, y: 0, z: 0}
   m_CellLayout: 0
   m_CellSwizzle: 0
+--- !u!1 &1694733788
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1694733789}
+  - component: {fileID: 1694733790}
+  m_Layer: 8
+  m_Name: Trigger_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1694733789
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694733788}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 216162885}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1694733790
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694733788}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - Wizard Spared
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &1774700378
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32912,6 +33740,70 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1852702649}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1909495458
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1909495460}
+  - component: {fileID: 1909495459}
+  m_Layer: 8
+  m_Name: Trigger_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1909495459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909495458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - AHHHHHHH Phoenix you cunt, look what you've done to me.... NOW I AM TOO WEAK
+      TO FIGHT, LITTLE GIRL, PLEASE DON'T KILL ME, I BEG OF YOU, I WILL LEAVE YOU
+      AND YOUR FAMILY ALONE. Please
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+--- !u!4 &1909495460
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1909495458}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 270588169}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1948939392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3547085730242304189, guid: e9b415bb1a666b1408cf14c634d8e14e,
@@ -32947,13 +33839,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d83fa2e39a1569428828e6dabdd8807, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fightWonComms: {fileID: 0}
-  _fightLostComms: {fileID: 0}
+  _wizardKilledComms: {fileID: 462140171}
+  _wizardSparedComms: {fileID: 216162886}
+  _wizardVictorComms: {fileID: 2013641548}
   _enemies:
   - {fileID: 669464669}
   - {fileID: 1119955042}
   - {fileID: 1174125455}
   - {fileID: 1099110497}
+  _phoenixController: {fileID: 1252748516}
   _ability: {fileID: 11400000, guid: 4896131179ae2f24d8524b62b208b803, type: 2}
   _targetTransform: {fileID: 166421815}
 --- !u!4 &1959743590
@@ -32966,10 +33860,76 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 21.16, y: -2.47, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 462140172}
+  - {fileID: 216162885}
+  - {fileID: 2013641549}
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1962286711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1962286712}
+  - component: {fileID: 1962286713}
+  m_Layer: 8
+  m_Name: Trigger-Cursed
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1962286712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962286711}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 270588169}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1962286713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1962286711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Phoenix
+    sentences:
+    - You may have absorbed some power, but can you live with the consequences of
+      your actions?
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!1001 &2001011479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33057,6 +34017,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1199635784}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2013641547
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2013641549}
+  - component: {fileID: 2013641548}
+  m_Layer: 8
+  m_Name: WizardWinsCom
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2013641548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013641547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c27a6e1e79fbbb418d02c11e907b8b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _triggers:
+  - {fileID: 1392235240}
+  _sceneStarter: 0
+  _decisionTypeCheck: 0
+  _eventTrigger: 1
+  _isItem: 0
+  _isDeathCom: 0
+  _npc: {fileID: 0}
+  _abilityName: 
+  _isFinalPhoenixDeath: 0
+--- !u!4 &2013641549
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013641547}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -9.599999, y: -1.1799996, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1392235241}
+  - {fileID: 307186690}
+  - {fileID: 465783057}
+  m_Father: {fileID: 1959743590}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2045355859
 GameObject:
