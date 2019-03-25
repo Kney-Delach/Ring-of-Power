@@ -173,9 +173,43 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
+    speakerName: Girl
+    sentences:
+    - Did you hear that voice?
+  - transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - Only you can hear me, girl.
+  - transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
     speakerName: Dad
     sentences:
-    - Did we ever tell you about the break in before you were born?
+    - No what voice?
+  - transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Evil Wizard
+    sentences:
+    - Your family is mine, my lair is East from your home, prove your worth and I
+      may return them
   - transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
@@ -186,7 +220,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - No? Was anybody hurt?!
+    - They've been taken, a voice just spoke to me
   - transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
@@ -197,23 +231,13 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dad
     sentences:
-    - No one was injured, however they took one thing from beside everyone's bed,
-      except mine. On my table was a single Raven Feather
-  - transformNpcs: 0
-    speakerTag: 
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 0
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Girl
-    sentences:
-    - How peculiar! Wait... Did you hear that sound? I hope everyone is ok!
+    - He's found us.. I have some explaining to do
   _waitTimes:
-  - 2.5
-  - 2.5
   - 4
+  - 4
+  - 4
+  - 5
+  - 5
   - 5
   _cutsceneNpcs:
   - {fileID: 849269261}

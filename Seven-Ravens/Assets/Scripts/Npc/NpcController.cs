@@ -63,15 +63,21 @@ namespace Rokemon
         private bool _idleMoving = false;
         public bool IdleMoving { set { _idleMoving = value ; } }
 
+        [SerializeField]
+        private bool _isWizard = false;
+
         private void Start()
         {
             if (_waypoints.Length > 0)
                 _currentWaypoint = _waypoints[0];
 
             _rigidbody.velocity = Vector2.zero;
-            _animator.SetFloat("MoveX", _rigidbody.velocity.x);
-            _animator.SetFloat("MoveY", _rigidbody.velocity.y);
-                
+
+            if(!_isWizard)
+            {
+                _animator.SetFloat("MoveX", _rigidbody.velocity.x);
+                _animator.SetFloat("MoveY", _rigidbody.velocity.y);
+            } 
         }
 
         private void UpdateNPC()

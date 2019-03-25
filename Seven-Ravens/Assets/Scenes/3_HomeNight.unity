@@ -15916,7 +15916,7 @@ MonoBehaviour:
     - '*Talks in sleep* Ergh! Ah! Hm! Mh! Eh! ...... *KA!*'
   _waitTimes:
   - 2
-  - 6
+  - 7
   - 4
   _cutsceneNpcs:
   - {fileID: 511110738}
@@ -16093,6 +16093,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _npcName
       value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376544750174935178, guid: c81f28511074e9541a4a7fe76f71f215,
+        type: 3}
+      propertyPath: _isWizard
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7971395789346203182, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}

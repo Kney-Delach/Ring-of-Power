@@ -1749,7 +1749,7 @@ MonoBehaviour:
     speakerName: Evil Wizard
     sentences:
     - Oh my, that girl has such a strong firebolt spell, I must aquire it for myself!
-      I'll need to lure her to my lair, the mother could be useful for this!
+      I'll need to lure her to my lair, she'd do anything for her family!
   - transformNpcs: 1
     speakerTag: WIZARD
     moveSpeaker: 1
@@ -1761,7 +1761,7 @@ MonoBehaviour:
     speakerName: Evil Wizard
     sentences:
     - KA KA KA KA KA KA
-  - transformNpcs: 0
+  - transformNpcs: 1
     speakerTag: WIZARD
     moveSpeaker: 1
     displayName: 0
@@ -1815,16 +1815,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - That looks really black, lets get you home so you can rest!
+    - That looks really black, lets get you home so you can rest.
   _waitTimes:
-  - 3
-  - 5
-  - 3
+  - 4
+  - 7
+  - 4
   - 1
-  - 2
-  - 2
-  - 2
-  - 3
+  - 4
+  - 4
+  - 4
+  - 5
   _cutsceneNpcs:
   - {fileID: 767456818}
   - {fileID: 7326345087893666665}
@@ -2228,7 +2228,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1073374349}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0, z: 0}
+  m_LocalPosition: {x: -0.92, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1469777986}
@@ -34082,7 +34082,7 @@ PrefabInstance:
     - target: {fileID: 7971395788974391645, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 23.7
+      value: 23.8
       objectReference: {fileID: 0}
     - target: {fileID: 7971395788974391645, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
@@ -34168,6 +34168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _npcName
       value: Wizard
+      objectReference: {fileID: 0}
+    - target: {fileID: 1376544750174935178, guid: c81f28511074e9541a4a7fe76f71f215,
+        type: 3}
+      propertyPath: _isWizard
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7971395789346203182, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}

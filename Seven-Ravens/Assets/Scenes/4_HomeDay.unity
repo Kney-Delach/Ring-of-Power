@@ -12281,9 +12281,9 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Dad
+    speakerName: Son - 1
     sentences:
-    - Are you ready to bake this cake?
+    - Why are we going to the forest again?
   - transformNpcs: 0
     speakerTag: MOM
     moveSpeaker: 0
@@ -12292,13 +12292,13 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Girl
+    speakerName: Mom
     sentences:
-    - Yeah, lets get to it!
+    - We need to go and pay our respects to the shrine, we've not been in years..
   _waitTimes:
+  - 5
   - 4
-  - 2
-  - 2
+  - 5
   _cutsceneNpcs:
   - {fileID: 511110738}
 --- !u!1 &713083250
