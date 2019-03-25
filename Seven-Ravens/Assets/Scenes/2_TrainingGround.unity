@@ -532,7 +532,7 @@ PrefabInstance:
     - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
       value: Time for your spell practice! Try shooting a fireball at that dummy on
-        the left by pressing [E]
+        the left by targetting it with the mouse then press [E]
       objectReference: {fileID: 0}
     - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
       propertyPath: _comType

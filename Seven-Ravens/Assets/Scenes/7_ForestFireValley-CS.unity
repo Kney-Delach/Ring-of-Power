@@ -27682,9 +27682,8 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dad
     sentences:
-    - Reversing the curse required transformation stones, I can only imagine he has
-      done the same to our family. The wizard has likely left these along the path
-      as breadcrumbs for you...
+    - 'Reversing the curse required transformation stones, I can only imagine he has
+      done the same to our family. '
   - transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
@@ -27695,18 +27694,18 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - Right, Find valuables and gather stones. Let's get to it!
+    - Right, find valuables and gather stones. Let's get to it!
   - transformNpcs: 0
     speakerTag: 
     moveSpeaker: 1
-    displayName: 0
+    displayName: 1
     displayContinue: 0
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Girl's Ring
+    speakerName: Whispers
     sentences:
-    - My power absorbs those you slay, mana you gain... their souls will pay.
+    - I absorb those you slay, mana you gain... their souls will pay.
   - transformNpcs: 0
     speakerTag: 
     moveSpeaker: 1
@@ -27717,8 +27716,9 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dad
     sentences:
-    - The ring around your neck will grant you bonus mana, making you stronger if
-      you slay living beings.
+    - The ring around your neck will grant you bonus mana upon killing creatures.
+      Be careful using your offensive spells however, transformation stones can be
+      damaged easily.
   _waitTimes:
   - 8
   - 5
@@ -27727,10 +27727,10 @@ MonoBehaviour:
   - 8
   - 5
   - 6
-  - 10
+  - 8
   - 5
   - 6
-  - 6
+  - 10
   _cutsceneNpcs:
   - {fileID: 698978666}
   - {fileID: 2102797423}
