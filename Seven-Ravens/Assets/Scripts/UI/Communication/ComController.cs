@@ -203,7 +203,7 @@ namespace Rokemon {
             {
 
             }
-            else if(!_sceneStarter && collision.tag == PLAYER_TAG)
+            else if(!_sceneStarter && collision.tag == PLAYER_TAG) 
             {
                 _currentComActive = false;
             }

@@ -1750,30 +1750,30 @@ MonoBehaviour:
     sentences:
     - Oh my, that girl has such a strong firebolt spell, I must aquire it for myself!
       I'll need to lure her to my lair, she'd do anything for her family!
-  - transformNpcs: 1
+  - transformNpcs: 0
     speakerTag: WIZARD
     moveSpeaker: 1
     displayName: 1
     displayContinue: 0
     displayDialogue: 1
     enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
+    moveSentenceIndexes: 00000000
     speakerName: Evil Wizard
     sentences:
     - KA KA KA KA KA KA
-  - transformNpcs: 1
+  - transformNpcs: 0
     speakerTag: WIZARD
     moveSpeaker: 1
     displayName: 0
     displayContinue: 0
     displayDialogue: 0
     enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
+    moveSentenceIndexes: 00000000
     speakerName: Evil Wizard
     sentences:
     - 
   - transformNpcs: 0
-    speakerTag: WIZARD
+    speakerTag: 
     moveSpeaker: 1
     displayName: 1
     displayContinue: 0
@@ -1818,13 +1818,13 @@ MonoBehaviour:
     - That looks really black, lets get you home so you can rest.
   _waitTimes:
   - 4
-  - 7
+  - 6
+  - 3.5
+  - 0.1
+  - 1.5
+  - 3
+  - 3
   - 4
-  - 1
-  - 4
-  - 4
-  - 4
-  - 5
   _cutsceneNpcs:
   - {fileID: 767456818}
   - {fileID: 7326345087893666665}
@@ -34162,7 +34162,7 @@ PrefabInstance:
     - target: {fileID: 1376544750174935178, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
       propertyPath: _speed
-      value: 15
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 1376544750174935178, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
