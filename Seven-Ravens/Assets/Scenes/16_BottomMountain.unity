@@ -446,15 +446,14 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dwarf
     sentences:
-    - 0
-    - 1
-    - 2
-    - 3
+    - No one crosses my bridge without good reason!
+    - What is your excuse for troubling me?
+    - Hand 'em over and I've never even seen you come near this bridge.
+    - I guess not, enjoy your time at the Wizards Lair
   _choices:
     _choicesText:
-    - I can't help you! Now leave me alone!
-    - I don't have time to stay and help, but here, let me give you this haste ability
-      to allow you to move yourself to aid.
+    - I have no excuse, only gems
+    - I come to retrieve my family, now get out of my way, Dwarf.
   _choiceIndex: 2
   _responseOptions: 0200000002000000
   _moveNpc: 0
@@ -558,7 +557,7 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Hi
+      value: Who Dares Attempt to Cross My Bridge?
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
@@ -25887,16 +25886,15 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dwarf
     sentences:
-    - 0
-    - 1
-    - Bye 2
-    - Bye 3
+    - How dare you insult me on my bridge
+    - About time, now pass, before I change my mind
+    - That's it, I'm taking payment if you like it or not. Be glad I'm sparing your
+      life, tiny woman.
   _choices:
     _choicesText:
-    - I can't help you! Now leave me alone!
-    - I don't have time to stay and help, but here, let me give you this haste ability
-      to allow you to move yourself to aid.
-  _choiceIndex: 2
+    - Ok I'm sorry take the gems
+    - I don't have time for this.
+  _choiceIndex: 1
   _responseOptions: 0300000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
