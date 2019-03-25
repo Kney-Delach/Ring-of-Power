@@ -10,14 +10,14 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8b1b420d30c62584696b36150d5859b9, type: 3}
-  m_Name: Heal
+  m_Name: FB-Wizard
   m_EditorClassIdentifier: 
-  _name: Heal
-  _description: Heals a player or healable creature for 10 health.
-  _damage: 25
+  _name: Firebolt
+  _description: Sends a bolt of fire in the direction specified
+  _damage: 999
   _speed: 1
-  _reloadTime: 5
-  _castTime: 1
-  _cost: 25
-  _castBarColor: {r: 0.13243146, g: 0.9056604, b: 0.85106564, a: 0}
-  _prefab: {fileID: 0}
+  _reloadTime: 3
+  _castTime: 2
+  _cost: 20
+  _castBarColor: {r: 1, g: 0.23281917, b: 0, a: 0}
+  _prefab: {fileID: 3589298519776283733, guid: cf398f1ec9a260d46946a49cba07e7cc, type: 3}

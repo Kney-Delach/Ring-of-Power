@@ -43,6 +43,9 @@ namespace Rokemon {
         private bool _isSerpent = false;
 
         [SerializeField]
+        private bool _isWizard = false;
+
+        [SerializeField]
         Transform _movePosition; 
 
         [SerializeField]
@@ -54,6 +57,7 @@ namespace Rokemon {
         [SerializeField]
         private ZonerController _prevZonerController;
 
+        [SerializeField]
         private bool _oneHealthTrigger = false; 
         public bool OneHealthTrigger { get {return _oneHealthTrigger ; } set { _oneHealthTrigger = value ; } }
 
@@ -138,68 +142,98 @@ namespace Rokemon {
         // add an amount to stat value
         public void AddValue(float amount)
         {   
-            if(_isPhoenix)
+            if(_isWizard && _oneHealthTrigger)
             {
-                _currentValue = _maxValue;
-                GetComponent<ItemDropper>().DropGoodItem();
-                //_shieldActive = true;
-                gameObject.tag = "Untagged";
-                ActionBarUIController.Instance.HideFireboltFlash();
-                ActionBarUIController.Instance.HideHealFlash();
-                _oneHealthComController.ComEventTrigger(1,true);
+                UpdateUI();
+                Debug.Log("WIZARD HAS BEEN KILLED");
             }
             else 
             {
-                if(amount < 0)
-                    Debug.LogError("Stats AddValue Error: Attempting to add negative amounts to stat!");
-
-                // verify addition of value not above max
-                float tempVal = amount + _currentValue; 
-                if(amount > _maxValue || tempVal > _maxValue)
+                if(_isPhoenix)
                 {
                     _currentValue = _maxValue;
-                } 
-                else
-                {
-                    _currentValue = tempVal;     
+                    GetComponent<ItemDropper>().DropGoodItem();
+                    //_shieldActive = true;
+                    gameObject.tag = "Untagged";
+                    ActionBarUIController.Instance.HideFireboltFlash();
+                    ActionBarUIController.Instance.HideHealFlash();
+                    _oneHealthComController.ComEventTrigger(1,true);
                 }
+                else 
+                {
+                    if(amount < 0)
+                        Debug.LogError("Stats AddValue Error: Attempting to add negative amounts to stat!");
+
+                    // verify addition of value not above max
+                    float tempVal = amount + _currentValue; 
+                    if(amount > _maxValue || tempVal > _maxValue)
+                    {
+                        _currentValue = _maxValue;
+                    } 
+                    else
+                    {
+                        _currentValue = tempVal;     
+                    }
+                }
+
+                UpdateUI();
             }
 
-            UpdateUI();
+           
+
         }
 
         // reduce an amount from stat value 
         public void ReduceValue(float amount)
         {   
-            if(_shieldActive)
+            if(_isWizard && _oneHealthTrigger)
             {
-                Debug.Log("Invincible shield active");
+                UpdateUI();
+                Debug.Log("WIZARD HAS BEEN SAVED");
+            }
+            else if(_isWizard && !_oneHealthTrigger)
+            {
+                UpdateUI();
+                _oneHealthTrigger = true;
+                gameObject.tag = "HealableEnemy";
+                gameObject.layer = 8;
+                ActionBarUIController.Instance.ActivateFireboltFlash();
+                ActionBarUIController.Instance.ActivateHealFlash();
+
             }
             else 
             {
-                if(amount < 0)
-                    Debug.LogError("Stats AddValue Error: Attempting to reduce negative amounts to stat!");
-                // verify addition of value not below min
-                float tempVal = _currentValue - amount; 
-                if(tempVal < 0)
+                if(_shieldActive)
                 {
-                    _currentValue = 0;
-                } 
-                else
-                {
-                    _currentValue = tempVal;     
+                    Debug.Log("Invincible shield active");
                 }
-                if(_currentValue <= 0 && _oneHealthTrigger)
+                else 
                 {
-                    processOneHealth(); 
-                    _oneHealthTrigger = false;
-                    _currentValue = 1; 
-                }
-                else if (!_isDead && _currentValue <= 0)
-                    ProcessDeath();
+                    if(amount < 0)
+                        Debug.LogError("Stats AddValue Error: Attempting to reduce negative amounts to stat!");
+                    // verify addition of value not below min
+                    float tempVal = _currentValue - amount; 
+                    if(tempVal < 0)
+                    {
+                        _currentValue = 0;
+                    } 
+                    else
+                    {
+                        _currentValue = tempVal;     
+                    }
+                    if(_currentValue <= 0 && _oneHealthTrigger)
+                    {
+                        processOneHealth(); 
+                        _oneHealthTrigger = false;
+                        _currentValue = 1; 
+                    }
+                    else if (!_isDead && _currentValue <= 0)
+                        ProcessDeath();
 
-                UpdateUI();
+                    UpdateUI();
+                }
             }
+           
             
         }
 
@@ -223,7 +257,7 @@ namespace Rokemon {
             _isDead = true;
             if(_isRoot)
                 GetComponentInParent<Tangler>().DestroyRoot();
-            if(_isPhoenix)
+            if(_isPhoenix && !_isCerberus)
             {
                 PlayerController.Instance.Mana.MaxValue += 20; 
                 ActionBarUIController.Instance.HideFireboltFlash();
@@ -231,7 +265,7 @@ namespace Rokemon {
                 GetComponent<ItemDropper>().DropCursedItem();
                 _oneHealthComController.ComEventTrigger(2,true);
             }
-            if(_isCerberus)
+            if(_isCerberus && !_isPhoenix)
             {
                 GetComponent<Collider2D>().enabled = false;
                 PlayerController.Instance.RemoveTarget();
@@ -250,6 +284,21 @@ namespace Rokemon {
                 GetComponent<ItemDropper>().DropCursedItem();
 
                 PlayerInformationController.Instance.ReplaceChoice(ChoicesMadeType.Bad);
+            }
+
+            if(_isPhoenix && _isCerberus)
+            {
+                WizardFightController.Instance.RemoveEnemies();
+                
+                GetComponent<Collider2D>().enabled = false;
+                PlayerController.Instance.RemoveTarget();
+                gameObject.layer = 1;  
+                
+                if(_movePosition != null)
+                    transform.position = _movePosition.position;
+                
+                if(_deathComController != null)
+                    _deathComController.Instance.TriggerCommunicationEvents();
             }
 
             if(_isSerpent)

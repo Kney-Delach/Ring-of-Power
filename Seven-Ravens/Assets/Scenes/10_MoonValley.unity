@@ -124,6 +124,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cerberus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 789040831239394881, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_TagString
+      value: CharmableEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 789040831239394882, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12786,6 +12791,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cerberus (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 789040831239394881, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_TagString
+      value: CharmableEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 789040831239394882, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -12915,6 +12925,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cerberus (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 789040831239394881, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_TagString
+      value: CharmableEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 789040831239394882, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
@@ -16007,41 +16022,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Good Item
       objectReference: {fileID: 0}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[1]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[2]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[3]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[4]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[5]
-      value: 
-      objectReference: {fileID: 1106370796}
-    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _itemId
-      value: 9
-      objectReference: {fileID: 0}
     - target: {fileID: 2964898281399499700, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16097,6 +16077,41 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[2]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[3]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[4]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[5]
+      value: 
+      objectReference: {fileID: 1106370796}
+    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _itemId
+      value: 9
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b855a53d3e8e4e56947d07e0344d9ff, type: 3}
 --- !u!4 &1106370795 stripped
@@ -16134,6 +16149,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cerberus (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 789040831239394881, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_TagString
+      value: CharmableEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 789040831239394882, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
@@ -27557,6 +27577,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cerberus (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 789040831239394881, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_TagString
+      value: CharmableEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 789040831239394882, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -27914,6 +27939,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cerberus
+      objectReference: {fileID: 0}
+    - target: {fileID: 789040831239394881, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_TagString
+      value: CharmableEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 789040831239394882, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}

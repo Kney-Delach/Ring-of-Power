@@ -395,19 +395,23 @@ namespace Rokemon
         
         private IEnumerator CharmRoutine(float abilityTime, float waitTime, string spellName, GameObject target)
         {
+            GameObject findCharm = GameObject.FindGameObjectWithTag("CharmScene");
+            if(findCharm == null)
+            {
+                target.GetComponent<Stats>().DeactivateShield(); 
+                target.GetComponentInChildren<EnemyController>().StopFireboltActivity();
+            }
             float temp = waitTime - abilityTime; 
 
             _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(abilityTime);
-            GameObject findCharm = GameObject.FindGameObjectWithTag("CharmScene");
-            Debug.Log("Charm Scene Found?: " + findCharm);
+           
             if(findCharm == null)
             {
-                Debug.Log("Not charm scene");
-                target.GetComponent<Stats>().DeactivateShield(); 
-                target.GetComponent<SpriteRenderer>().color = Color.red; 
-                target.tag = "CharmableEnemy";
+                target.GetComponent<SpriteRenderer>().color = Color.white; 
+                //target.tag = "CharmableEnemy";
                 target.layer = 8;
+                target.GetComponentInChildren<EnemyController>().CanCastFirebolt = true;
             }
 
             yield return new WaitForSeconds(temp);
@@ -518,7 +522,7 @@ namespace Rokemon
                                 UseMana(_abilitiesDatabase[spellName]._cost);
 
                                 _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
-                                _currentTarget.tag = "Untagged";
+                                //_currentTarget.tag = "Untagged";
                                 _currentTarget.gameObject.layer = 1;
 
                                 StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, _currentTarget.gameObject));

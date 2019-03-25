@@ -51,6 +51,10 @@ namespace Rokemon {
         private bool _currentEventComplete = false;
 
         private bool _complete = false; 
+
+        [SerializeField]
+        private bool _isFinalPhoenixDeath = false;
+
         private ComController _instance;
         public ComController Instance { get { return _instance ; } }
 
@@ -174,6 +178,10 @@ namespace Rokemon {
                 if(_isItem && _itemActivated)
                     gameObject.SetActive(false);
             }
+
+            // TODO: Fix
+            if(_isFinalPhoenixDeath && _currentTriggerIndex == 2)
+                WizardFightController.Instance.InstantiateFirebolt();
            
         }
         

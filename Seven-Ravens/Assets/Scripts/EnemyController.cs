@@ -77,6 +77,12 @@ namespace Rokemon {
             }
         }
 
+        public void StopFireboltActivity()
+        {
+            StopAllCoroutines();
+            _canCastFirebolt = false;
+        }
+
         private IEnumerator FireboltRoutine()
         {
             _canCastFirebolt = false;

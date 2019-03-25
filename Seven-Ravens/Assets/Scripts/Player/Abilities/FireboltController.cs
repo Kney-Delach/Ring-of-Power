@@ -18,6 +18,9 @@ namespace Rokemon {
         private float _damage = 0;
         public float Damage{  set { _damage = value ; } } 
 
+        private bool _endScene = false; 
+        public bool EndScene { set { _endScene = value ; } }
+
         // Use this for initialization
         void Start ()
         {
@@ -52,7 +55,9 @@ namespace Rokemon {
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if ((collision.tag == "Enemy" ||  collision.tag == "HealableEnemy" || collision.tag == "CharmableEnemy" || collision.tag == "Roots" || collision.tag == "Player") && collision.transform == _target)
+            Debug.Log(collision.tag);
+
+            if ((collision.tag == "Enemy" ||  collision.tag == "HealableEnemy" || collision.tag == "CharmableEnemy" || collision.tag == "Roots" || collision.tag == "Player" || collision.tag == "WIZARD") && collision.transform == _target)
             {
                 //GetComponent<Animator>().SetTrigger("impact");
                 _rigidBody.velocity = Vector2.zero;
