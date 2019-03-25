@@ -598,7 +598,7 @@ namespace Rokemon
         {   
             if(_mana.CompareMaximum() && _regenMana)
             {
-                _mana.AddValue(0.15f);
+                _mana.AddValue(0.25f);
             }
             if(Input.GetKeyDown(KeyCode.M))
             {
