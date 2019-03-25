@@ -149,7 +149,7 @@ namespace Rokemon {
             TransitionFader.PlayTransition(_transitionPrefab, _transitionName);
             yield return new WaitForSeconds(_playDelay);
             
-            ComManager.Instance.EndCommunication(); // end communication
+            ComManager.Instance.EndCommunicationCutscene(); // end communication
             
             if(_deactivatePlayer && PlayerController.Instance != null)
             {
@@ -189,7 +189,7 @@ namespace Rokemon {
             _playNextDialogue = false; 
             yield return new WaitForSeconds(_waitTimes[_curDialogueIndex]);
 
-            ComManager.Instance.EndCommunication();
+            ComManager.Instance.EndCommunicationCutscene();
 
             _curDialogueIndex++;
             _playNextDialogue = true;

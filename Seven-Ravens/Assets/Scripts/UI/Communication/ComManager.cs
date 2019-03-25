@@ -249,9 +249,26 @@ namespace Rokemon {
                 EndComHelper();
                 PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
                 _currentController = null;
+                PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
             }
         }
 
+        private void EndComPreCutscene()
+        {
+            if(_currentController != null)
+            {
+                _currentController.TriggerCompleteCutscene();
+                EndComHelper();
+                _currentController = null;
+                PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
+            }
+        }
+        public void EndCommunicationCutscene()
+        {
+            EndComHelper();
+            _currentController = null; // reset reference to com controller
+            PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
+        }
         #endregion
 
         #region Dialogue
@@ -304,10 +321,14 @@ namespace Rokemon {
                 _currentIndex++;
             }else if(_currentIndex > _choiceIndex && _choiceMade)
             {
-                if(Input.GetKeyDown(KeyCode.Space))
+                if(_currentComType != ComType.Cutscene && Input.GetKeyDown(KeyCode.Space))
                 {
-                    EndCommunication();
+                        EndCommunication();
                 }
+                // if(Input.GetKeyDown(KeyCode.Space))
+                // {
+                //     EndCommunication();
+                // }
                 
             }
             // TODO : add update options for after choice complete?

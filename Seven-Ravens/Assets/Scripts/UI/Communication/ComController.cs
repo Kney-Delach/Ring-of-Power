@@ -50,6 +50,7 @@ namespace Rokemon {
 
         private bool _currentEventComplete = false;
 
+        private bool _complete = false; 
         private ComController _instance;
         public ComController Instance { get { return _instance ; } }
 
@@ -117,7 +118,7 @@ namespace Rokemon {
                     {
 
                     }
-                    else if(Input.GetKeyDown(KeyCode.K))
+                    else if(!_complete && Input.GetKeyDown(KeyCode.K))
                     {
                         _isActive = true;
                     }
@@ -128,7 +129,8 @@ namespace Rokemon {
                         if(!_currentComActive) 
                         {
                             _currentComActive = true;
-                            _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
+                            if(_currentTriggerIndex < _triggers.Length)
+                                _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
                         }
                     }
 
@@ -179,6 +181,14 @@ namespace Rokemon {
         {
              _isActive = false;
             _currentComActive = false;
+        }
+        public void TriggerCompleteCutscene()
+        {
+            _currentComActive = true;
+            _isActive = false;
+            _isCollding = false;
+            _complete = true;
+            gameObject.SetActive(false);
         }
 
         public void TriggerCommunicationEvents()
