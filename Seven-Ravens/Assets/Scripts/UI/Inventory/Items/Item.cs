@@ -19,6 +19,12 @@ namespace Rokemon {
     // reference to item inventory display status
 	public bool showInInventory = true;
 
+    public bool isGem = false;
+
+    public bool isUsable = false;
+
+    public BrotherRefColor brotherRefColor;
+
 	// called when the item is pressed in the inventory
 	public virtual void Use ()
 	{

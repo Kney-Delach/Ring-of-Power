@@ -348,32 +348,45 @@ namespace Rokemon {
                      _currentController.Npc.SetActive(true);
                     break;
                 case ResponseType.Trade:
-                    PlayerInformationController.Instance.AddChoice(ChoicesMadeType.Good); // set good decision made
 
+                    PlayerInformationController.Instance.AddChoice(ChoicesMadeType.Good); // set good decision made
                     _choiceMade = true;
                     SkipSentences(choiceMadeIndex-1);
                     DisplayNextSentence();
-                    PlayerController.Instance.DeactivateAbility(_currentController.AbilityName);
-                    GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
-                     foreach(GameObject obj in objs)
-                     {
-                        EnemyController tempController = obj.GetComponentInChildren<EnemyController>();
-                        if(tempController != null)
-                            tempController.CanCastFirebolt = false;
-                     }
-                    //     obj.SetActive(false);
-                     _currentController.Npc.SetActive(true);
-                    _currentController.Npc.layer = 1;
-                    _currentController.Npc.SetActive(false);
-                    _currentController.Npc.GetComponent<ItemDropper>().DropGoodItem();
+
+                    if(_currentController.AbilityName != "NOTHING")
+                    {
+                        PlayerController.Instance.DeactivateAbility(_currentController.AbilityName);
+                        GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
+                        foreach(GameObject obj in objs)
+                        {
+                            EnemyController tempController = obj.GetComponentInChildren<EnemyController>();
+                            if(tempController != null)
+                                tempController.CanCastFirebolt = false;
+                        }
+                        _currentController.Npc.GetComponent<ItemDropper>().DropGoodItem();
+                         _currentController.Npc.layer = 1;
+                        _currentController.Npc.SetActive(false);
+                    }
+                  
+
                     break;
                 case ResponseType.Nothing:
-                    _choiceMade = true;
-                    // SkipSentences(choiceMadeIndex-1);
-                    // DisplayNextSentence();
-                    // _currentController.Npc.layer = 1;
-                    // _currentController.Npc.SetActive(false);
-                    EndCommunication(ResponseType.Nothing);
+                    if(_currentController.AbilityName == "NOTHING")
+                    {
+                        _currentController.Npc.layer = 1;
+                        _currentController.Npc.SetActive(false);
+                        _choiceMade = true; 
+                        EndCommunication();
+                        ItemInventory.Instance.RemoveGems();    // remove gems if this choice made
+                        //ItemInventory.Instance.Remove();//
+                    }
+                    else 
+                    {
+                        _choiceMade = true;
+                        EndCommunication(ResponseType.Nothing);
+                    }
+
                     break;
                 default:
                     Debug.Log("ComManager EvaluateChoice: Choice type response: " + responseChosen);

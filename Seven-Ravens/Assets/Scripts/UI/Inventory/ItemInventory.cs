@@ -3,6 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 namespace Rokemon{
+
+    public enum BrotherRefColor
+    {
+        Red,
+        Green,
+        Blue,
+        Yellow,
+        Orange,
+        Pink,
+        Black
+    }
+    
     public class ItemInventory : MonoBehaviour
     {
         // reference to the number of available item slots in the inventory
@@ -73,5 +85,35 @@ namespace Rokemon{
             if (onItemChangedCallback != null)
                 onItemChangedCallback.Invoke(); // notify observers
         }
+
+        public void RemoveGems()
+        {
+            foreach(Item item in _items.ToArray())
+            {
+                if(item.isGem)
+                {
+                    Remove(item);
+                }
+            }
+        }
+
+        public Dictionary<BrotherRefColor,bool> RemoveTransformItems()
+        {
+            Dictionary<BrotherRefColor, bool> dictionary = new Dictionary<BrotherRefColor,bool>();
+
+            foreach(Item item in _items.ToArray())
+            {
+                if(item.isUsable)
+                {
+                    dictionary.Add(item.brotherRefColor, true);
+                    Remove(item);
+                }
+                else 
+                    dictionary.Add(item.brotherRefColor, false);
+            }
+            return dictionary; 
+        }
     }
+
+
 }
