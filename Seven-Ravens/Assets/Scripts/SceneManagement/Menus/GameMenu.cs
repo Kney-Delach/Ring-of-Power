@@ -9,10 +9,10 @@ namespace LevelManagement
     {        
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
-                OnPausePressed();
-            }
+            // if (Input.GetKeyDown(KeyCode.Escape))
+            // {
+            //     OnPausePressed();
+            // }
         }
 
         // pauses the game and opens the pause menu

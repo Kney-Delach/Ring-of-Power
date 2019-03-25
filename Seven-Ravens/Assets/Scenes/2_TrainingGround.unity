@@ -615,7 +615,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Mom
     sentences:
-    - 
+    - What is it sweety?
   _choices:
     _choicesText:
     - Thanks Mom, I'm shattered, lets go home and see Dad!
@@ -16514,8 +16514,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 218393446}
-  - {fileID: 8577350602357902056}
   - {fileID: 7566164505696328500}
+  - {fileID: 8577350602357902056}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -33527,6 +33527,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1493646881134559999, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: NameText
+      objectReference: {fileID: 0}
+    - target: {fileID: 1560207898161441630, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_Name
+      value: BodyText
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7f28ebef0b7820e4fb6f291e570ac1dc, type: 3}
 --- !u!1001 &1244666057791628344
@@ -33624,7 +33634,7 @@ PrefabInstance:
     - target: {fileID: 6806588404031607959, guid: 155a6524c6c185f4e865c97676170922,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.34
+      value: -19.5
       objectReference: {fileID: 0}
     - target: {fileID: 6806588404031607959, guid: 155a6524c6c185f4e865c97676170922,
         type: 3}
@@ -33659,7 +33669,7 @@ PrefabInstance:
     - target: {fileID: 6806588404031607959, guid: 155a6524c6c185f4e865c97676170922,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6806588404031607959, guid: 155a6524c6c185f4e865c97676170922,
         type: 3}
@@ -33681,6 +33691,21 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 447056647}
+    - target: {fileID: 6806588404031607958, guid: 155a6524c6c185f4e865c97676170922,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806588404031607958, guid: 155a6524c6c185f4e865c97676170922,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7877358
+      objectReference: {fileID: 0}
+    - target: {fileID: 6806588404031607958, guid: 155a6524c6c185f4e865c97676170922,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7877358
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 155a6524c6c185f4e865c97676170922, type: 3}
 --- !u!1001 &5232118149106927195
@@ -33733,7 +33758,7 @@ PrefabInstance:
     - target: {fileID: 4581543258330631347, guid: 33f40c8aa74be914996c1349b327a2ad,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4581543258330631347, guid: 33f40c8aa74be914996c1349b327a2ad,
         type: 3}
@@ -33862,10 +33887,15 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy-Dummy
       objectReference: {fileID: 0}
+    - target: {fileID: 8221122689524222026, guid: 89b864e8688c3c4459f96487a55e4b5f,
+        type: 3}
+      propertyPath: m_TagString
+      value: HealableEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8221122689524222025, guid: 89b864e8688c3c4459f96487a55e4b5f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.49
+      value: -23.35
       objectReference: {fileID: 0}
     - target: {fileID: 8221122689524222025, guid: 89b864e8688c3c4459f96487a55e4b5f,
         type: 3}
@@ -33927,6 +33957,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 447056647}
+    - target: {fileID: 69001310, guid: 89b864e8688c3c4459f96487a55e4b5f, type: 3}
+      propertyPath: _maxValue
+      value: 1000
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 89b864e8688c3c4459f96487a55e4b5f, type: 3}
 --- !u!1001 &8265059230550439389

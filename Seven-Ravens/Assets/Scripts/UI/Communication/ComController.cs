@@ -174,7 +174,12 @@ namespace Rokemon {
             }
            
         }
-
+        
+        public void TriggerCompleteNoIncrement()
+        {
+             _isActive = false;
+            _currentComActive = false;
+        }
 
         public void TriggerCommunicationEvents()
         {

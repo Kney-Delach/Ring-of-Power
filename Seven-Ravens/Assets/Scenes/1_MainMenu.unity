@@ -500,12 +500,9 @@ MonoBehaviour:
     type: 3}
   gameMenuPrefab: {fileID: 114785412825122878, guid: 6ae8454c42ed04c65a8810f15b23ebed,
     type: 3}
-  pauseMenuPrefab: {fileID: 7264992933357006319, guid: fdc6ba4735646fb46a8967ad33c7f1e3,
-    type: 3}
-  winScreenPrefab: {fileID: 7172693573222879556, guid: e22fb1c9cc230aa4c8a1fcbefc85e2f4,
-    type: 3}
-  finMenuPrefab: {fileID: 5204090426767360896, guid: 90bcb5a28d61f40219e5710c16ef91dd,
-    type: 3}
+  pauseMenuPrefab: {fileID: 0}
+  winScreenPrefab: {fileID: 0}
+  finMenuPrefab: {fileID: 0}
   _menuParent: {fileID: 0}
 --- !u!4 &2086161290
 Transform:
@@ -689,6 +686,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 648670880, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}

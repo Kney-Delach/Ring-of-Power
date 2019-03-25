@@ -393,12 +393,24 @@ namespace Rokemon
             _reloadingCheckDatabase[spellName] = false;
         }
         
-        private IEnumerator CharmRoutine(float waitTime, GameObject charmTarget, string spellName)
+        private IEnumerator CharmRoutine(float abilityTime, float waitTime, string spellName, GameObject target)
         {
-            GameObject target = charmTarget;
+            float temp = waitTime - abilityTime; 
+
             _reloadingCheckDatabase[spellName] = true;
-            yield return new WaitForSeconds(waitTime);
-            _reloadingCheckDatabase[spellName] = false;
+            yield return new WaitForSeconds(abilityTime);
+            GameObject findCharm = GameObject.FindGameObjectWithTag("CharmScene");
+            Debug.Log("Charm Scene Found?: " + findCharm);
+            if(findCharm == null)
+            {
+                Debug.Log("Not charm scene");
+                target.GetComponent<Stats>().DeactivateShield(); 
+                target.GetComponent<SpriteRenderer>().color = Color.red; 
+                target.tag = "CharmableEnemy";
+                target.layer = 8;
+            }
+
+            yield return new WaitForSeconds(temp);
         }
 
         // TODO : Add checks for reload 
@@ -449,7 +461,6 @@ namespace Rokemon
                         }
                         else
                         {
-                            Debug.Log("fUCK");
                             GetComponent<SpriteRenderer>().color = Color.blue; 
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, null));
@@ -487,31 +498,58 @@ namespace Rokemon
                         TransformReference reference = _currentTarget.GetComponentInChildren<TransformReference>();
                         reference.TransformedObject.SetActive(true);
                         _currentTarget.gameObject.SetActive(false);
-                        StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                        StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));   
+                        ActionBarUIController.Instance.HideFreezeFlash();                            
                         break;
                     case "Charm":
-                        if(_currentTarget != null && _currentTarget.tag == "CharmableEnemy")
-                        {
-                            // TODO: Implement Charm
-                            UseMana(_abilitiesDatabase[spellName]._cost);
-                            //Debug.Log(_currentTarget.gameObject.GetComponent<SpriteRenderer>().color);
-                            _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
-                            StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage, _currentTarget.gameObject, spellName));
+                        if(_currentTarget != null && _currentTarget.tag == "CharmableEnemy" && _currentTarget.GetComponent<Stats>().CurrentValue > 0)
+                        {   
+                            float distance = Vector3.Distance(_currentTarget.position, transform.position);
+                            if(distance < _attackDistance)
+                            {
+                                UseMana(_abilitiesDatabase[spellName]._cost);
+
+                                _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
+                                _currentTarget.tag = "Untagged";
+                                _currentTarget.gameObject.layer = 1;
+
+                                StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, _currentTarget.gameObject));
+                                RemoveTarget();
+                            
+                                // perform logic for charm scene
+                                GoodItem item = FindObjectOfType<GoodItem>();
+                                Debug.Log(item);
+                                if(item != null)
+                                {
+                                    item.ActivateObject();
+                                    ActionBarUIController.Instance.HideCharmFlash();
+                                    ActionBarUIController.Instance.HideFireboltFlash();
+                                }
+
+                            }
+
+                           
+
                         }                     
                         break;
                     case "Heal":
-                        if(_currentTarget != null && _currentTarget.tag == "HealableEnemy" && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != _currentTarget.gameObject.GetComponent<Stats>().MaxValue) && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != 0) && (!_currentTarget.gameObject.GetComponent<Stats>().OneHealthTrigger))
-                        {
-                            UseMana(_abilitiesDatabase[spellName]._cost);
-                            _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
-                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
-                        }
-                        else if(_currentTarget == null && (_health.CurrentValue != _health.MaxValue) && _health.CurrentValue != 0)
-                        {
-                            UseMana(_abilitiesDatabase[spellName]._cost);
-                            _health.AddValue(_abilitiesDatabase[spellName]._damage);    
-                            StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
-                        }
+                            float distanceHeal = Vector3.Distance(_currentTarget.position, transform.position);
+                            if(distanceHeal < _attackDistance)
+                            {
+                                if(_currentTarget != null && _currentTarget.tag == "HealableEnemy" && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != _currentTarget.gameObject.GetComponent<Stats>().MaxValue) && (_currentTarget.gameObject.GetComponent<Stats>().CurrentValue != 0) && (!_currentTarget.gameObject.GetComponent<Stats>().OneHealthTrigger))
+                                {
+                                    UseMana(_abilitiesDatabase[spellName]._cost);
+                                    _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
+                                    StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                                }
+                                else if(_currentTarget == null && (_health.CurrentValue != _health.MaxValue) && _health.CurrentValue != 0)
+                                {
+                                    UseMana(_abilitiesDatabase[spellName]._cost);
+                                    _health.AddValue(_abilitiesDatabase[spellName]._damage);    
+                                    StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                                }
+                            }
+                        
                         break;
                     default:
                         break;
