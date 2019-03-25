@@ -25946,12 +25946,12 @@ PrefabInstance:
     - target: {fileID: 4241083473564228283, guid: 2228ede249a9d4908a21de2d067cab84,
         type: 3}
       propertyPath: _dialogue.speakerName
-      value: Broken Transformation Stone
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4241083473564228283, guid: 2228ede249a9d4908a21de2d067cab84,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: It seems this one was damaged by my firebolt...
+      value: A stone! Although it seems this one was damaged by my firebolt...
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2228ede249a9d4908a21de2d067cab84, type: 3}
