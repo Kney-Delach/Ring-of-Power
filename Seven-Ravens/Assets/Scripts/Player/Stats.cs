@@ -193,8 +193,10 @@ namespace Rokemon {
             }
             else if(_isWizard && !_oneHealthTrigger)
             {
+                _currentValue = _currentValue - amount;
                 UpdateUI();
                 _oneHealthTrigger = true;
+                PlayerController.Instance.RemoveTarget();
                 gameObject.tag = "HealableEnemy";
                 gameObject.layer = 8;
                 ActionBarUIController.Instance.ActivateFireboltFlash();
@@ -289,7 +291,7 @@ namespace Rokemon {
             if(_isPhoenix && _isCerberus)
             {
                 WizardFightController.Instance.RemoveEnemies();
-                
+
                 GetComponent<Collider2D>().enabled = false;
                 PlayerController.Instance.RemoveTarget();
                 gameObject.layer = 1;  

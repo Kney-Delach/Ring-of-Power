@@ -176,7 +176,7 @@ namespace Rokemon
 
                 if (hit.collider != null) // if hit something
                 {
-                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy" || hit.collider.tag == "CharmableEnemy" || hit.collider.tag == "Roots") // check if we hit an enemy
+                    if (hit.collider.tag == "Enemy" || hit.collider.tag == "HealableEnemy" || hit.collider.tag == "CharmableEnemy" || hit.collider.tag == "Roots" || hit.collider.tag == "WIZARD") // check if we hit an enemy
                     {
                         _currentTarget = hit.transform;
                         notifyTargetObservers(_currentTarget.gameObject);

@@ -52,13 +52,21 @@ namespace Rokemon {
 
         private void OnTriggerEnter2D(Collider2D collision)
         {
-            if ((collision.tag == "Player") && collision.transform == _target)
+            if ((collision.tag == "Player" && collision.transform == _target))
             {
                 //GetComponent<Animator>().SetTrigger("impact");
                 _rigidBody.velocity = Vector2.zero;
                 PlayerController.Instance.ReduceHealth(_damage);
                 //_target.GetComponent<PlayerController>().ReduceValue(_damage);
                 _target = null;
+                Destroy(gameObject);
+            }
+            else if(collision.tag == "WIZARD" && collision.transform == _target)
+            {
+                _rigidBody.velocity = Vector2.zero;
+                _target.GetComponent<Stats>().ReduceValue(_damage);
+                _target = null;
+                Debug.Log("Wizard attacked by phoenix");
                 Destroy(gameObject);
             }
         }

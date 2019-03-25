@@ -1057,6 +1057,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: WIZARD
       objectReference: {fileID: 0}
+    - target: {fileID: 7971395788974391618, guid: c81f28511074e9541a4a7fe76f71f215,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 7971395788974391645, guid: c81f28511074e9541a4a7fe76f71f215,
         type: 3}
       propertyPath: m_LocalPosition.x

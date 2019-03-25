@@ -17,7 +17,8 @@ namespace Rokemon {
 
         private float _damage = 0;
         public float Damage{  set { _damage = value ; } } 
-
+        
+        // TODO: Utilise this
         private bool _endScene = false; 
         public bool EndScene { set { _endScene = value ; } }
 
