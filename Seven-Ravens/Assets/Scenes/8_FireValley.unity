@@ -305,46 +305,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 63.274002
       objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _sceneStarter
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _eventTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.data[1]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _npc
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _abilityName
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.data[0]
-      value: 
-      objectReference: {fileID: 209721197}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.size
@@ -390,6 +350,46 @@ PrefabInstance:
       propertyPath: _moveNpc
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _sceneStarter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _eventTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _abilityName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 209721197}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
 --- !u!1 &209721196 stripped
@@ -25766,17 +25766,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
       value: Please young witch, please don't kill me, I have a family! Heal me instead
-        and you will be rewarded!
+        I beg of you!
       objectReference: {fileID: 0}
     - target: {fileID: 271771687, guid: 66dec6422c8fd1740a01b2d8287c175f, type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Thank you for healing me young witch, I will go and spend time with my
-        family, enjoy this trinket I found as a gift!
+      value: Thank you for healing me, I will go and spend time with my family now.
       objectReference: {fileID: 0}
     - target: {fileID: 1591767951, guid: 66dec6422c8fd1740a01b2d8287c175f, type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: You may have absorbed some power but I'll curse this trinket so it is
-        of no use to you!
+      value: You may have absorbed some power, but can you live with the consequences
+        of your actions?
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 66dec6422c8fd1740a01b2d8287c175f, type: 3}
@@ -25944,6 +25943,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4241083473564228283, guid: 2228ede249a9d4908a21de2d067cab84,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Broken Transformation Stone
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241083473564228283, guid: 2228ede249a9d4908a21de2d067cab84,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: It seems this one was damaged by my firebolt...
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2228ede249a9d4908a21de2d067cab84, type: 3}
 --- !u!1001 &6317024165409229959
@@ -26011,6 +26020,22 @@ PrefabInstance:
     - target: {fileID: 2964898281399499700, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252453, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252453, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: A Transformation Stone! Exactly what Dad was talking about... I hope
+        these aren't necessary...
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252453, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _dialogue.displayName
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -26092,6 +26117,11 @@ PrefabInstance:
       propertyPath: _unlockedZone
       value: 
       objectReference: {fileID: 1347662033}
+    - target: {fileID: 3439349815149163354, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Ruby Gem
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f078c9ae70eeb4f9eb1e6d7709727a5e, type: 3}
 --- !u!1 &9119784044902319124 stripped

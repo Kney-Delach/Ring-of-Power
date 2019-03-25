@@ -121,6 +121,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemId: 1
   _item: {fileID: 11400000, guid: 27790a9b94cd649c8a6bbb16be700548, type: 2}
+  _isGem: 0
+  _unlockedZone: {fileID: 0}
 --- !u!1 &2964898281399499701
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,19 +200,21 @@ MonoBehaviour:
     transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
-    displayName: 1
+    displayName: 0
     displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Good Item
+    speakerName: Transformation Stone
     sentences:
-    - 'You picked up a good item, this can be used to transform cursed souls back
-      to their initial state. '
+    - A Transformation Stone! Exactly what Dad was talking about... I hope these aren't
+      necessary...
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!114 &6317024163942252454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,5 +230,9 @@ MonoBehaviour:
   _triggers:
   - {fileID: 6317024163942252453}
   _sceneStarter: 0
+  _decisionTypeCheck: 0
   _eventTrigger: 0
   _isItem: 1
+  _isDeathCom: 0
+  _npc: {fileID: 0}
+  _abilityName: 

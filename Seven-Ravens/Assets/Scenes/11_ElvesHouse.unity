@@ -195,6 +195,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _responseOptions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Tiny Tree Elf
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Hey you, you over there! We need your help!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[1]
+      value: 'There''s a serpent in our home and we can''t get it to leave! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _comType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[2]
+      value: Please return our home to us, that tree has been in our family for generations.
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npcToMove
+      value: 
+      objectReference: {fileID: 222774535}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _moveNpc
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: m_IsActive
@@ -235,51 +280,6 @@ PrefabInstance:
       propertyPath: _triggers.Array.data[0]
       value: 
       objectReference: {fileID: 124475152}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _responseOptions.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.speakerName
-      value: Tiny Tree Elf
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[0]
-      value: Hey you, you over there! We need your help!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[1]
-      value: 'There''s a serpent in our home and we can''t get it to leave! '
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _comType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[2]
-      value: Do what you can, we will be waiting out here.
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _npcToMove
-      value: 
-      objectReference: {fileID: 222774535}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _moveNpc
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
 --- !u!1 &124475149 stripped

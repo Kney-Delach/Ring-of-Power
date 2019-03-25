@@ -249,8 +249,8 @@ MonoBehaviour:
     - Thank you for your help kind witch.
     - My family are constantly getting stuck in there, is there anything you can do
       to help?
-    - Fine! I just hope none of my family die because of you, also you're scary please
-      don't hurt me
+    - Fine! I just hope none of my family die because of you, you're scary, please
+      don't hurt me.
     - Thank you kind witch, I will go and save my family now who I am sure are stuck
       somewhere in this forest!
   _choices:
@@ -16117,6 +16117,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: Good Item
       objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 281154234}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[2]
+      value: 
+      objectReference: {fileID: 281154234}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[3]
+      value: 
+      objectReference: {fileID: 281154234}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[4]
+      value: 
+      objectReference: {fileID: 281154234}
+    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _triggers.Array.data[5]
+      value: 
+      objectReference: {fileID: 281154234}
+    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
+        type: 3}
+      propertyPath: _itemId
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 2964898281399499700, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -16171,41 +16206,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[1]
-      value: 
-      objectReference: {fileID: 281154234}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[2]
-      value: 
-      objectReference: {fileID: 281154234}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[3]
-      value: 
-      objectReference: {fileID: 281154234}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[4]
-      value: 
-      objectReference: {fileID: 281154234}
-    - target: {fileID: 6317024163942252454, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _triggers.Array.data[5]
-      value: 
-      objectReference: {fileID: 281154234}
-    - target: {fileID: 5906983535767163545, guid: 9b855a53d3e8e4e56947d07e0344d9ff,
-        type: 3}
-      propertyPath: _itemId
-      value: 21
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9b855a53d3e8e4e56947d07e0344d9ff, type: 3}
@@ -25295,6 +25295,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _itemId
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _isGem
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: _unlockedZone
+      value: 
+      objectReference: {fileID: 1070950100}
     - target: {fileID: 3439349815149163353, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
         type: 3}
       propertyPath: _triggers.Array.size
@@ -25315,21 +25330,6 @@ PrefabInstance:
       propertyPath: _triggers.Array.data[3]
       value: 
       objectReference: {fileID: 482529573}
-    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
-        type: 3}
-      propertyPath: _itemId
-      value: 19
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
-        type: 3}
-      propertyPath: _isGem
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3019734294846824038, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
-        type: 3}
-      propertyPath: _unlockedZone
-      value: 
-      objectReference: {fileID: 1070950100}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f078c9ae70eeb4f9eb1e6d7709727a5e, type: 3}
 --- !u!4 &482529572 stripped
@@ -60543,6 +60543,51 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _responseOptions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Baby Bunny
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Hey witch, look over here!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[1]
+      value: Please come and save me I will die if you leave me in here!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _comType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[2]
+      value: We'll be waiting for your return!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npcToMove
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _moveNpc
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: m_IsActive
@@ -60602,51 +60647,6 @@ PrefabInstance:
         type: 3}
       propertyPath: _triggers.Array.data[2]
       value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _responseOptions.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.speakerName
-      value: Baby Bunny
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[0]
-      value: Hey witch, look over here!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[1]
-      value: Please come and save me I will die if you leave me in here!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _comType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[2]
-      value: We'll be waiting for your return!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _npcToMove
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _moveNpc
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
@@ -61328,51 +61328,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _sceneStarter
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _eventTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.data[1]
-      value: 
-      objectReference: {fileID: 55816573}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _npc
-      value: 
-      objectReference: {fileID: 815614543}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _abilityName
-      value: RemoveRoots
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _triggers.Array.data[0]
-      value: 
-      objectReference: {fileID: 55816573}
-    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _isItem
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.size
@@ -61416,6 +61371,51 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _moveNpc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _sceneStarter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _eventTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 55816573}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npc
+      value: 
+      objectReference: {fileID: 815614543}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _abilityName
+      value: RemoveRoots
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 55816573}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _isItem
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

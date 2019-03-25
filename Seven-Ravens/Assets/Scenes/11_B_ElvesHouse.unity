@@ -195,6 +195,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _responseOptions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Tiny Tree Elf
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Thank you kind witch! Our home is now free of that monster. We saw him
+        walk away happy, and safe, with the protective bubble you gave him, you're
+        so kind!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[1]
+      value: 'There''s a serpent in our home and we can''t get it to leave! '
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _comType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[2]
+      value: We'll be waiting for your return!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npcToMove
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _moveNpc
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: m_IsActive
@@ -255,53 +302,6 @@ PrefabInstance:
       propertyPath: _triggers.Array.data[2]
       value: 
       objectReference: {fileID: 1477595474}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _responseOptions.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.speakerName
-      value: Tiny Tree Elf
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[0]
-      value: Thank you kind witch! Our home is now free of that monster. We saw him
-        walk away happy, and safe, with the protective bubble you gave him, you're
-        so kind!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[1]
-      value: 'There''s a serpent in our home and we can''t get it to leave! '
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _comType
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _dialogue.sentences.Array.data[2]
-      value: We'll be waiting for your return!
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _npcToMove
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
-        type: 3}
-      propertyPath: _moveNpc
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
 --- !u!1 &124475149 stripped
@@ -20728,7 +20728,7 @@ MonoBehaviour:
     speakerName: Tiny Tree Elf
     sentences:
     - 'Thank you kind witch! We thank you for freeing our home of that monster. We''ll
-      find somewhere to bury its body. Have a safe journey! '
+      find somewhere to bury its body. '
   _choices:
     _choicesText: []
   _choiceIndex: 0

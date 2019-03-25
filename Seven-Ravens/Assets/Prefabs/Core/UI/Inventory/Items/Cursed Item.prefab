@@ -77,18 +77,20 @@ MonoBehaviour:
     transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
-    displayName: 1
+    displayName: 0
     displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Cursed Item
+    speakerName: 
     sentences:
-    - Cursed Item Description
+    - A stone! Although it seems this one was damaged by my firebolt...
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
 --- !u!114 &4241083473564228280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -104,8 +106,12 @@ MonoBehaviour:
   _triggers:
   - {fileID: 4241083473564228283}
   _sceneStarter: 0
+  _decisionTypeCheck: 0
   _eventTrigger: 0
   _isItem: 1
+  _isDeathCom: 0
+  _npc: {fileID: 0}
+  _abilityName: 
 --- !u!1 &8250385407243085244
 GameObject:
   m_ObjectHideFlags: 0
@@ -227,3 +233,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _itemId: 2
   _item: {fileID: 11400000, guid: 43339970fd8494e929834251905ca51a, type: 2}
+  _isGem: 0
+  _unlockedZone: {fileID: 0}
