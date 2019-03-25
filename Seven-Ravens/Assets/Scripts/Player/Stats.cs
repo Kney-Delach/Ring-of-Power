@@ -309,6 +309,14 @@ namespace Rokemon {
 
             if(_isPhoenix && _isCerberus)
             {
+                FireboltController[] firebolts = FindObjectsOfType<FireboltController>();
+                EnemyFireboltController[] enemyFirebolts = FindObjectsOfType<EnemyFireboltController>();
+
+                foreach(FireboltController cont in firebolts)
+                    Destroy(cont.gameObject);
+                foreach(EnemyFireboltController econt in enemyFirebolts)
+                    Destroy(econt.gameObject);
+            
                 WizardFightController.Instance.RemoveEnemies();
 
                 GetComponent<Collider2D>().enabled = false;
