@@ -255,16 +255,26 @@ namespace Rokemon {
             if(_isSerpent)
             {
                 PlayerController.Instance.Mana.MaxValue += 20; 
-                if(_deathComController != null)
+
+               GoodItem item = FindObjectOfType<GoodItem>();
+                if(item != null)
+                    item.MoveSheepBad();
+                else if(_deathComController != null)
+                {
                     _deathComController.Instance.TriggerCommunicationEvents();
+                    PlayerInformationController.Instance.ReplaceChoice(ChoicesMadeType.Bad);
+                }
+
                 //ActionBarUIController.Instance.HideFireboltFlash();
                 GetComponent<Collider2D>().enabled = false;
                 gameObject.layer = 1;   
                 PlayerController.Instance.RemoveTarget();
                 ActionBarUIController.Instance.HideFireboltFlash();
+                ActionBarUIController.Instance.HideCharmFlash();
                 GetComponent<ItemDropper>().DropCursedItem();
                 
-                PlayerInformationController.Instance.ReplaceChoice(ChoicesMadeType.Bad);
+
+  
 
             }
             if(_isPlayer)

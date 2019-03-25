@@ -178,6 +178,17 @@ namespace Rokemon {
             _freezeFlashAnimator.SetBool("Active", false);
         }
 
+        public void ActivateCharmFlash()
+        {
+            _charmFlashAnimator.SetBool("Active", true);
+        }
+
+        public void HideCharmFlash()
+        {
+            _charmFlashAnimator.SetBool("Active", false);
+        }
+
+
         #endregion
 
         #region Block Image Functions 

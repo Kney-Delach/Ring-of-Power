@@ -61,6 +61,7 @@ namespace Rokemon
 
         [SerializeField]
         private bool _idleMoving = false;
+        public bool IdleMoving { set { _idleMoving = value ; } }
 
         private void Start()
         {
