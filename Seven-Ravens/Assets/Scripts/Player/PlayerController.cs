@@ -8,6 +8,34 @@ namespace Rokemon
 {
     public class PlayerController : MonoBehaviour
     {   
+        #region Audio SFX controller references
+
+        [SerializeField]
+        private AudioController _fireboltSFX;
+
+        [SerializeField]
+        private AudioController _hasteSFX;
+
+        [SerializeField]
+        private AudioController _invisibilitySFX;
+
+        [SerializeField]
+        private AudioController _bubbleSFX;
+
+        [SerializeField]
+        private AudioController _rootsSFX;
+
+        [SerializeField]
+        private AudioController _freezeSFX;
+
+        [SerializeField]
+        private AudioController _charmSFX;
+
+        [SerializeField]
+        private AudioController _healSFX;
+
+        #endregion 
+        
         #region Player HUD UI Components
 
         [SerializeField]
@@ -459,6 +487,7 @@ namespace Rokemon
                                 ActionBarUIController.Instance.ReloadAbility(0,_abilitiesDatabase[spellName]._reloadTime);
 
                                 StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                                _fireboltSFX.PlaySfx();
                             }
                         }
                         break;
@@ -482,6 +511,7 @@ namespace Rokemon
                                 UseMana(_abilitiesDatabase[spellName]._cost);
                                 ActionBarUIController.Instance.ReloadAbility(2,_abilitiesDatabase[spellName]._reloadTime);
                                 StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, targetControllersList));
+                                _invisibilitySFX.PlaySfx();
                             }                            
                         }
                         else
@@ -490,6 +520,7 @@ namespace Rokemon
                             UseMana(_abilitiesDatabase[spellName]._cost);
                             ActionBarUIController.Instance.ReloadAbility(2,_abilitiesDatabase[spellName]._reloadTime);
                             StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, null));
+                            _invisibilitySFX.PlaySfx();
                         }                         
                         break;
                     case "Haste":
@@ -506,6 +537,7 @@ namespace Rokemon
                         _health.ActivateShield();
                         ActionBarUIController.Instance.ReloadAbility(3,_abilitiesDatabase[spellName]._reloadTime);
                         StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._damage ,_abilitiesDatabase[spellName]._reloadTime,spellName));
+                        _bubbleSFX.PlaySfx();
                         break;
                     case "RemoveRoots":
 
@@ -520,6 +552,7 @@ namespace Rokemon
                                 RemoveTarget();
                                 ActionBarUIController.Instance.ReloadAbility(4,_abilitiesDatabase[spellName]._reloadTime);
                                 StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                                _rootsSFX.PlaySfx();
                             }
                           
                         }                       
@@ -530,7 +563,8 @@ namespace Rokemon
                         reference.TransformedObject.SetActive(true);
                         _currentTarget.gameObject.SetActive(false);
                         ActionBarUIController.Instance.ReloadAbility(5,_abilitiesDatabase[spellName]._reloadTime);
-                        StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));   
+                        StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                        _freezeSFX.PlaySfx();   
                         ActionBarUIController.Instance.HideFreezeFlash(); 
                         
                         GoodItem tempItem = FindObjectOfType<GoodItem>();
@@ -556,6 +590,7 @@ namespace Rokemon
                                 ActionBarUIController.Instance.ReloadAbility(6,_abilitiesDatabase[spellName]._reloadTime);
 
                                 StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, _currentTarget.gameObject));
+                                _charmSFX.PlaySfx();
                                 RemoveTarget();
                             
                                 // perform logic for charm scene
@@ -584,6 +619,7 @@ namespace Rokemon
                                 _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
                                 ActionBarUIController.Instance.ReloadAbility(7,_abilitiesDatabase[spellName]._reloadTime);
                                 StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                                _healSFX.PlaySfx();
                             }
                         }
                         else if(_currentTarget == null && (_health.CurrentValue != _health.MaxValue) && _health.CurrentValue != 0)
@@ -592,6 +628,7 @@ namespace Rokemon
                             _health.AddValue(_abilitiesDatabase[spellName]._damage);   
                             ActionBarUIController.Instance.ReloadAbility(7,_abilitiesDatabase[spellName]._reloadTime); 
                             StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                            _healSFX.PlaySfx();
                         }                           
                         
                         break;

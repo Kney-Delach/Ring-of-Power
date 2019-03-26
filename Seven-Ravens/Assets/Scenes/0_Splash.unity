@@ -654,5 +654,130 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.size
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[1]._audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[1]._soundName
+      value: Firebolt
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[1]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[2]._audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[2]._soundName
+      value: Haste
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[2]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[3]._audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[3]._soundName
+      value: Invisibility
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[3]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[4]._audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[4]._soundName
+      value: ProtectiveBubble
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[4]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[5]._audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[5]._soundName
+      value: RemoveRoots
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[5]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[6]._audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[6]._soundName
+      value: WaterFreeze
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[6]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[7]._audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[7]._soundName
+      value: Charm
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[7]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[8]._audioType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[8]._soundName
+      value: Heal
+      objectReference: {fileID: 0}
+    - target: {fileID: 4303886255367178558, guid: 14973988054a4484a8eb47dc0113da7f,
+        type: 3}
+      propertyPath: _gameSounds.Array.data[8]._audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 14973988054a4484a8eb47dc0113da7f, type: 3}
