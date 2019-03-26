@@ -421,8 +421,8 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: You took your time you litte witch, Prove yourself worthy of your brothers
-        by bypassing my minions to free your family!
+      value: You took your time you litte witch, Get past my minions and we shall
+        see about freeing your pathetic family!
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
@@ -15437,7 +15437,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2013641549}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &307186691
 MonoBehaviour:
@@ -16441,7 +16441,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - Well maybe you should've thought about the power before you took my family hostage...
+    - Well maybe you should've thought about my power before you took my family hostage...
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -16671,7 +16671,6 @@ MonoBehaviour:
   - {fileID: 1017401942}
   - {fileID: 1916772425}
   - {fileID: 646444453}
-  - {fileID: 1427518309}
   _sceneStarter: 0
   _decisionTypeCheck: 0
   _eventTrigger: 1
@@ -16696,7 +16695,6 @@ Transform:
   - {fileID: 1017401941}
   - {fileID: 1916772424}
   - {fileID: 646444452}
-  - {fileID: 1427518308}
   - {fileID: 782049251}
   - {fileID: 633163008}
   m_Father: {fileID: 1959743590}
@@ -16731,7 +16729,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2013641549}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &465783058
 MonoBehaviour:
@@ -17015,68 +17013,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 327504570}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &575889150
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 575889151}
-  - component: {fileID: 575889152}
-  m_Layer: 8
-  m_Name: 4-Mother
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &575889151
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575889150}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2013641549}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &575889152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 575889150}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _comType: 0
-  _dialogue:
-    transformNpcs: 0
-    speakerTag: 
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 1
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Mother
-    sentences:
-    - Oh no, not my daughter.
-  _choices:
-    _choicesText: []
-  _choiceIndex: 0
-  _responseOptions: 
-  _moveNpc: 0
-  _npcToMove: {fileID: 0}
 --- !u!1001 &579168286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17347,7 +17283,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462140172}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &633163009
 MonoBehaviour:
@@ -17392,7 +17328,7 @@ GameObject:
   - component: {fileID: 646444452}
   - component: {fileID: 646444453}
   m_Layer: 8
-  m_Name: 5-Mother
+  m_Name: 5-Girl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17434,9 +17370,12 @@ MonoBehaviour:
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
-    speakerName: Mother
+    speakerName: Girl
     sentences:
-    - NO, My Babies. Oh lord please let it be me. LET IT BE MY STONE.
+    - I got X Stones on my Journey, [List of Colours] so we can save only the brothers
+      with those hair colours.
+    - I will spend the rest of eternity looking for the remaining stones to free my
+      Mother & (7-X) Brothers!
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -17945,6 +17884,68 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 693435188}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &734189840
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 734189842}
+  - component: {fileID: 734189841}
+  m_Layer: 0
+  m_Name: InitialTrigger (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &734189841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734189840}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 1
+    displayContinue: 1
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: Mommy Bunny
+    sentences:
+    - You've done the Bunny Kingdom a great service! Have a safe journey!
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+--- !u!4 &734189842
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 734189840}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1575958725}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &782049250
 GameObject:
   m_ObjectHideFlags: 0
@@ -17974,7 +17975,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 462140172}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &782049252
 MonoBehaviour:
@@ -18248,9 +18249,9 @@ MonoBehaviour:
     sentences:
     - Ha ha ha, yes, maybe so, now give me your firebolt spell and I can control the
       realm!
-    - Your brothers can go free now, go, tell your father what happened here today.
-      You best hope someone else can step up to fight me, after wasting your talents
-      on saving this foolish girl.
+    - I'm not without mercy however, I see you have some transformation stones in
+      this bag... [List of Colours] so I will transform only the brothers with those
+      hair colours.
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -18344,7 +18345,7 @@ MonoBehaviour:
     sentences:
     - I've got a nice supply of transformation stones here, and would've given you
       your family back if you had shown a little mercy.
-    - Wizard by day, raven by night, all of these stone will break by my smite!
+    - '*Wizard by day, raven by night, all of these stone will break by my smite!*'
     - Watch the last of the stones break, I hope you collected enough to save at least
       some of your family. Mua ha ha
   _choices:
@@ -24376,7 +24377,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - Well maybe you should've thought about the power before you took my family hostage...
+    - Well maybe you should've thought about my power before you took my family hostage...
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -24486,15 +24487,17 @@ MonoBehaviour:
     speakerTag: 
     moveSpeaker: 0
     displayName: 1
-    displayContinue: 0
+    displayContinue: 1
     displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
     speakerName: Mother
     sentences:
-    - Oh my daughter, saving not only her family but the entire realm from this once
-      treacherous being. Lets all go home to father, I'm sure he'll be excited to
-      hear of the journey.
+    - My Daughter is such a hero, saving her Mother and X of her brothers from this
+      wizard!
+    - 'So you obtained:  [List of Colours] so we can save only the brothers with those
+      hair colours.'
+    - We must find any remaining stones! Back the way you came
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -24746,69 +24749,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1414733836}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1427518307
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1427518308}
-  - component: {fileID: 1427518309}
-  m_Layer: 8
-  m_Name: 6-Girl-Brothers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1427518308
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427518307}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 462140172}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1427518309
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1427518307}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _comType: 0
-  _dialogue:
-    transformNpcs: 0
-    speakerTag: 
-    moveSpeaker: 0
-    displayName: 1
-    displayContinue: 0
-    displayDialogue: 1
-    enableSpeakerVisibility: 0
-    moveSentenceIndexes: 
-    speakerName: Girl
-    sentences:
-    - Oh, my dear sweet family lets go home and explain what has happened here today
-      to father, maybe he will know where to find more stones.
-  _choices:
-    _choicesText: []
-  _choiceIndex: 0
-  _responseOptions: 
-  _moveNpc: 0
-  _npcToMove: {fileID: 0}
 --- !u!1001 &1469860317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31410,8 +31350,8 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences:
-    - Well I was watching your journey, I found the stones you missed, thank you for
-      sparing my life and showing an old wizard how to let go of resentment.
+    - I was watching your journey and I found the stones you missed, thank you for
+      sparing my life and showing an old wizard how to let go of his hatred.
     - Take these stones and save the rest of your family, I'm sorry I can't fix the
       broken ones.
   _choices:
@@ -32890,6 +32830,215 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1572012611}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1575958722
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5848623003525030115, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_Name
+      value: CommunicationController (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -12.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.32
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2875
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _responseOptions.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.speakerName
+      value: Daddy Bunny
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: Thank You So Much for Saving our Family!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _comType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _dialogue.sentences.Array.data[2]
+      value: We'll be waiting for your return!
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npcToMove
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _moveNpc
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623002796447001, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _sceneStarter
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _eventTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.data[1]
+      value: 
+      objectReference: {fileID: 734189841}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _npc
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _abilityName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5848623003525030125, guid: f2c1243fd963495429eb8b010d5d3b08,
+        type: 3}
+      propertyPath: _triggers.Array.data[0]
+      value: 
+      objectReference: {fileID: 1575958724}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f2c1243fd963495429eb8b010d5d3b08, type: 3}
+--- !u!1 &1575958723 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5848623003525030115, guid: f2c1243fd963495429eb8b010d5d3b08,
+    type: 3}
+  m_PrefabInstance: {fileID: 1575958722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1575958724 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
+    type: 3}
+  m_PrefabInstance: {fileID: 1575958722}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1575958725 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5848623003525030114, guid: f2c1243fd963495429eb8b010d5d3b08,
+    type: 3}
+  m_PrefabInstance: {fileID: 1575958722}
+  m_PrefabAsset: {fileID: 0}
+--- !u!61 &1575958726
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1575958723}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.47623825, y: -2.058412}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.0475235, y: 14.748668}
+  m_EdgeRadius: 0
 --- !u!4 &1606448756 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5958550289454303568, guid: a38c51a952688db42912be43bff1f6b9,
@@ -32959,7 +33108,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences:
-    - All I wanted was your Fireball spell, then I could've reigned supreme...
+    - All I wanted was your Fireball spell, then I could've taken over the realm.
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -33158,7 +33307,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences:
-    - All I wanted was your Fireball spell, then I could've reigned supreme...
+    - All I wanted was your Fireball spell, then I could've taken over the realm.
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -35885,7 +36034,7 @@ GameObject:
   - component: {fileID: 1901124739}
   - component: {fileID: 1901124740}
   m_Layer: 8
-  m_Name: 5-Wizard-Revenge
+  m_Name: 4-Wizard-Revenge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35903,7 +36052,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2013641549}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1901124740
 MonoBehaviour:
@@ -35924,13 +36073,13 @@ MonoBehaviour:
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
-    displayDialogue: 1
+    displayDialogue: 0
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences:
-    - Oh yes, your precious little girl becoming a raven, you two will sit in a cage
-      and watch me control your little realm.
+    - Like Mother, like Daughter, both of you will spend the rest of your days sharing
+      a cage watching me take over the realm.
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -36181,7 +36330,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - So Weak. Maybe I was too young for this task.
+    - So.. Weak.... Maybe I was too young for this.
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -36372,7 +36521,6 @@ MonoBehaviour:
   - {fileID: 1392235240}
   - {fileID: 1961918531}
   - {fileID: 948896783}
-  - {fileID: 575889152}
   - {fileID: 1901124740}
   _sceneStarter: 0
   _decisionTypeCheck: 0
@@ -36396,7 +36544,6 @@ Transform:
   - {fileID: 1392235241}
   - {fileID: 1961918530}
   - {fileID: 948896782}
-  - {fileID: 575889151}
   - {fileID: 1901124739}
   - {fileID: 307186690}
   - {fileID: 465783057}

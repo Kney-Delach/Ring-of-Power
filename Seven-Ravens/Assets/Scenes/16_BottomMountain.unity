@@ -446,16 +446,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dwarf
     sentences:
-    - No one crosses my bridge without good reason!
-    - What is your excuse for troubling me?
+    - Who Goes There?
+    - And what is your excuse for troubling me?
     - Hand 'em over and I've never even seen you come near this bridge.
     - I guess not, enjoy your time at the Wizards Lair
   _choices:
     _choicesText:
-    - I have no excuse, only gems
-    - I come to retrieve my family, now get out of my way, Dwarf.
+    - I am the with of Violl's Garden and I'm here to retrieve my family!
+    - I am a messenger from the Wizard's Uncle.
   _choiceIndex: 2
-  _responseOptions: 0200000002000000
+  _responseOptions: 0300000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
 --- !u!4 &107234259
@@ -25886,16 +25886,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dwarf
     sentences:
-    - How dare you insult me on my bridge
-    - About time, now pass, before I change my mind
+    - And why should I allow you past?
+    - Excellent! Well Hand them over then!
     - That's it, I'm taking payment if you like it or not. Be glad I'm sparing your
       life, tiny woman.
   _choices:
     _choicesText:
-    - Ok I'm sorry take the gems
-    - I don't have time for this.
+    - I'm willing to pay you these gems to cross?
+    - Because if you don't I'll smite you down.
   _choiceIndex: 1
-  _responseOptions: 0300000003000000
+  _responseOptions: 0200000002000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
 --- !u!1 &1678537922
