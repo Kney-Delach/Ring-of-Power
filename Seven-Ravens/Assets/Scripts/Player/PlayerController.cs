@@ -402,7 +402,8 @@ namespace Rokemon
             if(findCharm == null)
             {
                 target.GetComponent<Stats>().DeactivateShield(); 
-                target.GetComponentInChildren<EnemyController>().StopFireboltActivity();
+                if(target.GetComponentInChildren<EnemyController>() != null)
+                    target.GetComponentInChildren<EnemyController>().StopFireboltActivity();
             }
             float temp = waitTime - abilityTime; 
 
