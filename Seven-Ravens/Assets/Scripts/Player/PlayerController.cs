@@ -51,6 +51,9 @@ namespace Rokemon
         private bool _regenMana = true; 
         public bool RegenMana { set { _regenMana = value ; } }
 
+        [SerializeField]
+        private SpriteRenderer _attackRangeImage;
+
         #endregion
 
         #region MOVEMENT VARIABLES
@@ -200,6 +203,11 @@ namespace Rokemon
                     _currentTarget = null;
                     notifyTargetObservers(null);
                 }
+            }
+
+            if(Input.GetMouseButtonDown(1))
+            {
+                _attackRangeImage.enabled = !_attackRangeImage.enabled;
             }
         }
 

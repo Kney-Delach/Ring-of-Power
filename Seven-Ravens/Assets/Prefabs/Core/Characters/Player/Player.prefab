@@ -273,6 +273,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 05e2819a3c7144244b27f133c09dc738, type: 2}
   - {fileID: 11400000, guid: a9d3454b3fc4c1e47a1e69d118f32dd0, type: 2}
   - {fileID: 11400000, guid: 94f329aa4a9efd44d80e963c59fe68b1, type: 2}
+  _attackRangeImage: {fileID: 4244176218821046309}
   _rigidbody: {fileID: 4686994119298673118}
   _speed: 6
   _animator: {fileID: 4686994119298673107}
@@ -435,6 +436,12 @@ PrefabInstance:
 --- !u!4 &4244176218821046310 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 76851784051431177, guid: 05c0d100315739a4ca1a05babe2e6796,
+    type: 3}
+  m_PrefabInstance: {fileID: 4321027381956486959}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4244176218821046309 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 76851784051431178, guid: 05c0d100315739a4ca1a05babe2e6796,
     type: 3}
   m_PrefabInstance: {fileID: 4321027381956486959}
   m_PrefabAsset: {fileID: 0}
