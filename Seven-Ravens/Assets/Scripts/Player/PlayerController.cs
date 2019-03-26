@@ -235,8 +235,23 @@ namespace Rokemon
 
             if(Input.GetMouseButtonDown(1))
             {
-                _attackRangeImage.enabled = !_attackRangeImage.enabled;
+                ToggleAttackRangeUI();
             }
+        }
+
+        private void ToggleAttackRangeUI()
+        {
+            _attackRangeImage.enabled = !_attackRangeImage.enabled;
+        }
+
+        public void AttackRangeOff()
+        {
+            _attackRangeImage.enabled = false;
+        }
+
+        public void AttackRangeOn()
+        {
+            _attackRangeImage.enabled = true;
         }
 
         // function removing current player target reference
