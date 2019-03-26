@@ -17447,7 +17447,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - 'I got  Stones on my Journey, so lets '
+    - I got  Stones on my Journey...
     - I will spend the rest of eternity looking for the remaining  stones to free
       my brothers!
   _choices:
@@ -18285,7 +18285,7 @@ MonoBehaviour:
   _displayColors: 0000
   _displayBrothersSaved: 0001
   _displayBrothersLeft: 0000
-  _replacementPositions: 000000006d000000
+  _replacementPositions: 0000000036000000
   _dialogue:
     transformNpcs: 0
     speakerTag: 
@@ -18299,8 +18299,8 @@ MonoBehaviour:
     sentences:
     - Ha ha ha, yes, maybe so, now give me your firebolt spell so I can take over
       the realm!
-    - I'm not without mercy however, I see you have some transformation stones in
-      this bag... so I will transform   brothers.
+    - I'm not without mercy however... so I will transform   brothers, as you collected
+      that many stones.
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -24583,7 +24583,8 @@ MonoBehaviour:
     sentences:
     - My Daughter is such a hero, saving her Mother and  of her brothers from this
       wizard!
-    - 'You obtained:  stones, so now transform your brothers back!'
+    - 'You obtained:  stones!'
+    - Lets go home and explain to father what happened here today.
   _choices:
     _choicesText: []
   _choiceIndex: 0
