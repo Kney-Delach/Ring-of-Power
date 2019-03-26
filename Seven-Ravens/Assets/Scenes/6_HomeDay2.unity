@@ -158,6 +158,9 @@ MonoBehaviour:
   _transitionPrefab: {fileID: 114970023746679392, guid: 613757411f6b548a5b3aff05cbf09ad8,
     type: 3}
   _transitionName: Along the path
+  _transformAudioController: {fileID: 0}
+  _wizardAudioController: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
   _playNextDialogue: 1
   _deactivatePlayer: 0
   _activatePlayer: 0
@@ -556,6 +559,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4244176218821046311, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899957466752128833, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
       propertyPath: m_IsActive
       value: 0

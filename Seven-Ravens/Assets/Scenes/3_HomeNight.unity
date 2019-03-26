@@ -15873,6 +15873,9 @@ MonoBehaviour:
   _transitionPrefab: {fileID: 114970023746679392, guid: 613757411f6b548a5b3aff05cbf09ad8,
     type: 3}
   _transitionName: A few hours later....
+  _transformAudioController: {fileID: 0}
+  _wizardAudioController: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
   _playNextDialogue: 1
   _deactivatePlayer: 0
   _activatePlayer: 0
@@ -15981,6 +15984,51 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &744995478
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 744995480}
+  - component: {fileID: 744995479}
+  m_Layer: 0
+  m_Name: AudioFX-1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &744995479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744995478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0041a343ccd7d21408549ccaf4848ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundName: Mysterious
+  _isSceneMusic: 1
+--- !u!4 &744995480
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 744995478}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &849269259
 PrefabInstance:
@@ -21276,6 +21324,11 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4244176218821046311, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4899957466752128833, guid: 6de87d0245efb9f42a5b2de7e8d3f04f,
         type: 3}
       propertyPath: m_IsActive
       value: 0

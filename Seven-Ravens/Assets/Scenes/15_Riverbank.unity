@@ -175,6 +175,7 @@ MonoBehaviour:
   _responseOptions: 0100000002000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &55966486
 Transform:
   m_ObjectHideFlags: 0
@@ -14796,6 +14797,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &246848275
 Transform:
   m_ObjectHideFlags: 0
@@ -17078,6 +17080,7 @@ MonoBehaviour:
   _responseOptions: 0100000002000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &866968286
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31804,6 +31807,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1738975138
 Transform:
   m_ObjectHideFlags: 0
@@ -32231,6 +32235,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1796987894
 Transform:
   m_ObjectHideFlags: 0

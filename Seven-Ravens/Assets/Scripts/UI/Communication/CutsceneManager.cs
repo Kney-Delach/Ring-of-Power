@@ -18,6 +18,15 @@ namespace Rokemon {
         // if cutscene triggered automatically, set to true
         [Header("Cutscene automation trigger")]
         [SerializeField]
+        private AudioController _transformAudioController;
+
+        [SerializeField]
+        private AudioController _wizardAudioController;
+
+        [SerializeField]
+        private AudioController _ravenAudioController;
+
+        [SerializeField]
         private bool _playNextDialogue;
 
         [SerializeField]
@@ -105,10 +114,16 @@ namespace Rokemon {
             {
                 if(_dialogues[_curDialogueIndex].speakerTag != null){
                     if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].enableSpeakerVisibility)
+                    {
+                        if(_wizardAudioController != null)
+                            _wizardAudioController.PlaySfx();
                         npcCont.gameObject.SetActive(true);
+                    }
                     
                     if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].moveSpeaker)
                     {
+                        if(npcCont.tag == "WIZARD")
+                            _ravenAudioController.PlaySfx();
                         npcCont.Cutscene = true;
                     }
                 }
@@ -117,6 +132,9 @@ namespace Rokemon {
 
             if(_dialogues[_curDialogueIndex].transformNpcs && _transformNpcObjects.Length > 0)
             {
+                if(_transformAudioController != null)
+                    _transformAudioController.PlaySfx();
+
                 foreach(GameObject npc in _transformNpcObjects)
                     npc.SetActive(false);
                 foreach(GameObject newNpc in _transformNewObjects)

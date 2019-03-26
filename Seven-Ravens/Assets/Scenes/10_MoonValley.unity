@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 12.224062
       objectReference: {fileID: 0}
+    - target: {fileID: 2411760356282556794, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: _isCerberus
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
       propertyPath: m_Offset.y
@@ -12215,6 +12220,7 @@ MonoBehaviour:
   _responseOptions: 0100000002000000
   _moveNpc: 0
   _npcToMove: {fileID: 1064000337}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &684470508
 Transform:
   m_ObjectHideFlags: 0
@@ -12899,6 +12905,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 9.159359
       objectReference: {fileID: 0}
+    - target: {fileID: 2411760356282556794, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: _isCerberus
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
       propertyPath: m_Offset.y
@@ -13033,6 +13044,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 9.1440735
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411760356282556794, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: _isCerberus
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
@@ -16258,6 +16274,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 9.436663
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411760356282556794, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: _isCerberus
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c2f1e19d4ce4dd28ec210b28758afa, type: 3}
@@ -27686,6 +27707,11 @@ PrefabInstance:
       propertyPath: m_Size.x
       value: 9.345263
       objectReference: {fileID: 0}
+    - target: {fileID: 2411760356282556794, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: _isCerberus
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c2f1e19d4ce4dd28ec210b28758afa, type: 3}
 --- !u!1001 &2001011479
@@ -28072,6 +28098,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.x
       value: 12.122075
+      objectReference: {fileID: 0}
+    - target: {fileID: 2411760356282556794, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: _isCerberus
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c2f1e19d4ce4dd28ec210b28758afa, type: 3}

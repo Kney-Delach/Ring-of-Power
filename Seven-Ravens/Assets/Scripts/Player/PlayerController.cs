@@ -460,7 +460,7 @@ namespace Rokemon
 
             _reloadingCheckDatabase[spellName] = true;
             yield return new WaitForSeconds(abilityTime);
-           
+            _reloadingCheckDatabase[spellName] = false;
             if(findCharm == null)
             {
                 if(target != null)

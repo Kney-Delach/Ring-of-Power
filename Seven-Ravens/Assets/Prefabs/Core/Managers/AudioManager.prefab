@@ -146,6 +146,16 @@ MonoBehaviour:
     _audioClip: {fileID: 8300000, guid: a1ccdc642291f7444b7d5e9460774057, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
+  - _audioType: 2
+    _soundName: Mysterious
+    _audioClip: {fileID: 8300000, guid: 9d50523193a937d47a0adf95ca12a7e9, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 2
+    _soundName: ForestFireValley
+    _audioClip: {fileID: 8300000, guid: 36cc42c010dbbbd41921ba5198bc90a2, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
 --- !u!114 &4303886255367178559
 MonoBehaviour:
   m_ObjectHideFlags: 0

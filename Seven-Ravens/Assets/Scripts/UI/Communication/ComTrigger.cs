@@ -71,6 +71,9 @@ namespace Rokemon {
 
         private ComController _curController;
 
+        [SerializeField]
+        private AudioController _ravenAudioController;
+
         #endregion
 
         public void TriggerCommunication(ComController controller)
@@ -102,6 +105,10 @@ namespace Rokemon {
             _curController = controller;
             if(_moveNpc && _npcToMove != null)
             {
+                if(_npcToMove.tag == "WIZARD")
+                {
+                    _ravenAudioController.PlaySfx();
+                }
                 _moveNpc = false;
                 _npcToMove.Cutscene = true;
             }

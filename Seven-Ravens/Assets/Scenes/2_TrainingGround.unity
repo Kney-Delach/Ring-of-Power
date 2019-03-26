@@ -291,6 +291,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &345232484
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,6 +365,7 @@ MonoBehaviour:
   _responseOptions: 0000000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &381460748
 GameObject:
   m_ObjectHideFlags: 0
@@ -645,6 +647,7 @@ MonoBehaviour:
   _responseOptions: 0000000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &510654020
 GameObject:
   m_ObjectHideFlags: 0
@@ -1628,6 +1631,7 @@ MonoBehaviour:
   _responseOptions: 0000000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &621102437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1748,6 +1752,9 @@ MonoBehaviour:
   _transitionPrefab: {fileID: 114970023746679392, guid: 613757411f6b548a5b3aff05cbf09ad8,
     type: 3}
   _transitionName: Home
+  _transformAudioController: {fileID: 0}
+  _wizardAudioController: {fileID: 751944869}
+  _ravenAudioController: {fileID: 1849494326}
   _playNextDialogue: 0
   _deactivatePlayer: 1
   _activatePlayer: 0
@@ -1856,6 +1863,51 @@ MonoBehaviour:
   _cutsceneNpcs:
   - {fileID: 767456818}
   - {fileID: 7326345087893666665}
+--- !u!1 &751944868
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 751944870}
+  - component: {fileID: 751944869}
+  m_Layer: 0
+  m_Name: WizardAppearAudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &751944869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751944868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0041a343ccd7d21408549ccaf4848ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundName: WizardApp
+  _isSceneMusic: 0
+--- !u!4 &751944870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 751944868}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &767456818 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7326345086891979187, guid: 239c09413ca73ba4f81be3b3ddd30a10,
@@ -2129,6 +2181,7 @@ MonoBehaviour:
   _responseOptions: 0000000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!114 &963854630 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 47763814460920682, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
@@ -2246,6 +2299,7 @@ MonoBehaviour:
   _responseOptions: 0000000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1073374349
 GameObject:
   m_ObjectHideFlags: 0
@@ -16786,6 +16840,7 @@ MonoBehaviour:
   _responseOptions: 0000000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1711934027
 GameObject:
   m_ObjectHideFlags: 0
@@ -31386,6 +31441,51 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &1849494325
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1849494327}
+  - component: {fileID: 1849494326}
+  m_Layer: 0
+  m_Name: RavenMoveAudioController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1849494326
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849494325}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0041a343ccd7d21408549ccaf4848ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundName: Raven
+  _isSceneMusic: 0
+--- !u!4 &1849494327
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1849494325}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1888179525 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10,
@@ -33848,6 +33948,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneAudioController
       objectReference: {fileID: 0}
+    - target: {fileID: 6521462096946553152, guid: 6324f10c18f861c4693599ac920c3dd6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6521462096946553158, guid: 6324f10c18f861c4693599ac920c3dd6,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33902,6 +34007,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521462096946553153, guid: 6324f10c18f861c4693599ac920c3dd6,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6521462096946553153, guid: 6324f10c18f861c4693599ac920c3dd6,
+        type: 3}
+      propertyPath: _soundName
+      value: MenuSong
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6324f10c18f861c4693599ac920c3dd6, type: 3}

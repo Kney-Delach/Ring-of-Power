@@ -182,6 +182,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &20167948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1368,6 +1369,7 @@ MonoBehaviour:
   _transformBrothers: 1
   _transformBrothersIndex: 3
   _isFinalPhoenixDeath: 0
+  _cinematicController: 0
 --- !u!1 &226213360
 GameObject:
   m_ObjectHideFlags: 0
@@ -15168,6 +15170,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &270588167
 GameObject:
   m_ObjectHideFlags: 0
@@ -15209,6 +15212,7 @@ MonoBehaviour:
   _transformBrothers: 0
   _transformBrothersIndex: 0
   _isFinalPhoenixDeath: 0
+  _cinematicController: 0
 --- !u!4 &270588169
 Transform:
   m_ObjectHideFlags: 0
@@ -15501,6 +15505,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &321994699
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15568,6 +15573,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -15577,11 +15587,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.909419
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
@@ -16486,6 +16491,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &383397626
 GameObject:
   m_ObjectHideFlags: 0
@@ -16719,6 +16725,7 @@ MonoBehaviour:
   _transformBrothers: 1
   _transformBrothersIndex: 5
   _isFinalPhoenixDeath: 0
+  _cinematicController: 0
 --- !u!4 &462140172
 Transform:
   m_ObjectHideFlags: 0
@@ -16817,6 +16824,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &471492024
 GameObject:
   m_ObjectHideFlags: 0
@@ -16886,6 +16894,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &478639473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17385,6 +17394,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &646444451
 GameObject:
   m_ObjectHideFlags: 0
@@ -17432,7 +17442,7 @@ MonoBehaviour:
   _calculateStringValues: 0
   _endingReplacements: 1
   _indexesToBeReplaced: 0000000001000000
-  _displayColors: 0100
+  _displayColors: 0000
   _displayBrothersSaved: 0100
   _displayBrothersLeft: 0001
   _replacementPositions: 060000003c000000
@@ -17456,6 +17466,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &655739491
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18033,6 +18044,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &839743392 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3547085730242304162, guid: e9b415bb1a666b1408cf14c634d8e14e,
@@ -18307,6 +18319,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &956862998 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1557483512766498498, guid: 7233da74f859e4140be82654262d2dff,
@@ -18422,6 +18435,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1047697296 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7971395788974391618, guid: c81f28511074e9541a4a7fe76f71f215,
@@ -24465,6 +24479,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1243562934 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 789040831239394882, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
@@ -24565,7 +24580,7 @@ MonoBehaviour:
   _comType: 0
   _calculateStringValues: 0
   _endingReplacements: 1
-  _indexesToBeReplaced: 0100000001000000
+  _indexesToBeReplaced: 0000000001000000
   _displayColors: 0001
   _displayBrothersSaved: 0100
   _displayBrothersLeft: 0000
@@ -24591,6 +24606,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1313991352 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1391158754991369671, guid: 25e473ae5a52b09438cd7e8610659e43,
@@ -24751,6 +24767,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1392235241
 Transform:
   m_ObjectHideFlags: 0
@@ -24832,6 +24849,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -24841,11 +24863,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.7589064
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
@@ -24925,6 +24942,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1456941735 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7971395788974391618, guid: c81f28511074e9541a4a7fe76f71f215,
@@ -31549,6 +31567,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &1572012611
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33108,6 +33127,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1624804595
 Transform:
   m_ObjectHideFlags: 0
@@ -33314,6 +33334,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1746417683 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4907759632342498889, guid: d6b126fa8208f4444afeff4e740ea553,
@@ -33387,6 +33408,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -33396,11 +33422,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.7589064
-      objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
@@ -36099,6 +36120,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1909495458
 GameObject:
   m_ObjectHideFlags: 0
@@ -36156,6 +36178,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1909495460
 Transform:
   m_ObjectHideFlags: 0
@@ -36239,6 +36262,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1948939392 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3547085730242304189, guid: e9b415bb1a666b1408cf14c634d8e14e,
@@ -36395,6 +36419,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1962286711
 GameObject:
   m_ObjectHideFlags: 0
@@ -36465,6 +36490,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &2001011479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36597,6 +36623,7 @@ MonoBehaviour:
   _transformBrothers: 1
   _transformBrothersIndex: 4
   _isFinalPhoenixDeath: 0
+  _cinematicController: 0
 --- !u!4 &2013641549
 Transform:
   m_ObjectHideFlags: 0
