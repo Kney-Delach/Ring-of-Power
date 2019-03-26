@@ -48,61 +48,101 @@ MonoBehaviour:
   _gameSounds:
   - _audioType: 2
     _soundName: MenuSong
-    _menuSong: 1
     _audioClip: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: Firebolt
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: 8140b74055733bc4082e9a77c68ca967, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: Haste
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: 30a83bd878f032147b51e3df536f63c0, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: Invisibility
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: e0f4b39221752ba40b53bab8eefdd7c0, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: ProtectiveBubble
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: 2f711688772cdda43aa9346f0814e0f8, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: RemoveRoots
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: 3ec9c080267cda14389a065d38004fea, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: WaterFreeze
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: bec640df71ba95f49ad80d1653403bbb, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: Charm
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: d55c2c1f9313c6a47b28089609a0b03e, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 2
     _soundName: TrainingGround
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: 2ae66b7406c896d4eb4ff3e08cf94e6e, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
   - _audioType: 1
+    _soundName: Cinematic-1
+    _audioClip: {fileID: 8300000, guid: bc3139c03638782489a3a44430738e95, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-2
+    _audioClip: {fileID: 8300000, guid: 85b2aef1b724b4f4e8928128d8fd4f78, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-3
+    _audioClip: {fileID: 8300000, guid: 68e3c8ad977dbd0468ea08c5776b95af, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-4
+    _audioClip: {fileID: 8300000, guid: 45c6ca0e04f668349860608e27cd9396, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-5
+    _audioClip: {fileID: 8300000, guid: fa94bdeb4e2e5ff468d968ebc1cb1f7a, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-6
+    _audioClip: {fileID: 8300000, guid: 5469668643992a04084de75306c0ca19, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-7
+    _audioClip: {fileID: 8300000, guid: 20f3e2ff78cecb146b68ab485fea44bb, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-8
+    _audioClip: {fileID: 8300000, guid: 20f3e2ff78cecb146b68ab485fea44bb, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-9
+    _audioClip: {fileID: 8300000, guid: 20f3e2ff78cecb146b68ab485fea44bb, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Cinematic-10
+    _audioClip: {fileID: 8300000, guid: 20f3e2ff78cecb146b68ab485fea44bb, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
     _soundName: Heal
-    _menuSong: 0
     _audioClip: {fileID: 8300000, guid: a1ccdc642291f7444b7d5e9460774057, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}

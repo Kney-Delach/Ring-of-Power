@@ -22,7 +22,7 @@ namespace Rokemon {
         private Image _imageRenderer; 
 
         [SerializeField]
-        private float waitTime = 0f;
+        private float[] waitTimes;
 
         [SerializeField]
         private Sprite[] _images;
@@ -33,6 +33,7 @@ namespace Rokemon {
         private AudioController[] _cinematicVoiceFX;
         
         private bool _cinematicComplete = false;
+        private bool _spacePressed = false;
         
         private static CinematicManager _instance;
         
@@ -49,6 +50,13 @@ namespace Rokemon {
             if(_active && !_cinematicComplete)
             {
                 TriggerDialogue();
+            }
+
+            if(Input.GetKeyDown(KeyCode.Space) && !_spacePressed && !_cinematicComplete)
+            {
+                _spacePressed = true;
+                ComManager.Instance.EndCommunication();
+                TriggerCinematicFinished();
             }
         }
 
@@ -72,7 +80,7 @@ namespace Rokemon {
                 _cinematicVoiceFX[count].PlaySfx();
             }
 
-            yield return new WaitForSeconds(waitTime);
+            yield return new WaitForSeconds(waitTimes[count]);
             count ++;
             _active = true;
         }
