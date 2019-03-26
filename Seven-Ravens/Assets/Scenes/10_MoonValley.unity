@@ -12182,6 +12182,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comType: 2
+  _calculateStringValues: 0
+  _endingReplacements: 0
+  _indexesToBeReplaced: 
+  _displayColors: 
+  _displayBrothersSaved: 
+  _displayBrothersLeft: 
+  _replacementPositions: 
   _dialogue:
     transformNpcs: 0
     speakerTag: 
@@ -12522,6 +12529,16 @@ PrefabInstance:
       propertyPath: _zoneName
       value: The Entangled Forest
       objectReference: {fileID: 0}
+    - target: {fileID: 2268202374634831955, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268202374634831955, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.05
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aeda09536d99c24286959a6d08bc211, type: 3}
 --- !u!4 &763354036 stripped
@@ -12776,6 +12793,11 @@ PrefabInstance:
         type: 3}
       propertyPath: _zoneName
       value: Road To Moon Valley
+      objectReference: {fileID: 0}
+    - target: {fileID: 7737394635688805485, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aeda09536d99c24286959a6d08bc211, type: 3}

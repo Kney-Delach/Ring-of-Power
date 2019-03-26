@@ -17339,6 +17339,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comType: 2
+  _calculateStringValues: 0
+  _endingReplacements: 0
+  _indexesToBeReplaced: 
+  _displayColors: 
+  _displayBrothersSaved: 
+  _displayBrothersLeft: 
+  _replacementPositions: 
   _dialogue:
     transformNpcs: 0
     speakerTag: 
@@ -20421,6 +20428,31 @@ PrefabInstance:
         type: 3}
       propertyPath: _zoneName
       value: The Entangled Forest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268202374634831955, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -2.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268202374634831955, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268202374634831955, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268202374634831955, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2268202374634831955, guid: 6aeda09536d99c24286959a6d08bc211,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 180
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6aeda09536d99c24286959a6d08bc211, type: 3}
