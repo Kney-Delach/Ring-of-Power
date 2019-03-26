@@ -27,6 +27,7 @@ namespace Rokemon{
         [SerializeField]
         private Collider2D _unlockedZone;
 
+
         // reference to player tag
         private static string PLAYER_TAG = "Player";
 
@@ -35,6 +36,7 @@ namespace Rokemon{
             if(_itemIdDatabase == null)
                 _itemIdDatabase = new Dictionary<int, bool>();
         }
+
 
         private void Start()
         {
@@ -65,8 +67,8 @@ namespace Rokemon{
                 gameObject.SetActive(false);
                 _itemIdDatabase[_itemId] = true; // set collected in database
 
-                if(_isGem && _unlockedZone != null)
-                    _unlockedZone.enabled = true;
+                // if(_isGem && _unlockedZone != null)
+                //     _unlockedZone.enabled = true;
                     
                 //Destroy(gameObject);
             }

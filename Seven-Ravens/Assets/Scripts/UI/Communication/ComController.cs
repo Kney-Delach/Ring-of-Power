@@ -52,6 +52,13 @@ namespace Rokemon {
 
         private bool _complete = false; 
 
+        [Header("Final Scene Variables")]
+        [SerializeField]
+        private bool _transformBrothers = false; 
+
+        [SerializeField]
+        private int _transformBrothersIndex = 0;
+
         [SerializeField]
         private bool _isFinalPhoenixDeath = false;
 
@@ -154,7 +161,11 @@ namespace Rokemon {
                     // gameObject.SetActive(false); // set gameobject inactive 
                 }
                 else if(_currentTriggerIndex < _triggers.Length) 
-                {
+                {   
+                    if(_transformBrothers && _currentTriggerIndex == _transformBrothersIndex)
+                    {
+                        WizardFightController.Instance.TransformBrothers();
+                    }
                     Debug.Log("REACHED SIMULATION POINT 4");
                     PlayerController.Instance.FreezePlayer();
                     TriggerCommunicationEvents();

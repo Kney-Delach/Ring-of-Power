@@ -16049,6 +16049,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 272060719}
+  - component: {fileID: 272060720}
   m_Layer: 0
   m_Name: Items
   m_TagString: Untagged
@@ -16073,6 +16074,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &272060720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 272060718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af4050f5738e5ab4bb9134d913305179, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _unlockedZone: {fileID: 1070950100}
+  _zoneUnlocked: 0
+  _gemItem: {fileID: 482529574}
+  _goodItem: {fileID: 281154235}
+  _cursedItem: {fileID: 1958983279}
 --- !u!1 &273282662
 GameObject:
   m_ObjectHideFlags: 0
@@ -25350,12 +25368,18 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 482529571}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 482529574}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &482529574 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5851580173210154826, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+    type: 3}
+  m_PrefabInstance: {fileID: 482529571}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &482743521
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -61104,6 +61128,8 @@ MonoBehaviour:
   _isDeathCom: 1
   _npc: {fileID: 0}
   _abilityName: 
+  _transformBrothers: 0
+  _transformBrothersIndex: 0
   _isFinalPhoenixDeath: 0
 --- !u!4 &1993422751
 Transform:
@@ -61474,6 +61500,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7305331185635886075, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_IsActive
@@ -61499,11 +61530,6 @@ PrefabInstance:
       propertyPath: _npcBunny
       value: 
       objectReference: {fileID: 815614543}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7708414224786187759, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_AnchoredPosition.y

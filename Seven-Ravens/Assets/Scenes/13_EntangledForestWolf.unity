@@ -47569,6 +47569,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7305331185635886075, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_IsActive
@@ -47594,11 +47599,6 @@ PrefabInstance:
       propertyPath: _npcBunny
       value: 
       objectReference: {fileID: 1477769735}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7708414224786187759, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -59640,6 +59640,8 @@ MonoBehaviour:
   _isDeathCom: 1
   _npc: {fileID: 0}
   _abilityName: 
+  _transformBrothers: 0
+  _transformBrothersIndex: 0
   _isFinalPhoenixDeath: 0
 --- !u!4 &1816067908
 Transform:

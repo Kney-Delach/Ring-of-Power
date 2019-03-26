@@ -5,7 +5,8 @@ using UnityEngine;
 namespace Rokemon {
     public class WizardFightController : MonoBehaviour
     {
-
+        
+        [Header("Completion Communications")]
         [SerializeField]
         private ComController _wizardKilledComms;
 
@@ -15,18 +16,50 @@ namespace Rokemon {
         [SerializeField]
         private ComController _wizardVictorComms;
 
+        [Header("NPC References")]
         [SerializeField]
         private GameObject[] _enemies; 
 
+        [Header("NPC References")]
+        [SerializeField]
+        private GameObject[] _redBrother;
+
+        [SerializeField]
+        private GameObject[] _purpleBrother;
+
+        [SerializeField]
+        private GameObject[] _blueBrother;
+
+        [SerializeField]
+        private GameObject[] _greenBrother; 
+
+        [SerializeField]
+        private GameObject[] _aquaBrother;
+
+        [SerializeField]
+        private GameObject[] _pinkBrother;
+
+        [SerializeField]
+        private GameObject[] _blackBrother;
+
+        [SerializeField]
+        private GameObject[] _mother;
+
+        [Header("Phoenix Attack References")]
+
         [SerializeField]
         private EnemyController _phoenixController;
-
     
         [SerializeField]
         private Ability _ability;
 
         [SerializeField]
         private Transform _targetTransform;
+
+        // reference to current item dicitonary 
+        private Dictionary<BrotherRefColor, bool> _items;
+
+        private bool _saveMother = false;
 
         private static WizardFightController _instance ;
 
@@ -35,10 +68,6 @@ namespace Rokemon {
         public void Awake()
         {
             _instance = this; 
-        }
-
-        public void Update()
-        {
         }
 
         public void InstantiateFirebolt()
@@ -56,29 +85,83 @@ namespace Rokemon {
             foreach(GameObject enemy in _enemies)
                 enemy.SetActive(false);
         }
+
+        public void TransformBrothers()
+        {
+            if(_saveMother)
+            {
+                _mother[0].SetActive(false);
+                _mother[1].SetActive(true);
+            }
+
+            if(_items[BrotherRefColor.Black])
+            {
+                _blackBrother[0].SetActive(false);
+                _blackBrother[1].SetActive(true);
+            }
+
+            if(_items[BrotherRefColor.Blue])
+            {
+                _blueBrother[0].SetActive(false);
+                _blueBrother[1].SetActive(true);
+            }
+
+            
+            if(_items[BrotherRefColor.Green])
+            {
+                _greenBrother[0].SetActive(false);
+                _greenBrother[1].SetActive(true);
+            }
+
+            // AQUA BROTHER = ORANGE?
+            if(_items[BrotherRefColor.Orange])
+            {
+                _aquaBrother[0].SetActive(false);
+                _aquaBrother[1].SetActive(true);
+            }
+
+            if(_items[BrotherRefColor.Pink])
+            {
+                _pinkBrother[0].SetActive(false);
+                _pinkBrother[1].SetActive(true);
+            }
+
+            
+            if(_items[BrotherRefColor.Red])
+            {
+                _redBrother[0].SetActive(false);
+                _redBrother[1].SetActive(true);
+            }
+
+            if(_items[BrotherRefColor.Yellow])
+            {
+                _purpleBrother[0].SetActive(false);
+                _purpleBrother[1].SetActive(true);       
+            }
+        }
+
         public void ProcessWizardKilledComplete()
         {
             _wizardKilledComms.TriggerCommunicationEvents();
             Dictionary<BrotherRefColor,bool> itemDictionary = ItemInventory.Instance.RemoveTransformItems();
-            itemDictionary = GetNeutralChoicesReferences(itemDictionary, false);
-            CheckBrotherStatus(itemDictionary);
+            _items = GetNeutralChoicesReferences(itemDictionary, false);
+            _saveMother = false;
         }
 
         public void ProcessWizardSparedComplete()
         {
             _wizardSparedComms.TriggerCommunicationEvents();
             Dictionary<BrotherRefColor,bool> itemDictionary = ItemInventory.Instance.RemoveTransformItems();
-            itemDictionary = GetNeutralChoicesReferences(itemDictionary, true);
-            CheckBrotherStatus(itemDictionary);
+            _items = GetNeutralChoicesReferences(itemDictionary, true);
+            _saveMother = true;
         }
 
         public void ProcessWizardWonComplete()
         {
             _wizardVictorComms.TriggerCommunicationEvents();
             Dictionary<BrotherRefColor,bool> itemDictionary = ItemInventory.Instance.RemoveTransformItems();
-            itemDictionary = GetNeutralChoicesReferences(itemDictionary, false);
-            
-            CheckBrotherStatus(itemDictionary);
+            _items = GetNeutralChoicesReferences(itemDictionary, false);
+            _saveMother = false;
         }
 
         private void CheckBrotherStatus(Dictionary<BrotherRefColor,bool> dictionary)

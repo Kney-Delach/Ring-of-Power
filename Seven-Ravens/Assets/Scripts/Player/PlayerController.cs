@@ -402,7 +402,8 @@ namespace Rokemon
             if(findCharm == null)
             {
                 target.GetComponent<Stats>().DeactivateShield(); 
-                target.GetComponentInChildren<EnemyController>().StopFireboltActivity();
+                if(target.GetComponentInChildren<EnemyController>() != null)
+                    target.GetComponentInChildren<EnemyController>().StopFireboltActivity();
             }
             float temp = waitTime - abilityTime; 
 
@@ -441,6 +442,9 @@ namespace Rokemon
                                 FireboltController fireboltController = ability.GetComponent<FireboltController>();
                                 fireboltController._target = _currentTarget;
                                 fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
+                                
+                                ActionBarUIController.Instance.ReloadAbility(0,_abilitiesDatabase[spellName]._reloadTime);
+
                                 StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                             }
                         }
@@ -463,6 +467,7 @@ namespace Rokemon
                                     controller.TogglePlayerInvisibility();
                                 }
                                 UseMana(_abilitiesDatabase[spellName]._cost);
+                                ActionBarUIController.Instance.ReloadAbility(2,_abilitiesDatabase[spellName]._reloadTime);
                                 StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, targetControllersList));
                             }                            
                         }
@@ -470,18 +475,23 @@ namespace Rokemon
                         {
                             GetComponent<SpriteRenderer>().color = Color.blue; 
                             UseMana(_abilitiesDatabase[spellName]._cost);
+                            ActionBarUIController.Instance.ReloadAbility(2,_abilitiesDatabase[spellName]._reloadTime);
                             StartCoroutine(InvisibleCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, null));
                         }                         
                         break;
                     case "Haste":
                         UseMana(_abilitiesDatabase[spellName]._cost);
                         _speed *= 2; 
+
+                        ActionBarUIController.Instance.ReloadAbility(1,_abilitiesDatabase[spellName]._reloadTime);
+
                         StartCoroutine(HasteCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName));
                         break;
                     case "ProtectiveBubble":
                         UseMana(_abilitiesDatabase[spellName]._cost);
                         GetComponent<SpriteRenderer>().color = Color.yellow; 
                         _health.ActivateShield();
+                        ActionBarUIController.Instance.ReloadAbility(3,_abilitiesDatabase[spellName]._reloadTime);
                         StartCoroutine(ShieldRoutine(_abilitiesDatabase[spellName]._damage ,_abilitiesDatabase[spellName]._reloadTime,spellName));
                         break;
                     case "RemoveRoots":
@@ -495,6 +505,7 @@ namespace Rokemon
                                 Tangler targetTangler = _currentTarget.gameObject.GetComponentInParent<Tangler>();
                                 targetTangler.DestroyRoot();
                                 RemoveTarget();
+                                ActionBarUIController.Instance.ReloadAbility(4,_abilitiesDatabase[spellName]._reloadTime);
                                 StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                             }
                           
@@ -505,6 +516,7 @@ namespace Rokemon
                         TransformReference reference = _currentTarget.GetComponentInChildren<TransformReference>();
                         reference.TransformedObject.SetActive(true);
                         _currentTarget.gameObject.SetActive(false);
+                        ActionBarUIController.Instance.ReloadAbility(5,_abilitiesDatabase[spellName]._reloadTime);
                         StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));   
                         ActionBarUIController.Instance.HideFreezeFlash(); 
                         
@@ -527,6 +539,8 @@ namespace Rokemon
                                 _currentTarget.gameObject.GetComponent<SpriteRenderer>().color = Color.red; 
                                 //_currentTarget.tag = "Untagged";
                                 _currentTarget.gameObject.layer = 1;
+
+                                ActionBarUIController.Instance.ReloadAbility(6,_abilitiesDatabase[spellName]._reloadTime);
 
                                 StartCoroutine(CharmRoutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName, _currentTarget.gameObject));
                                 RemoveTarget();
@@ -555,13 +569,15 @@ namespace Rokemon
                             {
                                 UseMana(_abilitiesDatabase[spellName]._cost);
                                 _currentTarget.gameObject.GetComponent<Stats>().AddValue(_abilitiesDatabase[spellName]._damage); 
+                                ActionBarUIController.Instance.ReloadAbility(7,_abilitiesDatabase[spellName]._reloadTime);
                                 StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                             }
                         }
                         else if(_currentTarget == null && (_health.CurrentValue != _health.MaxValue) && _health.CurrentValue != 0)
                         {
                             UseMana(_abilitiesDatabase[spellName]._cost);
-                            _health.AddValue(_abilitiesDatabase[spellName]._damage);    
+                            _health.AddValue(_abilitiesDatabase[spellName]._damage);   
+                            ActionBarUIController.Instance.ReloadAbility(7,_abilitiesDatabase[spellName]._reloadTime); 
                             StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
                         }                           
                         

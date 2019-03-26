@@ -6,6 +6,7 @@ using UnityEngine.UI;
 namespace Rokemon {
     public class ActionBarUIController : MonoBehaviour
     {
+        #region UI Components
         [Header("UI Components")]
         [SerializeField]
         private Animator _fireboltFlashAnimator;
@@ -31,11 +32,13 @@ namespace Rokemon {
         [SerializeField]
         private Animator _bubbleFlashAnimator;
 
+        // reference to all reloading images 
         [SerializeField]
         private Image[] _reloadImages;
 
+        // reference to all reloading texts
         [SerializeField]
-        private Text[] _reloadTexts; 
+        private ReloadTimer[] _reloadTimers; 
 
         [Header("Block UI Images")]
         [SerializeField]
@@ -53,6 +56,8 @@ namespace Rokemon {
         [SerializeField]
         private GameObject _blockCharm; 
 
+        #endregion
+
         #region Singleton 
 
         // reference to instance
@@ -67,6 +72,11 @@ namespace Rokemon {
             {
                 _instance = this;
             }
+        }
+        private void Start()
+        {
+            foreach(Image image in _reloadImages)
+                image.enabled = false;
         }
 
         // remove instance if destroyed
@@ -224,5 +234,23 @@ namespace Rokemon {
         }
 
         #endregion
+
+        #region Reload Logic 
+
+        public void ReloadAbility(int abilityIndex,float reloadTime)
+        {
+            StartCoroutine(ReloadAbilityRoutine(abilityIndex,reloadTime));
+        }
+
+        private IEnumerator ReloadAbilityRoutine(int abilityIndex, float reloadTime)
+        {
+            _reloadImages[abilityIndex].enabled = true;
+            _reloadTimers[abilityIndex].ActivateTimer(reloadTime);
+            yield return new WaitForSeconds(reloadTime);
+            _reloadImages[abilityIndex].enabled = false;
+        }
+
+        #endregion
+
     }
 }
