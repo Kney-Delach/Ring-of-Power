@@ -15568,11 +15568,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -15582,6 +15577,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.909419
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
@@ -17433,9 +17433,9 @@ MonoBehaviour:
   _endingReplacements: 1
   _indexesToBeReplaced: 0000000001000000
   _displayColors: 0100
-  _displayBrothersSaved: 0000
+  _displayBrothersSaved: 0100
   _displayBrothersLeft: 0001
-  _replacementPositions: 0a00000057000000
+  _replacementPositions: 060000003c000000
   _dialogue:
     transformNpcs: 0
     speakerTag: 
@@ -17447,10 +17447,9 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - I got X Stones on my Journey, so we can save only the brothers with those hair
-      colours.
-    - I will spend the rest of eternity looking for the remaining stones to free my
-      Mother &  Brothers!
+    - 'I got  Stones on my Journey, so lets '
+    - I will spend the rest of eternity looking for the remaining  stones to free
+      my brothers!
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -18281,12 +18280,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _comType: 0
   _calculateStringValues: 0
-  _endingReplacements: 0
-  _indexesToBeReplaced: 
-  _displayColors: 
-  _displayBrothersSaved: 
-  _displayBrothersLeft: 
-  _replacementPositions: 
+  _endingReplacements: 1
+  _indexesToBeReplaced: 0000000001000000
+  _displayColors: 0000
+  _displayBrothersSaved: 0001
+  _displayBrothersLeft: 0000
+  _replacementPositions: 000000006d000000
   _dialogue:
     transformNpcs: 0
     speakerTag: 
@@ -18298,11 +18297,10 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences:
-    - Ha ha ha, yes, maybe so, now give me your firebolt spell and I can control the
-      realm!
+    - Ha ha ha, yes, maybe so, now give me your firebolt spell so I can take over
+      the realm!
     - I'm not without mercy however, I see you have some transformation stones in
-      this bag... [List of Colours] so I will transform only the brothers with those
-      hair colours.
+      this bag... so I will transform   brothers.
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -24566,12 +24564,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _comType: 0
   _calculateStringValues: 0
-  _endingReplacements: 0
-  _indexesToBeReplaced: 
-  _displayColors: 
-  _displayBrothersSaved: 
-  _displayBrothersLeft: 
-  _replacementPositions: 
+  _endingReplacements: 1
+  _indexesToBeReplaced: 0100000001000000
+  _displayColors: 0001
+  _displayBrothersSaved: 0100
+  _displayBrothersLeft: 0000
+  _replacementPositions: 320000000e000000
   _dialogue:
     transformNpcs: 0
     speakerTag: 
@@ -24583,11 +24581,9 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Mother
     sentences:
-    - My Daughter is such a hero, saving her Mother and X of her brothers from this
+    - My Daughter is such a hero, saving her Mother and  of her brothers from this
       wizard!
-    - 'So you obtained:  [List of Colours] so we can save only the brothers with those
-      hair colours.'
-    - We must find any remaining stones! Back the way you came
+    - 'You obtained:  stones, so now transform your brothers back!'
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -24835,11 +24831,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -24849,6 +24840,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.7589064
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
@@ -33390,11 +33386,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -33404,6 +33395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.7589064
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
@@ -36089,7 +36085,7 @@ MonoBehaviour:
     moveSpeaker: 0
     displayName: 1
     displayContinue: 0
-    displayDialogue: 0
+    displayDialogue: 1
     enableSpeakerVisibility: 0
     moveSentenceIndexes: 
     speakerName: Evil Wizard
@@ -36598,7 +36594,7 @@ MonoBehaviour:
   _npc: {fileID: 0}
   _abilityName: 
   _transformBrothers: 1
-  _transformBrothersIndex: 3
+  _transformBrothersIndex: 4
   _isFinalPhoenixDeath: 0
 --- !u!4 &2013641549
 Transform:
