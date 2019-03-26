@@ -417,7 +417,8 @@ namespace Rokemon
                     target.GetComponent<SpriteRenderer>().color = Color.white; 
                     //target.tag = "CharmableEnemy";
                     target.layer = 8;
-                    target.GetComponentInChildren<EnemyController>().CanCastFirebolt = true;
+                    if(target.GetComponentInChildren<EnemyController>() != null)
+                        target.GetComponentInChildren<EnemyController>().CanCastFirebolt = true;
                 }
                
             }
