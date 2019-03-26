@@ -19,6 +19,30 @@ namespace Rokemon {
         [SerializeField]
         private ComType _comType;
 
+        #endregion
+
+        #region  Ending Scenario checks
+        [SerializeField]
+        private bool _calculateStringValues = false;
+        
+        [SerializeField]
+        private bool _endingReplacements = false;
+
+        [SerializeField]
+        private int[] _indexesToBeReplaced;
+
+        [SerializeField]
+        private bool[] _displayColors; 
+
+        [SerializeField]
+        private bool[] _displayBrothersSaved;
+
+        [SerializeField]
+        private bool[] _displayBrothersLeft; 
+
+        [SerializeField]
+        private int[] _replacementPositions;
+
         #endregion 
 
         #region Dialogue Info
@@ -51,6 +75,30 @@ namespace Rokemon {
 
         public void TriggerCommunication(ComController controller)
         {
+            if(_calculateStringValues)
+                WizardFightController.Instance.CalculateBrothersText();
+
+            if(_endingReplacements)
+            {
+                foreach(int index in _indexesToBeReplaced)
+                {
+                    if(_displayColors[index])
+                    {
+                        _dialogue.sentences[index] = _dialogue.sentences[index].Insert(_replacementPositions[index], WizardFightController.Instance.GetColorsText());
+                    }
+
+                    else if(_displayBrothersSaved[index])
+                    {
+                        _dialogue.sentences[index] =  _dialogue.sentences[index].Insert(_replacementPositions[index], WizardFightController.Instance.GetBroSavedText());
+                    }
+
+                    else if(_displayBrothersLeft[index])
+                    {
+                        _dialogue.sentences[index] = _dialogue.sentences[index].Insert(_replacementPositions[index], WizardFightController.Instance.GetBroNotSavedText());
+                    }
+                }
+            }
+            
             _curController = controller;
             if(_moveNpc && _npcToMove != null)
             {

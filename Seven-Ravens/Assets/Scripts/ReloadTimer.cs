@@ -21,7 +21,6 @@ namespace Rokemon {
         }
         private void Update()
         {
-            Debug.Log(_timeLeft.ToString("F0"));
             if(_active)
                 UpdateTimer();
         }
@@ -33,13 +32,11 @@ namespace Rokemon {
             _timeLeft -= Time.deltaTime;
             if ( _timeLeft <= 0 )
             {
-                Debug.Log(_timeLeft.ToString("F0"));
                 DeactivateTimer();
             }
             else 
             {
                 _reloadText.text = _timeLeft.ToString("F0");
-                Debug.Log(_timeLeft.ToString("F0"));
             }
         }
 
@@ -55,7 +52,6 @@ namespace Rokemon {
             _timeLeft = timeLeft;
             _reloadText.enabled = true;
             _reloadText.text = _timeLeft.ToString("F0");
-            Debug.Log(_timeLeft.ToString("F0"));
         }
     }
 }

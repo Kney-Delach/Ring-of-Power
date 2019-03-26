@@ -61,6 +61,12 @@ namespace Rokemon {
 
         private bool _saveMother = false;
 
+        private string _colorText = "";
+
+        private string _brothersSavedText = "";
+
+        private string _brothersNotSavedText = "";
+
         private static WizardFightController _instance ;
 
         public static WizardFightController Instance { get { return _instance ; } }
@@ -68,6 +74,21 @@ namespace Rokemon {
         public void Awake()
         {
             _instance = this; 
+        }
+
+        public string GetColorsText()
+        {
+            return _colorText;
+        }
+
+        public string GetBroSavedText()
+        {
+            return _brothersSavedText;
+        }
+
+        public string GetBroNotSavedText()
+        {
+            return _brothersNotSavedText;
         }
 
         public void InstantiateFirebolt()
@@ -85,7 +106,64 @@ namespace Rokemon {
             foreach(GameObject enemy in _enemies)
                 enemy.SetActive(false);
         }
+        
+        public void CalculateBrothersText()
+        {
+            int count = 0;
+            
+            if(_items[BrotherRefColor.Red])
+            {
+                _colorText += "Red, ";
+                count ++;
+            }
 
+            if(_items[BrotherRefColor.Yellow])
+            {
+                _colorText += "Purple, ";    
+                count ++;  
+            }
+
+            if(_items[BrotherRefColor.Blue])
+            {
+                _colorText += "Blue, ";
+                count ++;
+            }
+
+            
+            if(_items[BrotherRefColor.Green])
+            {
+                _colorText += "Green, ";
+                count ++;
+            }
+
+            // AQUA BROTHER = ORANGE?
+            if(_items[BrotherRefColor.Orange])
+            {
+                _colorText += "Aqua, ";
+                count ++;
+            }
+
+            if(_items[BrotherRefColor.Pink])
+            {
+                _colorText += "Pink, ";
+                count ++;
+            }
+
+            if(_items[BrotherRefColor.Black])
+            {
+                _colorText += "Black, ";
+                count ++;
+            }
+            string tempstring = "";
+
+            if(string.Compare(_colorText,tempstring) == 0)
+            {
+                _colorText = "No ";
+            }
+            _brothersSavedText = count.ToString();
+            int temp = 7 - count; 
+            _brothersNotSavedText += temp.ToString();
+        }
         public void TransformBrothers()
         {
             if(_saveMother)
@@ -93,11 +171,17 @@ namespace Rokemon {
                 _mother[0].SetActive(false);
                 _mother[1].SetActive(true);
             }
-
-            if(_items[BrotherRefColor.Black])
+            
+            if(_items[BrotherRefColor.Red])
             {
-                _blackBrother[0].SetActive(false);
-                _blackBrother[1].SetActive(true);
+                _redBrother[0].SetActive(false);
+                _redBrother[1].SetActive(true);
+            }
+
+            if(_items[BrotherRefColor.Yellow])
+            {
+                _purpleBrother[0].SetActive(false);
+                _purpleBrother[1].SetActive(true); 
             }
 
             if(_items[BrotherRefColor.Blue])
@@ -123,44 +207,38 @@ namespace Rokemon {
             if(_items[BrotherRefColor.Pink])
             {
                 _pinkBrother[0].SetActive(false);
-                _pinkBrother[1].SetActive(true);
+                _pinkBrother[1].SetActive(true);;
             }
 
-            
-            if(_items[BrotherRefColor.Red])
+            if(_items[BrotherRefColor.Black])
             {
-                _redBrother[0].SetActive(false);
-                _redBrother[1].SetActive(true);
-            }
-
-            if(_items[BrotherRefColor.Yellow])
-            {
-                _purpleBrother[0].SetActive(false);
-                _purpleBrother[1].SetActive(true);       
+                _blackBrother[0].SetActive(false);
+                _blackBrother[1].SetActive(true);
             }
         }
 
         public void ProcessWizardKilledComplete()
         {
-            _wizardKilledComms.TriggerCommunicationEvents();
             Dictionary<BrotherRefColor,bool> itemDictionary = ItemInventory.Instance.RemoveTransformItems();
             _items = GetNeutralChoicesReferences(itemDictionary, false);
+            _wizardKilledComms.TriggerCommunicationEvents();
             _saveMother = false;
+
         }
 
         public void ProcessWizardSparedComplete()
         {
-            _wizardSparedComms.TriggerCommunicationEvents();
             Dictionary<BrotherRefColor,bool> itemDictionary = ItemInventory.Instance.RemoveTransformItems();
             _items = GetNeutralChoicesReferences(itemDictionary, true);
+            _wizardSparedComms.TriggerCommunicationEvents();
             _saveMother = true;
         }
 
         public void ProcessWizardWonComplete()
         {
-            _wizardVictorComms.TriggerCommunicationEvents();
             Dictionary<BrotherRefColor,bool> itemDictionary = ItemInventory.Instance.RemoveTransformItems();
             _items = GetNeutralChoicesReferences(itemDictionary, false);
+            _wizardVictorComms.TriggerCommunicationEvents();
             _saveMother = false;
         }
 
@@ -187,7 +265,6 @@ namespace Rokemon {
             
             ProcessWizardWonComplete();
         }
-
         private Dictionary<BrotherRefColor, bool> GetNeutralChoicesReferences(Dictionary<BrotherRefColor,bool> inputList, bool neutralItemValue)
         {  
             List<BrotherRefColor> keyList = new List<BrotherRefColor>(inputList.Keys);
