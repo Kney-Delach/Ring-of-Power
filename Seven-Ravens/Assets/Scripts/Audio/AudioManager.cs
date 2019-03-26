@@ -19,11 +19,32 @@ public class AudioManager : MonoBehaviour
     // reference to dictionary storing sounds with their respective names
     private Dictionary<string, Sound> _soundDictionary;
 
+    private string _currentSceneSongName;
+
     private void Awake()
     {
         _soundDictionary = new Dictionary<string, Sound>();
     }
 
+    public void SwitchScene(string newSoundName)
+    {
+        if(_currentSceneSongName != null)
+            StopSound(_currentSceneSongName);
+        
+        _currentSceneSongName = newSoundName;
+
+        PlaySound(newSoundName);
+    }
+
+    private void StopSound(string soundName)
+    {
+        Sound sound; 
+        if (_soundDictionary.TryGetValue(soundName, out sound))
+        {
+            if(sound._audioSource.isPlaying)
+                sound._audioSource.Stop();
+        }
+    }
     // plays an audioclip attached to a sound, referenced through sound name
     public void PlaySound(string soundName)
     {
@@ -46,7 +67,6 @@ public class AudioManager : MonoBehaviour
                 sound.Value._audioSource.Pause();
                 sound.Value.IsPaused = true;
             }
-
         }
     }
 
@@ -61,7 +81,6 @@ public class AudioManager : MonoBehaviour
                 sound.Value._audioSource.Play();
                 sound.Value.IsPaused = false;
             }
-
         }
     }
 
@@ -92,7 +111,6 @@ public class AudioManager : MonoBehaviour
                 case AudioTypes.Music:
                     sound._audioSource.outputAudioMixerGroup = _masterVolumeMixer.FindMatchingGroups("Music")[0];
                     sound._audioSource.loop = true;
-                    sound._audioSource.Play();
                     break;
                 case AudioTypes.Master:
                     Debug.Log("AudioManager UpdateAudioSettings: MASTER CASE REACHED, SOUNDS SHOULD NOT BE OF TYPE 'Master'");

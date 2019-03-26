@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundName: Firebolt
+  _isSceneMusic: 0
 --- !u!1 &1222274782551136397
 GameObject:
   m_ObjectHideFlags: 0
@@ -149,6 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundName: Charm
+  _isSceneMusic: 0
 --- !u!1 &2801891913963124346
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundName: Haste
+  _isSceneMusic: 0
 --- !u!1 &6642721158754728809
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +522,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundName: ProtectiveBubble
+  _isSceneMusic: 0
 --- !u!1 &7429842673410681588
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,6 +567,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundName: RemoveRoots
+  _isSceneMusic: 0
 --- !u!1 &7765346283210815350
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +612,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundName: Invisibility
+  _isSceneMusic: 0
 --- !u!1 &7976782752619928831
 GameObject:
   m_ObjectHideFlags: 0
@@ -694,6 +700,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundName: Heal
+  _isSceneMusic: 0
 --- !u!1 &8806112312881956133
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,6 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _soundName: WaterFreeze
+  _isSceneMusic: 0
 --- !u!1001 &4321027381956486959
 PrefabInstance:
   m_ObjectHideFlags: 0

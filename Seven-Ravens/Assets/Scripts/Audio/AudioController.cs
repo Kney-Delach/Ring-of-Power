@@ -11,17 +11,31 @@ public class AudioController : MonoBehaviour
     // refernece to the audio manager
     private AudioManager _audioManager;
 
+    [SerializeField]
+    private bool _isSceneMusic = false;
+
     private void Awake()
     {
         _audioManager = Object.FindObjectOfType<AudioManager>();       
     }
-
+    
+    private void Start()
+    {
+        if(_isSceneMusic)
+            PlaySceneMusic();
+    }
     // play single shot sfx
     public void PlaySfx()
     {
         if (_audioManager == null)
             return;
         _audioManager.PlaySound(_soundName);    
-        Debug.Log("Playing SFX: " + _soundName);        
+    }
+
+    private void PlaySceneMusic()
+    {
+        if(_audioManager == null)
+            return; 
+        _audioManager.SwitchScene(_soundName);
     }
 }

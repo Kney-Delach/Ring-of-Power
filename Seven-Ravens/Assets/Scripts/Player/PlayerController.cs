@@ -530,6 +530,7 @@ namespace Rokemon
                         ActionBarUIController.Instance.ReloadAbility(1,_abilitiesDatabase[spellName]._reloadTime);
 
                         StartCoroutine(HasteCoroutine(_abilitiesDatabase[spellName]._damage,_abilitiesDatabase[spellName]._reloadTime, spellName));
+                        _hasteSFX.PlaySfx();
                         break;
                     case "ProtectiveBubble":
                         UseMana(_abilitiesDatabase[spellName]._cost);
