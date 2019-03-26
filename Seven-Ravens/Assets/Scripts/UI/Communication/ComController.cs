@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LevelManagement;
 
 namespace Rokemon {
 
@@ -62,6 +63,8 @@ namespace Rokemon {
         [SerializeField]
         private bool _isFinalPhoenixDeath = false;
 
+        [SerializeField]
+        private bool _cinematicController = false;
         private ComController _instance;
         public ComController Instance { get { return _instance ; } }
 
@@ -178,7 +181,7 @@ namespace Rokemon {
                     gameObject.SetActive(false);
                 }
             }
-            else 
+            else if(!_cinematicController) 
             {
                 if(!_singleTrigger)
                 {
@@ -208,6 +211,20 @@ namespace Rokemon {
             _isCollding = false;
             _complete = true;
             gameObject.SetActive(false);
+        }
+
+        public void CinematicTrigger()
+        {
+            if(_currentTriggerIndex == _triggers.Length)
+            {
+                CinematicManager.Instance.TriggerCinematicFinished();
+            }
+            else 
+            {
+                ComManager.Instance.EndCommunication();
+                _triggers[_currentTriggerIndex].TriggerCommunication(_instance);
+                _currentTriggerIndex++;
+            }
         }
 
         public void TriggerCommunicationEvents()

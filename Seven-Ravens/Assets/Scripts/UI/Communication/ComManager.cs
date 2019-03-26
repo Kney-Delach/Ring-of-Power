@@ -116,7 +116,8 @@ namespace Rokemon {
         // initialise sentences queue
         private void Start()
         {
-            ChoiceUIController.Instance.onChoiceMadeCallback += EvaluateChoice;
+            if(ChoiceUIController.Instance != null)
+                ChoiceUIController.Instance.onChoiceMadeCallback += EvaluateChoice;
         }
 
         // process communication if active
@@ -163,12 +164,16 @@ namespace Rokemon {
                     InventoryUIController.Instance.HideInventory();
                 if(QuestInventoryUIController.Instance != null)
                     QuestInventoryUIController.Instance.HideQuestLog();
-                
-                TargetUIController.Instance.TargetChange(null); // remove target UI's target
+                if(TargetUIController.Instance != null)
+                    TargetUIController.Instance.TargetChange(null); // remove target UI's target
 
                 _currentDialogue = dialogue;    // set current dialogue reference
-                PlayerController.Instance.FreezePlayer(); // freeze player movement
-                PlayerController.Instance.RemoveTarget();
+                if(PlayerController.Instance != null)
+                {
+                    PlayerController.Instance.FreezePlayer(); // freeze player movement
+                    PlayerController.Instance.RemoveTarget();
+                }
+                
                 _active = true;         // set active
                 _currentComType = type; // update current communication type
                 StartCommDialogue(dialogue); // start the dailogue
@@ -231,13 +236,15 @@ namespace Rokemon {
             else if(_currentController != null)
             {
                 EndComHelper();
-                PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
+                if(PlayerController.Instance != null)
+                    PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
                 _currentController.Instance.TriggerComplete();
                 _currentController = null; // reset reference to com controller
             } else
             {
                 EndComHelper();
-                PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
+                if(PlayerController.Instance != null)
+                    PlayerController.Instance.UnfreezePlayer(); // unfreeze player movement
             }                       
         }
 
