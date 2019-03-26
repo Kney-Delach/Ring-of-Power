@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3196008430098001928}
   - component: {fileID: 8251608000595799480}
   - component: {fileID: 5906983535767163545}
+  - component: {fileID: 2762612231858306276}
   m_Layer: 0
   m_Name: ItemInformation
   m_TagString: Untagged
@@ -123,6 +124,25 @@ MonoBehaviour:
   _item: {fileID: 11400000, guid: 27790a9b94cd649c8a6bbb16be700548, type: 2}
   _isGem: 0
   _unlockedZone: {fileID: 0}
+--- !u!95 &2762612231858306276
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2237883433039626402}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c77909f7237f414408ea2e692eb26fb7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2964898281399499701
 GameObject:
   m_ObjectHideFlags: 0
@@ -236,3 +256,6 @@ MonoBehaviour:
   _isDeathCom: 0
   _npc: {fileID: 0}
   _abilityName: 
+  _transformBrothers: 0
+  _transformBrothersIndex: 0
+  _isFinalPhoenixDeath: 0
