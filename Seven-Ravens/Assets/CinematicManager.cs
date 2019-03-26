@@ -56,6 +56,7 @@ namespace Rokemon {
             {
                 _spacePressed = true;
                 ComManager.Instance.EndCommunication();
+                Object.FindObjectOfType<AudioManager>().PauseSfx(); 
                 TriggerCinematicFinished();
             }
         }

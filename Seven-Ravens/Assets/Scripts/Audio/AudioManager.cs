@@ -54,7 +54,6 @@ public class AudioManager : MonoBehaviour
             if(!sound._audioSource.isPlaying)
                 sound._audioSource.Play();
         }
-        Debug.Log(_soundDictionary.Keys);
     }
 
     // pause all sfx
