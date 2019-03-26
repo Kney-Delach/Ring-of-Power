@@ -21,7 +21,7 @@ public class AudioController : MonoBehaviour
     {
         if (_audioManager == null)
             return;
-
-        _audioManager.PlaySound(_soundName);            
+        _audioManager.PlaySound(_soundName);    
+        Debug.Log("Playing SFX: " + _soundName);        
     }
 }
