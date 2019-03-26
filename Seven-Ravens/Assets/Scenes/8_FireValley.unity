@@ -25684,6 +25684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _unlockedZone: {fileID: 1347662033}
+  _zoneUnlocked: 0
   _gemItem: {fileID: 8651857357474425527}
   _goodItem: {fileID: 9119784045582825266}
   _cursedItem: {fileID: 9119784044902319124}
@@ -25904,6 +25905,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cursed Item
+      objectReference: {fileID: 0}
+    - target: {fileID: 4923738103601880747, guid: 2228ede249a9d4908a21de2d067cab84,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4923738103601880746, guid: 2228ede249a9d4908a21de2d067cab84,
         type: 3}
@@ -26138,6 +26144,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _dialogue.speakerName
       value: Ruby Gem
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850511568269552264, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1850511568269552264, guid: f078c9ae70eeb4f9eb1e6d7709727a5e,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f078c9ae70eeb4f9eb1e6d7709727a5e, type: 3}
