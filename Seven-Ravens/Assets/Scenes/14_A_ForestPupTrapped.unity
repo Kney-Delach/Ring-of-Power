@@ -254,12 +254,12 @@ MonoBehaviour:
     speakerName: Baby Bunny
     sentences:
     - Thank you for your help kind witch.
-    - My family are constantly getting stuck in there, is there anything you can do
+    - My family are constantly getting stuck in these, is there anything you can do
       to help?
-    - Fine! I just hope none of my family die because of you, you're scary, please
+    - Fine! I just hope no more of my family die because of you, you're scary, please
       don't hurt me.
-    - Thank you kind witch, I will go and save my family now who I am sure are stuck
-      somewhere in this forest!
+    - Thank you kind witch, I will go and save my family now, who are likely stuck
+      in traps deeper in the forest.
   _choices:
     _choicesText:
     - I can't help you! I don't have time for any of this nonsense.
@@ -59716,7 +59716,8 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[1]
-      value: Please come and save me I will die if you leave me in here!
+      value: Please come and save me these traps have killed so many of us, don't
+        let me be another one!
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
@@ -60629,11 +60630,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7305331185635886075, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_IsActive
@@ -60659,6 +60655,11 @@ PrefabInstance:
       propertyPath: _npcBunny
       value: 
       objectReference: {fileID: 815614543}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7708414224786187759, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_AnchoredPosition.y
