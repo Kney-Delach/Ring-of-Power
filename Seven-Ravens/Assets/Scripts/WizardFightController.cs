@@ -67,6 +67,9 @@ namespace Rokemon {
 
         private string _brothersNotSavedText = "";
 
+        [SerializeField]
+        private ComController _wizardShotByPhoneixCom; 
+
         private static WizardFightController _instance ;
 
         public static WizardFightController Instance { get { return _instance ; } }
@@ -100,6 +103,9 @@ namespace Rokemon {
                 fireboltController._target = _targetTransform;
                 fireboltController.Damage = _ability._damage;
             }
+            //ComManager.Instance.EndCommunication();
+            _wizardShotByPhoneixCom.TriggerCommunicationEvents();
+            
         }
         public void RemoveEnemies()
         {
