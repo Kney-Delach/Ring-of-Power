@@ -24,6 +24,7 @@ namespace Rokemon {
 
         [SerializeField]
         private bool _isBunny = false;
+        public bool IsBunny { get { return _isBunny ; } }
 
         [SerializeField]
         private ComController _bunnyController;
@@ -43,6 +44,7 @@ namespace Rokemon {
             if (collision.tag == PLAYER_TAG && !_triggered)
             {
                 _triggered = true; 
+                PlayerController.Instance.IsRooted = true;
                 PlayerController.Instance.FreezePlayer();
                 PlayerController.Instance.SetPosition(GetComponent<Transform>());
 
@@ -66,6 +68,10 @@ namespace Rokemon {
             {
                 _npcBunny.layer = 8;
                 _bunnyController.TriggerCommunicationEvents();
+            }
+            else 
+            {
+                PlayerController.Instance.IsRooted = false;
             }
 
             if(_triggered)

@@ -63,6 +63,9 @@ namespace Rokemon
 
         private Transform _currentTarget; 
 
+        private bool _isRooted = false;
+        public bool IsRooted { set {_isRooted = value ; } }
+
         // reference to the player's ability  database
         private static Dictionary<string, Ability> _abilitiesDatabase;
 
@@ -491,19 +494,29 @@ namespace Rokemon
                         float dist = Vector3.Distance(_currentTarget.position, transform.position);
                         if(dist < _attackDistance)
                         {
-                            ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
-                            if( ability != null)
+                            // TODO: Implement root check
+                            if(_isRooted && _currentTarget.GetComponentInParent<Tangler>() == null) // dont fire scenario
                             {
-                                UseMana(_abilitiesDatabase[spellName]._cost);
-                                FireboltController fireboltController = ability.GetComponent<FireboltController>();
-                                fireboltController._target = _currentTarget;
-                                fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
-                                
-                                ActionBarUIController.Instance.ReloadAbility(0,_abilitiesDatabase[spellName]._reloadTime);
 
-                                StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
-                                _fireboltSFX.PlaySfx();
                             }
+                            else if((_isRooted && _currentTarget.GetComponentInParent<Tangler>() && !_currentTarget.GetComponentInParent<Tangler>().IsBunny ) || !_isRooted) // fire scenario
+                            {
+                                ability = (GameObject)Instantiate(_abilitiesDatabase[spellName]._prefab, transform.position, Quaternion.identity);
+                                if( ability != null)
+                                {
+                                    UseMana(_abilitiesDatabase[spellName]._cost);
+                                    FireboltController fireboltController = ability.GetComponent<FireboltController>();
+                                    fireboltController._target = _currentTarget;
+                                    fireboltController.Damage = _abilitiesDatabase[spellName]._damage;
+                                    
+                                    ActionBarUIController.Instance.ReloadAbility(0,_abilitiesDatabase[spellName]._reloadTime);
+
+                                    StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                                    _fireboltSFX.PlaySfx();
+                                }
+                            }
+
+                            
                         }
                         break;
                     case "Invisibility":
@@ -562,13 +575,22 @@ namespace Rokemon
                             float distance = Vector3.Distance(_currentTarget.position, transform.position);
                             if(distance <= _attackDistance)
                             {
-                                UseMana(_abilitiesDatabase[spellName]._cost);
                                 Tangler targetTangler = _currentTarget.gameObject.GetComponentInParent<Tangler>();
-                                targetTangler.DestroyRoot();
-                                RemoveTarget();
-                                ActionBarUIController.Instance.ReloadAbility(4,_abilitiesDatabase[spellName]._reloadTime);
-                                StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
-                                _rootsSFX.PlaySfx();
+                                if(targetTangler.IsBunny && _isRooted)
+                                {
+                                    Debug.Log("Can't free bunny if rooted ");
+                                }
+                                else
+                                {
+                                    UseMana(_abilitiesDatabase[spellName]._cost);
+                                    targetTangler.DestroyRoot();
+                                    RemoveTarget();
+                                    ActionBarUIController.Instance.ReloadAbility(4,_abilitiesDatabase[spellName]._reloadTime);
+                                    StartCoroutine(SpellWaitCoroutine(_abilitiesDatabase[spellName]._reloadTime, spellName));
+                                    _rootsSFX.PlaySfx();
+                                }
+                   
+                                
                             }
                           
                         }                       
