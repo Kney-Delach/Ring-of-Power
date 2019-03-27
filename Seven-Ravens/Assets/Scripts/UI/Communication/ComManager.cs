@@ -369,7 +369,7 @@ namespace Rokemon {
                     {
                         EnemyController tempController = obj.GetComponentInChildren<EnemyController>();
                         if(tempController != null)
-                            tempController.CanCastFirebolt = false;
+                            tempController.StopFireboltActivity();
                     }
                     //     obj.SetActive(false);
                     
@@ -390,7 +390,7 @@ namespace Rokemon {
                         {
                             EnemyController tempController = obj.GetComponentInChildren<EnemyController>();
                             if(tempController != null)
-                                tempController.CanCastFirebolt = false;
+                                tempController.StopFireboltActivity();
                         }
                         _currentController.Npc.GetComponent<ItemDropper>().DropGoodItem();
                          _currentController.Npc.layer = 1;

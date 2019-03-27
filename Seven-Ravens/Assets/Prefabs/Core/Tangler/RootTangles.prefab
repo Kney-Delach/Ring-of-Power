@@ -50,6 +50,9 @@ MonoBehaviour:
   _rootedObject: {fileID: 7292822889652695852}
   _collider: {fileID: 1648432148103906677}
   _initialTrigger: 0
+  _isBunny: 0
+  _bunnyController: {fileID: 0}
+  _npcBunny: {fileID: 0}
 --- !u!61 &1648432148103906677
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -561,6 +564,7 @@ GameObject:
   - component: {fileID: 2544970271680649686}
   - component: {fileID: 499959759656634045}
   - component: {fileID: 3769924498533301626}
+  - component: {fileID: 8683590601156004757}
   m_Layer: 8
   m_Name: tangle
   m_TagString: Roots
@@ -603,10 +607,10 @@ BoxCollider2D:
   m_Offset: {x: 0.09760338, y: 0.37089348}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 3.57, y: 2.99}
+    newSize: {x: 3.57, y: 2.99}
+    adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
@@ -628,10 +632,69 @@ MonoBehaviour:
   _name: Health
   _currentFill: 1
   _isRoot: 1
-  ADD_MORE_REFERENCES_HERE: 0
+  _isTraveller: 0
+  _isPhoenix: 0
+  _isCerberus: 0
+  _isSerpent: 0
+  _isWizard: 0
+  _movePosition: {fileID: 0}
+  _oneHealthComController: {fileID: 0}
+  _deathComController: {fileID: 0}
+  _prevZonerController: {fileID: 0}
+  _oneHealthTrigger: 0
+  _oneHealthTriggerWizard: 0
   _fillSpeed: 1
   _isPlayer: 0
   _maxValue: 100
+  _isDeadBunny: 0
+--- !u!212 &8683590601156004757
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7292822889652695852}
+  m_Enabled: 0
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 251d8b6074bc5624d86cfe1103cba33a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 3.57, y: 2.99}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &7305331185635886075
 GameObject:
   m_ObjectHideFlags: 0

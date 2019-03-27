@@ -456,8 +456,9 @@ namespace Rokemon
             if(findCharm == null)
             {
                 target.GetComponent<Stats>().DeactivateShield(); 
+                bool isCharmed = true;
                 if(target.GetComponentInChildren<EnemyController>() != null)
-                    target.GetComponentInChildren<EnemyController>().StopFireboltActivity();
+                    target.GetComponentInChildren<EnemyController>().StopFireboltActivity(isCharmed);
             }
             float temp = waitTime - abilityTime; 
 
@@ -472,7 +473,10 @@ namespace Rokemon
                     //target.tag = "CharmableEnemy";
                     target.layer = 8;
                     if(target.GetComponentInChildren<EnemyController>() != null)
-                        target.GetComponentInChildren<EnemyController>().CanCastFirebolt = true;
+                    {
+                        if(!target.GetComponentInChildren<EnemyController>().StopActivity)
+                            target.GetComponentInChildren<EnemyController>().CanCastFirebolt = true;    
+                    }
                 }
                
             }

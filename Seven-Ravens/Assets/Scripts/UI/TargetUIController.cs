@@ -70,6 +70,7 @@ namespace Rokemon {
 
         public void TargetChange(GameObject target)
         {   
+            // TODO: Remove redundant check? O.o
             if(target == null)
             {
                 if(_target != null)
@@ -93,6 +94,7 @@ namespace Rokemon {
                 }
                 _target = target;
                 _targetHealth = _target.GetComponent<Stats>(); 
+                
                 UpdateUI();
             }
         }
@@ -107,6 +109,14 @@ namespace Rokemon {
             else 
             {
                 _targetGroup.alpha = 1;
+                if(_target.GetComponent<SpriteRenderer>())
+                    _targetImage.sprite = _target.GetComponent<SpriteRenderer>().sprite;
+                else if(_target.GetComponentInParent<SpriteRenderer>())
+                    _targetImage.sprite = _target.GetComponentInParent<SpriteRenderer>().sprite;
+                else
+                {
+                    _targetImage.sprite = null;
+                }
                 _targetHealth.DisplayImage = _displayImage;
                 _targetHealth.DisplayText = _targetText;
                 _targetHealth.UpdateUI();

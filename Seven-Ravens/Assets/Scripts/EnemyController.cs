@@ -30,6 +30,9 @@ namespace Rokemon {
 
         private bool _aggro = false; 
 
+        private bool _stopActivity = false;
+        public bool StopActivity{ get { return _stopActivity ; } }
+
         private bool _playerInvisibile = false;
 
         private bool _reloading = false; 
@@ -78,6 +81,12 @@ namespace Rokemon {
         }
 
         public void StopFireboltActivity()
+        {
+            StopAllCoroutines();
+            _stopActivity = true;
+            _canCastFirebolt = false;
+        }
+        public void StopFireboltActivity(bool isCharmed)
         {
             StopAllCoroutines();
             _canCastFirebolt = false;
