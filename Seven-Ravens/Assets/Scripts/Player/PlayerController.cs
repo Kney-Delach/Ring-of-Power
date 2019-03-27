@@ -713,20 +713,21 @@ namespace Rokemon
             {
                 _mana.AddValue(0.25f);
             }
-            if(Input.GetKeyDown(KeyCode.M))
-            {
-                _health.ReduceValue(10f);
-            }
+            // removed cheat codes
+            // if(Input.GetKeyDown(KeyCode.M))
+            // {
+            //     _health.ReduceValue(10f);
+            // }
 
-            if(Input.GetKeyDown(KeyCode.N))
-            {
-                _mana.ReduceValue(10f);
-            }
+            // if(Input.GetKeyDown(KeyCode.N))
+            // {
+            //     _mana.ReduceValue(10f);
+            // }
 
-            if(Input.GetKeyDown(KeyCode.L))
-            {
-                _mana.AddValue(100f);
-            }
+            // if(Input.GetKeyDown(KeyCode.L))
+            // {
+            //     _mana.AddValue(100f);
+            // }
         }
         #endregion
     }
