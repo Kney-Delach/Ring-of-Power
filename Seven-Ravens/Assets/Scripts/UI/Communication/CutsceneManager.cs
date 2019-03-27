@@ -115,7 +115,7 @@ namespace Rokemon {
                 if(_dialogues[_curDialogueIndex].speakerTag != null){
                     if(npcCont.gameObject.tag == _dialogues[_curDialogueIndex].speakerTag && _dialogues[_curDialogueIndex].enableSpeakerVisibility)
                     {
-                        if(_wizardAudioController != null)
+                        if(_wizardAudioController != null && npcCont.gameObject.tag == "WIZARD")
                             _wizardAudioController.PlaySfx();
                         npcCont.gameObject.SetActive(true);
                     }
