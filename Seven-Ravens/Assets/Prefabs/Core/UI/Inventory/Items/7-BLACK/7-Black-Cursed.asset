@@ -13,9 +13,8 @@ MonoBehaviour:
   m_Name: 7-Black-Cursed
   m_EditorClassIdentifier: 
   name: Cursed Item 1
-  icon: {fileID: 21300000, guid: a6bd2874992824c86bcee5dc2777f739, type: 2}
-  description: This used to undo curses, but it seems to be cursed and non-functional
-    now...
+  icon: {fileID: 21300000, guid: c63551d216dc54af98b9e83f2178185c, type: 2}
+  description: It seems the essence has escaped this stone...
   showInInventory: 1
   isGem: 0
   isUsable: 0
