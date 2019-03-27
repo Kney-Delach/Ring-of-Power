@@ -54,7 +54,7 @@ namespace LevelManagement
         // start the transition and play the first level
         private IEnumerator OnPlayPressedRoutine()
         {
-            TransitionFader.PlayTransition(startTransitionPrefab, "INSERT GAME NAME HERE");
+            TransitionFader.PlayTransition(startTransitionPrefab, "In The Beginning...");
             yield return new WaitForSeconds(_playDelay);
             if (PlayerController.Instance != null)
             {

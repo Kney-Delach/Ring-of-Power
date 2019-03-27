@@ -196,7 +196,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1400, y: 400}
+  m_SizeDelta: {x: 1800, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &958176263057002602
 CanvasRenderer:
@@ -226,9 +226,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_text: '<size=300>ROKEMON</size>
-
-    THE SEVEN RAVENS'
+  m_text: <size=300>THE RING OF POWER</size>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 76766c6cb31a9354fa1cf3d207678915, type: 2}
   m_sharedMaterial: {fileID: 21827449682717670, guid: 76766c6cb31a9354fa1cf3d207678915,
@@ -275,7 +273,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: -1
+  m_firstOverflowCharacterIndex: 12
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -298,7 +296,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 4852148392487896409}
-    characterCount: 24
+    characterCount: 17
     spriteCount: 0
     spaceCount: 3
     wordCount: 4

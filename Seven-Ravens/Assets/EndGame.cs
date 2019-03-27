@@ -32,7 +32,7 @@ namespace Rokemon {
 
         private IEnumerator GameOver()
         {
-            TransitionFader.PlayTransition(_transitionPrefab, "Thank You For Playing :)");
+            TransitionFader.PlayTransition(_transitionPrefab, "THE END");
             yield return new WaitForSeconds(1.5f);
 
             // reset item object counters
