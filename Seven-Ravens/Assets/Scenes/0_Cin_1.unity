@@ -160,14 +160,15 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - 'After their 7th son, they not knew what to be done, they prayed to the magical
-      gods and begged for a daughter. '
+    - Every attempt resulted in another son. Until they had 7 children, all boys.
+      They decided to try one last time, to fulfill their now decade old dream.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &40511812
 Transform:
   m_ObjectHideFlags: 0
@@ -349,13 +350,15 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - Finall! It had happened, they had their long dreamt for daughter.
+    - Alas! The gods blessed them with a daughter! This was a bright and beautiful
+      day. The birds sang for her arrival.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &322208484
 Transform:
   m_ObjectHideFlags: 0
@@ -432,13 +435,17 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - There once was a man and his wife, and they had always wanted a daughter.
+    - There once was a man and his wife, they grew tired of living as outsiders in
+      a world where the man's magical abilities were shunned, they had always wanted
+      a family of their own. When the mother was first with child they dreamt it would
+      be a girl.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &473986952
 GameObject:
   m_ObjectHideFlags: 0
@@ -632,14 +639,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - The father summoned his seven sons, sacrificing his and their magical abilities
-      to create a magical ring to sustain his daughter's life force.
+    - The girl grew weaker and weaker, she rapidly deteriorated. The parents knew
+      what was happening, she had a severe illness. She was dying. They couldn't watch
+      their daughter in such terrible pain.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &514983447
 Transform:
   m_ObjectHideFlags: 0
@@ -1167,14 +1176,17 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - For this ring they created, had powers of life and death, INSERT MORE DIALOGUE
-      HERE
+    - The father discussed long and hard with his family. Finally all of the family
+      agreed they must do everything they could to help the girl. The family gathered
+      at the shrine in the enchanted forest and sacrificed their powers and forged
+      a ring. The ring that would give this girl life and power beyond their knowledge.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1097721990
 Transform:
   m_ObjectHideFlags: 0
@@ -1237,13 +1249,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - Cinematic Sentence 9 - INSERT MORE DIALOGUE HERE
+    - After first laying the ring around the girl's neck she improved dramatically,
+      she could walk again, eat again, run again. The family rejoiced at the success,
+      and the girl's recovery.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1105658357
 Transform:
   m_ObjectHideFlags: 0
@@ -1340,6 +1355,79 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1281753236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1281753237}
+  - component: {fileID: 1281753238}
+  m_Layer: 0
+  m_Name: Trigger-11
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1281753237
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281753236}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1363735551}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1281753238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1281753236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7314db7e4a615bf4fadaf59503628f61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _comType: 0
+  _calculateStringValues: 0
+  _endingReplacements: 0
+  _indexesToBeReplaced: 
+  _displayColors: 
+  _displayBrothersSaved: 
+  _displayBrothersLeft: 
+  _replacementPositions: 
+  _dialogue:
+    transformNpcs: 0
+    speakerTag: 
+    moveSpeaker: 0
+    displayName: 0
+    displayContinue: 0
+    displayDialogue: 1
+    enableSpeakerVisibility: 0
+    moveSentenceIndexes: 
+    speakerName: 
+    sentences:
+    - The ring had absorbed the brothers' powers and bestowed them upon the girl.
+      Firebolt a powerful offensive spell in which she shoots fire at her target,
+      she quickly became known for the powers. Across the realm she was known as the
+      Witch of Violl's Garden, and this is where our story begins.
+  _choices:
+    _choicesText: []
+  _choiceIndex: 0
+  _responseOptions: 
+  _moveNpc: 0
+  _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1362450217
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,6 +1640,7 @@ Transform:
   - {fileID: 1609335807}
   - {fileID: 1105658357}
   - {fileID: 1767975646}
+  - {fileID: 1281753237}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1832,13 +1921,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - Cinematic Sentence 8 - INSERT MORE DIALOGUE HERE
+    - The ring absorbed all of the brothers' powers. Whether or not this would help
+      the girl they did not know, but it was the only option, hoping their sacrifice
+      would work they gave the girl the ring.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1609335807
 Transform:
   m_ObjectHideFlags: 0
@@ -2049,13 +2141,15 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - Cinematic Sentence 10 - INSERT MORE DIALOGUE HERE
+    - They quickly learned that the ring had other powers, but the girl was not to
+      know.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1767975646
 Transform:
   m_ObjectHideFlags: 0
@@ -2118,14 +2212,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - But there was a problem with the daughter, she was so weak and small. The parents
-      knew their worst nightmare was happening, their only daughter was dying.
+    - She grew a few years and the parents knew that she was weak. After all of this
+      time could it be that their dream would be ripped from underneath their feet,
+      just as life began to feel just and right again?
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1818419494
 Transform:
   m_ObjectHideFlags: 0
@@ -2188,13 +2284,16 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: 
     sentences:
-    - But for every attempt resulted in another son.
+    - But it was not meant to be at first, the mother gave birth to a beautifully
+      healthy baby boy. The parent's couldn't help but feel a slight disappointment,
+      so decided to keep trying until they had a little girl.
   _choices:
     _choicesText: []
   _choiceIndex: 0
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &1836124434
 Transform:
   m_ObjectHideFlags: 0
