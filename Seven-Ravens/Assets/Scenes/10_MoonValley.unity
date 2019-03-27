@@ -189,16 +189,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.4379425
-      objectReference: {fileID: 0}
-    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.1972675
-      objectReference: {fileID: 0}
     - target: {fileID: 5717310180303332772, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
       propertyPath: _isCerberus
@@ -218,6 +208,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _isCerberus
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4379425
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.1972675
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c2f1e19d4ce4dd28ec210b28758afa, type: 3}
@@ -12214,8 +12214,8 @@ MonoBehaviour:
   _choices:
     _choicesText:
     - I can't help you! Now leave me alone!
-    - I don't have time to stay and help, but let me give you this haste ability to
-      allow you to move yourself to safety.
+    - I don't have time to stay and help, but let me channel you this haste ability
+      to allow you to move yourself to safety.
   _choiceIndex: 2
   _responseOptions: 0100000002000000
   _moveNpc: 0
@@ -12890,16 +12890,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.4379425
-      objectReference: {fileID: 0}
-    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.1972675
-      objectReference: {fileID: 0}
     - target: {fileID: 5717310180303332772, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
       propertyPath: _isCerberus
@@ -12919,6 +12909,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _isCerberus
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4379425
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.1972675
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c2f1e19d4ce4dd28ec210b28758afa, type: 3}
@@ -13030,16 +13030,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: -1
       objectReference: {fileID: 0}
-    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
-        type: 3}
-      propertyPath: m_Offset.y
-      value: -0.4379425
-      objectReference: {fileID: 0}
-    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 3.1972675
-      objectReference: {fileID: 0}
     - target: {fileID: 5717310180303332772, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
         type: 3}
       propertyPath: _isCerberus
@@ -13059,6 +13049,16 @@ PrefabInstance:
         type: 3}
       propertyPath: _isCerberus
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -0.4379425
+      objectReference: {fileID: 0}
+    - target: {fileID: 6537789758233812261, guid: 56c2f1e19d4ce4dd28ec210b28758afa,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 3.1972675
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 56c2f1e19d4ce4dd28ec210b28758afa, type: 3}
@@ -13147,7 +13147,7 @@ PrefabInstance:
     - target: {fileID: 6733434539030804056, guid: d34dee5c604774689a1f36149f92b276,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Thank you for not giving me to the Cerberus, was help too much to ask?
+      value: '*Gasps for air* Was help too much to ask? '
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d34dee5c604774689a1f36149f92b276, type: 3}

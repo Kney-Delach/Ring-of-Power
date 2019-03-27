@@ -27662,7 +27662,8 @@ MonoBehaviour:
     speakerName: Dad
     sentences:
     - He lives in a tower along this path, you will need to collect some valuables
-      in order to bribe the dwarf that guards the bridge to his lair.
+      in order to bribe the dwarf that guards the bridge to his lair. Once you collect
+      these items, you can view them in your inventory by pressing [I].
   - transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
@@ -27684,7 +27685,8 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dad
     sentences:
-    - The wizard used to terrorise towns by turning the inhabitants into ravens.
+    - The wizard used to terrorise towns by turning the inhabitants into ravens. So
+      be careful when approaching him.
   - transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
@@ -27695,8 +27697,8 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dad
     sentences:
-    - 'Reversing the curse required transformation stones, I can only imagine he has
-      done the same to our family. '
+    - Reversing the curse required transformation stones, I can only imagine he has
+      done the same to our family.
   - transformNpcs: 0
     speakerTag: 
     moveSpeaker: 0
@@ -27730,14 +27732,14 @@ MonoBehaviour:
     speakerName: Dad
     sentences:
     - The ring around your neck will grant you bonus mana upon killing creatures.
-      Be careful using your offensive spells however, transformation stones can be
-      damaged easily.
+      Be careful using your offensive spells however, if creatures are carrying transformation
+      stones, the stones may be damaged easily.
   _waitTimes:
   - 8
   - 5
   - 5
   - 5
-  - 8
+  - 10
   - 5
   - 6
   - 8
