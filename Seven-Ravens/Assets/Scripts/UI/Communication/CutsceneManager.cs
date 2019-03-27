@@ -100,7 +100,10 @@ namespace Rokemon {
             _dialogueCounts = _dialogues.Length;
             
             if(_playNextDialogue)
+            {
                 _active = true;
+                AbilityDescriptionUIController.Instance.Activatable = true;
+            }
 
         }
 
@@ -188,6 +191,7 @@ namespace Rokemon {
                 // TODO: REPLACE PLAYER POSITION
                 PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Player";    
                 PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;  
+                AbilityDescriptionUIController.Instance.Activatable = true;
             }
             
             LevelLoader.LoadNextLevel();
@@ -204,6 +208,7 @@ namespace Rokemon {
             }
 
             _active = true;
+            AbilityDescriptionUIController.Instance.Activatable = true;
             _playNextDialogue = true;
         }
 

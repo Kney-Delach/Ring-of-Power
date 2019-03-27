@@ -1782,7 +1782,8 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Mom
     sentences:
-    - Ok, I'm just going to grab a drink from our supply store first.
+    - Ok lets go, i'm just going to grab a bottle of water from our picnic bench for
+      the journey.
   - transformNpcs: 0
     speakerTag: WIZARD
     moveSpeaker: 0
@@ -1793,8 +1794,9 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Evil Wizard
     sentences:
-    - Oh my, that girl has such a strong firebolt spell, I must aquire it for myself!
-      I'll need to lure her to my lair, she'd do anything for her family!
+    - '*Appears out of thin air* Oh my! That young witch has such a strong firebolt
+      spell, I must aquire it for myself! I''ll need to lure her to my lair, looks
+      like she has a strong bond with her family, I can exploit this!'
   - transformNpcs: 0
     speakerTag: WIZARD
     moveSpeaker: 1
@@ -1805,7 +1807,7 @@ MonoBehaviour:
     moveSentenceIndexes: 00000000
     speakerName: Evil Wizard
     sentences:
-    - KA KA KA KA KA KA
+    - '*Transforms into raven* KA KA KA KA KA KA'
   - transformNpcs: 0
     speakerTag: WIZARD
     moveSpeaker: 1
@@ -1827,7 +1829,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Mom
     sentences:
-    - Owch! That raven just bit me!
+    - 'Ouch! That raven just bit me! '
   - transformNpcs: 0
     speakerTag: MOM
     moveSpeaker: 0
@@ -1860,10 +1862,11 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Girl
     sentences:
-    - That looks really black, lets get you home so you can rest.
+    - It doesn't look so good, looks like its turning black, lets get you home so
+      you can rest.
   _waitTimes:
   - 4
-  - 6
+  - 7.5
   - 3.5
   - 0.1
   - 3.5
@@ -32360,16 +32363,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
-    - target: {fileID: 7819854374513651722, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819854374513651722, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1174269996861166691, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33695,6 +33688,21 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4628093965384358238, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819854374513651722, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819854374513651722, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1493646881134559999, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
         type: 3}
       propertyPath: m_Name
@@ -33704,11 +33712,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BodyText
-      objectReference: {fileID: 0}
-    - target: {fileID: 4628093965384358238, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1019968374085492190, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
         type: 3}

@@ -159,6 +159,8 @@ namespace Rokemon {
             }
             else 
             {
+                AbilityDescriptionUIController.Instance.Activatable = false;
+                AbilityDescriptionUIController.Instance.HideCanvas();
                 
                 if(InventoryUIController.Instance != null)
                     InventoryUIController.Instance.HideInventory();
@@ -223,6 +225,7 @@ namespace Rokemon {
             _currentComType = ComType.None;  // update current communication type
             HideDialogueUI();
             _sentences.Clear();
+            AbilityDescriptionUIController.Instance.Activatable = true;
         }
         // reset variables for ending communication
         public void EndCommunication()

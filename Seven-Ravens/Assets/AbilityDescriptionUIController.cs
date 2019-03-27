@@ -35,6 +35,8 @@ namespace Rokemon {
 
         // reference to active item
         private Ability _ability; 
+        private bool _activatable = true; 
+        public bool Activatable { get { return _activatable ;} set { _activatable = value ; } }
 
         #region Singleton
 
@@ -82,25 +84,29 @@ namespace Rokemon {
         // displays description canvas
         public void DisplayCanvas(Ability ability)
         {  
-            Debug.Log("Display Canvas");
-            _ability = ability;
-            _descriptionTitle.text = _ability._name;
-            _descriptionText.text = _ability._description;
-            if(_ability._name == "Invisibility" || _ability._name == "ProtectiveBubble" || _ability._name == "Charm" || _ability._name == "Haste")
-                _damageText.text = "Last Time: " + _ability._damage +"s";
-            else if(_ability._name == "RemoveRoots" || _ability._name == "WaterFreeze")
-                _damageText.text = "";
-            else if(_ability.name == "Heal")
-                _damageText.text = "Amount: " + _ability._damage + "hp";
-            else 
-            _damageText.text = "Damage: " + _ability._damage;
+            if(_activatable)
+            {
+                Debug.Log("Display Canvas");
+                _ability = ability;
+                _descriptionTitle.text = _ability._name;
+                _descriptionText.text = _ability._description;
+                if(_ability._name == "Invisibility" || _ability._name == "ProtectiveBubble" || _ability._name == "Charm" || _ability._name == "Haste")
+                    _damageText.text = "Last Time: " + _ability._damage +"s";
+                else if(_ability._name == "RemoveRoots" || _ability._name == "WaterFreeze")
+                    _damageText.text = "";
+                else if(_ability.name == "Heal")
+                    _damageText.text = "Amount: " + _ability._damage + "hp";
+                else 
+                _damageText.text = "Damage: " + _ability._damage;
 
-            _manaText.text = "Mana Cost: " + _ability._cost; 
-            _reloadText.text = "Reload Time: " + _ability._reloadTime + "s";
-            _descriptionImage.sprite = ability._icon;
-            _descriptionCanvasGroup.interactable = true; 
-            _descriptionCanvasGroup.blocksRaycasts = true; 
-            _descriptionCanvasGroup.alpha = 1;
+                _manaText.text = "Mana Cost: " + _ability._cost; 
+                _reloadText.text = "Reload Time: " + _ability._reloadTime + "s";
+                _descriptionImage.sprite = ability._icon;
+                _descriptionCanvasGroup.interactable = true; 
+                _descriptionCanvasGroup.blocksRaycasts = true; 
+                _descriptionCanvasGroup.alpha = 1;
+            }
+
         }
     }
 

@@ -18,6 +18,8 @@ namespace Rokemon {
             if(CutsceneManager.Instance.Active && !_skipableActivated)
             {
                 _skipableActivated = true;
+                AbilityDescriptionUIController.Instance.HideCanvas();
+                AbilityDescriptionUIController.Instance.Activatable = false;
                 ActivateSkipable();
             }
             if(CutsceneManager.Instance.Active && Input.GetKeyDown(KeyCode.Space))
@@ -56,6 +58,7 @@ namespace Rokemon {
 
                 PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Player";    
                 PlayerController.Instance.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;  
+                AbilityDescriptionUIController.Instance.Activatable = true;
             }
             
             LevelLoader.LoadNextLevel();
