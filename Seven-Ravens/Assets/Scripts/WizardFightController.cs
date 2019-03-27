@@ -74,9 +74,15 @@ namespace Rokemon {
 
         public static WizardFightController Instance { get { return _instance ; } }
 
-        public void Awake()
+        private void Awake()
         {
             _instance = this; 
+        }
+
+        private void OnDestroy()
+        {
+            if(_instance == this)
+                _instance = null;
         }
 
         public string GetColorsText()

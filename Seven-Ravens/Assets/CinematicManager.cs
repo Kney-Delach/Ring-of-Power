@@ -45,6 +45,12 @@ namespace Rokemon {
             count = 0;
         }
 
+        private void OnDestroy()
+        {
+            if(_instance == this)
+                _instance = null;
+        }
+
         private void Update()
         {
             if(_active && !_cinematicComplete)
