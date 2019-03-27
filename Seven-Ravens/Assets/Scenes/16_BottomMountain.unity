@@ -458,18 +458,19 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dwarf
     sentences:
-    - Who Goes There?
+    - Well go on then, Who are you?
     - And what is your excuse for troubling me?
-    - Hand 'em over and I've never even seen you come near this bridge.
-    - I guess not, enjoy your time at the Wizards Lair
+    - Well My Master Probably won't like that very much.
+    - Oh I love Merek, I wonder what he wants now.
   _choices:
     _choicesText:
-    - I am the with of Violl's Garden and I'm here to retrieve my family!
+    - I am the witch of Violl's Garden and I'm here to retrieve my family!
     - I am a messenger from the Wizard's Uncle.
   _choiceIndex: 2
   _responseOptions: 0300000003000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!4 &107234259
 Transform:
   m_ObjectHideFlags: 0
@@ -25915,18 +25916,19 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Dwarf
     sentences:
-    - And why should I allow you past?
-    - Excellent! Well Hand them over then!
-    - That's it, I'm taking payment if you like it or not. Be glad I'm sparing your
-      life, tiny woman.
+    - Why should I allow you past?
+    - Excellent! Hand 'em over then!
+    - 'Sorry to have bothered you, miss. It is customary in my culture for payment
+      to cross a bridge however, so I will be taking any valuables you have. '
   _choices:
     _choicesText:
-    - I'm willing to pay you these gems to cross?
-    - Because if you don't I'll smite you down.
+    - I've collected some gems you can have in exchange for safe passage.
+    - The Wizard summoned me, I feel he might have a thing or two to say if you don't
   _choiceIndex: 1
   _responseOptions: 0200000002000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1678537922
 GameObject:
   m_ObjectHideFlags: 0
