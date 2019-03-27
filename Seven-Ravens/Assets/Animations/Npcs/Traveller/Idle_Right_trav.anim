@@ -20,9 +20,23 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300014, guid: 568ffc561d66a4b449d45725a31726b0, type: 3}
+      value: {fileID: 21300000, guid: 2acf2d86733a44e89b6b47a793bcfca2, type: 2}
     attribute: m_Sprite
     path: 
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 69ccd40ac1fba4a9faa2202702cb9a3b, type: 2}
+    attribute: m_Sprite
+    path: EyeSprite
+    classID: 212
+    script: {fileID: 0}
+  - curve:
+    - time: 0
+      value: {fileID: 21300000, guid: 65785381fe5da4382971f0defe9b17a3, type: 2}
+    attribute: m_Sprite
+    path: HairSprite
     classID: 212
     script: {fileID: 0}
   m_SampleRate: 60
@@ -39,8 +53,24 @@ AnimationClip:
       typeID: 212
       customType: 23
       isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 2616102932
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
+    - serializedVersion: 2
+      path: 316664668
+      attribute: 0
+      script: {fileID: 0}
+      typeID: 212
+      customType: 23
+      isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300014, guid: 568ffc561d66a4b449d45725a31726b0, type: 3}
+    - {fileID: 21300000, guid: 2acf2d86733a44e89b6b47a793bcfca2, type: 2}
+    - {fileID: 21300000, guid: 69ccd40ac1fba4a9faa2202702cb9a3b, type: 2}
+    - {fileID: 21300000, guid: 65785381fe5da4382971f0defe9b17a3, type: 2}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
