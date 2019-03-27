@@ -9,6 +9,7 @@ namespace Rokemon {
     {
         public string _name = "Ability Name"; 
 
+        public Sprite _icon;
         //public Sprite _sprite; 
 
         public string _description = "Description of ability goes here"; 

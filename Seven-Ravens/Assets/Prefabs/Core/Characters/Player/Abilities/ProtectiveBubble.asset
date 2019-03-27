@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1b420d30c62584696b36150d5859b9, type: 3}
   m_Name: ProtectiveBubble
   m_EditorClassIdentifier: 
-  _inCooldown: 0
-  _active: 1
   _name: ProtectiveBubble
+  _icon: {fileID: 21300000, guid: b512fdb2964ff0148acf852eafbfb057, type: 3}
   _description: Player becomes invinsible for 10 seconds
   _damage: 10
   _speed: 1

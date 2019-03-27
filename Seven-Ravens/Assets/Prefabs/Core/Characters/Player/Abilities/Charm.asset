@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Charm
   m_EditorClassIdentifier: 
   _name: Charm
+  _icon: {fileID: 21300000, guid: 4bca3af858b179d4ca9fa2e7413e096b, type: 3}
   _description: Can charm certain creatures, turning them friendly
   _damage: 15
   _speed: 0

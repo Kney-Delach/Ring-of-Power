@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: RemoveRoots
   m_EditorClassIdentifier: 
   _name: RemoveRoots
+  _icon: {fileID: 21300000, guid: 3c08b6daa89fe844192cc6540d4dc7da, type: 3}
   _description: Removes roots from trapped creatures
   _damage: 0
   _speed: 0
