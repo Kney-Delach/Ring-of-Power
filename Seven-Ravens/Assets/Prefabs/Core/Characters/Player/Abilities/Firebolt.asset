@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Firebolt
   m_EditorClassIdentifier: 
   _name: Firebolt
+  _icon: {fileID: 21300000, guid: 33fad926e144bdf459ac46c2b10324e0, type: 3}
   _description: Sends a bolt of fire in the direction specified
   _damage: 50
   _speed: 1

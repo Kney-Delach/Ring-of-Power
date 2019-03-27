@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b1b420d30c62584696b36150d5859b9, type: 3}
   m_Name: Invisibility
   m_EditorClassIdentifier: 
-  _inCooldown: 0
-  _active: 1
   _name: Invisibility
+  _icon: {fileID: 21300000, guid: 821fd9779feadf0428cb6e15fff4e146, type: 3}
   _description: Player goes invisible for 5 seconds
   _damage: 5
   _speed: 1

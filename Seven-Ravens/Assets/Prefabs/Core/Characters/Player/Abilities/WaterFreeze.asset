@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: WaterFreeze
   m_EditorClassIdentifier: 
   _name: WaterFreeze
+  _icon: {fileID: 21300000, guid: 6abd60184839c014a9cd85c78052530e, type: 3}
   _description: Freezes water into a walkable layer of ice
   _damage: 0
   _speed: 0
