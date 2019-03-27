@@ -288,6 +288,7 @@ namespace Rokemon {
             }
             if(_isCerberus && !_isPhoenix)
             {
+                PlayerController.Instance.Mana.MaxValue += 1; 
                 GetComponent<Collider2D>().enabled = false;
                 PlayerController.Instance.RemoveTarget();
                 gameObject.layer = 1;   
@@ -309,6 +310,7 @@ namespace Rokemon {
 
             if(_isPhoenix && _isCerberus)
             {
+                PlayerController.Instance.Mana.MaxValue += 5; 
                 FireboltController[] firebolts = FindObjectsOfType<FireboltController>();
                 EnemyFireboltController[] enemyFirebolts = FindObjectsOfType<EnemyFireboltController>();
 
