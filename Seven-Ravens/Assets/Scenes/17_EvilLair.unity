@@ -461,8 +461,8 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: You took your time you litte witch, Get past my minions and we shall
-        see about freeing your pathetic family!
+      value: You actually came all this way? You think I'll just return your family?
+        If you can defeat my minions we can discuss the next steps from here...
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
@@ -705,7 +705,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 271771687, guid: 66dec6422c8fd1740a01b2d8287c175f, type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Woah Phoenix, calm down.
+      value: Phoenix, control yourself, don't shoot, no turn around, lay down, ahh...
       objectReference: {fileID: 0}
     - target: {fileID: 271771687, guid: 66dec6422c8fd1740a01b2d8287c175f, type: 3}
       propertyPath: _dialogue.speakerName
@@ -15674,11 +15674,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -15688,6 +15683,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.909419
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
@@ -25207,11 +25207,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -25221,6 +25216,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.7589064
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
@@ -33766,11 +33766,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 1648432148103906677, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_Offset.y
@@ -33780,6 +33775,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Size.y
       value: 2.7589064
+      objectReference: {fileID: 0}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5351688b8bee4bd4d8a016e425263333, type: 3}
