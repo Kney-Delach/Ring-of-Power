@@ -66,7 +66,6 @@ namespace Rokemon{
         {
             if (item.showInInventory) {
                 if (_items.Count >= _itemSlots) {
-                    Debug.Log("ItemInventory Add: Not enough room in inventory!"); // TODO: Display UI notification
                     return;
                 }
 

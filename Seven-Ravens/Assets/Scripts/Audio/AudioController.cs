@@ -32,6 +32,13 @@ public class AudioController : MonoBehaviour
         _audioManager.PlaySound(_soundName);    
     }
 
+    public void StopSound()
+    {
+        if(_audioManager == null)
+            return; 
+        _audioManager.StopSound(_soundName);
+    }
+
     private void PlaySceneMusic()
     {
         if(_audioManager == null)

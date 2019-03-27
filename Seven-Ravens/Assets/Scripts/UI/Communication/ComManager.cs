@@ -353,7 +353,6 @@ namespace Rokemon {
         public void EvaluateChoice(int choiceMadeIndex)
         {  
             ActionBarUIController.Instance.HideAllFlashes();
-            Debug.Log("Evaluating Choice");
             ResponseType responseChosen = _currentReponses[choiceMadeIndex-1];
             switch(responseChosen)
             {

@@ -36,7 +36,7 @@ public class AudioManager : MonoBehaviour
         PlaySound(newSoundName);
     }
 
-    private void StopSound(string soundName)
+    public void StopSound(string soundName)
     {
         Sound sound; 
         if (_soundDictionary.TryGetValue(soundName, out sound))

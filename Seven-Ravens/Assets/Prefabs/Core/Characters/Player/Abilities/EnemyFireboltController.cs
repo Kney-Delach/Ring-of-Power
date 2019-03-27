@@ -66,8 +66,6 @@ namespace Rokemon {
                 _rigidBody.velocity = Vector2.zero;
                 _target.GetComponent<Stats>().ReduceValue(_damage);
                 _target = null;
-                Debug.Log("Wizard attacked by phoenix");
-
                 
                 Destroy(gameObject);
             }

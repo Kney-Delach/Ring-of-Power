@@ -29,7 +29,6 @@ namespace Rokemon {
 	public virtual void Use ()
 	{
         // TODO: use the item
-        Debug.Log("Used item: " + name);
 	}
 
 	// Call this method to remove the item from inventory

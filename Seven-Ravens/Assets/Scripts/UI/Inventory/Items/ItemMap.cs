@@ -9,7 +9,6 @@ namespace Rokemon {
 
         public override void Use()
         {
-            Debug.Log("Used item MAP: " + name);
         }
     }
 }

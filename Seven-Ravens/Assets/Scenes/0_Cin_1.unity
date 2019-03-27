@@ -437,8 +437,8 @@ MonoBehaviour:
     sentences:
     - There once was a man and his wife, they grew tired of living as outsiders in
       a world where the man's magical abilities were shunned, they had always wanted
-      a family of their own. When the mother was first with child they dreamt it would
-      be a girl.
+      a family of their own. When the man's wife was first with child they dreamt
+      it would be a girl.
   _choices:
     _choicesText: []
   _choiceIndex: 0
@@ -1308,7 +1308,7 @@ MonoBehaviour:
   _comController: {fileID: 1363735550}
   _imageRenderer: {fileID: 1363705712}
   waitTimes:
-  - 12.5
+  - 13.5
   - 10.5
   - 9.5
   - 7.5
@@ -1317,7 +1317,7 @@ MonoBehaviour:
   - 15.5
   - 10.5
   - 10.5
-  - 16.5
+  - 12.5
   - 3
   _images:
   - {fileID: 21300000, guid: 84cc526675a2d87468b14e8a6921816f, type: 3}
@@ -1418,8 +1418,7 @@ MonoBehaviour:
     speakerName: 
     sentences:
     - The ring had absorbed the brothers' powers and bestowed them upon the girl.
-      Firebolt a powerful offensive spell in which she shoots fire at her target,
-      she quickly became known for the powers. Across the realm she was known as the
+      She quickly became known for her powers. Across the realm she was known as the
       Witch of Violl's Garden, and this is where our story begins.
   _choices:
     _choicesText: []

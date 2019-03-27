@@ -168,9 +168,7 @@ namespace Rokemon {
                     if(_transformBrothers && _currentTriggerIndex == _transformBrothersIndex)
                     {
                         WizardFightController.Instance.TransformBrothers();
-                        Debug.Log("Brothers Transformed: Index - " + _currentTriggerIndex);
                     }
-                    Debug.Log("REACHED SIMULATION POINT 4");
                     PlayerController.Instance.FreezePlayer();
                     TriggerCommunicationEvents();
                 }
@@ -182,7 +180,6 @@ namespace Rokemon {
                     else 
                     {
                         PlayerController.Instance.UnfreezePlayer();
-                        Debug.Log("Exiting ComController");
                         gameObject.SetActive(false);
                     }
 

@@ -587,7 +587,6 @@ namespace Rokemon
                                 Tangler targetTangler = _currentTarget.gameObject.GetComponentInParent<Tangler>();
                                 if(targetTangler.IsBunny && _isRooted)
                                 {
-                                    Debug.Log("Can't free bunny if rooted ");
                                 }
                                 else
                                 {
@@ -686,7 +685,9 @@ namespace Rokemon
             else 
             {
                 if(!_activeCheckDatabase[spellName])
-                    Debug.Log("Inactive Spell: " + spellName);
+                {
+
+                }
             }
            
         }
