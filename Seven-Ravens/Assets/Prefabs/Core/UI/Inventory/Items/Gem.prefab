@@ -73,6 +73,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _comType: 0
+  _calculateStringValues: 0
+  _endingReplacements: 0
+  _indexesToBeReplaced: 
+  _displayColors: 
+  _displayBrothersSaved: 
+  _displayBrothersLeft: 
+  _replacementPositions: 
   _dialogue:
     transformNpcs: 0
     speakerTag: 
@@ -91,6 +98,7 @@ MonoBehaviour:
   _responseOptions: 
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!114 &3439349815149163353
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,6 +123,7 @@ MonoBehaviour:
   _transformBrothers: 0
   _transformBrothersIndex: 0
   _isFinalPhoenixDeath: 0
+  _cinematicController: 0
 --- !u!1 &7430690126803258461
 GameObject:
   m_ObjectHideFlags: 0
@@ -128,6 +137,7 @@ GameObject:
   - component: {fileID: 761684123870552391}
   - component: {fileID: 3019734294846824038}
   - component: {fileID: 22735575038037170}
+  - component: {fileID: 2831355944526311923}
   m_Layer: 0
   m_Name: ItemInformation
   m_TagString: Untagged
@@ -239,6 +249,7 @@ MonoBehaviour:
   _item: {fileID: 11400000, guid: a39743cc497f0455cbdd518ecc1a4a7b, type: 2}
   _isGem: 1
   _unlockedZone: {fileID: 0}
+  _itemPickupSFX: {fileID: 2831355944526311923}
 --- !u!95 &22735575038037170
 Animator:
   serializedVersion: 3
@@ -258,3 +269,17 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &2831355944526311923
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7430690126803258461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0041a343ccd7d21408549ccaf4848ec5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _soundName: GemPickup
+  _isSceneMusic: 0

@@ -49,42 +49,42 @@ MonoBehaviour:
   - _audioType: 2
     _soundName: MenuSong
     _audioClip: {fileID: 8300000, guid: b8a2c5e3183c8b34a8e53945c9aef0cc, type: 3}
-    _volume: 0
+    _volume: 0.3
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: Firebolt
     _audioClip: {fileID: 8300000, guid: 8140b74055733bc4082e9a77c68ca967, type: 3}
-    _volume: 0
+    _volume: 0.6
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: Haste
     _audioClip: {fileID: 8300000, guid: 30a83bd878f032147b51e3df536f63c0, type: 3}
-    _volume: 0
+    _volume: 0.6
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: Invisibility
     _audioClip: {fileID: 8300000, guid: e0f4b39221752ba40b53bab8eefdd7c0, type: 3}
-    _volume: 0
+    _volume: 0.6
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: ProtectiveBubble
     _audioClip: {fileID: 8300000, guid: 2f711688772cdda43aa9346f0814e0f8, type: 3}
-    _volume: 0
+    _volume: 0.6
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: RemoveRoots
     _audioClip: {fileID: 8300000, guid: 3ec9c080267cda14389a065d38004fea, type: 3}
-    _volume: 0
+    _volume: 0.6
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: WaterFreeze
     _audioClip: {fileID: 8300000, guid: bec640df71ba95f49ad80d1653403bbb, type: 3}
-    _volume: 0
+    _volume: 0.6
     _audioSource: {fileID: 0}
   - _audioType: 1
     _soundName: Charm
     _audioClip: {fileID: 8300000, guid: d55c2c1f9313c6a47b28089609a0b03e, type: 3}
-    _volume: 0
+    _volume: 0.6
     _audioSource: {fileID: 0}
   - _audioType: 2
     _soundName: TrainingGround
@@ -144,16 +144,51 @@ MonoBehaviour:
   - _audioType: 1
     _soundName: Heal
     _audioClip: {fileID: 8300000, guid: a1ccdc642291f7444b7d5e9460774057, type: 3}
-    _volume: 0
+    _volume: 0.6
     _audioSource: {fileID: 0}
   - _audioType: 2
     _soundName: Mysterious
     _audioClip: {fileID: 8300000, guid: 9d50523193a937d47a0adf95ca12a7e9, type: 3}
-    _volume: 0
+    _volume: 0.7
     _audioSource: {fileID: 0}
   - _audioType: 2
     _soundName: ForestFireValley
     _audioClip: {fileID: 8300000, guid: 36cc42c010dbbbd41921ba5198bc90a2, type: 3}
+    _volume: 0.5
+    _audioSource: {fileID: 0}
+  - _audioType: 2
+    _soundName: Cinematic
+    _audioClip: {fileID: 8300000, guid: 10c222f58335536408f936a5b0b1a0c8, type: 3}
+    _volume: 0.3
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: WizardApp
+    _audioClip: {fileID: 8300000, guid: d9a3eab071b6d2643864ede2591836e9, type: 3}
+    _volume: 0.7
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Raven
+    _audioClip: {fileID: 8300000, guid: 253e799094f567a45927bea8082e6dbb, type: 3}
+    _volume: 0.8
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: Transform
+    _audioClip: {fileID: 8300000, guid: 91150899872815b43982169494a92a98, type: 3}
+    _volume: 0
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: GoodPickup
+    _audioClip: {fileID: 8300000, guid: 40f531a5d3511364e9d7eadc844d85e2, type: 3}
+    _volume: 0.7
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: CursedPickup
+    _audioClip: {fileID: 8300000, guid: f37b04480e0af1640b9850f6ae0ce233, type: 3}
+    _volume: 0.7
+    _audioSource: {fileID: 0}
+  - _audioType: 1
+    _soundName: GemPickup
+    _audioClip: {fileID: 8300000, guid: dbf2d9362e017af458149cad0ba57dd3, type: 3}
     _volume: 0
     _audioSource: {fileID: 0}
 --- !u!114 &4303886255367178559

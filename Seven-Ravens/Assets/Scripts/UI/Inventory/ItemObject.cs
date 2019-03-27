@@ -27,6 +27,8 @@ namespace Rokemon{
         [SerializeField]
         private Collider2D _unlockedZone;
 
+        [SerializeField]
+        private AudioController _itemPickupSFX; 
 
         // reference to player tag
         private static string PLAYER_TAG = "Player";
@@ -63,6 +65,7 @@ namespace Rokemon{
         {
             if (collision.tag == PLAYER_TAG)
             {
+                _itemPickupSFX.PlaySfx();
                 ItemInventory.Instance.Add(_item);
                 gameObject.SetActive(false);
                 _itemIdDatabase[_itemId] = true; // set collected in database
