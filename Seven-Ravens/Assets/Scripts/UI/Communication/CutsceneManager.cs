@@ -14,6 +14,7 @@ namespace Rokemon {
         // reference to transition name 
         [SerializeField]
         private string _transitionName; 
+        public string TransitionName { get { return _transitionName ; } }
 
         // if cutscene triggered automatically, set to true
         [Header("Cutscene automation trigger")]
@@ -31,9 +32,11 @@ namespace Rokemon {
 
         [SerializeField]
         private bool _deactivatePlayer = false; 
+        public bool DeactivatePlayer { get { return _deactivatePlayer ; } }
 
         [SerializeField]
         private bool _activatePlayer = false;
+        public bool ActivatePlayer { get {return _activatePlayer; }}
 
         [SerializeField]
         private GameObject[] _transformNpcObjects; 
@@ -43,7 +46,7 @@ namespace Rokemon {
 
         // reference to active status of cutscene
         private bool _active = false;
-        public bool Active { get { return _active ; } }
+        public bool Active { get { return _active ; }  set { _active = value ; } }
 
         [SerializeField]
         private float _playDelay = 0.5f;
