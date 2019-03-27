@@ -65,6 +65,7 @@ namespace LevelManagement
             if (_menuParent == null)
             {
                 GameObject menuParentObject = new GameObject("Menus");
+                menuParentObject.gameObject.tag = "Persist";
                 _menuParent = menuParentObject.transform;
             }
 

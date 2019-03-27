@@ -177,9 +177,15 @@ namespace Rokemon {
                 else 
                 {
                     _currentEventComplete = true;
-                    PlayerController.Instance.UnfreezePlayer();
-                    Debug.Log("Exiting ComController");
-                    gameObject.SetActive(false);
+                    if(_transformBrothersIndex != 0)
+                        EndGame.Instance.ComepleteGame();
+                    else 
+                    {
+                        PlayerController.Instance.UnfreezePlayer();
+                        Debug.Log("Exiting ComController");
+                        gameObject.SetActive(false);
+                    }
+
                 }
             }
             else if(!_cinematicController) 

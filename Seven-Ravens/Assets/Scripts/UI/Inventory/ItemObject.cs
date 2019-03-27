@@ -8,7 +8,7 @@ namespace Rokemon{
     {
         // reference to total item ID counts 
         private static int _itemIdCounter = 0;
-
+        public static int ItemIdCounter { set {_itemIdCounter = value;} }
         // reference to this item's ID
         [SerializeField]
         private int _itemId; 
@@ -16,7 +16,7 @@ namespace Rokemon{
 
         // reference storing all item IDs and whether or not they have been collected
         private static Dictionary<int, bool> _itemIdDatabase;
-
+        public static Dictionary<int, bool> ItemIdDatabase { set {_itemIdDatabase = value ; }}
         // reference to this item object's item
         [SerializeField]
         private Item _item; 
@@ -38,6 +38,8 @@ namespace Rokemon{
             if(_itemIdDatabase == null)
                 _itemIdDatabase = new Dictionary<int, bool>();
         }
+
+
 
 
         private void Start()

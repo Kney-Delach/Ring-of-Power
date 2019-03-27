@@ -166,7 +166,12 @@ namespace Rokemon
         private void OnDestroy()
         {
             if (_instance == this)
+            {
                 _instance = null;
+                _abilitiesDatabase = null;
+                _activeCheckDatabase = null; 
+                _reloadingCheckDatabase = null;; 
+            }
         }
 
         #endregion
