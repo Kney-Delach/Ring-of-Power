@@ -283,7 +283,7 @@ MonoBehaviour:
     sentences:
     - I think you might've mastered your abilities!
     - You can also hide from your enemies by turning invisible with [T]. Alongside
-      covering yourself with a protective bubble [F]
+      covering yourself with a protective bubble [F].
     - Let me know when you're ready to go home!
   _choices:
     _choicesText: []
@@ -539,7 +539,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
       propertyPath: _dialogue.sentences.Array.size
-      value: 2
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
       propertyPath: _choices._choicesText.Array.size
@@ -547,8 +547,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Time for your spell practice! Try shooting a fireball at that dummy on
-        the left by targetting it with the mouse then press [E]
+      value: 'You can target an enemy by clicking it with the left mouse button, you
+        can also use the right mouse button to toggle the range view of your spells. '
       objectReference: {fileID: 0}
     - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
       propertyPath: _comType
@@ -560,6 +560,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
       propertyPath: _dialogue.sentences.Array.data[1]
+      value: 'You can see descriptions of all your abilities by hovering over the
+        icons in the action bar. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _dialogue.sentences.Array.data[2]
+      value: Try shooting a fireball at that dummy on the left by targetting it then
+        press [E].
+      objectReference: {fileID: 0}
+    - target: {fileID: 819293613, guid: 239c09413ca73ba4f81be3b3ddd30a10, type: 3}
+      propertyPath: _dialogue.sentences.Array.data[3]
       value: Come back and speak to me when you're done.
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -638,11 +648,11 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Mom
     sentences:
-    - What is it sweety?
+    - Ready to leave?
   _choices:
     _choicesText:
-    - Thanks Mom, I'm shattered, lets go home and see Dad!
-    - Can we stay a little longer? I'd like to practice some more
+    - Yeah I'm shattered, lets go home and see Dad!
+    - Not quite, I'd like to practice some more.
   _choiceIndex: 1
   _responseOptions: 0000000003000000
   _moveNpc: 0
@@ -1622,7 +1632,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Mom
     sentences:
-    - Great Shooting! Now Charm the middle dummy with [X], Come back when you're ready!
+    - Great Shooting! Now Charm the right dummy with [X], Come back when you're ready!
   _choices:
     _choicesText:
     - Choice 1
@@ -2172,7 +2182,7 @@ MonoBehaviour:
       the ability to untangle yourself!
     - Try walking into one of the vines by the dummies and targetting it.
     - Then press [G] to unroot yourself. Alternatively you can fireball your way out,
-      but that takes a bit longer
+      but that takes a bit longer...
   _choices:
     _choicesText:
     - Choice 1
@@ -16830,7 +16840,7 @@ MonoBehaviour:
     speakerName: Mom
     sentences:
     - Good Work!
-    - You can heal yourself and others by pressing [C]
+    - You can heal yourself and others by pressing [C].
     - Why don't you try it out on the dummy you injured earlier?
   _choices:
     _choicesText:
@@ -32350,6 +32360,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: HUD
       objectReference: {fileID: 0}
+    - target: {fileID: 7819854374513651722, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_BlocksRaycasts
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7819854374513651722, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_Interactable
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1174269996861166691, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -33675,21 +33695,6 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4628093965384358238, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
-        type: 3}
-      propertyPath: m_SortingOrder
-      value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819854374513651722, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
-        type: 3}
-      propertyPath: m_BlocksRaycasts
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7819854374513651722, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
-        type: 3}
-      propertyPath: m_Interactable
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1493646881134559999, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
         type: 3}
       propertyPath: m_Name
@@ -33699,6 +33704,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BodyText
+      objectReference: {fileID: 0}
+    - target: {fileID: 4628093965384358238, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1019968374085492190, guid: 7f28ebef0b7820e4fb6f291e570ac1dc,
         type: 3}
