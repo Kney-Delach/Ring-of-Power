@@ -17358,10 +17358,10 @@ MonoBehaviour:
     speakerName: Injured Serpent
     sentences:
     - You want me to leave? But I can't, everywhere I go I am in danger!
-    - Wait a minute, i've heard of you, the strong witch of Violl's Garden, can you
+    - Wait a minute, I've heard of you, the strong witch of Violl's Garden, can you
       help me survive out in the wild?
     - I'm going to die out there, you may aswell kill me now.
-    - Thank you kind witch, I will tell everyone I meet of the good which you have
+    - Thank you kind witch, I will tell everyone I meet of the good that you have
       done here today.
   _choices:
     _choicesText:
@@ -17372,6 +17372,7 @@ MonoBehaviour:
   _responseOptions: 0100000002000000
   _moveNpc: 0
   _npcToMove: {fileID: 0}
+  _ravenAudioController: {fileID: 0}
 --- !u!1001 &1278596473
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17591,7 +17592,7 @@ PrefabInstance:
     - target: {fileID: 6451845737021871628, guid: 460cc15bd7214fc4fa89a1f5395ca290,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
-      value: Curse you little witch!
+      value: All I wanted was to be safe...
       objectReference: {fileID: 0}
     - target: {fileID: 6451845737021871628, guid: 460cc15bd7214fc4fa89a1f5395ca290,
         type: 3}

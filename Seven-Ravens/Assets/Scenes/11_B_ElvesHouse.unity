@@ -214,7 +214,7 @@ PrefabInstance:
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[0]
       value: Thank you kind witch! Our home is now free of that monster. We saw him
-        walk away happy, and safe, with the protective bubble you gave him, you're
+        walk away happy and safe, with the protective bubble you gave him, you're
         so kind!
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
@@ -20757,8 +20757,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Tiny Tree Elf
     sentences:
-    - 'Thank you kind witch! We thank you for freeing our home of that monster. We''ll
-      find somewhere to bury its body. '
+    - 'Thank you kind witch! We''ll find somewhere to bury the body of that vile creature. '
   _choices:
     _choicesText: []
   _choiceIndex: 0

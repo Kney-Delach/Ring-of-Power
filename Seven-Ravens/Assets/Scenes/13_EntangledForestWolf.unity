@@ -24899,12 +24899,12 @@ MonoBehaviour:
     speakerName: Bunny
     sentences:
     - Thank you for your help.
-    - My family are always getting tangled in there, many of us have perished. Is
+    - My family are always getting tangled in these, many of us have perished. Is
       there any way you can help us?
-    - Fine! I just hope none of my family die because of you,  please don't hurt me,
-      you're scary.
-    - Thank you kind witch, I will go and save my family now who I am sure are stuck
-      somewhere in this forest!
+    - Fine! I just hope no more of my family die because of you, please don't hurt
+      me, you're scary.
+    - Thank you kind witch, I must go and find my family, you have helped more than
+      you know!```````````
   _choices:
     _choicesText:
     - 'I can''t help you, I don''t have time for any of this nonsense. '
@@ -47137,7 +47137,8 @@ PrefabInstance:
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
       propertyPath: _dialogue.sentences.Array.data[1]
-      value: Please come and save me I will die if you leave me in here!
+      value: Please come and save me these traps have killed so many of us, don't
+        let me be another one!s
       objectReference: {fileID: 0}
     - target: {fileID: 5848623002796447003, guid: f2c1243fd963495429eb8b010d5d3b08,
         type: 3}
@@ -47482,11 +47483,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 7305331185635886075, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_IsActive
@@ -47512,6 +47508,11 @@ PrefabInstance:
       propertyPath: _npcBunny
       value: 
       objectReference: {fileID: 1477769735}
+    - target: {fileID: 7292822889652695852, guid: 5351688b8bee4bd4d8a016e425263333,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7708414224786187759, guid: 5351688b8bee4bd4d8a016e425263333,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -59357,7 +59358,7 @@ MonoBehaviour:
     moveSentenceIndexes: 
     speakerName: Bunny
     sentences:
-    - Curse you little witch! You will pay for this some day!
+    - I only wanted to save my family...
   _choices:
     _choicesText: []
   _choiceIndex: 0

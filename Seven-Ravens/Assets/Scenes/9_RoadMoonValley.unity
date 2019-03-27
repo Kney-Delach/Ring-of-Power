@@ -14875,6 +14875,10 @@ PrefabInstance:
       propertyPath: _goodItem
       value: 
       objectReference: {fileID: 1659158571}
+    - target: {fileID: 71488718, guid: d5efa08eaf73546319a74a206de8023a, type: 3}
+      propertyPath: _dialogue.sentences.Array.data[0]
+      value: 'Was safety too much to ask from a powerful witch? '
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d5efa08eaf73546319a74a206de8023a, type: 3}
 --- !u!114 &752771680 stripped
@@ -15253,15 +15257,15 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: -4
       objectReference: {fileID: 0}
-    - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
-        type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7421903738011418205, guid: 72a0d65e79f76764fb73f83a417d97c2,
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216582432738446322, guid: 72a0d65e79f76764fb73f83a417d97c2,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 72a0d65e79f76764fb73f83a417d97c2, type: 3}
@@ -22753,7 +22757,8 @@ MonoBehaviour:
     - Hey miss! I beg for your help, there are a group of bandits chasing me, I need
       to hide from them! They will find and kill me!
     - 'Is there any way in which you can help me? '
-    - Okay okay, just don't kill me please. Jeez you're scarier than the bandits.
+    - Okay okay, just don't kill me please. I think the bandits would run from you,
+      scary witch.
     - Thank you kind witch. You will be remembered for your actions here today!
   _choices:
     _choicesText:
@@ -22764,6 +22769,7 @@ MonoBehaviour:
   _responseOptions: 0100000002000000
   _moveNpc: 1
   _npcToMove: {fileID: 752771680}
+  _ravenAudioController: {fileID: 0}
 --- !u!1 &1896701892
 GameObject:
   m_ObjectHideFlags: 0
