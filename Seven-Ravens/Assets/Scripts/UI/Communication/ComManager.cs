@@ -364,7 +364,7 @@ namespace Rokemon {
                     _choiceMade = true;
                     SkipSentences(choiceMadeIndex-1);
                     DisplayNextSentence();
-                    GameObject[] objects = GameObject.FindGameObjectsWithTag("Enemy");
+                    GameObject[] objects = GameObject.FindGameObjectsWithTag("CharmableEnemy");
                     foreach(GameObject obj in objects)
                     {
                         EnemyController tempController = obj.GetComponentInChildren<EnemyController>();
@@ -385,7 +385,7 @@ namespace Rokemon {
                     if(_currentController.AbilityName != "NOTHING")
                     {
                         PlayerController.Instance.DeactivateAbility(_currentController.AbilityName);
-                        GameObject[] objs = GameObject.FindGameObjectsWithTag("Enemy");
+                        GameObject[] objs = GameObject.FindGameObjectsWithTag("CharmableEnemy");
                         foreach(GameObject obj in objs)
                         {
                             EnemyController tempController = obj.GetComponentInChildren<EnemyController>();
