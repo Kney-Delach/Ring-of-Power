@@ -10,7 +10,7 @@
 Play it [here](https://kney-delach.github.io/static/assets/projects/Ring-Of-Power/ROP-Build.zip)!
 <a name="about"></a>
 ## About 
-Ring of power is an rpg game designed and implemented by [Taylor Mudd](https://github.com/Taylor-Mudd) and myself with the goal of showcasing the capabilities of our custom built **parallel story telling engine**.
+Ring of power is an rpg game (based on the [seven ravens fairy tale](https://en.wikipedia.org/wiki/The_Seven_Ravens)), designed and implemented by [Taylor Mudd](https://github.com/Taylor-Mudd) and myself with the goal of showcasing the capabilities of our custom built **parallel story telling engine**.
 
 ****Your choices in gameplay and npc interactions affect your world experiences ....... what choices will you make?****
 
